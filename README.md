@@ -11,6 +11,11 @@
 
 #### built with:
 ---
+- spring boot
+- tailwind
+- html (thymleaf)
+- javascript
+- map api (tbd)
 <br/>
 
 ## description
