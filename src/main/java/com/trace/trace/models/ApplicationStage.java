@@ -7,6 +7,10 @@ import java.util.Date;
 @Table(name="applications_stages")
 public class ApplicationStage {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
     @Column(nullable = false)
     private Date createdAt;
 
