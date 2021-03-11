@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="partials/head :: header-links"></head>
+    <body>
+        <nav th:replace="partials/nav :: navbar"></nav>
+        <form class="container" th:action="@{/create}" method="POST">
+            <!--JobTitle-->
+            <div class="form-group">
+                <label for="jobTitleInput">Job Title</label>
+                <input type="text" class="form-control" id="jobTitleInput" > <!-- aria-describedby="emailHelp"-->
+                <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+            </div>
+            <!--PostId-->
+            <div class="form-group">
+                <label for="postId">Post ID</label>
+                <input type="text" class="form-control" id="postId">
+            </div>
+            <!--ReferredBy-->
+            <div class="form-group">
+                <label for="referenceName">Referred By</label>
+                <input type="text" class="form-control" id="referenceName">
+            </div>
+            <!--CompanyName-->
+            <div class="form-group">
+                <label for="companyName">Company</label>
+                <input type="text" class="form-control" id="companyName">
+            </div>
+            <!--JobDescription-->
+            <div class="form-group">
+                <label for="jobDescription">Description</label>
+                <textarea type="text" class="form-control" id="jobDescription"></textarea>
+            </div>
+            <hr>
+            <!--JobLocation-->
+            <div class="form-group">
+                <label for="jobLocation">Location</label>
+                <input type="text" class="form-control" id="jobLocation">
+            </div>
+            <!--Salary-->
+            <div class="form-group">
+                <label for="salary">Salary</label>
+                <input type="text" class="form-control" id="salary">
+            </div>
+            <!--PositionType-->
+            <div class="form-group">
+                <label for="positionType">Position Type</label>
+                <input type="text" class="form-control" id="positionType">
+            </div>
+            <!--ApplicationStage-->
+            <div class="form-group">
+                <label for="applicationStage">Application Stage</label>
+                <input type="text" class="form-control" id="applicationStage">
+            </div>
+            <!--Notes-->
+            <div class="form-group">
+                <label for="notes">Notes</label>
+                <textarea type="text" class="form-control" id="notes"></textarea>
+            </div>
+            <hr>
+
+            <!--POC INFO FOLLOWS-->
+
+            <!--Position-->
+            <div class="form-group">
+                <label for="pocTitle">Position/Title</label>
+                <input type="text" class="form-control" id="pocTitle">
+            </div>
+            <!--FirstName-->
+            <div class="form-group">
+                <label for="pocFirstName">First Name</label>
+                <input type="text" class="form-control" id="pocFirstName">
+            </div>
+            <!--LastName-->
+            <div class="form-group">
+                <label for="pocLastName">Last Name</label>
+                <input type="text" class="form-control" id="pocLastName">
+            </div>
+            <!--PhoneNumber-->
+            <div class="form-group">
+                <label for="pocPhoneNumber">Phone Number</label>
+                <input type="text" class="form-control" id="pocPhoneNumber">
+            </div>
+            <!--Email-->
+            <div class="form-group">
+                <label for="pocEmail">Email</label>
+                <input type="text" class="form-control" id="pocEmail">
+            </div>
+
+            <button>Load Resume</button>
+            <button>Cancel</button>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+    </body>
+</html>
