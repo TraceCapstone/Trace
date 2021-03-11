@@ -14,7 +14,7 @@ public class Stage {
     @Column(nullable = true)
     private String stage;
 
-    @OneToMany
+    @OneToMany(mappedBy = "stage")
     private List<ApplicationStage> application;
 
 //    Constructors

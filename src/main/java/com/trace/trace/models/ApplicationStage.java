@@ -1,23 +1,24 @@
 package com.trace.trace.models;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
 @Table(name="applications_stages")
-public class ApplicationStage {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+public class ApplicationStage implements Serializable {
 
     @Column(nullable = false)
     private Date createdAt;
 
+    @Id
     @ManyToOne
+    @JoinColumn(name = "application_id", referencedColumnName = "id")
     private Application application;
 
+    @Id
     @ManyToOne
+    @JoinColumn(name = "stage_id", referencedColumnName = "id")
     private Stage stage;
 
 //    Constructors
