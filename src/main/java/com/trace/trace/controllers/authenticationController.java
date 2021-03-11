@@ -5,10 +5,13 @@ import com.trace.trace.repositories.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.validation.Valid;
 
 @Controller
 public class authenticationController {
@@ -37,7 +40,18 @@ public class authenticationController {
     }
 
     @PostMapping("/sign-up")
-    public String createUser(@ModelAttribute User user) {
+    public String saveUser(@Valid @ModelAttribute User user, Errors e, Model model) {
+        if (e.hasErrors()) {
+            model.addAttribute("errors", e);
+            return "sign-up";
+        } else if (userDao.findByUsername(user.getUsername()) != null) {
+            model.addAttribute("username", user.getUsername());
+            return "sign-up";
+        } else if (userDao.findByEmail(user.getEmail()) != null) {
+            model.addAttribute("email", user.getEmail());
+            return "sign-up";
+        }
+
         String password = user.getPassword();
         String hash = passwordEncoder.encode(password);
         user.setPassword(hash);

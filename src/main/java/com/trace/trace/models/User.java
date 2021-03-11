@@ -1,5 +1,6 @@
 package com.trace.trace.models;
 
+import com.trace.trace.ValidPassword;
 import org.hibernate.engine.internal.Cascade;
 
 import javax.persistence.*;
@@ -20,6 +21,7 @@ public class User {
     private String username;
 
     @Column(nullable = false)
+    @ValidPassword
     private String password;
 
     @Column(nullable = false)
