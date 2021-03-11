@@ -19,10 +19,13 @@ public class authenticationController {
 
     private final UserRepository userDao;
     private final PasswordEncoder passwordEncoder;
+//    private final UserDetailsLoader userDetailsLoader;
+//    private final UserService userService;
 
     public authenticationController(UserRepository userDao, PasswordEncoder passwordEncoder) {
         this.userDao = userDao;
         this.passwordEncoder = passwordEncoder;
+
     }
 
     @GetMapping("/")
@@ -37,14 +40,14 @@ public class authenticationController {
     }
 
     @PostMapping("/sign-up")
-    public String saveUser(@Valid @ModelAttribute User user, Errors e, Model model){
-        if(e.hasErrors()) {
+    public String saveUser(@Valid @ModelAttribute User user, Errors e, Model model) {
+        if (e.hasErrors()) {
             model.addAttribute("errors", e);
             return "sign-up";
-        } else if(userDao.findByUsername(user.getUsername()) != null) {
+        } else if (userDao.findByUsername(user.getUsername()) != null) {
             model.addAttribute("username", user.getUsername());
             return "sign-up";
-        } else if(userDao.findByEmail(user.getEmail()) != null) {
+        } else if (userDao.findByEmail(user.getEmail()) != null) {
             model.addAttribute("email", user.getEmail());
             return "sign-up";
         }
@@ -55,5 +58,13 @@ public class authenticationController {
         userDao.save(user);
         return "redirect:/";
     }
+
+    @GetMapping("/profile")
+    public String profileView(Model model){
+        User currUser = UserService.loggedInUser();
+        model.addAttribute("user", currUser);
+        return "profile";
+    }
+
 
 }
