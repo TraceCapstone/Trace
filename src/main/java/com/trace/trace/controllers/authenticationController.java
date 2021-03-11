@@ -16,10 +16,13 @@ public class authenticationController {
 
     private final UserRepository userDao;
     private final PasswordEncoder passwordEncoder;
+//    private final UserDetailsLoader userDetailsLoader;
+//    private final UserService userService;
 
     public authenticationController(UserRepository userDao, PasswordEncoder passwordEncoder) {
         this.userDao = userDao;
         this.passwordEncoder = passwordEncoder;
+
     }
 
     @GetMapping("/")
@@ -34,12 +37,20 @@ public class authenticationController {
     }
 
     @PostMapping("/sign-up")
-    public String createUser(@ModelAttribute User user){
+    public String createUser(@ModelAttribute User user) {
         String password = user.getPassword();
         String hash = passwordEncoder.encode(password);
         user.setPassword(hash);
         userDao.save(user);
         return "redirect:/";
     }
+
+    @GetMapping("/profile")
+    public String profileView(Model model){
+        User currUser = UserService.loggedInUser();
+        model.addAttribute("user", currUser);
+        return "profile";
+    }
+
 
 }

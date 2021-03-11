@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="partials/head :: header-links"></head>
+<body>
+<nav th:replace="partials/nav :: navbar"></nav>
+<h1>Profile</h1>
+<p th:text="${user.firstName}"></p>
+<p th:text="${user.lastName}"></p>
+<p th:text="${user.email}"></p>
+
+<div th:replace="partials/scripts :: assets"></div>
+</body>
+</html>
