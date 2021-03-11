@@ -51,7 +51,17 @@ public class User {
         this.applications = applications;
     }
 
-// Getters and Setters
+    public User(User copy) {
+        this.id = copy.id;
+        this.email = copy.email;
+        this.username = copy.username;
+        this.password = copy.password;
+        this.firstName = copy.firstName;
+        this.lastName = copy.lastName;
+        this.applications = copy.applications;
+    }
+
+    // Getters and Setters
     public long getId() {
         return id;
     }

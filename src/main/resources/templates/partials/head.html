@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-<head th:fragment="header-links">
+<head th:fragment="header-links(title)">
     <meta charset="UTF-8">
     <title th:text="${title}"></title>
     <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css}">
-    <link rel="stylesheet" th:href="@{/styles/main.css}">
-
+	<link rel="stylesheet" href="/css/build.css">
 </head>
 <body>
 

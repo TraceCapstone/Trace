@@ -39,11 +39,11 @@ public SecurityConfig(UserDetailsLoader userLoader) {
                 .logoutSuccessUrl("/login?logout")
                 .and()
                 .authorizeRequests()
-                .antMatchers("/", "/sign-up", "/posts")
+                .antMatchers("/", "/about")
                 .permitAll()
                 .and()
                 .authorizeRequests()
-                .antMatchers("/posts/*")
+                .antMatchers("/application/*")
                 .authenticated();
     }
 
