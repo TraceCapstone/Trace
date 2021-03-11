@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="partials/head :: header-links"></head>
+<body>
+    <nav th:replace="partials/nav :: navbar"></nav>
+
+    <div class="container">
+
+        <form action="@{/edit}" method="post" th:object="${user}">
+            <div class="form-group">
+                <label for="job-title">Job Title</label>
+                <input type="text" id="job-title" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="post-id">Post # / ID</label>
+                <input type="text" id="post-id" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="referred-by">Referred By</label>
+                <input type="text" id="referred-by" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="company">Company</label>
+                <input type="text" id="company" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea type="text" id="description" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="location">Location</label>
+                <input type="text" id="location" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="salary">Salary</label>
+                <input type="number" id="salary" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="job-type">Full-time/Part-time/Internship/Contract</label>
+                <input type="text" id="job-type" class="form-control">
+            </div>
+            <div>
+                <label for="applicationStage">Application Stage</label>
+                <input type="text" id="applicationStage" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="comments">Comments</label>
+                <textarea type="text" id="comments" class="form-control"></textarea>
+            </div>
+        </form>
+
+    </div>
+</body>
+</html>
