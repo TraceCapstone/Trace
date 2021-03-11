@@ -1,5 +1,6 @@
 package com.trace.trace.models;
 
+import com.trace.trace.ValidPassword;
 import org.hibernate.engine.internal.Cascade;
 
 import javax.persistence.*;
@@ -20,6 +21,7 @@ public class User {
     private String username;
 
     @Column(nullable = false)
+    @ValidPassword
     private String password;
 
     @Column(nullable = false)
@@ -51,7 +53,17 @@ public class User {
         this.applications = applications;
     }
 
-// Getters and Setters
+    public User(User copy) {
+        this.id = copy.id;
+        this.email = copy.email;
+        this.username = copy.username;
+        this.password = copy.password;
+        this.firstName = copy.firstName;
+        this.lastName = copy.lastName;
+        this.applications = copy.applications;
+    }
+
+    // Getters and Setters
     public long getId() {
         return id;
     }
