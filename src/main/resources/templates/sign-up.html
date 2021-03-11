@@ -6,19 +6,21 @@
 
 <form th:action="@{/sign-up}" method="post" th:object="${user}">
     <label for="email">Email</label>
-    <input type="text" id="email" th:field="*{email}">
+    <input type="text" id="email" th:field="*{email}" placeholder="email">
     <br>
     <label for="username">Username</label>
-    <input type="text" id="username" th:field="*{username}">
+    <input type="text" id="username" th:field="*{username}" placeholder="username">
     <br>
-    <input type="text" id="first" th:field="*{firstName}">
+    <label for="first">First name</label>
+    <input type="text" id="first" th:field="*{firstName}" placeholder="first name">
     <br>
-    <input type="text" id="last" th:field="*{lastName}">
+    <label for="last">Last Name</label>
+    <input type="text" id="last" th:field="*{lastName}" placeholder="last name">
     <br>
     <label for="password">Password</label>
-    <input type="password" id="password" th:field="*{password}">
+    <input type="password" id="password" th:field="*{password}" placeholder="password">
     <br>
-    <input type="submit" value="Sign In!" />
+    <input type="submit" value="Sign Up!" />
 </form>
 
 
