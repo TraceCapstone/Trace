@@ -61,8 +61,8 @@ public class authenticationController {
 
     @GetMapping("/profile")
     public String profileView(Model model){
-        User currUser = UserService.loggedInUser();
-        model.addAttribute("user", currUser);
+//        User currUser = UserService.loggedInUser();
+//        model.addAttribute("user", currUser);
         return "profile";
     }
 
