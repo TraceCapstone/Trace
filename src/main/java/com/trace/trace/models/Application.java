@@ -33,6 +33,9 @@ public class Application {
     @Column(nullable = false)
     private Date dateCreated;
 
+    @Column(nullable = false)
+    private Date dateApplied;
+
     @Column(nullable = true)
     private String postingId;
 
@@ -58,7 +61,7 @@ public class Application {
     public Application() {
     }
 
-    public Application(long id, String company, String title, String description, String location, int salary, String positionType, Date dateCreated, String postingId, String referredBy, String url, User user, Resume resume) {
+    public Application(long id, String company, String title, String description, String location, int salary, String positionType, Date dateCreated, Date dateApplied, String postingId, String referredBy, String url, User user, Resume resume) {
         this.id = id;
         this.company = company;
         this.title = title;
@@ -67,6 +70,7 @@ public class Application {
         this.salary = salary;
         this.positionType = positionType;
         this.dateCreated = dateCreated;
+        this.dateApplied = dateApplied;
         this.postingId = postingId;
         this.referredBy = referredBy;
         this.url = url;
@@ -134,6 +138,14 @@ public class Application {
 
     public void setDateCreated(Date dateCreated) {
         this.dateCreated = dateCreated;
+    }
+
+    public Date getDateApplied() {
+        return dateApplied;
+    }
+
+    public void setDateApplied(Date dateApplied) {
+        this.dateApplied = dateApplied;
     }
 
     public String getPostingId() {

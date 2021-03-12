@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>My Jobs</title>
+</head>
+<body>
+    <div class="container">
+        <div th:each="application : ${applications}">
+            <p th:text="${application.company}"><h6 th:text="${application.dateCreated}"></h6></p>
+            <p th:text="${application.title}"></p>
+            <p th:text="${application.dateApplied}"></p>
+            <p th:text="${application.dateCreated}"></p>
+            <p th:text="${application.location}"></p>
+        </div>
+    </div>
+    <!--START MAPBOX CONTAINER-->
+    <div id='map' style='width: 80%; height: 80%;'></div>
+    <!--END MAPBOX CONTAINER-->
+</body>
+</html>
