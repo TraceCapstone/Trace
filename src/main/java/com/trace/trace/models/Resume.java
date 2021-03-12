@@ -1,5 +1,7 @@
 package com.trace.trace.models;
 
+import org.springframework.beans.factory.annotation.Value;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
@@ -22,6 +24,7 @@ public class Resume {
     private String description;
 
     @Column(nullable = true)
+    @Value("${file-upload-path}")
     private String filePath;
 
     @ManyToOne
