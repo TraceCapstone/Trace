@@ -5,7 +5,7 @@ import java.util.Date;
 
 @Entity
 @Table(name="note")
-public class Notes {
+public class Note {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,10 +21,10 @@ public class Notes {
     private Application applications;
 
 //    Constructors
-    public Notes() {
+    public Note() {
     }
 
-    public Notes(long id, String note, Date createdAt, Application applications) {
+    public Note(long id, String note, Date createdAt, Application applications) {
         this.id = id;
         this.note = note;
         this.createdAt = createdAt;
