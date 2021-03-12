@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Individual Job</title>
+</head>
+<body>
+    <div class="container">
+        <h3 th:text="${application.title}"></h3>
+        <p th:text="'Authored by ' + ${post.user.email}" />
+        <p th:text="${post.body}"></p>
+        <div th:replace="partials/scripts :: assets"></div>
+        <a th:href="@{|/posts/${post.id}/edit|}">Edit Post</a>
+    </div>
+</body>
+</html>
