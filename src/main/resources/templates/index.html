@@ -4,8 +4,19 @@
 <body>
 
 <nav th:replace="partials/nav :: navbar"></nav>
-
-<div class="min-h-screen flex items-center justify-center bg-gray-50 py-14 px-4 sm:px-6 lg:px-8 absolute w-full top-0">
+<div class="min-h-screen flex flex-wrap items-center justify-evenly bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 w-full top-0 md:absolute">
+	<div class="max-w-screen-xl w-full bg-red-500 shadow-2xl rounded-lg mx-auto text-center py-12 hidden lg:block">
+		<h2 class="text-3xl leading-9 font-bold tracking-tight text-gray-200 sm:text-4xl sm:leading-10">
+			jumbotron
+		</h2>
+		<div class="mt-8 flex justify-center">
+			<div class="inline-flex rounded-md bg-white shadow">
+				<a href="/sign-up" class="text-gray-700 font-bold py-2 px-6">
+					Sign Up With Us
+				</a>
+			</div>
+		</div>
+	</div>
 	<div class="max-w-md w-full space-y-8">
 		<div>
 			<img class="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="Workflow">
@@ -13,7 +24,7 @@
 				Sign in to your account
 			</h2>
 		</div>
-		<form class="mt-8 space-y-6" th:action="@{/}" method="post">
+		<form class="my-8 space-y-6" th:action="@{/}" method="post">
 			<input type="hidden" name="remember" value="true">
 			<div class="rounded-md shadow-sm -space-y-px">
 				<div>
@@ -50,17 +61,26 @@
 			<div th:if="${sent != null}" th:text="'An email has been sent to '+${sent}"></div>
 			<div>
 				<button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-          <span class="absolute left-0 inset-y-0 flex items-center pl-3">
-            <!-- Heroicon name: solid/lock-closed -->
-            <svg class="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
-            </svg>
-          </span>
+					<span class="absolute left-0 inset-y-0 flex items-center pl-3">
+						<!-- Heroicon name: solid/lock-closed -->
+						<svg class="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+							<path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+						</svg>
+					</span>
 					Sign in
 				</button>
 			</div>
 		</form>
 	</div>
+<p class="max-w-md">
+	Lorem ipsum dolor sit amet, consectetuer
+	adipiscing elit, sed diam nonummy nibh euismod
+	tincidunt ut laoreet dolore magna aliquam
+	erat volutpat. Ut wisi enim ad minim
+	veniam, quis nostrud exerci tation ullamcorper
+	suscipit lobortis nisl ut aliquip ex ea commodo
+	consequat.
+</p>
 </div>
 </body>
 </html>
