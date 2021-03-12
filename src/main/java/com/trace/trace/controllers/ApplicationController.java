@@ -1,6 +1,8 @@
 package com.trace.trace.controllers;
 
 import com.trace.trace.models.Application;
+import com.trace.trace.models.Note;
+import com.trace.trace.models.Stage;
 import com.trace.trace.models.User;
 import com.trace.trace.repositories.ApplicationRepository;
 import com.trace.trace.services.UserService;
@@ -36,6 +38,10 @@ public class ApplicationController {
     public String viewIndividualJob(Model model, @PathVariable long id) {
         Application application = applicationDao.getOne(id);
         model.addAttribute("application", application);
+        Stage stage = applicationDao.findMostRecentStageForApplication(id);
+        model.addAttribute("stage",stage);
+        Application note = applicationDao.getOne(id);
+        model.addAttribute("notes", note);
         return "app";
     }
 
@@ -80,4 +86,11 @@ public class ApplicationController {
     }
 
     //DELETE APPLICATION
+    @PostMapping("/applications/{id}/delete")
+    public String deleteApplication(@PathVariable long id){
+        applicationDao.deleteById(id);
+        return "redirect:/applications";
+    }
+
+
 }
