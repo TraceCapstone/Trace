@@ -28,12 +28,12 @@ public class ApplicationController {
     }
 
     //CANCEL FORM SUBMISSION
-    @GetMapping("/create-application")
-    public String cancelFormSubmit() {
-        //INPUT IS BUTTON CLICK
-
-        return "ALL APPLICATIONS VIEW";
-    }
+//    @GetMapping("/create-application")
+//    public String cancelFormSubmit() {
+//        //INPUT IS BUTTON CLICK
+//
+//        return "ALL APPLICATIONS VIEW";
+//    }
 
     //SAVE APPLICATION FORM
 //    @PostMapping("/create-application")
