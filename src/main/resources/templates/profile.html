@@ -1,13 +1,63 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="partials/head :: header-links"></head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="partials/head :: header-links(profile)"></head>
 <body>
-<nav th:replace="partials/nav :: navbar"></nav>
-<h1>Profile</h1>
-<p th:text="${user.firstName}"></p>
-<p th:text="${user.lastName}"></p>
-<p th:text="${user.email}"></p>
 
-<div th:replace="partials/scripts :: assets"></div>
-</body>
-</html>
+<nav th:replace="partials/nav :: navbar"></nav>
+<h1>Welcome to your profile</h1>
+
+<div sec:authorize="isAuthenticated()">
+    <p th:text="${#authentication.principal.firstName}"></p>
+    <p th:text="${#authentication.principal.lastName}"></p>
+    <p th:text="${#authentication.principal.email}"></p>
+</div>
+
+<!--    <h1>Edit Profile</h1>-->
+<!--<div sec:authorize="isAuthenticated()">-->
+<!--    <form th:action="@{/}" method="post" th:object="${user}">-->
+<!--        Email:-->
+<!--        <label><input th:field="${#authentication.principal.email}" />-->
+<!--        </label>-->
+<!--        <br />-->
+<!--        First Name:-->
+<!--        <input th:text="${#authentication.principal.firstName}" />-->
+<!--        <br />-->
+<!--        Last Name:-->
+<!--        <input th:text="${#authentication.principal.lastName}" />-->
+<!--        <br />-->
+<!--        Password:-->
+<!--        <input th:text="${#authentication.principal.password}" />-->
+<!--        <br />-->
+<!--        <input class="btn btn-block btn-primary" type="submit" value="Update"/>-->
+<!--    </form>-->
+<!--</div>-->
+
+<!--    <form th:action="@{/user/{id}}" th:method="post" th:object="${user}">-->
+<!--            Email:-->
+<!--            <label>-->
+<!--                <input th:field="*{email}" />-->
+<!--            </label>-->
+<!--            <br />-->
+<!--            First Name:-->
+<!--            <input th:field="*{firstName}" />-->
+<!--            <br />-->
+<!--            Last Name:-->
+<!--            <input th:field="*{lastName}" />-->
+<!--            <br />-->
+<!--            Password:-->
+<!--            <input th:field="*{password}" />-->
+<!--            <br />-->
+<!--           <input class="btn btn-block btn-primary" type="submit" value="Update"/>-->
+<!--    </form>-->
+
+
+<!--<form th:action="@{|/users/${user.id}/delete|}" th:method="POST">-->
+    <button>Delete Account</button>
+<!--</form>-->
+
+
+    <div th:replace="partials/scripts :: assets"></div>
+    </body>
+    </html>
+
+

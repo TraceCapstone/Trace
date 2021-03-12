@@ -4,7 +4,7 @@
   "description": "## Table of contents ---",
   "main": "index.js",
   "scripts": {
-    "build": "postcss src/main/resources/static/css/tailwind.css -o src/main/resources/static/css/build.css"
+    "build": "postcss src/main/css/tailwind.css -o src/main/resources/static/css/build.css"
   },
   "repository": {
     "type": "git",

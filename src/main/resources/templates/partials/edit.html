@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-<head th:replace="partials/head :: header-links"></head>
+<head th:replace="partials/head :: header-links(edit)"></head>
 <body>
     <nav th:replace="partials/nav :: navbar"></nav>
 
     <div class="container">
-
-        <form action="@{/edit}" method="post" th:object="${user}">
+        <form th:action="@{/application/edit}" method="post" th:object="${user}">
             <div class="form-group">
                 <label for="job-title">Job Title</label>
                 <input type="text" id="job-title" class="form-control">
@@ -36,19 +35,64 @@
                 <input type="number" id="salary" class="form-control">
             </div>
             <div class="form-group">
-                <label for="job-type">Full-time/Part-time/Internship/Contract</label>
-                <input type="text" id="job-type" class="form-control">
+                <label for="job-type">Type</label>
+                <select class="form-control" id="job-type">
+                    <option>Full Time</option>
+                    <option>Part Time</option>
+                    <option>Internship</option>
+                    <option>Contract</option>
+                    <option>Other</option>
+                </select>
             </div>
             <div>
                 <label for="applicationStage">Application Stage</label>
-                <input type="text" id="applicationStage" class="form-control">
+                <select class="form-control" id="applicationStage">
+                    <option>Applied</option>
+                    <option>Scheduled Interview</option>
+                    <option>Interviewed</option>
+                    <option>Hired</option>
+                    <textarea placeholder="Other"></textarea>
+                </select>
             </div>
+            <br>
             <div class="form-group">
-                <label for="comments">Comments</label>
-                <textarea type="text" id="comments" class="form-control"></textarea>
+                <textarea type="text" id="comments" class="form-control" placeholder="Comments"></textarea>
             </div>
         </form>
 
+        <form class="container">
+            <h1>Point of Contact</h1>
+            <div class="form-group">
+                <label for="position">Position</label>
+                <input type="text" id="position" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="number" id="phone" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" id="email" class="form-control">
+            </div>
+        </form>
+
+        <form class="container">
+            <div class="form-group">
+                <label for="resume-upload">Load Resume</label>
+                <input type="file" class="form-control-file" id="resume-upload">
+            </div>
+        </form>
     </div>
+
+
+    <div th:replace="partials/scripts :: assets"></div>
 </body>
 </html>

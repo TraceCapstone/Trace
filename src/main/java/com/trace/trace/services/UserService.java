@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 @Service("UserService")
 public class UserService {
-    public User loggedInUser() {
+    public static User loggedInUser() {
         return (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
     }
 
