@@ -1,7 +1,5 @@
 package com.trace.trace.models;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
@@ -18,7 +16,7 @@ public class Resume {
     private String title;
 
     @Column(nullable = true)
-    private Date date;
+    private Date createdAt;
 
     @Column(nullable = true)
     private String description;
@@ -40,7 +38,7 @@ public class Resume {
     public Resume(long id, String title, Date date, String description, String filePath, User user, List<Application> applications) {
         this.id = id;
         this.title = title;
-        this.date = date;
+        this.createdAt = date;
         this.description = description;
         this.filePath = filePath;
         this.user = user;
@@ -61,12 +59,12 @@ public class Resume {
         this.title = title;
     }
 
-    public Date getDate() {
-        return date;
+    public Date getCreatedAt() {
+        return createdAt;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setCreatedAt(Date date) {
+        this.createdAt = date;
     }
 
     public String getDescription() {
