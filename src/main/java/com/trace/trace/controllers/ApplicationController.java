@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.Date;
+
 @Controller
 public class ApplicationController {
 
@@ -38,8 +40,8 @@ public class ApplicationController {
     public String viewIndividualJob(Model model, @PathVariable long id) {
         Application application = applicationDao.getOne(id);
         model.addAttribute("application", application);
-        Stage stage = applicationDao.findMostRecentStageForApplication(id);
-        model.addAttribute("stage",stage);
+//        Stage stage = applicationDao.findMostRecentStageForApplication(id);
+//        model.addAttribute("stage",stage);
         Application note = applicationDao.getOne(id);
         model.addAttribute("notes", note);
         return "app";
@@ -65,7 +67,7 @@ public class ApplicationController {
     public String saveApplication(@ModelAttribute Application application) {
         User user = userService.loggedInUser();
         application.setUser(user);
-
+        application.setDateCreated(new Date(System.currentTimeMillis()));
         Application savedApplication = applicationDao.save(application);
         return "redirect:/applications";
     }
