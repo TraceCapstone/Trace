@@ -40,8 +40,8 @@ public class ApplicationController {
     public String viewIndividualJob(Model model, @PathVariable long id) {
         Application application = applicationDao.getOne(id);
         model.addAttribute("application", application);
-//        Stage stage = applicationDao.findMostRecentStageForApplication(id);
-//        model.addAttribute("stage",stage);
+        Stage stage = applicationDao.findMostRecentStageForApplication(id);
+        model.addAttribute("stage",stage);
         Application note = applicationDao.getOne(id);
         model.addAttribute("notes", note);
         return "app";
