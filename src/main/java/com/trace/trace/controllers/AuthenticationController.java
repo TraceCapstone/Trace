@@ -60,7 +60,7 @@ public class AuthenticationController {
 
     @GetMapping("/profile")
     public String profileView(Model model){
-        model.addAttribute("user", UserService.loggedInUser());
+        model.addAttribute("user", userService.loggedInUser());
         return "profile";
     }
 
