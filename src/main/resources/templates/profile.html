@@ -14,45 +14,29 @@
     Email: <p th:text="${#authentication.principal.email}"></p>
 </div>
 
-<!--<div>-->
-<!--    <h1>Edit Profile</h1>-->
-<!--<div sec:authorize="isAuthenticated()">-->
-<!--    <form th:action="@{/}" method="post" th:object="${user}">-->
-<!--        Email:-->
-<!--        <label><input th:field="${#authentication.principal.email}" />-->
-<!--        </label>-->
-<!--        <br />-->
-<!--        First Name:-->
-<!--        <input th:text="${#authentication.principal.firstName}" />-->
-<!--        <br />-->
-<!--        Last Name:-->
-<!--        <input th:text="${#authentication.principal.lastName}" />-->
-<!--        <br />-->
+<div>
+    <h1>Edit Profile</h1>
+<div sec:authorize="isAuthenticated()">
+    <form th:action="@{/profile}" method="post" th:object="${user}">
+        Email:
+        <label>
+            <input th:field="*{email}" />
+        </label>
+        <br />
+        First Name:
+        <input th:field="*{firstName}" />
+        <br />
+        Last Name:
+        <input th:field="*{lastName}" />
+        <br />
 <!--        Password:-->
-<!--        <input th:text="${#authentication.principal.password}" />-->
+<!--        <input th:field="*{password}" />-->
 <!--        <br />-->
-<!--        <input class="btn btn-block btn-primary" type="submit" value="Update"/>-->
-<!--    </form>-->
-<!--</div>-->
-<!--</div>-->
+        <input class="btn btn-block btn-primary" type="submit" value="Update"/>
+    </form>
+</div>
+</div>
 
-<!--    <form th:action="@{/user/{id}}" th:method="post" th:object="${user}">-->
-<!--            Email:-->
-<!--            <label>-->
-<!--                <input th:field="*{email}" />-->
-<!--            </label>-->
-<!--            <br />-->
-<!--            First Name:-->
-<!--            <input th:field="*{firstName}" />-->
-<!--            <br />-->
-<!--            Last Name:-->
-<!--            <input th:field="*{lastName}" />-->
-<!--            <br />-->
-<!--            Password:-->
-<!--            <input th:field="*{password}" />-->
-<!--            <br />-->
-<!--           <input class="btn btn-block btn-primary" type="submit" value="Update"/>-->
-<!--    </form>-->
 
 
 <!--<form th:action="@{|/users/${user.id}/delete|}" th:method="POST">-->

@@ -61,27 +61,23 @@ public class AuthenticationController {
     }
 
     @GetMapping("/profile")
-    public String profileView(){
+    public String profileView(Model model){
+        model.addAttribute("user", UserService.loggedInUser());
         return "profile";
     }
 
-    @GetMapping("/user/{id}")
-    public String viewUserUpdateForm(Model model, @PathVariable String id) {
-        model.addAttribute("user", new User().getId());
-        return "profile";
-    }
+    @PostMapping("/profile")
+    public String updatePost(@ModelAttribute User user) {
 
-    @PostMapping("/user/{id}")
-    public String updatePost(@PathVariable Long id, @ModelAttribute User user, Model model) {
-        User currentUser = UserService.loggedInUser();
-        model.addAttribute("user", currentUser);
-
+        user.setPassword(user.getPassword());
+        user.setUsername(user.getUsername());
         userDao.save(user);
+//        userDao.update(user.getEmail(), user.getFirstName(), user.getLastName(), user.getId());
         return "redirect:/profile";
     }
 
 
-    @PostMapping("/posts/{id}/delete")
+    @PostMapping("/profile/{id}/delete")
     public String deletePost(@PathVariable long id){
         System.out.println("Deleting User...");
         userDao.deleteById(id);
