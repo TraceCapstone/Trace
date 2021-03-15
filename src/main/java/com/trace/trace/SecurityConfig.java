@@ -11,11 +11,11 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-private final UserDetailsLoader userLoader;
+    private final UserDetailsLoader userLoader;
 
-public SecurityConfig(UserDetailsLoader userLoader) {
-    this.userLoader = userLoader;
-}
+    public SecurityConfig(UserDetailsLoader userLoader) {
+        this.userLoader = userLoader;
+    }
 
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -36,7 +36,7 @@ public SecurityConfig(UserDetailsLoader userLoader) {
                 .permitAll()
                 .and()
                 .logout()
-                .logoutSuccessUrl("/login?logout")
+                .logoutSuccessUrl("/?logout")
                 .and()
                 .authorizeRequests()
                 .antMatchers("/", "/about")

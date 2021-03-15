@@ -18,13 +18,11 @@ public class AuthenticationController {
 
     private final UserRepository userDao;
     private final PasswordEncoder passwordEncoder;
-    private final UserDetailsLoader userDetailsLoader;
     private final UserService userService;
 
-    public AuthenticationController(UserRepository userDao, PasswordEncoder passwordEncoder, UserDetailsLoader userDetailsLoader, UserService userService) {
+    public AuthenticationController(UserRepository userDao, PasswordEncoder passwordEncoder, UserService userService) {
         this.userDao = userDao;
         this.passwordEncoder = passwordEncoder;
-        this.userDetailsLoader = userDetailsLoader;
         this.userService = userService;
     }
 
@@ -66,8 +64,11 @@ public class AuthenticationController {
         return "profile";
     }
 
+
     @PostMapping("/profile")
-    public String updatePost(@ModelAttribute User user) {
+    public String updateUser(@PathVariable Long id, @ModelAttribute User user, Model model) {
+        User currentUser = userService.loggedInUser();
+        model.addAttribute("user", currentUser);
 
         user.setPassword(user.getPassword());
         user.setUsername(user.getUsername());
@@ -77,8 +78,9 @@ public class AuthenticationController {
     }
 
 
+
     @PostMapping("/profile/{id}/delete")
-    public String deletePost(@PathVariable long id){
+    public String deleteUser(@PathVariable long id){
         System.out.println("Deleting User...");
         userDao.deleteById(id);
         return "redirect:/";
