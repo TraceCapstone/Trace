@@ -20,31 +20,31 @@ import java.util.Date;
 public class ResumeUploadController {
 
 //    @Value("${file-upload-path}")
-    private String uploadPath;
-
-    private final ResumeRepository resumeDao;
-
-    public ResumeUploadController(ResumeRepository resumeDao) {
-        this.resumeDao = resumeDao;
-    }
-
-    @PostMapping("/fileupload")
-    public String saveFile(Model model, @RequestParam(name = "file") MultipartFile uploadFile, @ModelAttribute Resume resume) {
-        String filename = uploadFile.getOriginalFilename();
-        String filepath = Paths.get(uploadPath, filename).toString();
-        File destinationFile = new File(filepath);
-        resume.setCreatedAt(new Date(System.currentTimeMillis()));
-        resume.setFilePath(filepath);
-        try {
-            uploadFile.transferTo(destinationFile);
-            resumeDao.save(resume);
-            model.addAttribute("message", "File successfully uploaded!");
-        } catch (IOException e) {
-            e.printStackTrace();
-            model.addAttribute("message", "Oops! Something went wrong! " + e);
-        }
-        return "fileupload";
-    }
+//    private String uploadPath;
+//
+//    private final ResumeRepository resumeDao;
+//
+//    public ResumeUploadController(ResumeRepository resumeDao) {
+//        this.resumeDao = resumeDao;
+//    }
+//
+//    @PostMapping("/fileupload")
+//    public String saveFile(Model model, @RequestParam(name = "file") MultipartFile uploadFile, @ModelAttribute Resume resume) {
+//        String filename = uploadFile.getOriginalFilename();
+//        String filepath = Paths.get(uploadPath, filename).toString();
+//        File destinationFile = new File(filepath);
+//        resume.setCreatedAt(new Date(System.currentTimeMillis()));
+//        resume.setFilePath(filepath);
+//        try {
+//            uploadFile.transferTo(destinationFile);
+//            resumeDao.save(resume);
+//            model.addAttribute("message", "File successfully uploaded!");
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//            model.addAttribute("message", "Oops! Something went wrong! " + e);
+//        }
+//        return "fileupload";
+//    }
 
 }
 
