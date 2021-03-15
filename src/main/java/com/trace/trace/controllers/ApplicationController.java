@@ -1,7 +1,7 @@
 package com.trace.trace.controllers;
 
 import com.trace.trace.models.Application;
-import com.trace.trace.models.Note;
+import com.trace.trace.models.Resume;
 import com.trace.trace.models.Stage;
 import com.trace.trace.models.User;
 import com.trace.trace.repositories.ApplicationRepository;
@@ -40,8 +40,8 @@ public class ApplicationController {
     public String viewIndividualJob(Model model, @PathVariable long id) {
         Application application = applicationDao.getOne(id);
         model.addAttribute("application", application);
-//        Stage stage = applicationDao.findMostRecentStageForApplication(id);
-//        model.addAttribute("stage",stage);
+        Stage stage = applicationDao.findMostRecentStageForApplication(id);
+        model.addAttribute("stage",stage);
         Application note = applicationDao.getOne(id);
         model.addAttribute("notes", note);
         return "app";
@@ -50,7 +50,8 @@ public class ApplicationController {
     //VIEW APPLICATION SUBMISSION FORM
     @GetMapping("/create-application")
     public String viewCreateApplicationForm(Model model) {
-        model.addAttribute("application", new Application());
+        model.addAttribute("jobApplication", new Application());
+        model.addAttribute("resume", new Resume());
         return "create-application";
     }
 
@@ -75,8 +76,8 @@ public class ApplicationController {
     //EDIT APPLICATION
     @GetMapping("/applications/{id}/edit")
     public String viewEditApplicationForm(@PathVariable long id, Model model) {
-        model.addAttribute("application", applicationDao.getOne(id));
-        return "applications/edit";
+        model.addAttribute("jobApplication", applicationDao.getOne(id));
+        return "edit";
     }
 
     @PostMapping("/applications/{id}/edit")

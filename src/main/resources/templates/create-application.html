@@ -3,92 +3,108 @@
 <head th:replace="partials/head :: header-links(create)"></head>
     <body>
         <nav th:replace="partials/nav :: navbar"></nav>
-        <form class="container" th:action="@{/create}" method="POST">
+        <form class="container" th:action="@{/create-application}" method="POST" th:object="${jobApplication}">
             <!--JobTitle-->
             <div class="form-group">
                 <label for="jobTitleInput">Job Title</label>
-                <input type="text" class="form-control" id="jobTitleInput" > <!-- aria-describedby="emailHelp"-->
+                <input type="text" class="form-control" id="jobTitleInput" th:field="*{title}"> <!-- aria-describedby="emailHelp"-->
                 <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
             </div>
             <!--PostId-->
             <div class="form-group">
                 <label for="postId">Post ID</label>
-                <input type="text" class="form-control" id="postId">
+                <input type="text" class="form-control" id="postId" th:field="*{id}">
+            </div>
+            <!--DateApplied-->
+            <div class="form-group">
+                <label for="dateApplied">Date Applied</label>
+                <input type="date" class="form-control" id="dateApplied" th:field="*{dateApplied}">
             </div>
             <!--ReferredBy-->
             <div class="form-group">
                 <label for="referenceName">Referred By</label>
-                <input type="text" class="form-control" id="referenceName">
+                <input type="text" class="form-control" id="referenceName" th:field="*{referredBy}">
             </div>
             <!--CompanyName-->
             <div class="form-group">
                 <label for="companyName">Company</label>
-                <input type="text" class="form-control" id="companyName">
+                <input type="text" class="form-control" id="companyName" th:field="*{company}">
             </div>
             <!--JobDescription-->
             <div class="form-group">
                 <label for="jobDescription">Description</label>
-                <textarea type="text" class="form-control" id="jobDescription"></textarea>
+                <textarea type="text" class="form-control" id="jobDescription" th:field="*{description}"></textarea>
             </div>
             <hr>
             <!--JobLocation-->
             <div class="form-group">
                 <label for="jobLocation">Location</label>
-                <input type="text" class="form-control" id="jobLocation">
+                <input type="text" class="form-control" id="jobLocation" th:field="*{location}">
             </div>
             <!--Salary-->
             <div class="form-group">
                 <label for="salary">Salary</label>
-                <input type="text" class="form-control" id="salary">
+                <input type="text" class="form-control" id="salary" th:field="*{salary}">
             </div>
             <!--PositionType-->
             <div class="form-group">
                 <label for="positionType">Position Type</label>
-                <input type="text" class="form-control" id="positionType">
+                <input type="text" class="form-control" id="positionType" th:field="*{positionType}">
             </div>
             <!--ApplicationStage-->
-            <div class="form-group">
-                <label for="applicationStage">Application Stage</label>
-                <input type="text" class="form-control" id="applicationStage">
-            </div>
-            <!--Notes-->
-            <div class="form-group">
-                <label for="notes">Notes</label>
-                <textarea type="text" class="form-control" id="notes"></textarea>
-            </div>
+<!--            <div class="form-group">-->
+<!--                <label for="applicationStage">Application Stage</label>-->
+<!--                <input type="text" class="form-control" id="applicationStage" th:field="*{ApplicationStage.applicationStage}">-->
+<!--            </div>-->
+<!--            Notes-->
+<!--            <div class="form-group">-->
+<!--                <label for="notes">Notes</label>-->
+<!--                <textarea type="text" class="form-control" id="notes" th:field="*{Note.note}"></textarea>-->
+<!--            </div>-->
             <hr>
 
             <!--POC INFO FOLLOWS-->
 
             <!--Position-->
-            <div class="form-group">
-                <label for="pocTitle">Position/Title</label>
-                <input type="text" class="form-control" id="pocTitle">
-            </div>
-            <!--FirstName-->
-            <div class="form-group">
-                <label for="pocFirstName">First Name</label>
-                <input type="text" class="form-control" id="pocFirstName">
-            </div>
-            <!--LastName-->
-            <div class="form-group">
-                <label for="pocLastName">Last Name</label>
-                <input type="text" class="form-control" id="pocLastName">
-            </div>
-            <!--PhoneNumber-->
-            <div class="form-group">
-                <label for="pocPhoneNumber">Phone Number</label>
-                <input type="text" class="form-control" id="pocPhoneNumber">
-            </div>
-            <!--Email-->
-            <div class="form-group">
-                <label for="pocEmail">Email</label>
-                <input type="text" class="form-control" id="pocEmail">
-            </div>
+<!--            <form action="" th:object="${poc}>-->
+<!--                <div class="form-group">-->
+<!--                    <label for="pocTitle">Position/Title</label>-->
+<!--                    <input type="text" class="form-control" id="pocTitle" th:field="*{poc.position}">-->
+<!--                </div>-->
+<!--                &lt;!&ndash;FirstName&ndash;&gt;-->
+<!--                <div class="form-group">-->
+<!--                    <label for="pocFirstName">First Name</label>-->
+<!--                    <input type="text" class="form-control" id="pocFirstName" th:field="*{poc.position}">-->
+<!--                </div>-->
+<!--                &lt;!&ndash;LastName&ndash;&gt;-->
+<!--                <div class="form-group">-->
+<!--                    <label for="pocLastName">Last Name</label>-->
+<!--                    <input type="text" class="form-control" id="pocLastName" th:field="*{poc.position}">-->
+<!--                </div>-->
+<!--                &lt;!&ndash;PhoneNumber&ndash;&gt;-->
+<!--                <div class="form-group">-->
+<!--                    <label for="pocPhoneNumber">Phone Number</label>-->
+<!--                    <input type="text" class="form-control" id="pocPhoneNumber" th:field="*{poc.position}">-->
+<!--                </div>-->
+<!--                &lt;!&ndash;Email&ndash;&gt;-->
+<!--                <div class="form-group">-->
+<!--                    <label for="pocEmail">Email</label>-->
+<!--                    <input type="text" class="form-control" id="pocEmail" th:field="*{poc.position}">-->
+<!--                </div>-->
+<!--                <button type="submit" class="btn btn-primary">Save POC</button>-->
+<!--            </form>-->
 
-            <button>Load Resume</button>
             <button>Cancel</button>
             <button type="submit" class="btn btn-primary">Save</button>
         </form>
+		<form th:action="@{/fileUpload}" method="post" enctype="multipart/form-data" th:object="${resume}">
+			<label for="resume">Upload a resume!</label>
+			<input type="file" id="resume" name="file">
+			<label for="title">Title</label>
+			<input type="text" th:field="*{title}" id="title">
+			<label for="title">description</label>
+			<textarea th:field="*{description}" id="description"></textarea>
+			<input type="submit" value="upload" />
+		</form>
     </body>
 </html>

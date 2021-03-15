@@ -24,7 +24,7 @@ public class Resume {
     private String description;
 
     @Column(nullable = true)
-//    @Value("${file-upload-path}")
+    @Value("${file-upload-path}")
     private String filePath;
 
     @ManyToOne
