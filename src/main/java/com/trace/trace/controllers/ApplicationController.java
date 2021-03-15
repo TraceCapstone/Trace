@@ -1,7 +1,6 @@
 package com.trace.trace.controllers;
 
 import com.trace.trace.models.Application;
-import com.trace.trace.models.Note;
 import com.trace.trace.models.Stage;
 import com.trace.trace.models.User;
 import com.trace.trace.repositories.ApplicationRepository;
@@ -50,7 +49,7 @@ public class ApplicationController {
     //VIEW APPLICATION SUBMISSION FORM
     @GetMapping("/create-application")
     public String viewCreateApplicationForm(Model model) {
-        model.addAttribute("application", new Application());
+        model.addAttribute("jobApplication", new Application());
         return "create-application";
     }
 
@@ -75,7 +74,7 @@ public class ApplicationController {
     //EDIT APPLICATION
     @GetMapping("/applications/{id}/edit")
     public String viewEditApplicationForm(@PathVariable long id, Model model) {
-        model.addAttribute("application", applicationDao.getOne(id));
+        model.addAttribute("jobApplication", applicationDao.getOne(id));
         return "applications/edit";
     }
 
