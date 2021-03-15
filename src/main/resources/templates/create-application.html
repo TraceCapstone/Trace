@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="partials/head :: header-links"></head>
+<head th:replace="partials/head :: header-links(create)"></head>
     <body>
         <nav th:replace="partials/nav :: navbar"></nav>
         <form class="container" th:action="@{/create}" method="POST">
