@@ -11,25 +11,31 @@
     <p th:text="${#authentication.principal.email}"></p>
 </div>
 
-<!--    <h1>Edit Profile</h1>-->
-<!--<div sec:authorize="isAuthenticated()">-->
-<!--    <form th:action="@{/}" method="post" th:object="${user}">-->
-<!--        Email:-->
-<!--        <label><input th:field="${#authentication.principal.email}" />-->
-<!--        </label>-->
-<!--        <br />-->
-<!--        First Name:-->
-<!--        <input th:text="${#authentication.principal.firstName}" />-->
-<!--        <br />-->
-<!--        Last Name:-->
-<!--        <input th:text="${#authentication.principal.lastName}" />-->
-<!--        <br />-->
-<!--        Password:-->
-<!--        <input th:text="${#authentication.principal.password}" />-->
-<!--        <br />-->
-<!--        <input class="btn btn-block btn-primary" type="submit" value="Update"/>-->
-<!--    </form>-->
-<!--</div>-->
+    <h1>Edit Profile</h1>
+<div sec:authorize="isAuthenticated()">
+    <form th:action="@{/}" method="post" th:object="${user}">
+        Email:
+        <label><input th:field="${user.email}" />
+        </label>
+        <br />
+        First Name:
+        <label>
+            <input th:field="${user.firstName}" />
+        </label>
+        <br />
+        Last Name:
+        <label>
+            <input th:field="${user.lastName}" />
+        </label>
+        <br />
+        Password:
+        <label>
+            <input th:field="${#authentication.principal.password}" />
+        </label>
+        <br />
+        <input class="btn btn-block btn-primary" type="submit" value="Update"/>
+    </form>
+</div>
 
 <!--    <form th:action="@{/user/{id}}" th:method="post" th:object="${user}">-->
 <!--            Email:-->
