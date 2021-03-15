@@ -19,7 +19,7 @@ import java.util.Date;
 @Controller
 public class ResumeUploadController {
 
-    @Value("${file-upload-path}")
+//    @Value("${file-upload-path}")
     private String uploadPath;
 
     private final ResumeRepository resumeDao;
