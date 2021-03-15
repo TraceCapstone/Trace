@@ -60,19 +60,24 @@ public class AuthenticationController {
 
     @GetMapping("/profile")
     public String profileView(Model model){
-        model.addAttribute("user", userService.loggedInUser());
+        model.addAttribute("user", userDao.findById(userService.loggedInUser().getId()).get());
         return "profile";
     }
 
 
     @PostMapping("/profile")
-    public String updateUser(@PathVariable Long id, @ModelAttribute User user, Model model) {
-        User currentUser = userService.loggedInUser();
-        model.addAttribute("user", currentUser);
+    public String updateUser(@ModelAttribute User user, Model model) {
+//        User currentUser = userService.loggedInUser();
+//        model.addAttribute("user", currentUser);
 
-        user.setPassword(user.getPassword());
-        user.setUsername(user.getUsername());
-        userDao.save(user);
+//        user.setPassword(user.getPassword());
+//        user.setUsername(user.getUsername());
+        User updatedUser = userDao.getOne(user.getId());
+//        updatedUser.setUsername(user.getUsername());
+        updatedUser.setEmail(user.getEmail());
+        updatedUser.setFirstName(user.getFirstName());
+        updatedUser.setLastName(user.getLastName());
+        userDao.save(updatedUser);
 //        userDao.update(user.getEmail(), user.getFirstName(), user.getLastName(), user.getId());
         return "redirect:/profile";
     }
