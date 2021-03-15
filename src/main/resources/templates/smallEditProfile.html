@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="partials/head :: header-links(profile)"></head>
+<body>
+
+<nav th:replace="partials/nav :: navbar"></nav>
+
+<div sec:authorize="isAuthenticated()">
+    <p th:text="${#authentication.principal.firstName}"></p>
+    <p th:text="${#authentication.principal.lastName}"></p>
+    <p th:text="${#authentication.principal.email}"></p>
+</div>
+
+    <h1>Edit Profile</h1>
+<div sec:authorize="isAuthenticated()">
+    <form th:action="@{/}" method="post" th:object="${user}">
+        Email:
+        <label><input th:field="${user.email}" />
+        </label>
+        <br />
+        First Name:
+        <label>
+            <input th:field="${user.firstName}" />
+        </label>
+        <br />
+        Last Name:
+        <label>
+            <input th:field="${user.lastName}" />
+        </label>
+        <br />
+        Password:
+        <label>
+            <input th:field="${#authentication.principal.password}" />
+        </label>
+        <br />
+        <input class="btn btn-block btn-primary" type="submit" value="Update"/>
+    </form>
+</div>
+
+<!--    <form th:action="@{/user/{id}}" th:method="post" th:object="${user}">-->
+<!--            Email:-->
+<!--            <label>-->
+<!--                <input th:field="*{email}" />-->
+<!--            </label>-->
+<!--            <br />-->
+<!--            First Name:-->
+<!--            <input th:field="*{firstName}" />-->
+<!--            <br />-->
+<!--            Last Name:-->
+<!--            <input th:field="*{lastName}" />-->
+<!--            <br />-->
+<!--            Password:-->
+<!--            <input th:field="*{password}" />-->
+<!--            <br />-->
+<!--           <input class="btn btn-block btn-primary" type="submit" value="Update"/>-->
+<!--    </form>-->
+
+<div th:replace="partials/scripts :: assets"></div>
+</body>
+</html>

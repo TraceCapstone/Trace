@@ -18,13 +18,11 @@ public class AuthenticationController {
 
     private final UserRepository userDao;
     private final PasswordEncoder passwordEncoder;
-    private final UserDetailsLoader userDetailsLoader;
     private final UserService userService;
 
-    public AuthenticationController(UserRepository userDao, PasswordEncoder passwordEncoder, UserDetailsLoader userDetailsLoader, UserService userService) {
+    public AuthenticationController(UserRepository userDao, PasswordEncoder passwordEncoder, UserService userService) {
         this.userDao = userDao;
         this.passwordEncoder = passwordEncoder;
-        this.userDetailsLoader = userDetailsLoader;
         this.userService = userService;
     }
 
@@ -61,28 +59,28 @@ public class AuthenticationController {
     }
 
     @GetMapping("/profile")
-    public String profileView(){
+    public String profileView(Model model){
+        model.addAttribute("user", UserService.loggedInUser());
         return "profile";
     }
 
-    @GetMapping("/user/{id}")
-    public String viewUserUpdateForm(Model model, @PathVariable String id) {
-        model.addAttribute("user", new User());
-        return "profile";
-    }
 
-    @PostMapping("/user/{id}")
-    public String updatePost(@PathVariable Long id, @ModelAttribute User user, Model model) {
-        User currentUser = UserService.loggedInUser();
+    @PostMapping("/profile")
+    public String updateUser(@PathVariable Long id, @ModelAttribute User user, Model model) {
+        User currentUser = userService.loggedInUser();
         model.addAttribute("user", currentUser);
 
+        user.setPassword(user.getPassword());
+        user.setUsername(user.getUsername());
         userDao.save(user);
+//        userDao.update(user.getEmail(), user.getFirstName(), user.getLastName(), user.getId());
         return "redirect:/profile";
     }
 
 
-    @PostMapping("/posts/{id}/delete")
-    public String deletePost(@PathVariable long id){
+
+    @PostMapping("/profile/{id}/delete")
+    public String deleteUser(@PathVariable long id){
         System.out.println("Deleting User...");
         userDao.deleteById(id);
         return "redirect:/";
