@@ -67,7 +67,7 @@ public class AuthenticationController {
 
     @GetMapping("/user/{id}")
     public String viewUserUpdateForm(Model model, @PathVariable String id) {
-        model.addAttribute("user", new User());
+        model.addAttribute("user", new User().getId());
         return "profile";
     }
 
