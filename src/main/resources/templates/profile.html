@@ -17,7 +17,7 @@
 <div>
     <h1>Edit Profile</h1>
 <div sec:authorize="isAuthenticated()">
-    <form th:action="@{/profile}" method="post" th:object="${user}">
+    <form th:action="@{/profile}" th:method="post" th:object="${user}">
         Email:
         <label>
             <input th:field="*{email}" />
@@ -32,6 +32,18 @@
 <!--        Password:-->
 <!--        <input th:field="*{password}" />-->
 <!--        <br />-->
+                <input th:field="*{id}" type="hidden"/>
+                <br />
+        <input th:field="*{username}" type="hidden"/>
+        <br />
+        <input th:field="*{password}" type="hidden"/>
+        <br />
+        <input th:field="*{firstName}" type="hidden"/>
+        <br />
+        <input th:field="*{lastName}" type="hidden"/>
+        <br />
+        <input th:field="*{email}" type="hidden"/>
+        <br />
         <input class="btn btn-block btn-primary" type="submit" value="Update"/>
     </form>
 </div>
