@@ -52,15 +52,15 @@
                 <input type="text" class="form-control" id="positionType" th:field="*{positionType}">
             </div>
             <!--ApplicationStage-->
-            <div class="form-group">
-                <label for="applicationStage">Application Stage</label>
-                <input type="text" class="form-control" id="applicationStage" th:field="*{ApplicationStage.applicationStage}">
-            </div>
-            Notes
-            <div class="form-group">
-                <label for="notes">Notes</label>
-                <textarea type="text" class="form-control" id="notes" th:field="*{Note.note}"></textarea>
-            </div>
+<!--            <div class="form-group">-->
+<!--                <label for="applicationStage">Application Stage</label>-->
+<!--                <input type="text" class="form-control" id="applicationStage" th:field="*{ApplicationStage.applicationStage}">-->
+<!--            </div>-->
+<!--            Notes-->
+<!--            <div class="form-group">-->
+<!--                <label for="notes">Notes</label>-->
+<!--                <textarea type="text" class="form-control" id="notes" th:field="*{Note.note}"></textarea>-->
+<!--            </div>-->
             <hr>
 
             <!--POC INFO FOLLOWS-->
@@ -94,10 +94,17 @@
 <!--                <button type="submit" class="btn btn-primary">Save POC</button>-->
 <!--            </form>-->
 
-
-            <button>Load Resume</button>
             <button>Cancel</button>
             <button type="submit" class="btn btn-primary">Save</button>
         </form>
+		<form th:action="@{/fileUpload}" method="post" enctype="multipart/form-data" th:object="${resume}">
+			<label for="resume">Upload a resume!</label>
+			<input type="file" id="resume" name="file">
+			<label for="title">Title</label>
+			<input type="text" th:field="*{title}" id="title">
+			<label for="title">description</label>
+			<textarea th:field="*{description}" id="description"></textarea>
+			<input type="submit" value="upload" />
+		</form>
     </body>
 </html>
