@@ -6,23 +6,25 @@ import java.util.Date;
 
 @Entity
 @Table(name="applications_stages")
+@IdClass(ApplicationStageId.class)
 public class ApplicationStage implements Serializable {
 
     @Column(nullable = false)
     private Date createdAt;
 
     @Id
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "application_id", referencedColumnName = "id")
     private Application application;
 
     @Id
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "stage_id", referencedColumnName = "id")
     private Stage stage;
 
-//    Constructors
 
+
+    //CONSTRUCTORS
     public ApplicationStage() {
     }
 
@@ -31,6 +33,8 @@ public class ApplicationStage implements Serializable {
         this.application = application;
         this.stage = stage;
     }
+
+    //GETTERS AND SETTER
 
     public Date getCreatedAt() {
         return createdAt;

@@ -6,6 +6,8 @@
     <div class="container">
         <div th:each="app : ${jobApplications}">
             <p th:text="${app.company}">
+          <h6 th:text="${app.dateCreated}"></h6></p>
+            <p th:text="${app.company}">
 			<h6 th:text="${app.dateCreated}"></h6></p>
             <p th:text="${app.title}"></p>
             <p th:text="${app.dateApplied}"></p>

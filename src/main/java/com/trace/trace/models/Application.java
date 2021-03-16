@@ -3,12 +3,14 @@ package com.trace.trace.models;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 import java.util.Date;
+import java.util.Objects;
 
 @Entity
 @Table(name="applications")
-public class Application {
+public class Application implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -48,6 +50,10 @@ public class Application {
     @Column(nullable = true)
     private String url;
 
+    public Application(List<ApplicationStage> applicationStage) {
+        this.applicationStage = applicationStage;
+    }
+
     @ManyToOne
     private User user;
 
@@ -59,9 +65,11 @@ public class Application {
     private List<PointOfContact> poc;
 
     @OneToMany(mappedBy = "application", cascade = CascadeType.ALL)
+    @Column(nullable = true)
     private List<ApplicationStage> applicationStage;
 
     @OneToMany(mappedBy = "applications", cascade = CascadeType.ALL)
+    @Column(nullable = true)
     private List<Note> note;
 
 //    Constructors
@@ -90,6 +98,16 @@ public class Application {
 
 
 //    Getters and Setters
+
+
+    public List<ApplicationStage> getApplicationStage() {
+        return applicationStage;
+    }
+
+    public void setApplicationStage(List<ApplicationStage> applicationStage) {
+        this.applicationStage = applicationStage;
+    }
+
     public long getId() {
         return id;
     }
