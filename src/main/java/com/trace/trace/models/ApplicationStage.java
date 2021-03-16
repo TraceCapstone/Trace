@@ -6,11 +6,8 @@ import java.util.Date;
 
 @Entity
 @Table(name="applications_stages")
-//@IdClass(ApplicationStageId.class)
+@IdClass(ApplicationStageId.class)
 public class ApplicationStage implements Serializable {
-
-    @Id
-    private long id;
 
     @Column(nullable = false)
     private Date createdAt;
@@ -37,25 +34,7 @@ public class ApplicationStage implements Serializable {
         this.stage = stage;
     }
 
-    //GETTERS AND SETTERS
-
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    //    public ApplicationStageId getId() {
-//        return new ApplicationStageId(application, stage);
-//    }
-//
-//    public void setId(ApplicationStageId id) {
-//        this.application = id.getApplication();
-//        this.stage = id.getStage();
-//    }
+    //GETTERS AND SETTER
 
     public Date getCreatedAt() {
         return createdAt;

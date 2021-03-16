@@ -4,14 +4,14 @@
 <body>
 <nav th:replace="partials/nav :: navbar"></nav>
     <div class="container">
-        <div th:each="application : ${applications}">
-            <p th:text="${application.company}"><h6 th:text="${application.dateCreated}"></h6></p>
-            <p th:text="${application.title}"></p>
-            <p th:text="${application.dateApplied}"></p>
-            <p th:text="${application.dateCreated}"></p>
-            <p th:text="${application.location}"></p>
-			<a th:href="@{|/applications/${application.id}|}">full application</a>
-			<a th:href="@{|/applications/${application.id}/edit|}">edit application</a>
+        <div th:each="app : ${jobApplications}">
+            <p th:text="${app.company}"><h6 th:text="${app.dateCreated}"></h6></p>
+            <p th:text="${app.title}"></p>
+            <p th:text="${app.dateApplied}"></p>
+            <p th:text="${app.dateCreated}"></p>
+            <p th:text="${app.location}"></p>
+			<a th:href="@{|/applications/${app.id}|}">full application</a>
+			<a th:href="@{|/applications/${app.id}/edit|}">edit application</a>
         </div>
     </div>
     <!--START MAPBOX CONTAINER-->

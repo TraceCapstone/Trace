@@ -10,7 +10,7 @@ import java.util.Objects;
 
 @Entity
 @Table(name="applications")
-public class Application implements Serializable{
+public class Application implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -71,23 +71,6 @@ public class Application implements Serializable{
     @OneToMany(mappedBy = "applications", cascade = CascadeType.ALL)
     @Column(nullable = true)
     private List<Note> note;
-
-    @Override
-    public boolean equals(Object o) {
-        if ( this == o ) {
-            return true;
-        }
-        if ( o == null || getClass() != o.getClass() ) {
-            return false;
-        }
-        Application application = (Application) o;
-        return Objects.equals( id, application.id );
-    }
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
-
 
 //    Constructors
     public Application() {

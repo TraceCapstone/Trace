@@ -36,7 +36,7 @@ public class ApplicationController {
     //VIEW ALL JOBS APPLIED FOR
     @GetMapping("/applications")
     public String viewAllAppliedJobs(Model model) {
-        model.addAttribute("applications", applicationDao.findAll());
+        model.addAttribute("jobApplications", applicationDao.findAll());
         return "applications";
     }
 
