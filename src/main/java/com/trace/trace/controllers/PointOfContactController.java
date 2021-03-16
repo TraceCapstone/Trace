@@ -1,5 +1,6 @@
 package com.trace.trace.controllers;
 
+import com.trace.trace.models.Application;
 import com.trace.trace.models.PointOfContact;
 import com.trace.trace.repositories.ApplicationRepository;
 import com.trace.trace.repositories.PointOfContactRepository;
@@ -21,9 +22,10 @@ public class PointOfContactController {
 
     @PostMapping("/poc")
     public String addPoc(@ModelAttribute PointOfContact poc, @RequestParam(name = "application") String applicationId) {
-        poc.setApplication(applicationDao.getOne(Long.parseLong(applicationId)));
+        Application app = applicationDao.getOne(Long.parseLong(applicationId));
+        poc.setApplication(app);
         pocDao.save(poc);
-        return "redirect:/applications/{id}";
+        return "redirect:/applications/"+applicationId;
     }
 
 }

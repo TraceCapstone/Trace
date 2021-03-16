@@ -28,15 +28,15 @@
 			<input id="phone" type="tel" th:field="*{phoneNumber}">
 			<label for="position">position</label>
 			<input id="position" type="text" th:field="*{position}">
-			<input type="hidden" name="application" value="${jobApplication.id}">
+			<input type="hidden" name="application" th:value="${jobApplication.id}">
 			<button>add pont of contact</button>
 		</form>
-<!--        <div th:each="contact : ${jobApplication.poc}">-->
-<!--            <p th:text="${contact.position}"></p>-->
-<!--            <p th:text="${contact.firstName + ' ' + contact.lastName}"></p>-->
-<!--            <p th:text="${contact.phoneNumber}"></p>-->
-<!--            <p th:text="${contact.email}"></p>-->
-<!--        </div>-->
+        <div th:each="contact : ${jobApplication.poc}">
+            <p th:text="${contact.position}"></p>
+            <p th:text="${contact.firstName + ' ' + contact.lastName}"></p>
+            <p th:text="${contact.phoneNumber}"></p>
+            <p th:text="${contact.email}"></p>
+        </div>
         <hr>
         <p>Notes:</p>
         <div th:each="note : ${notes}">
