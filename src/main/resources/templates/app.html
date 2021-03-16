@@ -4,20 +4,20 @@
 <body>
 <nav th:replace="partials/nav :: navbar"></nav>
     <div class="container">
-        <h3 th:text="${application.title}"></h3>
-        <a th:href="@{${application.company}}"></a>
-        <p th:text="${application.dateApplied}"></p>
-        <p th:href="@{${application.postingId}}"></p>
-        <p th:text="${application.referredBy}"></p>
-        <p th:text="${application.description}"></p>
+        <h3 th:text="${jobApplication.title}"></h3>
+        <a th:href="@{${jobApplication.company}}"></a>
+        <p th:text="${jobApplication.dateApplied}"></p>
+        <p th:href="@{${jobApplication.postingId}}"></p>
+        <p th:text="${jobApplication.referredBy}"></p>
+        <p th:text="${jobApplication.description}"></p>
         <hr>
-        <p th:text="${application.location}"></p>
-        <p th:text="${application.salary}"></p>
-        <p th:text="${application.positionType}"></p>
+        <p th:text="${jobApplication.location}"></p>
+        <p th:text="${jobApplication.salary}"></p>
+        <p th:text="${jobApplication.positionType}"></p>
         <p th:text="${stage}"></p>
         <hr>
         <p>POC</p>
-        <div th:each="contact : ${application.poc}">
+        <div th:each="contact : ${jobApplication.poc}">
             <p th:text="${contact.position}"></p>
             <p th:text="${contact.firstName + ' ' + contact.lastName}"></p>
             <p th:text="${contact.phoneNumber}"></p>
