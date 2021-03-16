@@ -16,7 +16,21 @@
         <p th:text="${jobApplication.positionType}"></p>
         <p th:text="${stage}"></p>
         <hr>
-        <p>POC</p>
+        <p>add POC</p>
+		<form th:action="@{/poc}" method="post" th:object="${poc}">
+			<label for="email">email</label>
+			<input id="email" type="email" th:field="*{email}">
+			<label for="firstName">first name</label>
+			<input id="firstName" type="text" th:field="*{firstName}">
+			<label for="lastName">last name</label>
+			<input id="lastName" type="text" th:field="*{lastName}">
+			<label for="phone">phone</label>
+			<input id="phone" type="tel" th:field="*{phoneNumber}">
+			<label for="position">position</label>
+			<input id="position" type="text" th:field="*{position}">
+			<input type="hidden" name="application" th:value="${jobApplication.id}">
+			<button>add pont of contact</button>
+		</form>
         <div th:each="contact : ${jobApplication.poc}">
             <p th:text="${contact.position}"></p>
             <p th:text="${contact.firstName + ' ' + contact.lastName}"></p>
