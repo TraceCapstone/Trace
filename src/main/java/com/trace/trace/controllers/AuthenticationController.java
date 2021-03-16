@@ -60,9 +60,6 @@ public class AuthenticationController {
 
     @GetMapping("/profile")
     public String profileView(Model model){
-//        User user2 = userService.loggedInUser();
-//        User user1 = userDao.findById(user2.getId()).get();
-//        model.addAttribute("user", user1);
         User freshUser = userDao.findById(userService.loggedInUser().getId()).get();
         model.addAttribute("user", freshUser);
         return "profile";
@@ -70,7 +67,7 @@ public class AuthenticationController {
 
 
     @PostMapping("/profile")
-    public String updateUser(@ModelAttribute("user") User user, Model model) {
+    public String updateUser(@ModelAttribute("user") User user, @ModelAttribute("userDeleted") User userDeleted) {
 //        User user1 = userDao.findById(user.getId()).get();
 //        userDao.save(user1);
         User updatedUser = userDao.findById(user.getId()).get();
@@ -78,17 +75,8 @@ public class AuthenticationController {
         updatedUser.setFirstName(user.getFirstName());
         updatedUser.setLastName(user.getLastName());
         userDao.save(updatedUser);
+        userDao.delete(userDeleted);
         return "redirect:/profile";
     }
-
-
-
-    @PostMapping("/profile/{id}/delete")
-    public String deleteUser(@PathVariable long id){
-        System.out.println("Deleting User...");
-        userDao.deleteById(id);
-        return "redirect:/";
-    }
-
 
 }
