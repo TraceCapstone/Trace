@@ -1,9 +1,6 @@
 package com.trace.trace.controllers;
 
-import com.trace.trace.models.Application;
-import com.trace.trace.models.Resume;
-import com.trace.trace.models.Stage;
-import com.trace.trace.models.User;
+import com.trace.trace.models.*;
 import com.trace.trace.repositories.ApplicationRepository;
 import com.trace.trace.repositories.ResumeRepository;
 import com.trace.trace.services.UserService;
@@ -39,11 +36,11 @@ public class ApplicationController {
     @GetMapping("/applications/{id}")
     public String viewIndividualJob(Model model, @PathVariable long id) {
         Application application = applicationDao.getOne(id);
-        model.addAttribute("application", application);
+        model.addAttribute("jobApplication", application);
         Stage stage = applicationDao.findMostRecentStageForApplication(id);
         model.addAttribute("stage",stage);
-        Application note = applicationDao.getOne(id);
-        model.addAttribute("notes", note);
+//        Note note = applicationDao.findAll(id);
+//        model.addAttribute("notes", note);
         return "app";
     }
 
