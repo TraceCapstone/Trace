@@ -28,17 +28,18 @@ public class ApplicationController {
     //VIEW ALL JOBS APPLIED FOR
     @GetMapping("/applications")
     public String viewAllAppliedJobs(Model model) {
-        model.addAttribute("applications", applicationDao.findAll());
+        model.addAttribute("jobApplications", applicationDao.findAll());
         return "applications";
     }
 
     //VIEW INDIVIDUAL JOB APPLIED FOR
     @GetMapping("/applications/{id}")
     public String viewIndividualJob(Model model, @PathVariable long id) {
+        model.addAttribute("poc", new PointOfContact());
         Application application = applicationDao.getOne(id);
         model.addAttribute("jobApplication", application);
-        Stage stage = applicationDao.findMostRecentStageForApplication(id);
-        model.addAttribute("stage",stage);
+//        Stage stage = applicationDao.findMostRecentStageForApplication(id);
+//        model.addAttribute("stage",stage);
 //        Note note = applicationDao.findAll(id);
 //        model.addAttribute("notes", note);
         return "app";
