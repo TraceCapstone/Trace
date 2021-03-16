@@ -2,25 +2,33 @@ package com.trace.trace.controllers;
 
 import com.trace.trace.models.*;
 import com.trace.trace.repositories.ApplicationRepository;
+import com.trace.trace.repositories.ApplicationStageRepository;
+import com.trace.trace.repositories.StageRepository;
+import com.trace.trace.repositories.UserRepository;
 import com.trace.trace.services.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Controller
 public class ApplicationController {
 
     private final ApplicationRepository applicationDao;
     private final UserService userService;
+    private final StageRepository stageDao;
+    private final UserRepository userDao;
+    private final ApplicationStageRepository applicationsStageDao;
 
-    public ApplicationController(ApplicationRepository applicationDao, UserService userService) {
+    public ApplicationController(ApplicationRepository applicationDao, UserService userService, StageRepository stageDao, UserRepository userDao, ApplicationStageRepository applicationsStageDao) {
         this.applicationDao = applicationDao;
         this.userService = userService;
+        this.stageDao = stageDao;
+        this.userDao = userDao;
+        this.applicationsStageDao = applicationsStageDao;
     }
 
 
@@ -49,6 +57,7 @@ public class ApplicationController {
     public String viewCreateApplicationForm(Model model) {
         model.addAttribute("jobApplication", new Application());
         model.addAttribute("resume", new Resume());
+        model.addAttribute("stage", stageDao.findAll());
         return "create-application";
     }
 
@@ -62,11 +71,16 @@ public class ApplicationController {
 
     //SAVE APPLICATION FORM
     @PostMapping("/create-application")
-    public String saveApplication(@ModelAttribute Application application) {
-        User user = userService.loggedInUser();
+    public String saveApplication(@ModelAttribute Application application, @RequestParam(name = "test") String applicationStage) {
+        User user = userDao.findById(userService.loggedInUser().getId()).get();
         application.setUser(user);
         application.setDateCreated(new Date(System.currentTimeMillis()));
         Application savedApplication = applicationDao.save(application);
+        Stage stage = stageDao.findById(Long.parseLong(applicationStage)).get();
+        ApplicationStage appStage = new ApplicationStage(new Date(System.currentTimeMillis()), application, stage);
+        appStage.setApplication(savedApplication);
+        appStage.setStage(stage);
+        applicationsStageDao.save(appStage);
         return "redirect:/applications";
     }
 

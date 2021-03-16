@@ -1,11 +1,13 @@
 package com.trace.trace.models;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Table(name="stages")
-public class Stage {
+public class Stage implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,6 +18,23 @@ public class Stage {
 
     @OneToMany(mappedBy = "stage")
     private List<ApplicationStage> application;
+
+    @Override
+    public boolean equals(Object o) {
+        if ( this == o ) {
+            return true;
+        }
+        if ( o == null || getClass() != o.getClass() ) {
+            return false;
+        }
+        Stage stage = (Stage) o;
+        return Objects.equals( id, stage.id );
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
 
 //    Constructors
     public Stage() {
@@ -28,7 +47,6 @@ public class Stage {
     }
 
 //    Getters and Setters
-
     public long getId() {
         return id;
     }
