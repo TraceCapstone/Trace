@@ -119,10 +119,6 @@ public class User {
         this.applications = applications;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
-
     public List<Resume> getResumes() {
         return resumes;
     }

@@ -20,7 +20,18 @@ public class Note {
     @ManyToOne
     private Application applications;
 
-//    Constructors
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    @ManyToOne
+    private User user;
+
+    //    Constructors
     public Note() {
     }
 
@@ -33,6 +44,10 @@ public class Note {
 //    Getters and Setters
     public long getId() {
         return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getNote() {
@@ -59,7 +74,4 @@ public class Note {
         this.applications = applications;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
 }

@@ -61,14 +61,15 @@ public class AuthenticationController {
 
     @GetMapping("/profile")
     public String profileView(Model model){
-        model.addAttribute("user", userService.loggedInUser());
+        User freshUser = userDao.findById(userService.loggedInUser().getId()).get();
+        model.addAttribute("user", freshUser);
         model.addAttribute("resume", new Resume());
         return "profile";
     }
 
 
     @PostMapping("/profile")
-    public String updateUser(@ModelAttribute("user") User user, @ModelAttribute("userDeleted") User userDeleted) {
+    public String updateUser(@ModelAttribute("user") User user, Model model, @ModelAttribute("userDeleted") User userDeleted) {
 //        User user1 = userDao.findById(user.getId()).get();
 //        userDao.save(user1);
         User updatedUser = userDao.findById(user.getId()).get();
@@ -76,7 +77,7 @@ public class AuthenticationController {
         updatedUser.setFirstName(user.getFirstName());
         updatedUser.setLastName(user.getLastName());
         userDao.save(updatedUser);
-        userDao.delete(userDeleted);
+//        userDao.delete(userDeleted);
         return "redirect:/profile";
     }
 
