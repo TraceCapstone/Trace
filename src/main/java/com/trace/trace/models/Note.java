@@ -24,8 +24,7 @@ public class Note {
     public Note() {
     }
 
-    public Note(long id, String note, Date createdAt, Application applications) {
-        this.id = id;
+    public Note(String note, Date createdAt, Application applications) {
         this.note = note;
         this.createdAt = createdAt;
         this.applications = applications;
