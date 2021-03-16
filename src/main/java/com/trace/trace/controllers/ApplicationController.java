@@ -39,8 +39,8 @@ public class ApplicationController {
         model.addAttribute("jobApplication", application);
         Stage stage = applicationDao.findMostRecentStageForApplication(id);
         model.addAttribute("stage",stage);
-        Note note = applicationDao.findAll(id);
-        model.addAttribute("notes", note);
+//        Note note = applicationDao.findAll(id);
+//        model.addAttribute("notes", note);
         return "app";
     }
 
