@@ -25,7 +25,7 @@ public class ApplicationController {
     private final UserRepository userDao;
     private final ApplicationStageRepository applicationsStageDao;
 
- public ApplicationController(ApplicationRepository applicationDao, UserService userService, ResumeRepository resumeDao) {
+ public ApplicationController(ApplicationRepository applicationDao, UserService userService, ResumeRepository resumeDao, StageRepository stageDao, UserRepository userDao, ApplicationStageRepository applicationsStageDao) {
         this.applicationDao = applicationDao;
         this.userService = userService;
         this.resumeDao = resumeDao;

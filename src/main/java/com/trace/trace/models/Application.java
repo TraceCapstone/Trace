@@ -236,11 +236,4 @@ public class Application implements Serializable {
         this.poc = poc;
     }
 
-    public List<ApplicationStage> getApplicationStage() {
-        return applicationStage;
-    }
-
-    public void setApplicationStage(List<ApplicationStage> applicationStage) {
-        this.applicationStage = applicationStage;
-    }
 }
