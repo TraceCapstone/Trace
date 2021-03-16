@@ -1,7 +1,6 @@
 package com.trace.trace.models;
 
 import com.trace.trace.ValidPassword;
-import org.hibernate.engine.internal.Cascade;
 
 import javax.persistence.*;
 import java.util.List;
@@ -66,6 +65,10 @@ public class User {
     // Getters and Setters
     public long getId() {
         return id;
+    }
+
+    public void setId(long id){
+        this.id = id;
     }
 
     public String getEmail() {
