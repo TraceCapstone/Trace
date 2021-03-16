@@ -20,7 +20,7 @@ import java.util.Date;
 @Controller
 public class ResumeUploadController {
 
-//    @Value("${file-upload-path}")
+    @Value("${file-upload-path}")
     private String uploadPath;
 
     private final ResumeRepository resumeDao;
@@ -47,7 +47,7 @@ public class ResumeUploadController {
             e.printStackTrace();
             model.addAttribute("message", "Oops! Something went wrong! " + e);
         }
-        return "redirect:/create-application";
+        return "redirect:/profile";
     }
 
 }

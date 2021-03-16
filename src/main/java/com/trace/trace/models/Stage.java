@@ -70,4 +70,5 @@ public class Stage implements Serializable{
     public void setApplication(List<ApplicationStage> application) {
         this.application = application;
     }
+
 }

@@ -14,7 +14,6 @@
     Email: <p th:text="${#authentication.principal.email}"></p>
 </div>
 <br>
-
     <h1 style="text-align: center; font-weight: bold">Edit Profile</h1>
 <div sec:authorize="isAuthenticated()">
     <form th:action="@{/profile}" th:method="post" th:object="${user}">
@@ -34,7 +33,6 @@
 <!--        <br />-->
                 <input th:field="*{id}" type="hidden"/>
                 <br />
-
         <button type="submit" value="Update" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
 					<span class="absolute left-0 inset-y-0 flex items-center pl-3">
 						<!-- Heroicon name: solid/lock-closed -->
@@ -44,12 +42,21 @@
 					</span>
             Edit profile
         </button>
-    </form>
+	</form>
 </div>
 <br>
 
+<form th:action="@{/fileUpload}" method="post" enctype="multipart/form-data" th:object="${resume}">
+	<label for="resume">Upload a resume!</label>
+	<input type="file" id="resume" name="file">
+	<label for="title">Title</label>
+	<input type="text" th:field="*{title}" id="title">
+	<label for="title">description</label>
+	<textarea th:field="*{description}" id="description"></textarea>
+	<input type="submit" value="upload" />
+</form>
 
-<!--<form th:action="@{|/users/${user.id}/delete|}" th:method="POST">-->
+<form th:action="@{/profile}" th:method="POST">
 <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
 					<span class="absolute left-0 inset-y-0 flex items-center pl-3">
 						<!-- Heroicon name: solid/lock-closed -->
@@ -59,7 +66,7 @@
 					</span>
     Delete profile
 </button>
-<!--</form>-->
+</form>
 
     <br>
 <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
