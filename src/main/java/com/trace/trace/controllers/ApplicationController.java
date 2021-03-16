@@ -2,13 +2,11 @@ package com.trace.trace.controllers;
 
 import com.trace.trace.models.*;
 import com.trace.trace.repositories.ApplicationRepository;
+import com.trace.trace.repositories.ResumeRepository;
 import com.trace.trace.services.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 
@@ -16,11 +14,13 @@ import java.util.Date;
 public class ApplicationController {
 
     private final ApplicationRepository applicationDao;
+    private ResumeRepository resumeDao;
     private final UserService userService;
 
-    public ApplicationController(ApplicationRepository applicationDao, UserService userService) {
+    public ApplicationController(ApplicationRepository applicationDao, UserService userService, ResumeRepository resumeDao) {
         this.applicationDao = applicationDao;
         this.userService = userService;
+        this.resumeDao = resumeDao;
     }
 
 
@@ -39,8 +39,8 @@ public class ApplicationController {
         model.addAttribute("jobApplication", application);
         Stage stage = applicationDao.findMostRecentStageForApplication(id);
         model.addAttribute("stage",stage);
-        Note note = applicationDao.findAll(id);
-        model.addAttribute("notes", note);
+//        Note note = applicationDao.findAll(id);
+//        model.addAttribute("notes", note);
         return "app";
     }
 
@@ -48,7 +48,7 @@ public class ApplicationController {
     @GetMapping("/create-application")
     public String viewCreateApplicationForm(Model model) {
         model.addAttribute("jobApplication", new Application());
-        model.addAttribute("resume", new Resume());
+        model.addAttribute("resumes", resumeDao.findAllByUserId(userService.loggedInUser().getId()));
         return "create-application";
     }
 
@@ -62,8 +62,9 @@ public class ApplicationController {
 
     //SAVE APPLICATION FORM
     @PostMapping("/create-application")
-    public String saveApplication(@ModelAttribute Application application) {
+    public String saveApplication(@ModelAttribute Application application, @RequestParam("resume") String resumeId) {
         User user = userService.loggedInUser();
+        application.setResume(resumeDao.getOne(Long.parseLong(resumeId)));
         application.setUser(user);
         application.setDateCreated(new Date(System.currentTimeMillis()));
         Application savedApplication = applicationDao.save(application);

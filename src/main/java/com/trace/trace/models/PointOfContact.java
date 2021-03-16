@@ -93,4 +93,8 @@ public class PointOfContact {
     public void setApplication(Application application) {
         this.application = application;
     }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 }

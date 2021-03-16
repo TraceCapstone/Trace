@@ -205,4 +205,24 @@ public class Application {
     public void setNote(List<Note> note) {
         this.note = note;
     }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public List<PointOfContact> getPoc() {
+        return poc;
+    }
+
+    public void setPoc(List<PointOfContact> poc) {
+        this.poc = poc;
+    }
+
+    public List<ApplicationStage> getApplicationStage() {
+        return applicationStage;
+    }
+
+    public void setApplicationStage(List<ApplicationStage> applicationStage) {
+        this.applicationStage = applicationStage;
+    }
 }
