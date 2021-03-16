@@ -1,5 +1,6 @@
 package com.trace.trace.controllers;
 
+import com.trace.trace.models.Resume;
 import com.trace.trace.models.User;
 import com.trace.trace.repositories.UserRepository;
 import com.trace.trace.services.UserDetailsLoader;
@@ -60,11 +61,8 @@ public class AuthenticationController {
 
     @GetMapping("/profile")
     public String profileView(Model model){
-//        User user2 = userService.loggedInUser();
-//        User user1 = userDao.findById(user2.getId()).get();
-//        model.addAttribute("user", user1);
-        User freshUser = userDao.findById(userService.loggedInUser().getId()).get();
-        model.addAttribute("user", freshUser);
+        model.addAttribute("user", userService.loggedInUser());
+        model.addAttribute("resume", new Resume());
         return "profile";
     }
 

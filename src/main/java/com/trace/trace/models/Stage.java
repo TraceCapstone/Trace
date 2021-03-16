@@ -52,4 +52,5 @@ public class Stage {
     public void setApplication(List<ApplicationStage> application) {
         this.application = application;
     }
+
 }
