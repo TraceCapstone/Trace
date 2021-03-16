@@ -38,8 +38,7 @@ public class Resume {
     public Resume() {
     }
 
-    public Resume(long id, String title, Date date, String description, String filePath, User user, List<Application> applications) {
-        this.id = id;
+    public Resume(String title, Date date, String description, String filePath, User user, List<Application> applications) {
         this.title = title;
         this.createdAt = date;
         this.description = description;

@@ -68,8 +68,7 @@ public class Application {
     public Application() {
     }
 
-    public Application(long id, String company, String title, String description, String location, int salary, String positionType, Date dateCreated, Date dateApplied, String postingId, String referredBy, String url, User user, Resume resume, List<Note> note) {
-        this.id = id;
+    public Application(String company, String title, String description, String location, int salary, String positionType, Date dateCreated, Date dateApplied, String postingId, String referredBy, String url, User user, Resume resume, List<PointOfContact> poc, List<ApplicationStage> applicationStage, List<Note> note) {
         this.company = company;
         this.title = title;
         this.description = description;
@@ -83,8 +82,11 @@ public class Application {
         this.url = url;
         this.user = user;
         this.resume = resume;
+        this.poc = poc;
+        this.applicationStage = applicationStage;
         this.note = note;
     }
+
 
 
 //    Getters and Setters
