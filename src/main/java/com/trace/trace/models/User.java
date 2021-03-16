@@ -114,4 +114,16 @@ public class User {
     public void setApplications(List<Application> applications) {
         this.applications = applications;
     }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public List<Resume> getResumes() {
+        return resumes;
+    }
+
+    public void setResumes(List<Resume> resumes) {
+        this.resumes = resumes;
+    }
 }

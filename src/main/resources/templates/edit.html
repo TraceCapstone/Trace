@@ -5,34 +5,34 @@
     <nav th:replace="partials/nav :: navbar"></nav>
 
     <div class="container">
-        <form th:action="@{/application/edit}" method="post" th:object="${user}">
+        <form th:action="@{/jobApplication/edit}" method="post" th:object="${jobApplication}">
             <div class="form-group">
                 <label for="job-title">Job Title</label>
-                <input type="text" id="job-title" class="form-control">
+                <input type="text" id="job-title" class="form-control" th:field="*{title}">
             </div>
             <div class="form-group">
                 <label for="post-id">Post # / ID</label>
-                <input type="text" id="post-id" class="form-control">
+                <input type="text" id="post-id" class="form-control" th:field="*{postingId}">
             </div>
             <div class="form-group">
                 <label for="referred-by">Referred By</label>
-                <input type="text" id="referred-by" class="form-control">
+                <input type="text" id="referred-by" class="form-control" th:field="*{referredBy}">
             </div>
             <div class="form-group">
                 <label for="company">Company</label>
-                <input type="text" id="company" class="form-control">
+                <input type="text" id="company" class="form-control" th:field="*{company}">
             </div>
             <div class="form-group">
                 <label for="description">Description</label>
-                <textarea type="text" id="description" class="form-control"></textarea>
+                <textarea type="text" id="description" class="form-control" th:field="*{description}"></textarea>
             </div>
             <div class="form-group">
                 <label for="location">Location</label>
-                <input type="text" id="location" class="form-control">
+                <input type="text" id="location" class="form-control" th:field="*{location}">
             </div>
             <div class="form-group">
                 <label for="salary">Salary</label>
-                <input type="number" id="salary" class="form-control">
+                <input type="number" id="salary" class="form-control" th:field="*{salary}">
             </div>
             <div class="form-group">
                 <label for="job-type">Type</label>
@@ -60,37 +60,37 @@
             </div>
         </form>
 
-        <form class="container">
-            <h1>Point of Contact</h1>
-            <div class="form-group">
-                <label for="position">Position</label>
-                <input type="text" id="position" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="first-name">First Name</label>
-                <input type="text" id="first-name" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="last-name">Last Name</label>
-                <input type="text" id="last-name" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="phone">Phone</label>
-                <input type="number" id="phone" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="text" id="email" class="form-control">
-            </div>
-			<button>change</button>
-        </form>
+<!--        <form class="container">-->
+<!--            <h1>Points of Contact</h1>-->
+<!--            <div class="form-group">-->
+<!--                <label for="position">Position</label>-->
+<!--                <input type="text" id="position" class="form-control">-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--                <label for="first-name">First Name</label>-->
+<!--                <input type="text" id="first-name" class="form-control">-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--                <label for="last-name">Last Name</label>-->
+<!--                <input type="text" id="last-name" class="form-control">-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--                <label for="phone">Phone</label>-->
+<!--                <input type="number" id="phone" class="form-control">-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--                <label for="email">Email</label>-->
+<!--                <input type="text" id="email" class="form-control">-->
+<!--            </div>-->
+<!--			<button>change</button>-->
+<!--        </form>-->
 
-        <form class="container">
-            <div class="form-group">
-                <label for="resume-upload">Load Resume</label>
-                <input type="file" class="form-control-file" id="resume-upload">
-            </div>
-        </form>
+<!--        <form class="container">-->
+<!--            <div class="form-group">-->
+<!--                <label for="resume-upload">Load Resume</label>-->
+<!--                <input type="file" class="form-control-file" id="resume-upload">-->
+<!--            </div>-->
+<!--        </form>-->
     </div>
 
 

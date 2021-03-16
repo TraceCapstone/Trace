@@ -100,4 +100,8 @@ public class Resume {
     public void setApplications(List<Application> applications) {
         this.applications = applications;
     }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 }

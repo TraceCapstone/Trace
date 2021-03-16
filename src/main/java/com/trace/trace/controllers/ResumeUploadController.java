@@ -47,7 +47,7 @@ public class ResumeUploadController {
             e.printStackTrace();
             model.addAttribute("message", "Oops! Something went wrong! " + e);
         }
-        return "redirect:/create-application";
+        return "redirect:/profile";
     }
 
 }

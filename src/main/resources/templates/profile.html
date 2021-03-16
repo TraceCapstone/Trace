@@ -37,6 +37,15 @@
 </div>
 </div>
 
+<form th:action="@{/fileUpload}" method="post" enctype="multipart/form-data" th:object="${resume}">
+	<label for="resume">Upload a resume!</label>
+	<input type="file" id="resume" name="file">
+	<label for="title">Title</label>
+	<input type="text" th:field="*{title}" id="title">
+	<label for="title">description</label>
+	<textarea th:field="*{description}" id="description"></textarea>
+	<input type="submit" value="upload" />
+</form>
 
 
 <!--<form th:action="@{|/users/${user.id}/delete|}" th:method="POST">-->
