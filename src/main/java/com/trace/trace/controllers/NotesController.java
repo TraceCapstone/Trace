@@ -2,6 +2,7 @@ package com.trace.trace.controllers;
 
 import com.trace.trace.models.Application;
 import com.trace.trace.models.Note;
+import com.trace.trace.models.PointOfContact;
 import com.trace.trace.models.User;
 import com.trace.trace.repositories.ApplicationRepository;
 import com.trace.trace.repositories.NotesRepository;
@@ -24,6 +25,19 @@ public class NotesController {
         this.notesDao = notesDao;
         this.applicationDao = applicationDao;
         this.userService = userService;
+    }
+    @GetMapping("/note/{id}")
+    public String viewIndividualNote(Model model, @PathVariable long id) {
+        model.addAttribute("note", new Note());
+        Note note = notesDao.getOne(id);
+        model.addAttribute("notes", note);
+        return "/notes";
+    }
+
+    @PostMapping("/note/{id}")
+    public String updateNote(){
+
+        return "redirect:/applications";
     }
 
     @PostMapping("/notes")

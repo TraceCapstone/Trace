@@ -4,17 +4,36 @@
 <body>
 <nav th:replace="partials/nav :: navbar"></nav>
     <div class="container">
+        <p style="text-align: center">Title</p>
         <h3 th:text="${jobApplication.title}"></h3>
+        <p style="text-align: center">Company</p>
         <a th:href="@{${jobApplication.company}}"></a>
+        <p style="text-align: center">date applied</p>
         <p th:text="${jobApplication.dateApplied}"></p>
+        <p style="text-align: center">Post Id</p>
         <p th:href="@{${jobApplication.postingId}}"></p>
+        <p style="text-align: center">referred by</p>
         <p th:text="${jobApplication.referredBy}"></p>
+        <p style="text-align: center">Description</p>
         <p th:text="${jobApplication.description}"></p>
         <hr>
+        <p style="text-align: center">Location</p>
         <p th:text="${jobApplication.location}"></p>
+        <p style="text-align: center">Salary</p>
         <p th:text="${jobApplication.salary}"></p>
+        <p style="text-align: center">Position type</p>
         <p th:text="${jobApplication.positionType}"></p>
+        <p style="text-align: center">Sage</p>
         <p th:text="${stage}"></p>
+        <hr>
+        <p style="text-align: center">notes</p>
+        <div th:each="note : ${jobApplication.note}">
+        <p>note:</p>
+        <p th:text="${note.body}"></p>
+        <p>Created at:</p>
+        <p th:text="${note.createdAt}"></p>
+            <a th:href="@{|/note/${note.id}|}">Edit note</a>
+        </div>
         <hr>
         <p>add POC</p>
 		<form th:action="@{/poc}" method="post" th:object="${poc}">
