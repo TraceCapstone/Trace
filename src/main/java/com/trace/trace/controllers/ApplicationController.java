@@ -1,19 +1,13 @@
 package com.trace.trace.controllers;
 
 import com.trace.trace.models.*;
-import com.trace.trace.repositories.ApplicationRepository;
+import com.trace.trace.repositories.*;
 import com.trace.trace.services.UserService;
-import com.trace.trace.repositories.ApplicationStageRepository;
-import com.trace.trace.repositories.StageRepository;
-import com.trace.trace.repositories.UserRepository;
-import com.trace.trace.repositories.ResumeRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 @Controller
 public class ApplicationController {
@@ -24,15 +18,17 @@ public class ApplicationController {
     private final StageRepository stageDao;
     private final UserRepository userDao;
     private final ApplicationStageRepository applicationsStageDao;
+    private final NotesRepository noteDao;
 
- public ApplicationController(ApplicationRepository applicationDao, UserService userService, ResumeRepository resumeDao, StageRepository stageDao, UserRepository userDao, ApplicationStageRepository applicationsStageDao) {
+ public ApplicationController(ApplicationRepository applicationDao, UserService userService, ResumeRepository resumeDao, StageRepository stageDao, UserRepository userDao, ApplicationStageRepository applicationsStageDao, NotesRepository noteDao) {
         this.applicationDao = applicationDao;
         this.userService = userService;
         this.resumeDao = resumeDao;
         this.stageDao = stageDao;
         this.userDao = userDao;
         this.applicationsStageDao = applicationsStageDao;
-    }
+        this.noteDao = noteDao;
+ }
 
 
 
