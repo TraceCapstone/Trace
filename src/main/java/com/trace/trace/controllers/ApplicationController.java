@@ -46,7 +46,11 @@ public class ApplicationController {
         model.addAttribute("poc", new PointOfContact());
         Application application = applicationDao.getOne(id);
         model.addAttribute("jobApplication", application);
-//        Stage stage = applicationDao.findMostRecentStageForApplication(id);
+        Stage stage = stageDao.getOne(id);
+        model.addAttribute("stage", stage);
+//        Date date = applicationsStageDao.getCreatedAt();
+//        model.addAttribute("date", date);
+//        Stage stageDate = applicationDao.findBy(id);
 //        model.addAttribute("stage",stage);
 //        Note note = applicationDao.findAll(id);
 //        model.addAttribute("notes", note);

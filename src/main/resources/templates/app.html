@@ -14,7 +14,7 @@
         <p th:text="${jobApplication.location}"></p>
         <p th:text="${jobApplication.salary}"></p>
         <p th:text="${jobApplication.positionType}"></p>
-        <p th:text="${stage}"></p>
+        <p th:text="${stage}"><p th:text="${date}"></p></p>
         <hr>
         <p>add POC</p>
 		<form th:action="@{/poc}" method="post" th:object="${poc}">
