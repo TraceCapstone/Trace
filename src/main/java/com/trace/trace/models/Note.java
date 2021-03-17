@@ -12,7 +12,7 @@ public class Note {
     private long id;
 
     @Column(nullable = true)
-    private String note;
+    private String body;
 
     @Column(nullable = false)
     private Date createdAt;
@@ -20,23 +20,12 @@ public class Note {
     @ManyToOne
     private Application applications;
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    @ManyToOne
-    private User user;
-
     //    Constructors
     public Note() {
     }
 
-    public Note(String note, Date createdAt, Application applications) {
-        this.note = note;
+    public Note(String body, Date createdAt, Application applications) {
+        this.body = body;
         this.createdAt = createdAt;
         this.applications = applications;
     }
@@ -50,12 +39,12 @@ public class Note {
         this.id = id;
     }
 
-    public String getNote() {
-        return note;
+    public String getBody() {
+        return body;
     }
 
-    public void setNote(String note) {
-        this.note = note;
+    public void setBody(String body) {
+        this.body = body;
     }
 
     public Date getCreatedAt() {
