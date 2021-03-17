@@ -46,6 +46,7 @@ public class ApplicationController {
     //VIEW INDIVIDUAL JOB APPLIED FOR
     @GetMapping("/applications/{id}")
     public String viewIndividualJob(Model model, @PathVariable long id) {
+        model.addAttribute("note", new Note());
         model.addAttribute("poc", new PointOfContact());
         Application application = applicationDao.getOne(id);
         model.addAttribute("jobApplication", application);
