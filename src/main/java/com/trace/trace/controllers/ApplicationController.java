@@ -42,9 +42,10 @@ public class ApplicationController {
     //VIEW INDIVIDUAL JOB APPLIED FOR
     @GetMapping("/applications/{id}")
     public String viewIndividualJob(Model model, @PathVariable long id) {
+        model.addAttribute("note", new Note());
         model.addAttribute("poc", new PointOfContact());
         Application application = applicationDao.getOne(id);
-        model.addAttribute("jobApplications", application);
+        model.addAttribute("jobApplication", application);
 //        Stage stage = applicationDao.findMostRecentStageForApplication(id);
 //        model.addAttribute("stage",stage);
 //        Note note = applicationDao.findAll(id);
@@ -55,7 +56,7 @@ public class ApplicationController {
     //VIEW APPLICATION SUBMISSION FORM
     @GetMapping("/create-application")
     public String viewCreateApplicationForm(Model model) {
-        model.addAttribute("jobApplications", new Application());
+        model.addAttribute("jobApplication", new Application());
         model.addAttribute("stage", stageDao.findAll());
         model.addAttribute("resumes", resumeDao.findAllByUserId(userService.loggedInUser().getId()));
         return "create-application";
@@ -88,7 +89,7 @@ public class ApplicationController {
     //EDIT APPLICATION
     @GetMapping("/applications/{id}/edit")
     public String viewEditApplicationForm(@PathVariable long id, Model model) {
-        model.addAttribute("jobApplications", applicationDao.getOne(id));
+        model.addAttribute("jobApplication", applicationDao.getOne(id));
         return "edit";
     }
 
@@ -105,13 +106,6 @@ public class ApplicationController {
     public String deleteApplication(@PathVariable long id){
         applicationDao.deleteById(id);
         return "redirect:/applications";
-    }
-
-    //VIEW NOTES
-    @GetMapping("/app")
-    public String viewNotes(Model model) {
-        model.addAttribute("notes", noteDao.findAll());
-        return "app";
     }
 
 
