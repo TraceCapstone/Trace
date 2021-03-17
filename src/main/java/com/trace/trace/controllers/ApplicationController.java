@@ -1,19 +1,13 @@
 package com.trace.trace.controllers;
 
 import com.trace.trace.models.*;
-import com.trace.trace.repositories.ApplicationRepository;
+import com.trace.trace.repositories.*;
 import com.trace.trace.services.UserService;
-import com.trace.trace.repositories.ApplicationStageRepository;
-import com.trace.trace.repositories.StageRepository;
-import com.trace.trace.repositories.UserRepository;
-import com.trace.trace.repositories.ResumeRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 @Controller
 public class ApplicationController {
@@ -24,15 +18,17 @@ public class ApplicationController {
     private final StageRepository stageDao;
     private final UserRepository userDao;
     private final ApplicationStageRepository applicationsStageDao;
+    private final NotesRepository noteDao;
 
- public ApplicationController(ApplicationRepository applicationDao, UserService userService, ResumeRepository resumeDao, StageRepository stageDao, UserRepository userDao, ApplicationStageRepository applicationsStageDao) {
+ public ApplicationController(ApplicationRepository applicationDao, UserService userService, ResumeRepository resumeDao, StageRepository stageDao, UserRepository userDao, ApplicationStageRepository applicationsStageDao, NotesRepository noteDao) {
         this.applicationDao = applicationDao;
         this.userService = userService;
         this.resumeDao = resumeDao;
         this.stageDao = stageDao;
         this.userDao = userDao;
         this.applicationsStageDao = applicationsStageDao;
-    }
+        this.noteDao = noteDao;
+ }
 
 
 
@@ -48,7 +44,7 @@ public class ApplicationController {
     public String viewIndividualJob(Model model, @PathVariable long id) {
         model.addAttribute("poc", new PointOfContact());
         Application application = applicationDao.getOne(id);
-        model.addAttribute("jobApplication", application);
+        model.addAttribute("jobApplications", application);
 //        Stage stage = applicationDao.findMostRecentStageForApplication(id);
 //        model.addAttribute("stage",stage);
 //        Note note = applicationDao.findAll(id);
@@ -59,7 +55,7 @@ public class ApplicationController {
     //VIEW APPLICATION SUBMISSION FORM
     @GetMapping("/create-application")
     public String viewCreateApplicationForm(Model model) {
-        model.addAttribute("jobApplication", new Application());
+        model.addAttribute("jobApplications", new Application());
         model.addAttribute("stage", stageDao.findAll());
         model.addAttribute("resumes", resumeDao.findAllByUserId(userService.loggedInUser().getId()));
         return "create-application";
@@ -92,7 +88,7 @@ public class ApplicationController {
     //EDIT APPLICATION
     @GetMapping("/applications/{id}/edit")
     public String viewEditApplicationForm(@PathVariable long id, Model model) {
-        model.addAttribute("jobApplication", applicationDao.getOne(id));
+        model.addAttribute("jobApplications", applicationDao.getOne(id));
         return "edit";
     }
 
@@ -109,6 +105,13 @@ public class ApplicationController {
     public String deleteApplication(@PathVariable long id){
         applicationDao.deleteById(id);
         return "redirect:/applications";
+    }
+
+    //VIEW NOTES
+    @GetMapping("/app")
+    public String viewNotes(Model model) {
+        model.addAttribute("notes", noteDao.findAll());
+        return "app";
     }
 
 
