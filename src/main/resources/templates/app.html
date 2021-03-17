@@ -4,17 +4,34 @@
 <body>
 <nav th:replace="partials/nav :: navbar"></nav>
     <div class="container">
+        <p style="text-align: center">Title</p>
         <h3 th:text="${jobApplication.title}"></h3>
+        <p style="text-align: center">Company</p>
         <a th:href="@{${jobApplication.company}}"></a>
+        <p style="text-align: center">date applied</p>
         <p th:text="${jobApplication.dateApplied}"></p>
+        <p style="text-align: center">Post Id</p>
         <p th:href="@{${jobApplication.postingId}}"></p>
+        <p style="text-align: center">referred by</p>
         <p th:text="${jobApplication.referredBy}"></p>
+        <p style="text-align: center">Description</p>
         <p th:text="${jobApplication.description}"></p>
         <hr>
+        <p style="text-align: center">Location</p>
         <p th:text="${jobApplication.location}"></p>
+        <p style="text-align: center">Salary</p>
         <p th:text="${jobApplication.salary}"></p>
+        <p style="text-align: center">Position type</p>
         <p th:text="${jobApplication.positionType}"></p>
-        <p th:text="${stage}"></p>
+        <hr>
+        <p style="text-align: center">notes</p>
+        <div th:each="note : ${jobApplication.note}">
+        <p>note:</p>
+        <p th:text="${note.body}"></p>
+        <p>Created at:</p>
+        <p th:text="${note.createdAt}"></p>
+            <a th:href="@{|/note/${note.id}|}">Edit note</a>
+        </div>
         <hr>
         <p>add POC</p>
 		<form th:action="@{/poc}" method="post" th:object="${poc}">
@@ -36,13 +53,33 @@
             <p th:text="${contact.firstName + ' ' + contact.lastName}"></p>
             <p th:text="${contact.phoneNumber}"></p>
             <p th:text="${contact.email}"></p>
+			<form th:action="@{|/poc/delete/${contact.id}|}" method="post">
+				<input type="hidden" name="application" th:value="${jobApplication.id}">
+				<button>remove</button>
+			</form>
+			<form th:action="@{|/poc/edit/${contact.id}|}">
+				<input type="hidden" name="application" th:value="${jobApplication.id}">
+				<button>edit</button>
+			</form>
         </div>
         <hr>
-        <p>Notes:</p>
-        <div th:each="note : ${notes}">
-            <p th:text="${note.note}"></p>
-
-
     </div>
+<form th:action="@{/notes}" method="post" th:object="${note}">
+    <label for="note">Note</label>
+    <input type="text" id="note" th:field="*{body}" placeholder="note">
+    <input type="hidden" name="application" th:value="${jobApplication.id}">
+    <br>
+    <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+					<span class="absolute left-0 inset-y-0 flex items-center pl-3">
+						<!-- Heroicon name: solid/lock-closed -->
+						<svg class="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+							<path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+						</svg>
+					</span>
+        Make note
+    </button>
+    <br>
+</form>
+
 </body>
 </html>

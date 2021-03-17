@@ -5,9 +5,8 @@ import com.trace.trace.models.PointOfContact;
 import com.trace.trace.repositories.ApplicationRepository;
 import com.trace.trace.repositories.PointOfContactRepository;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;;
 
 @Controller
 public class PointOfContactController {
@@ -27,5 +26,25 @@ public class PointOfContactController {
         pocDao.save(poc);
         return "redirect:/applications/"+applicationId;
     }
+
+    @PostMapping("/poc/delete/{id}")
+    public String deletePoc(@PathVariable long id, @RequestParam(name = "application") String applicationId) {
+        pocDao.deleteById(id);
+        return "redirect:/applications/"+applicationId;
+    }
+
+    @GetMapping("/poc/edit/{id}")
+    public String editPoc(Model model,  @PathVariable long id) {
+        PointOfContact poc = pocDao.getOne(id);
+        model.addAttribute("poc", poc);
+        return "poc/edit-poc";
+    }
+
+    @PostMapping("/poc/edit/{id}")
+    public String editPoc(@PathVariable long id, @ModelAttribute PointOfContact poc) {
+        pocDao.update(poc.getEmail(), poc.getFirstName(), poc.getLastName(), poc.getPhoneNumber(), poc.getPosition(), id);
+        return "redirect:/applications/"+poc.getApplication().getId();
+    }
+
 
 }

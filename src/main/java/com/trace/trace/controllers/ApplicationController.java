@@ -1,19 +1,13 @@
 package com.trace.trace.controllers;
 
 import com.trace.trace.models.*;
-import com.trace.trace.repositories.ApplicationRepository;
+import com.trace.trace.repositories.*;
 import com.trace.trace.services.UserService;
-import com.trace.trace.repositories.ApplicationStageRepository;
-import com.trace.trace.repositories.StageRepository;
-import com.trace.trace.repositories.UserRepository;
-import com.trace.trace.repositories.ResumeRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 @Controller
 public class ApplicationController {
@@ -24,15 +18,17 @@ public class ApplicationController {
     private final StageRepository stageDao;
     private final UserRepository userDao;
     private final ApplicationStageRepository applicationsStageDao;
+    private final NotesRepository noteDao;
 
- public ApplicationController(ApplicationRepository applicationDao, UserService userService, ResumeRepository resumeDao, StageRepository stageDao, UserRepository userDao, ApplicationStageRepository applicationsStageDao) {
+ public ApplicationController(ApplicationRepository applicationDao, UserService userService, ResumeRepository resumeDao, StageRepository stageDao, UserRepository userDao, ApplicationStageRepository applicationsStageDao, NotesRepository noteDao) {
         this.applicationDao = applicationDao;
         this.userService = userService;
         this.resumeDao = resumeDao;
         this.stageDao = stageDao;
         this.userDao = userDao;
         this.applicationsStageDao = applicationsStageDao;
-    }
+        this.noteDao = noteDao;
+ }
 
 
 
@@ -46,10 +42,15 @@ public class ApplicationController {
     //VIEW INDIVIDUAL JOB APPLIED FOR
     @GetMapping("/applications/{id}")
     public String viewIndividualJob(Model model, @PathVariable long id) {
+        model.addAttribute("note", new Note());
         model.addAttribute("poc", new PointOfContact());
         Application application = applicationDao.getOne(id);
         model.addAttribute("jobApplication", application);
-//        Stage stage = applicationDao.findMostRecentStageForApplication(id);
+        Stage stage = stageDao.getOne(id);
+        model.addAttribute("stage", stage);
+//        Date date = applicationsStageDao.getCreatedAt();
+//        model.addAttribute("date", date);
+//        Stage stageDate = applicationDao.findBy(id);
 //        model.addAttribute("stage",stage);
 //        Note note = applicationDao.findAll(id);
 //        model.addAttribute("notes", note);
@@ -74,10 +75,12 @@ public class ApplicationController {
     }
 
     //SAVE APPLICATION FORM
-@PostMapping("/create-application")
-    public String saveApplication(@ModelAttribute Application application, @RequestParam("resume") String resumeId, @RequestParam(name = "test") String applicationStage) {
+    @PostMapping("/create-application")
+    public String saveApplication(@ModelAttribute Application application, @RequestParam(value = "resume", required = false) String resumeId, @RequestParam(name = "test") String applicationStage) {
         User user = userDao.findById(userService.loggedInUser().getId()).get();
-        application.setResume(resumeDao.getOne(Long.parseLong(resumeId)));
+        if(resumeId != null)
+            application.setResume(resumeDao.getOne(Long.parseLong(resumeId)));
+
         application.setUser(user);
         application.setDateCreated(new Date(System.currentTimeMillis()));
         Application savedApplication = applicationDao.save(application);

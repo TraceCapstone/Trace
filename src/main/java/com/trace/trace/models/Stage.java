@@ -19,23 +19,6 @@ public class Stage implements Serializable{
     @OneToMany(mappedBy = "stage")
     private List<ApplicationStage> application;
 
-    @Override
-    public boolean equals(Object o) {
-        if ( this == o ) {
-            return true;
-        }
-        if ( o == null || getClass() != o.getClass() ) {
-            return false;
-        }
-        Stage stage = (Stage) o;
-        return Objects.equals( id, stage.id );
-    }
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
-
-
 //    Constructors
     public Stage() {
     }
