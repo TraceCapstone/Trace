@@ -23,8 +23,6 @@
         <p th:text="${jobApplication.salary}"></p>
         <p style="text-align: center">Position type</p>
         <p th:text="${jobApplication.positionType}"></p>
-        <p style="text-align: center">Sage</p>
-        <p th:text="${stage}"></p>
         <hr>
         <p style="text-align: center">notes</p>
         <div th:each="note : ${jobApplication.note}">
