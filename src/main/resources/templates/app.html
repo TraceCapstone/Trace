@@ -53,6 +53,14 @@
             <p th:text="${contact.firstName + ' ' + contact.lastName}"></p>
             <p th:text="${contact.phoneNumber}"></p>
             <p th:text="${contact.email}"></p>
+			<form th:action="@{|/poc/delete/${contact.id}|}" method="post">
+				<input type="hidden" name="application" th:value="${jobApplication.id}">
+				<button>remove</button>
+			</form>
+			<form th:action="@{|/poc/edit/${contact.id}|}">
+				<input type="hidden" name="application" th:value="${jobApplication.id}">
+				<button>edit</button>
+			</form>
         </div>
         <hr>
     </div>

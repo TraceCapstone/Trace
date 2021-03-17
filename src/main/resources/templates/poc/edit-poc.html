@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<form th:if="${poc != null}" th:action="@{|/poc/edit/${poc.id}|}" method="post" th:object="${poc}">
+	<label for="edit-email">email</label>
+	<input id="edit-email" type="email" th:field="*{email}" th:value="${email}">
+	<label for="edit-firstName">first name</label>
+	<input id="edit-firstName" type="text" th:field="*{firstName}" th:value="${firstName}">
+	<label for="edit-lastName">last name</label>
+	<input id="edit-lastName" type="text" th:field="*{lastName}" th:value="${lastName}">
+	<label for="edit-phone">phone</label>
+	<input id="edit-phone" type="tel" th:field="*{phoneNumber}" th:value="${phoneNumber}">
+	<label for="edit-position">position</label>
+	<input id="edit-position" type="text" th:field="*{position}" th:value="${position}">
+	<button>change</button>
+</form>
+</body>
+</html>
