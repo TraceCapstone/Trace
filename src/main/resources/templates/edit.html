@@ -3,20 +3,18 @@
 <head th:replace="partials/head :: header-links(edit)"></head>
 <body>
     <nav th:replace="partials/nav :: navbar"></nav>
-
-    <div class="container">
         <form th:action="@{/edit}" method="post" th:object="${jobApplication}">
             <div class="form-group">
-                <label for="job-title">Job Title</label>
-                <input type="text" id="job-title" class="form-control" th:field="*{title}">
+                <label for="jobTitleInput">Job Title</label>
+                <input type="text" id="jobTitleInput" class="form-control" th:field="*{title}">
             </div>
             <div class="form-group">
-                <label for="post-id">Post # / ID</label>
-                <input type="text" id="post-id" class="form-control" th:field="*{postingId}">
+                <label for="postId">Post ID</label>
+                <input type="text" id="postId" class="form-control" th:field="*{id}">
             </div>
             <div class="form-group">
-                <label for="referred-by">Referred By</label>
-                <input type="text" id="referred-by" class="form-control" th:field="*{referredBy}">
+                <label for="referenceName">Referred By</label>
+                <input type="text" id="referenceName" class="form-control" th:field="*{referredBy}">
             </div>
             <div class="form-group">
                 <label for="company">Company</label>
@@ -95,7 +93,7 @@
 <!--                <input type="file" class="form-control-file" id="resume-upload">-->
 <!--            </div>-->
 <!--        </form>-->
-    </div>
+
 
 
     <div th:replace="partials/scripts :: assets"></div>
