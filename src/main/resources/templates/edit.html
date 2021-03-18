@@ -12,6 +12,10 @@
                 <label for="postId">Post ID</label>
                 <input type="text" id="postId" class="form-control" th:field="*{id}">
             </div>
+			<div class="form-group">
+				<label for="dateApplied">Date Applied</label>
+				<input type="date" class="form-control" id="dateApplied" th:field="*{dateApplied}">
+			</div>
             <div class="form-group">
                 <label for="referenceName">Referred By</label>
                 <input type="text" id="referenceName" class="form-control" th:field="*{referredBy}">

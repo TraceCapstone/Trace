@@ -108,9 +108,8 @@ public class ApplicationController {
 
         application.setUser(user);
         Application app = applicationDao.getOne(id);
-        app.setResume(resumeDao.getOne(resumeId));
+        application.setResume(resumeDao.getOne(resumeId));
         application.setDateCreated(app.getDateCreated());
-
 
         Application savedApplication = applicationDao.save(application);
         ApplicationStage appStage = new ApplicationStage(new Date(System.currentTimeMillis()), application, stage);
