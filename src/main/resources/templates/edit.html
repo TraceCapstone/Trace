@@ -3,20 +3,18 @@
 <head th:replace="partials/head :: header-links(edit)"></head>
 <body>
     <nav th:replace="partials/nav :: navbar"></nav>
-
-    <div class="container">
-        <form th:action="@{/jobApplication/edit}" method="post" th:object="${jobApplication}">
+        <form th:action="@{/edit}" method="post" th:object="${jobApplication}">
             <div class="form-group">
-                <label for="job-title">Job Title</label>
-                <input type="text" id="job-title" class="form-control" th:field="*{title}">
+                <label for="jobTitleInput">Job Title</label>
+                <input type="text" id="jobTitleInput" class="form-control" th:field="*{title}">
             </div>
             <div class="form-group">
-                <label for="post-id">Post # / ID</label>
-                <input type="text" id="post-id" class="form-control" th:field="*{postingId}">
+                <label for="postId">Post ID</label>
+                <input type="text" id="postId" class="form-control" th:field="*{id}">
             </div>
             <div class="form-group">
-                <label for="referred-by">Referred By</label>
-                <input type="text" id="referred-by" class="form-control" th:field="*{referredBy}">
+                <label for="referenceName">Referred By</label>
+                <input type="text" id="referenceName" class="form-control" th:field="*{referredBy}">
             </div>
             <div class="form-group">
                 <label for="company">Company</label>
@@ -33,6 +31,27 @@
             <div class="form-group">
                 <label for="salary">Salary</label>
                 <input type="number" id="salary" class="form-control" th:field="*{salary}">
+            </div>
+            <div class="form-group">
+                <label for="job-type">Type</label>
+                <select class="form-control" id="job-type" th:field="*{positionType}">
+                    <option>Full Time</option>
+                    <option>Part Time</option>
+                    <option>Internship</option>
+                    <option>Contract</option>
+                    <option>Other</option>
+                </select>
+
+            </div>
+            <div>
+                <label for="applicationStage">Application Stage</label>
+                <select class="form-control" id="applicationStage" th:field="*{applicationStage}">
+                    <option>Applied</option>
+                    <option>Scheduled Interview</option>
+                    <option>Interviewed</option>
+                    <option>Hired</option>
+                    <textarea placeholder="Other"></textarea>
+                </select>
             </div>
 			<fieldset th:each="r : ${jobApplication.resume}">
 				<input type="radio" name="resume" th:value="${r.id}">
@@ -66,40 +85,6 @@
             <button>Cancel</button>
             <button type="submit" class="btn btn-primary">Save</button>
         </form>
-
-<!--        <form class="container">-->
-<!--            <h1>Points of Contact</h1>-->
-<!--            <div class="form-group">-->
-<!--                <label for="position">Position</label>-->
-<!--                <input type="text" id="position" class="form-control">-->
-<!--            </div>-->
-<!--            <div class="form-group">-->
-<!--                <label for="first-name">First Name</label>-->
-<!--                <input type="text" id="first-name" class="form-control">-->
-<!--            </div>-->
-<!--            <div class="form-group">-->
-<!--                <label for="last-name">Last Name</label>-->
-<!--                <input type="text" id="last-name" class="form-control">-->
-<!--            </div>-->
-<!--            <div class="form-group">-->
-<!--                <label for="phone">Phone</label>-->
-<!--                <input type="number" id="phone" class="form-control">-->
-<!--            </div>-->
-<!--            <div class="form-group">-->
-<!--                <label for="email">Email</label>-->
-<!--                <input type="text" id="email" class="form-control">-->
-<!--            </div>-->
-<!--			<button>change</button>-->
-<!--        </form>-->
-
-<!--        <form class="container">-->
-<!--            <div class="form-group">-->
-<!--                <label for="resume-upload">Load Resume</label>-->
-<!--                <input type="file" class="form-control-file" id="resume-upload">-->
-<!--            </div>-->
-<!--        </form>-->
-    </div>
-
 
     <div th:replace="partials/scripts :: assets"></div>
 </body>
