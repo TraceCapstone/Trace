@@ -51,11 +51,6 @@ public class ApplicationController {
         Stage stage = appStage.get(appStage.size() - 1).getStage();
         model.addAttribute("stage", stage);
         model.addAttribute("date", appStage.get(appStage.size() - 1).getCreatedAt());
-//        Date date = applicationsStageDao.getCreatedAt();
-//        Stage stageDate = applicationDao.findBy(id);
-//        model.addAttribute("stage",stage);
-//        Note note = applicationDao.findAll(id);
-//        model.addAttribute("notes", note);
         return "app";
     }
 
@@ -72,7 +67,6 @@ public class ApplicationController {
     @GetMapping("/create-application/cancel")
     public String cancelFormSubmit() {
         //ON BUTTON CLICK
-
         return "applications";
     }
 
