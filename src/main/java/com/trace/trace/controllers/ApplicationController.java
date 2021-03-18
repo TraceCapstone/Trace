@@ -104,7 +104,8 @@ public class ApplicationController {
     public String updateApplication(@PathVariable long id, @ModelAttribute Application application) {
         User user = userService.loggedInUser();
         application.setUser(user);
-        application.setDateCreated(new Date());
+        Application app = applicationDao.getOne(id);
+        application.setDateCreated(app.getDateCreated());
         applicationDao.save(application);
         return "redirect:/applications";
     }
