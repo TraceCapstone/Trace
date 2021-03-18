@@ -91,19 +91,34 @@ public class ApplicationController {
     //EDIT APPLICATION
     @GetMapping("/applications/edit/{id}")
     public String viewEditApplicationForm(@PathVariable long id, Model model) {
+        User user = userDao.findById(userService.loggedInUser().getId()).get();
         Application application = applicationDao.getOne(id);
+        List <Resume> resumes = resumeDao.findAllByUserId(user.getId());
+
         model.addAttribute("jobApplication", applicationDao.getOne(id));
+        model.addAttribute("stage", stageDao.findAll());
+        model.addAttribute("resumes", resumes);
         return "edit";
     }
 
     @PostMapping("/applications/edit/{id}")
-    public String updateApplication(@PathVariable long id, @ModelAttribute Application application, @RequestParam(value = "resume", required = false) long resumeId) {
+    public String updateApplication(@PathVariable long id, @ModelAttribute Application application, @RequestParam(value = "resume", required = false) long resumeId , @RequestParam(name="test") String stageId) {
         User user = userService.loggedInUser();
+        Stage stage = stageDao.findById(Long.parseLong(stageId)).get();
+
         application.setUser(user);
         Application app = applicationDao.getOne(id);
         app.setResume(resumeDao.getOne(resumeId));
         application.setDateCreated(app.getDateCreated());
-        applicationDao.save(application);
+
+
+        Application savedApplication = applicationDao.save(application);
+        ApplicationStage appStage = new ApplicationStage(new Date(System.currentTimeMillis()), application, stage);
+        appStage.setApplication(savedApplication);
+        appStage.setStage(stage);
+
+        applicationsStageDao.save(appStage);
+
         return "redirect:/applications";
     }
 
