@@ -3,7 +3,7 @@
 <head th:replace="partials/head :: header-links(edit)"></head>
 <body>
     <nav th:replace="partials/nav :: navbar"></nav>
-        <form th:action="@{/edit}" method="post" th:object="${jobApplication}">
+        <form th:action="@{|/applications/edit/${jobApplication.id}|}" method="post" th:object="${jobApplication}">
             <div class="form-group">
                 <label for="jobTitleInput">Job Title</label>
                 <input type="text" id="jobTitleInput" class="form-control" th:field="*{title}">
