@@ -32,6 +32,10 @@
         <p th:text="${note.body}"></p>
         <p>Created at:</p>
         <p th:text="${note.createdAt}"></p>
+            <form th:action="@{|/notes/delete/${note.id}|}" method="post">
+                <input type="hidden" name="application" th:value="${jobApplication.id}">
+                <button>remove</button>
+            </form>
             <a th:href="@{|/note/${note.id}|}">Edit note</a>
         </div>
         <hr>
