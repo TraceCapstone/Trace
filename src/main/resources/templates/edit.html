@@ -3,7 +3,7 @@
 <head th:replace="partials/head :: header-links(edit)"></head>
 <body>
     <nav th:replace="partials/nav :: navbar"></nav>
-        <form th:action="@{/edit}" method="post" th:object="${jobApplication}">
+        <form th:action="@{|/applications/edit/${jobApplication.id}|}" method="post" th:object="${jobApplication}">
             <div class="form-group">
                 <label for="jobTitleInput">Job Title</label>
                 <input type="text" id="jobTitleInput" class="form-control" th:field="*{title}">
@@ -12,6 +12,10 @@
                 <label for="postId">Post ID</label>
                 <input type="text" id="postId" class="form-control" th:field="*{id}">
             </div>
+			<div class="form-group">
+				<label for="dateApplied">Date Applied</label>
+				<input type="date" class="form-control" id="dateApplied" th:field="*{dateApplied}">
+			</div>
             <div class="form-group">
                 <label for="referenceName">Referred By</label>
                 <input type="text" id="referenceName" class="form-control" th:field="*{referredBy}">
@@ -33,55 +37,20 @@
                 <input type="number" id="salary" class="form-control" th:field="*{salary}">
             </div>
             <div class="form-group">
-                <label for="job-type">Type</label>
-                <select class="form-control" id="job-type" th:field="*{positionType}">
-                    <option>Full Time</option>
-                    <option>Part Time</option>
-                    <option>Internship</option>
-                    <option>Contract</option>
-                    <option>Other</option>
-                </select>
-
-            </div>
-            <div>
                 <label for="applicationStage">Application Stage</label>
-                <select class="form-control" id="applicationStage" th:field="*{applicationStage}">
-                    <option>Applied</option>
-                    <option>Scheduled Interview</option>
-                    <option>Interviewed</option>
-                    <option>Hired</option>
-                    <textarea placeholder="Other"></textarea>
+                <select id="applicationStage" name="test">
+                    <option th:each="s : ${stage}" th:value="${s.id}" th:text="${s.stage}"></option>
                 </select>
             </div>
-			<fieldset th:each="r : ${jobApplication.resume}">
+            <div class="form-group">
+                <label for="positionType">Position Type</label>
+                <input type="text" class="form-control" id="positionType" th:field="*{positionType}">
+            </div>
+			<fieldset th:each="r : ${resumes}">
 				<input type="radio" name="resume" th:value="${r.id}">
 				<label  th:text="${r.title}"></label>
 			</fieldset>
-<!--            <div class="form-group">-->
-<!--                <label for="job-type">Type</label>-->
-<!--                <select class="form-control" id="job-type" th:field="*{positionType}">-->
-<!--                    <option>Full Time</option>-->
-<!--                    <option>Part Time</option>-->
-<!--                    <option>Internship</option>-->
-<!--                    <option>Contract</option>-->
-<!--                    <option>Other</option>-->
-<!--                </select>-->
-<!--            </div>-->
-<!--            <div>-->
-<!--                <label for="applicationStage">Application Stage</label>-->
-<!--                <select class="form-control" id="applicationStage" th:field="*{applicationStage}">-->
-<!--                    <option>Applied</option>-->
-<!--                    <option>Scheduled Interview</option>-->
-<!--                    <option>Interviewed</option>-->
-<!--                    <option>Hired</option>-->
-<!--                    <textarea placeholder="Other"></textarea>-->
-<!--                </select>-->
-<!--            </div>-->
             <br>
-<!--            <div class="form-group">-->
-<!--                <textarea type="text" id="comments" class="form-control" placeholder="Comments"></textarea>-->
-<!--            </div>-->
-
             <button>Cancel</button>
             <button type="submit" class="btn btn-primary">Save</button>
         </form>
