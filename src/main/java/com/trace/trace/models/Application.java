@@ -57,7 +57,7 @@ public class Application implements Serializable {
     @ManyToOne
     private User user;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private Resume resume;
 
     @OneToMany(mappedBy = "application", cascade = CascadeType.ALL)

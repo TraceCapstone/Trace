@@ -1,11 +1,12 @@
 package com.trace.trace.repositories;
 
-import com.trace.trace.models.Application;
-import com.trace.trace.models.Note;
-import com.trace.trace.models.PointOfContact;
-import com.trace.trace.models.Stage;
+import com.trace.trace.models.*;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+import javax.transaction.Transactional;
 
 public interface ApplicationRepository extends JpaRepository<Application, Long> {
 
@@ -13,4 +14,9 @@ public interface ApplicationRepository extends JpaRepository<Application, Long> 
     Stage findMostRecentStageForApplication(long applicationId);
 
     Application findByPoc(PointOfContact poc);
+
+    @Modifying
+    @Transactional
+    @Query(value = "UPDATE applications a SET a.resume_id = null WHERE a.resume_id = :resumeId", nativeQuery = true)
+    void update(@Param("resumeId") long resumeId);
 }
