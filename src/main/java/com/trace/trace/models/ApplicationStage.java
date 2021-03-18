@@ -34,8 +34,8 @@ public class ApplicationStage implements Serializable {
         this.stage = stage;
     }
 
-    //GETTERS AND SETTER
 
+    //GETTERS AND SETTER
     public Date getCreatedAt() {
         return createdAt;
     }

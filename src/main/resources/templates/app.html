@@ -23,7 +23,11 @@
         <p th:text="${jobApplication.salary}"></p>
         <p style="text-align: center">Position type</p>
         <p th:text="${jobApplication.positionType}"></p>
-		<p>resume</p>
+	      <p>resume</p>
+        <a th:href="@{jobApplication.resume.filePath}" th:if="${jobApplication.resume != null}" th:text="${jobApplication.resume.title}"></a>
+        <p th:text="${stage.stage}"></p>
+        <p th:text="${date}"></p>
+		    <p>resume</p>
         <p th:text="${jobApplication.resume.title}"></p>
         <hr>
         <p style="text-align: center">notes</p>
@@ -32,8 +36,13 @@
         <p th:text="${note.body}"></p>
         <p>Created at:</p>
         <p th:text="${note.createdAt}"></p>
+            <form th:action="@{|/notes/delete/${note.id}|}" method="post">
+                <input type="hidden" name="application" th:value="${jobApplication.id}">
+                <button>remove</button>
+            </form>
             <a th:href="@{|/note/${note.id}|}">Edit note</a>
         </div>
+		<a th:href="@{|/applications/edit/${jobApplication.id}|}"></a>
         <hr>
         <p>add POC</p>
 		<form th:action="@{/poc}" method="post" th:object="${poc}">

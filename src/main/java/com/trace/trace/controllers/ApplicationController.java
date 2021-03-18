@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
+import java.util.List;
 
 @Controller
 public class ApplicationController {
@@ -46,14 +47,10 @@ public class ApplicationController {
         model.addAttribute("poc", new PointOfContact());
         Application application = applicationDao.getOne(id);
         model.addAttribute("jobApplication", application);
-        Stage stage = stageDao.getOne(id);
+        List<ApplicationStage> appStage = application.getApplicationStage();
+        Stage stage = appStage.get(appStage.size() - 1).getStage();
         model.addAttribute("stage", stage);
-//        Date date = applicationsStageDao.getCreatedAt();
-//        model.addAttribute("date", date);
-//        Stage stageDate = applicationDao.findBy(id);
-//        model.addAttribute("stage",stage);
-//        Note note = applicationDao.findAll(id);
-//        model.addAttribute("notes", note);
+        model.addAttribute("date", appStage.get(appStage.size() - 1).getCreatedAt());
         return "app";
     }
 
@@ -70,7 +67,6 @@ public class ApplicationController {
     @GetMapping("/create-application/cancel")
     public String cancelFormSubmit() {
         //ON BUTTON CLICK
-
         return "applications";
     }
 
@@ -93,16 +89,20 @@ public class ApplicationController {
     }
 
     //EDIT APPLICATION
-    @GetMapping("/applications/{id}/edit")
+    @GetMapping("/applications/edit/{id}")
     public String viewEditApplicationForm(@PathVariable long id, Model model) {
+        Application application = applicationDao.getOne(id);
         model.addAttribute("jobApplication", applicationDao.getOne(id));
         return "edit";
     }
 
-    @PostMapping("/applications/{id}/edit")
-    public String updateApplication(@PathVariable long id, @ModelAttribute Application application) {
+    @PostMapping("/applications/edit/{id}")
+    public String updateApplication(@PathVariable long id, @ModelAttribute Application application, @RequestParam(value = "resume", required = false) long resumeId) {
         User user = userService.loggedInUser();
         application.setUser(user);
+        Application app = applicationDao.getOne(id);
+        app.setResume(resumeDao.getOne(resumeId));
+        application.setDateCreated(app.getDateCreated());
         applicationDao.save(application);
         return "redirect:/applications";
     }
