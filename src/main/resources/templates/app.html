@@ -32,6 +32,7 @@
         <div th:each="note : ${jobApplication.note}">
         <p>note:</p>
         <p th:text="${note.body}"></p>
+            <br>
         <p>Created at:</p>
         <p th:text="${note.createdAt}"></p>
             <form th:action="@{|/notes/delete/${note.id}|}" method="post">
@@ -42,26 +43,40 @@
         </div>
 		<a th:href="@{|/applications/edit/${jobApplication.id}|}"></a>
         <hr>
-        <p>add POC</p>
+        <p style="text-align: center; font-weight: bold">Create POC</p>
 		<form th:action="@{/poc}" method="post" th:object="${poc}">
 			<label for="email">email</label>
 			<input id="email" type="email" th:field="*{email}">
 			<label for="firstName">first name</label>
 			<input id="firstName" type="text" th:field="*{firstName}">
+            <br>
 			<label for="lastName">last name</label>
 			<input id="lastName" type="text" th:field="*{lastName}">
 			<label for="phone">phone</label>
 			<input id="phone" type="tel" th:field="*{phoneNumber}">
+            <br>
 			<label for="position">position</label>
 			<input id="position" type="text" th:field="*{position}">
 			<input type="hidden" name="application" th:value="${jobApplication.id}">
+            <br>
 			<button>add pont of contact</button>
+            <hr>
 		</form>
         <div th:each="contact : ${jobApplication.poc}">
-            <p th:text="${contact.position}"></p>
-            <p th:text="${contact.firstName + ' ' + contact.lastName}"></p>
-            <p th:text="${contact.phoneNumber}"></p>
-            <p th:text="${contact.email}"></p>
+            <p style="font-weight: bold; text-align: center">Point of contacts</p>
+            <br>
+            <p style="font-weight: bold">Position:</p>
+            <p th:text=" ${contact.position}"></p>
+            <br>
+            <p style="font-weight: bold">Name of contact:</p>
+            <p th:text=" ${contact.firstName + ' ' + contact.lastName}"></p>
+            <br>
+            <p style="font-weight: bold">Contact number:</p>
+            <p th:text=" ${contact.phoneNumber}"></p>
+            <br>
+            <p style="font-weight: bold">Contact email:</p>
+            <p th:text=" ${contact.email}"></p>
+            <br>
 			<form th:action="@{|/poc/delete/${contact.id}|}" method="post">
 				<input type="hidden" name="application" th:value="${jobApplication.id}">
 				<button>remove</button>
