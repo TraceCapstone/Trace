@@ -36,7 +36,9 @@ public class NotesController {
 
     @PostMapping("/note/{id}")
     public String updateNote(@PathVariable long id, @ModelAttribute Note note){
-//        notesDao.update(note.getBody(), id);
+        Note updatedNote = notesDao.findById(note.getId()).get();
+        updatedNote.setBody(note.getBody());
+        notesDao.save(updatedNote);
         return "redirect:/applications";
     }
 
@@ -53,6 +55,6 @@ public class NotesController {
     @PostMapping("/notes/delete/{id}")
     public String deleteNote(@PathVariable long id, @RequestParam(name = "application") String applicationId){
         notesDao.deleteById(id);
-        return "redirect:/applications"+applicationId;
+        return "redirect:/applications/"+applicationId;
     }
 }

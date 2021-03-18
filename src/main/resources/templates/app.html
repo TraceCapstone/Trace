@@ -23,8 +23,12 @@
         <p th:text="${jobApplication.salary}"></p>
         <p style="text-align: center">Position type</p>
         <p th:text="${jobApplication.positionType}"></p>
-		<p>resume</p>
+	      <p>resume</p>
         <a th:href="@{jobApplication.resume.filePath}" th:if="${jobApplication.resume != null}" th:text="${jobApplication.resume.title}"></a>
+        <p th:text="${stage.stage}"></p>
+        <p th:text="${date}"></p>
+		    <p>resume</p>
+        <p th:text="${jobApplication.resume.title}"></p>
         <hr>
         <p style="text-align: center">notes</p>
         <div th:each="note : ${jobApplication.note}">
