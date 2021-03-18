@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    p {
+        display: inline-block;
+    }
+}
+
 @layer components {
 
     .bg-img {

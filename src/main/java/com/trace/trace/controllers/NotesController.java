@@ -25,23 +25,26 @@ public class NotesController {
         this.notesDao = notesDao;
         this.applicationDao = applicationDao;
         this.userService = userService;
+
     }
     @GetMapping("/note/{id}")
     public String viewIndividualNote(Model model, @PathVariable long id) {
-        model.addAttribute("note", new Note());
         Note note = notesDao.getOne(id);
         model.addAttribute("notes", note);
         return "/notes";
     }
 
     @PostMapping("/note/{id}")
-    public String updateNote(){
-
+    public String updateNote(@PathVariable long id, @ModelAttribute Note note){
+        Note updatedNote = notesDao.findById(note.getId()).get();
+        note.setCreatedAt((new Date(System.currentTimeMillis())));
+        note.setApplications(applicationDao.getOne(id));
+        notesDao.save(note);
         return "redirect:/applications";
     }
 
     @PostMapping("/notes")
-    public String CrudNotes(@ModelAttribute Note note,  @RequestParam(name = "application") String applicationId){
+    public String CreatNotes(@ModelAttribute Note note,  @RequestParam(name = "application") String applicationId){
 
         Application app = applicationDao.getOne(Long.parseLong(applicationId));
         note.setApplications(app);
@@ -49,4 +52,10 @@ public class NotesController {
         notesDao.save(note);
         return "redirect:/applications/"+applicationId;
     }
+
+//    @PostMapping("/notes/delete/{note.id}")
+//    public String deleteNote(@PathVariable long id){
+//        notesDao.deleteById(id);
+//        return "redirect:/applications";
+//    }
 }
