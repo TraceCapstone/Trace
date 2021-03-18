@@ -551,6 +551,10 @@ video {
   height: auto;
 }
 
+p {
+  display: inline-block;
+}
+
 .container {
   width: 100%;
 }

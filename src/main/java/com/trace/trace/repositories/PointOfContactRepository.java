@@ -1,5 +1,6 @@
 package com.trace.trace.repositories;
 
+import com.trace.trace.models.Application;
 import com.trace.trace.models.PointOfContact;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
