@@ -3,22 +3,31 @@
 <head th:replace="partials/head :: header-links(applications)"></head>
 <body>
 <nav th:replace="partials/nav :: navbar"></nav>
-    <div class="container">
-        <div th:each="app : ${jobApplications}">
-            <p th:text="${app.company}">
-          <h6 th:text="${app.dateCreated}"></h6></p>
-            <p th:text="${app.company}">
-			<h6 th:text="${app.dateCreated}"></h6></p>
-            <p th:text="${app.title}"></p>
-            <p th:text="${app.dateApplied}"></p>
-            <p th:text="${app.dateCreated}"></p>
-            <p th:text="${app.location}"></p>
-			<a th:href="@{|/applications/${app.id}|}">full application</a>
-			<a th:href="@{|/applications/edit/${app.id}|}">edit application</a>
+
+<h1 style="text-align: center; font-weight: bold; font-size: x-large">Application list</h1>
+
+<div class="container">
+    <div th:each="app : ${jobApplications}">
+        <div class="card">
+            <p style="font-weight: bold">Title:</p><p th:text=" ${app.company}"></p>
+            <br>
+          <p style="font-weight: bold">Date created: </p><h6 th:text=" ${app.dateCreated}"></h6>
+            <br>
+            <p style="font-weight: bold">Job title: </p><p th:text=" ${app.title}"></p>
+            <br>
+            <p style="font-weight: bold">Date applied: </p><p th:text=" ${app.dateApplied}"></p>
+            <br>
+            <p style="font-weight: bold">Location: </p><p th:text=" ${app.location}"></p>
+            <br>
+            <a th:href="@{|/applications/${app.id}|}"><button class="button">full application</button></a>
+            <br>
+            <a th:href="@{|/applications/edit/${app.id}|}"><button class="button">edit application</button></a>
         </div>
     </div>
+</div>
     <!--START MAPBOX CONTAINER-->
-    <div id='map' style='width: 80%; height: 80%;'></div>
+	<div id='map' class="w-full h-60 rounded-3xl"></div>
     <!--END MAPBOX CONTAINER-->
+<div th:replace="partials/scripts :: assets"></div>
 </body>
 </html>
