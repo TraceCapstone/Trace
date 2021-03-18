@@ -1,6 +1,7 @@
 package com.trace.trace.controllers;
 
 import com.trace.trace.models.Resume;
+import com.trace.trace.repositories.ApplicationRepository;
 import com.trace.trace.repositories.ResumeRepository;
 import com.trace.trace.repositories.UserRepository;
 import com.trace.trace.services.UserService;
@@ -27,11 +28,13 @@ public class ResumeUploadController {
     private String uploadPath;
 
     private final ResumeRepository resumeDao;
+    private final ApplicationRepository appDao;
     private final UserService userService;
 
-    public ResumeUploadController(ResumeRepository resumeDao, UserService userService) {
+    public ResumeUploadController(ResumeRepository resumeDao, UserService userService, ApplicationRepository appDao) {
         this.resumeDao = resumeDao;
         this.userService = userService;
+        this.appDao = appDao;
     }
 
     @PostMapping("/fileUpload")
@@ -62,6 +65,7 @@ public class ResumeUploadController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        appDao.update(id);
         resumeDao.deleteById(id);
         return "redirect:/profile";
     }

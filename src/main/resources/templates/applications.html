@@ -14,7 +14,7 @@
             <p th:text="${app.dateCreated}"></p>
             <p th:text="${app.location}"></p>
 			<a th:href="@{|/applications/${app.id}|}">full application</a>
-			<a th:href="@{|/applications/${app.id}/edit|}">edit application</a>
+			<a th:href="@{|/applications/edit/${app.id}|}">edit application</a>
         </div>
     </div>
     <!--START MAPBOX CONTAINER-->
