@@ -93,16 +93,18 @@ public class ApplicationController {
     }
 
     //EDIT APPLICATION
-    @GetMapping("/applications/{id}/edit")
+    @GetMapping("/applications/edit/{id}")
     public String viewEditApplicationForm(@PathVariable long id, Model model) {
+        Application application = applicationDao.getOne(id);
         model.addAttribute("jobApplication", applicationDao.getOne(id));
-        return "edit";
+        return "/applications/edit";
     }
 
-    @PostMapping("/applications/{id}/edit")
+    @PostMapping("/applications/edit/{id}")
     public String updateApplication(@PathVariable long id, @ModelAttribute Application application) {
         User user = userService.loggedInUser();
         application.setUser(user);
+        application.setDateCreated(new Date());
         applicationDao.save(application);
         return "redirect:/applications";
     }
