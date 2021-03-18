@@ -43,7 +43,8 @@ public class PointOfContactController {
     @PostMapping("/poc/edit/{id}")
     public String editPoc(@PathVariable long id, @ModelAttribute PointOfContact poc) {
         pocDao.update(poc.getEmail(), poc.getFirstName(), poc.getLastName(), poc.getPhoneNumber(), poc.getPosition(), id);
-        return "redirect:/applications/"+poc.getApplication().getId();
+        Application app = applicationDao.findByPoc(poc);
+        return "redirect:/applications/"+app.getId();
     }
 
 
