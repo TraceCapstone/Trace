@@ -50,7 +50,7 @@ public class NotesController {
         return "redirect:/applications/"+applicationId;
     }
 
-    @PostMapping("/notes/delete/${note.id}")
+    @PostMapping("/notes/delete/{id}")
     public String deleteNote(@PathVariable long id, @RequestParam(name = "application") String applicationId){
         notesDao.deleteById(id);
         return "redirect:/applications"+applicationId;

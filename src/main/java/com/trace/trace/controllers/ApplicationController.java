@@ -97,14 +97,15 @@ public class ApplicationController {
     public String viewEditApplicationForm(@PathVariable long id, Model model) {
         Application application = applicationDao.getOne(id);
         model.addAttribute("jobApplication", applicationDao.getOne(id));
-        return "/applications/edit";
+        return "edit";
     }
 
     @PostMapping("/applications/edit/{id}")
-    public String updateApplication(@PathVariable long id, @ModelAttribute Application application) {
+    public String updateApplication(@PathVariable long id, @ModelAttribute Application application, @RequestParam(value = "resume", required = false) long resumeId) {
         User user = userService.loggedInUser();
         application.setUser(user);
         Application app = applicationDao.getOne(id);
+        app.setResume(resumeDao.getOne(resumeId));
         application.setDateCreated(app.getDateCreated());
         applicationDao.save(application);
         return "redirect:/applications";

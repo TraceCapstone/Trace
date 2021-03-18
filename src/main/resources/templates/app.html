@@ -24,7 +24,7 @@
         <p style="text-align: center">Position type</p>
         <p th:text="${jobApplication.positionType}"></p>
 		<p>resume</p>
-        <p th:text="${jobApplication.resume.title}"></p>
+        <a th:href="@{jobApplication.resume.filePath}" th:if="${jobApplication.resume != null}" th:text="${jobApplication.resume.title}"></a>
         <hr>
         <p style="text-align: center">notes</p>
         <div th:each="note : ${jobApplication.note}">
@@ -38,6 +38,7 @@
             </form>
             <a th:href="@{|/note/${note.id}|}">Edit note</a>
         </div>
+		<a th:href="@{|/applications/edit/${jobApplication.id}|}"></a>
         <hr>
         <p>add POC</p>
 		<form th:action="@{/poc}" method="post" th:object="${poc}">

@@ -30,7 +30,7 @@ public class Resume {
     @ManyToOne
     private User user;
 
-    @OneToMany(mappedBy="resume", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy="resume")
     private List<Application> applications;
 
 //    Constructors
