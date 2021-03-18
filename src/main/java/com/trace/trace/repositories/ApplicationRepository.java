@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 public interface ApplicationRepository extends JpaRepository<Application, Long> {
 
@@ -14,6 +15,7 @@ public interface ApplicationRepository extends JpaRepository<Application, Long> 
     Stage findMostRecentStageForApplication(long applicationId);
 
     Application findByPoc(PointOfContact poc);
+    List<Application> findAllByUser(User user);
 
     @Modifying
     @Transactional

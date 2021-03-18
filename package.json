@@ -23,6 +23,7 @@
     "tailwindcss": "^2.0.3"
   },
   "dependencies": {
+    "mapbox-gl": "^2.1.1",
     "postcss-cli": "^8.3.1"
   }
 }
