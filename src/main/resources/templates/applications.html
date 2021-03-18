@@ -12,13 +12,14 @@
             <p th:text="${app.title}"></p>
             <p th:text="${app.dateApplied}"></p>
             <p th:text="${app.dateCreated}"></p>
-            <p th:text="${app.location}"></p>
+            <p id="location" th:text="${app.location}"></p>
 			<a th:href="@{|/applications/${app.id}|}">full application</a>
 			<a th:href="@{|/applications/edit/${app.id}|}">edit application</a>
         </div>
     </div>
     <!--START MAPBOX CONTAINER-->
-    <div id='map' style='width: 80%; height: 80%;'></div>
+	<div id='map' class="w-full h-60 rounded-3xl"></div>
     <!--END MAPBOX CONTAINER-->
+<div th:replace="partials/scripts :: assets"></div>
 </body>
 </html>

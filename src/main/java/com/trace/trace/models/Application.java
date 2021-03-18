@@ -16,7 +16,7 @@ public class Application implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(nullable = true)
+    @Column(nullable = false)
     private String company;
 
     @Column(nullable = false)
