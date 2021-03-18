@@ -5,13 +5,13 @@
 
 <nav th:replace="partials/nav :: navbar"></nav>
 <div sec:authorize="isAuthenticated()">
-<h1 style="text-align: center; font-weight: bold">Welcome <span th:text="${#authentication.principal.firstName + '!'}">!</span></h1>
+<h1 style="text-align: center; font-weight: bold">Welcome <span th:text="${user.firstName + '!'}">!</span></h1>
 </div>
 
 <div sec:authorize="isAuthenticated()">
-    Full name: <p th:text="${#authentication.principal.firstName + ' '  + #authentication.principal.lastName}"></p>
+    Full name: <p th:text="${user.firstName + ' '  + user.lastName}"></p>
 <!--    Last Name: <p th:text="${#authentication.principal.lastName}"></p>-->
-    Email: <p th:text="${#authentication.principal.email}"></p>
+    Email: <p th:text="${user.email}"></p>
 </div>
 <br>
     <h1 style="text-align: center; font-weight: bold">Edit Profile</h1>
@@ -46,12 +46,20 @@
 </div>
 <br>
 
+<h3>your resumes</h3>
+<div th:each="resume : ${user.resumes}">
+	<p th:text="${resume.title}"></p>
+	<form th:action="@{|/resume/${resume.id}|}" method="post">
+		<button>remove resume</button>
+	</form>
+</div>
+
 <form th:action="@{/fileUpload}" method="post" enctype="multipart/form-data" th:object="${resume}">
 	<label for="resume">Upload a resume!</label>
 	<input type="file" id="resume" name="file">
 	<label for="title">Title</label>
 	<input type="text" th:field="*{title}" id="title">
-	<label for="title">description</label>
+	<label for="description">description</label>
 	<textarea th:field="*{description}" id="description"></textarea>
 	<input type="submit" value="upload" />
 </form>
