@@ -19,7 +19,7 @@ public class Stage implements Serializable{
     @OneToMany(mappedBy = "stage")
     private List<ApplicationStage> application;
 
-//    Constructors
+    //CONSTRUCTORS
     public Stage() {
     }
 
@@ -29,7 +29,7 @@ public class Stage implements Serializable{
         this.application = application;
     }
 
-//    Getters and Setters
+    //GETTERS AND SETTERS
     public long getId() {
         return id;
     }
