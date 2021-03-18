@@ -28,9 +28,17 @@
 				<div class="hidden sm:block sm:ml-6">
 					<div class="flex space-x-4">
 						<!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-						<a href="/applications" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
 						<a sec:authorize="!isAuthenticated()" href="/sign-up" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Sign Up</a>
+						<a sec:authorize="!isAuthenticated()" href="/aboutUs" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
 						<a sec:authorize="isAuthenticated()" href="/create-application" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Create</a>
+						<a sec:authorize="isAuthenticated()" href="/applications" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">My Applications</a>
+						<a sec:authorize="isAuthenticated()" href="/profile" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Profile</a>
+						<a sec:authorize="isAuthenticated()" href="/aboutUs" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
+						<a sec:authorize="isAuthenticated()" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+							<form th:action="@{/logout}" th:method="post">
+								<button>Sign out</button>
+							</form>
+						</a>
 					</div>
 				</div>
 			</div>
