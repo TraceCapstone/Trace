@@ -5,7 +5,7 @@
     <nav th:replace="partials/nav :: navbar"></nav>
 
     <div class="container">
-        <form th:action="@{/jobApplication/edit}" method="post" th:object="${jobApplication}">
+        <form th:action="@{/edit}" method="post" th:object="${jobApplication}">
             <div class="form-group">
                 <label for="job-title">Job Title</label>
                 <input type="text" id="job-title" class="form-control" th:field="*{title}">
