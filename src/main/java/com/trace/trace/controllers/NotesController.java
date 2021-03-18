@@ -38,6 +38,7 @@ public class NotesController {
     public String updateNote(@PathVariable long id, @ModelAttribute Note note){
         Note updatedNote = notesDao.findById(note.getId()).get();
         note.setCreatedAt((new Date(System.currentTimeMillis())));
+        note.setApplications(applicationDao.getOne(id));
         notesDao.save(note);
         return "redirect:/applications";
     }
