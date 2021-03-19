@@ -49,7 +49,24 @@
             <!--PositionType-->
             <div class="form-group">
                 <label for="positionType">Position Type</label>
-                <input type="text" class="form-control" id="positionType" th:field="*{positionType}">
+<!--                <input type="text" class="form-control" id="positionType" th:field="*{positionType}">-->
+                <select name="positionType" id="positionType">
+                    <option value="full-time">Full-Time</option>
+                    <option value="full-time-remote">Full-Time Remote</option>
+                    <option value="part-time">Part-Time</option>
+                    <option value="part-time-remote">Part-Time Remote</option>
+                    <option value="contract">Contract</option>
+                    <option value="contract-remote">Contract Remote</option>
+                    <option value="temporary">Temporary</option>
+                    <option value="temporary-remote">Temporary Remote</option>
+                    <option value="seasonal">Seasonal</option>
+                    <option value="seasonal-remote">Seasonal Remote</option>
+                    <option value="apprenticeship">Apprenticeship</option>
+                    <option value="apprenticeship-remote">Apprenticeship Remote</option>
+                    <option value="intern">Intern</option>
+                    <option value="intern-remote">Intern Remote</option>
+                    <option value="freelance">Freelance</option>
+                </select>
             </div>
 			<fieldset th:each="resume : ${resumes}">
 					<input type="radio" name="resume" th:value="${resume.id}">
