@@ -1,11 +1,9 @@
-(function(){
+$(document).ready(function() {
     // let mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
-    const local = document.getElementById("location");
     const mobileNav = document.getElementById("mobile-menu");
     const mobileBtn = document.getElementById("mobile-btn");
     const icon = document.querySelector("#user-menu");
     const menu = document.querySelector("#profile-menu");
-    console.log(local);
     if(document.getElementById("map") !== null) {
         mapboxgl.accessToken = mapboxKey
         let map = new mapboxgl.Map({
@@ -24,8 +22,7 @@
                     }
                 });
         }
-
-        local.addEventListener("click", function() {
+        $(document).on("click", "#location", function() {
             geocode(this.innerText)
         })
     }
@@ -51,4 +48,4 @@
         })
 
     }
-})()
+})
