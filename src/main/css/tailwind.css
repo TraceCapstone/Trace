@@ -84,4 +84,9 @@
     .form-container .btn:hover, .open-button:hover {
         opacity: 1;
     }
+    .scale3d {
+        transform: scale3d(0, 0, 0);
+    }
+
+
 }

@@ -601,6 +601,7 @@ p {
   z-index: -10;
 }
 
+<<<<<<< HEAD
 /*Popup form css*/
 
 {
@@ -665,6 +666,10 @@ p {
 
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
+=======
+.scale3d {
+  transform: scale3d(0, 0, 0);
+>>>>>>> ff419746cba3db981bd1598ed5eec733edb78f63
 }
 
 .space-y-0 > :not([hidden]) ~ :not([hidden]) {

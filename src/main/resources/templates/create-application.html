@@ -13,7 +13,7 @@
             <!--PostId-->
             <div class="form-group">
                 <label for="postId">Post ID</label>
-                <input type="text" class="form-control" id="postId" th:field="*{id}">
+                <input type="text" class="form-control" id="postId" th:field="*{postingId}">
             </div>
             <!--DateApplied-->
             <div class="form-group">
@@ -63,43 +63,6 @@
                 </select>
             </div>
             <input type="hidden" th:field="*{id}">
-<!--            Notes-->
-<!--            <div class="form-group">-->
-<!--                <label for="notes">Notes</label>-->
-<!--                <textarea type="text" class="form-control" id="notes" th:field="*{Note.note}"></textarea>-->
-<!--            </div>-->
-            <hr>
-
-            <!--POC INFO FOLLOWS-->
-
-            <!--Position-->
-<!--            <form action="" th:object="${poc}>-->
-<!--                <div class="form-group">-->
-<!--                    <label for="pocTitle">Position/Title</label>-->
-<!--                    <input type="text" class="form-control" id="pocTitle" th:field="*{poc.position}">-->
-<!--                </div>-->
-<!--                &lt;!&ndash;FirstName&ndash;&gt;-->
-<!--                <div class="form-group">-->
-<!--                    <label for="pocFirstName">First Name</label>-->
-<!--                    <input type="text" class="form-control" id="pocFirstName" th:field="*{poc.position}">-->
-<!--                </div>-->
-<!--                &lt;!&ndash;LastName&ndash;&gt;-->
-<!--                <div class="form-group">-->
-<!--                    <label for="pocLastName">Last Name</label>-->
-<!--                    <input type="text" class="form-control" id="pocLastName" th:field="*{poc.position}">-->
-<!--                </div>-->
-<!--                &lt;!&ndash;PhoneNumber&ndash;&gt;-->
-<!--                <div class="form-group">-->
-<!--                    <label for="pocPhoneNumber">Phone Number</label>-->
-<!--                    <input type="text" class="form-control" id="pocPhoneNumber" th:field="*{poc.position}">-->
-<!--                </div>-->
-<!--                &lt;!&ndash;Email&ndash;&gt;-->
-<!--                <div class="form-group">-->
-<!--                    <label for="pocEmail">Email</label>-->
-<!--                    <input type="text" class="form-control" id="pocEmail" th:field="*{poc.position}">-->
-<!--                </div>-->
-<!--                <button type="submit" class="btn btn-primary">Save POC</button>-->
-<!--            </form>-->
 
             <button type="button" th:onclick="|window.location.href='/applications'|">Cancel</button>
             <button type="submit" class="btn btn-primary">Save</button>
