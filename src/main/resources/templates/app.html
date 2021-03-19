@@ -4,7 +4,6 @@
 <body>
 <nav th:replace="partials/nav :: navbar"></nav>
 <h1 style="text-align: center; font-weight: bold">Application</h1>
-    <div class="container">
         <p style="font-weight: bold">Title:</p>
         <p th:text=" ${jobApplication.title}"></p>
         <br>
@@ -22,7 +21,7 @@
         <br>
         <p style="font-weight: bold">Description:</p>
         <p th:text=" ${jobApplication.description}"></p>
-        <hr>
+        <hr class="curve-fade">
         <p style="font-weight: bold">Location:</p>
         <p th:text=" ${jobApplication.location}"></p>
         <br>
@@ -40,7 +39,7 @@
         <br>
         <p style="font-weight: bold">Date</p>
         <p th:text=" ${date}"></p>
-        <hr>
+        <hr class="curve-fade">
         <p style="text-align: center; font-weight: bold">notes</p>
         <div class="grid grid-cols-12 gap-2">
             <div class="py-1 px-4 md:col-span-4 col-span-full">
@@ -61,25 +60,25 @@
                 </div>
                     </div>
 		<a th:href="@{|/applications/edit/${jobApplication.id}|}"></a>
-        <hr>
+        <hr class="curve-fade">
         <p style="text-align: center; font-weight: bold">Create POC</p>
 		<form th:action="@{/poc}" method="post" th:object="${poc}">
-			<label for="email">email:</label>
-			<input id="email" type="email" th:field="*{email}">
+			<label for="email" >email:</label>
+			<input id="email" type="email" th:field="*{email}" class="shadow-md transition-all duration-300 rounded hover:shadow-2xl">
 			<label for="firstName">first name:</label>
-			<input id="firstName" type="text" th:field="*{firstName}">
+			<input id="firstName" type="text" th:field="*{firstName}" class="shadow-md transition-all duration-300 rounded hover:shadow-2xl">
             <br>
 			<label for="lastName">last name:</label>
-			<input id="lastName" type="text" th:field="*{lastName}">
+			<input id="lastName" type="text" th:field="*{lastName}" class="shadow-md transition-all duration-300 rounded hover:shadow-2xl">
 			<label for="phone">phone:</label>
-			<input id="phone" type="tel" th:field="*{phoneNumber}">
+			<input id="phone" type="tel" th:field="*{phoneNumber}" class="shadow-md transition-all duration-300 rounded hover:shadow-2xl">
             <br>
 			<label for="position">position:</label>
-			<input id="position" type="text" th:field="*{position}">
+			<input id="position" type="text" th:field="*{position}" class="shadow-md transition-all duration-300 rounded hover:shadow-2xl">
 			<input type="hidden" name="application" th:value="${jobApplication.id}">
             <br>
 			<button>add pont of contact</button>
-            <hr>
+            <hr class="curve-fade">
 		</form>
         <p style="font-weight: bold; text-align: center">Point of contacts</p>
         <div class="grid grid-cols-12 gap-2">
@@ -111,7 +110,7 @@
                 </div>
             </div>
         </div>
-        <hr>
+        <hr class="curve-fade">
         <p style="text-align: center; font-weight: bold">Create Note</p>
 <form th:action="@{/notes}" method="post" th:object="${note}">
     <label for="note">Note:</label>
@@ -129,7 +128,6 @@
     </button>
     <br>
 </form>
-    </div>
 
 <div th:replace="partials/scripts :: assets"></div>
 </body>
