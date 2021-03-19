@@ -3,6 +3,7 @@ package com.trace.trace.controllers;
 import com.trace.trace.models.*;
 import com.trace.trace.repositories.*;
 import com.trace.trace.services.UserService;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -20,6 +21,8 @@ public class ApplicationController {
     private final UserRepository userDao;
     private final ApplicationStageRepository applicationsStageDao;
     private final NotesRepository noteDao;
+    @Value("${api-key}")
+    private String apiKey;
 
  public ApplicationController(ApplicationRepository applicationDao, UserService userService, ResumeRepository resumeDao, StageRepository stageDao, UserRepository userDao, ApplicationStageRepository applicationsStageDao, NotesRepository noteDao) {
         this.applicationDao = applicationDao;
@@ -37,6 +40,7 @@ public class ApplicationController {
     @GetMapping("/applications")
     public String viewAllAppliedJobs(Model model) {
      User user = userDao.getOne(userService.loggedInUser().getId());
+        model.addAttribute("apiKey", apiKey);
         model.addAttribute("jobApplications", applicationDao.findAllByUser(user));
         return "applications";
     }
@@ -103,15 +107,16 @@ public class ApplicationController {
     }
 
     @PostMapping("/applications/edit/{id}")
-    public String updateApplication(@PathVariable long id, @ModelAttribute Application application, @RequestParam(value = "resume", required = false) long resumeId , @RequestParam(name="test") String stageId) {
+    public String updateApplication(@PathVariable long id, @ModelAttribute Application application, @RequestParam(value = "resume", required = false) Long resumeId , @RequestParam(name="test") String stageId) {
         User user = userService.loggedInUser();
         Stage stage = stageDao.findById(Long.parseLong(stageId)).get();
 
         application.setUser(user);
         Application app = applicationDao.getOne(id);
-        application.setResume(resumeDao.getOne(resumeId));
-        application.setDateCreated(app.getDateCreated());
+        if(resumeId != null)
+            application.setResume(resumeDao.getOne(resumeId));
 
+        application.setDateCreated(app.getDateCreated());
         Application savedApplication = applicationDao.save(application);
         ApplicationStage appStage = new ApplicationStage(new Date(System.currentTimeMillis()), application, stage);
         appStage.setApplication(savedApplication);

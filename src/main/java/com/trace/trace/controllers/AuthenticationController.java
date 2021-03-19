@@ -55,6 +55,10 @@ public class AuthenticationController {
         String password = user.getPassword();
         String hash = passwordEncoder.encode(password);
         user.setPassword(hash);
+        String formattedFirstName = user.getFirstName().substring(0, 1).toUpperCase() + user.getFirstName().substring(1);
+        String formattedLastName = user.getLastName().substring(0, 1).toUpperCase() + user.getLastName().substring(1);
+        user.setFirstName(formattedFirstName);
+        user.setLastName(formattedLastName);
         userDao.save(user);
         return "redirect:/";
     }
