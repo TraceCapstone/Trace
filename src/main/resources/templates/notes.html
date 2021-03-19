@@ -4,8 +4,10 @@
 <body>
 <nav th:replace="partials/nav :: navbar"></nav>
 
+
+<h1 style="text-align: center; font-weight: bold; font-size: x-large">Update your note</h1>
 <form th:action="@{|/note/${notes.id}|}" method="post" th:object="${notes}">
-    <label for="note">Note</label>
+    <label for="note">Note:</label>
     <input type="text" id="note" th:field="*{body}" placeholder="note" th:value="${body}" required>
 <!--    <input type="hidden" name="application" th:value="${application.id}">-->
     <br>
