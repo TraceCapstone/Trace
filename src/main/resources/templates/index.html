@@ -14,7 +14,7 @@
 	<div sec:authorize="!isAuthenticated()" class="mt-8 flex justify-center">
 		<div class="inline-flex rounded-md bg-white shadow">
 			<a href="/sign-up" class="text-gray-700 font-bold py-2 px-6">
-				Sign Up With Us
+				<button class="button1 bouncy" style="font-weight: bold">Sign Up With Us!</button>
 			</a>
 		</div>
 	</div>
@@ -85,5 +85,7 @@
 		consequat.
 	</p>
 </div>
+
+<div th:replace="partials/scripts :: assets"></div>
 </body>
 </html>

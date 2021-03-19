@@ -14,6 +14,7 @@
             <div class="form-group">
                 <label for="postId">Post ID</label>
                 <input type="text" class="form-control" id="postId" th:field="*{postingId}">
+                <p>(Optional)</p>
             </div>
             <!--DateApplied-->
             <div class="form-group">
@@ -24,6 +25,7 @@
             <div class="form-group">
                 <label for="referenceName">Referred By</label>
                 <input type="text" class="form-control" id="referenceName" th:field="*{referredBy}">
+                <p>(Optional)</p>
             </div>
             <!--CompanyName-->
             <div class="form-group">
@@ -34,6 +36,7 @@
             <div class="form-group">
                 <label for="jobDescription">Description</label>
                 <textarea type="text" class="form-control" id="jobDescription" th:field="*{description}"></textarea>
+                <p>(Optional)</p>
             </div>
             <hr>
             <!--JobLocation-->
@@ -45,12 +48,15 @@
             <div class="form-group">
                 <label for="salary">Salary</label>
                 <input type="number" class="form-control" id="salary" th:field="*{salary}">
+                <p>(Optional)</p>
             </div>
             <!--PositionType-->
             <div class="form-group">
                 <label for="positionType">Position Type</label>
                 <input type="text" class="form-control" id="positionType" th:field="*{positionType}">
+                <p>(Optional)</p>
             </div>
+            <p>Resume(Optional)</p>
 			<fieldset th:each="resume : ${resumes}">
 					<input type="radio" name="resume" th:value="${resume.id}">
 					<label  th:text="${resume.title}"></label>
@@ -67,5 +73,7 @@
             <button type="button" th:onclick="|window.location.href='/applications'|">Cancel</button>
             <button type="submit" class="btn btn-primary">Save</button>
         </form>
+
+        <div th:replace="partials/scripts :: assets"></div>
     </body>
 </html>

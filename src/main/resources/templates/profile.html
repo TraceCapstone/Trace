@@ -8,25 +8,30 @@
 <h1 style="text-align: center; font-weight: bold">Welcome <span th:text="${user.firstName + '!'}">!</span></h1>
 </div>
 
-<div sec:authorize="isAuthenticated()">
-    Full name: <p th:text="${user.firstName + ' '  + user.lastName}"></p>
-<br>
-    Email: <p th:text="${user.email}"></p>
+<div class="grid grid-cols-12 gap-2">
+    <div class="py-1 px-4 md:col-span-4 col-span-full">
+        <div sec:authorize="isAuthenticated()">
+            <div class="shadow-md transition-all duration-300 rounded hover:shadow-2xl">
+            Full name: <p th:text="${user.firstName + ' '  + user.lastName}"></p>
+                <br>
+            Email: <p th:text="${user.email}"></p>
+            </div>
+        </div>
+    </div>
 </div>
 <br>
+<hr class="fade">
     <h1 style="text-align: center; font-weight: bold">Edit Profile</h1>
 <div sec:authorize="isAuthenticated()">
     <form th:action="@{/profile}" th:method="post" th:object="${user}">
-        Email:
-        <label>
-            <input th:field="*{email}" required/>
-        </label>
+            <label for="email">Email:</label>
+            <input id="email" th:field="*{email}" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"/>
         <br />
-        First Name:
-        <input th:field="*{firstName}" required/>
+            <label for="first">First name:</label>
+            <input id="first" th:field="*{firstName}" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"/>
         <br />
-        Last Name:
-        <input th:field="*{lastName}" required/>
+        <label for="last">Last Name:</label>
+        <input id="last" th:field="*{lastName}" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"/>
         <br />
 <!--        Password:-->
 <!--        <input th:field="*{password}" />-->
@@ -45,6 +50,7 @@
 	</form>
 </div>
 <br>
+<hr class="fade">
 
 <h3 style="font-weight: bold; text-align: center">your resumes</h3>
 <div th:each="resume : ${user.resumes}">
@@ -56,11 +62,14 @@
 
 <form th:action="@{/fileUpload}" method="post" enctype="multipart/form-data" th:object="${resume}">
 	<label for="resume">Upload a resume!</label>
-	<input type="file" id="resume" name="file">
+	<input type="file" id="resume" name="file" required>
+    <br>
 	<label for="title">Title</label>
-	<input type="text" th:field="*{title}" id="title">
+	<input type="text" th:field="*{title}" id="title" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
+    <br>
 	<label for="description">description</label>
-	<textarea th:field="*{description}" id="description"></textarea>
+	<textarea th:field="*{description}" id="description" class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">></textarea>
+    <br>
 	<input type="submit" value="upload" />
 </form>
 
