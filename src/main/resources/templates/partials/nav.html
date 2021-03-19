@@ -29,16 +29,9 @@
 					<div class="flex space-x-4">
 						<!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
 						<a sec:authorize="!isAuthenticated()" href="/sign-up" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Sign Up</a>
-						<a sec:authorize="!isAuthenticated()" href="/aboutUs" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
+						<a href="/aboutUs" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
 						<a sec:authorize="isAuthenticated()" href="/create-application" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Create</a>
-						<a sec:authorize="isAuthenticated()" href="/applications" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">My Applications</a>
 						<a sec:authorize="isAuthenticated()" href="/profile" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Profile</a>
-						<a sec:authorize="isAuthenticated()" href="/aboutUs" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
-						<a sec:authorize="isAuthenticated()" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-							<form th:action="@{/logout}" th:method="post">
-								<button>Sign out</button>
-							</form>
-						</a>
 					</div>
 				</div>
 			</div>
@@ -53,7 +46,7 @@
 					</div>
 					<div id="profile-menu" class="profile-menu scale3d origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5" role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
 						<a href="/profile" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" th:text="${#authentication.principal.username}"></a>
-						<a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Settings</a>
+						<a sec:authorize="isAuthenticated()" href="/applications" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">My Applications</a>
 						<form th:action="@{/logout}" th:method="post">
 							<button class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left" role="menuitem">Sign out</button>
 						</form>
@@ -69,6 +62,7 @@
 			<!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
 			<a href="/" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
 			<a href="/sign-up" sec:authorize="!isAuthenticated()" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Sign Up</a>
+			<a href="/aboutUs" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
 			<a href="/create-application" sec:authorize="isAuthenticated()" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Create</a>
 		</div>
 	</div>
