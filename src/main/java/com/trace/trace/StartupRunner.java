@@ -85,7 +85,13 @@ public class StartupRunner implements CommandLineRunner {
         ApplicationStage as = new ApplicationStage();
         as.setCreatedAt(new Date(System.currentTimeMillis()));
         as.setApplication(app);
-        as.setStage(stage2);
+        as.setStage(stage3);
+        applicationsStageDao.save(as);
+
+        ApplicationStage as2 = new ApplicationStage();
+        as.setCreatedAt(new Date(1614977184000L));
+        as.setApplication(app);
+        as.setStage(stage1);
         applicationsStageDao.save(as);
 
 //        List<Application> appList = new ArrayList<>();

@@ -5,14 +5,15 @@ $(document).ready(function() {
     const icon = document.querySelector("#user-menu");
     const menu = document.querySelector("#profile-menu");
     if(document.getElementById("map") !== null) {
-        mapboxgl.accessToken = mapboxKey
+        const key = document.getElementById("api").value;
+        mapboxgl.accessToken = key
         let map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/streets-v11'
         });
 
         const geocode = (input) => {
-            fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${input}.json?&access_token=${mapboxKey}`)
+            fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${input}.json?&access_token=${key}`)
                 .then(res => res.json())
                 .then(data => {
                     try {
