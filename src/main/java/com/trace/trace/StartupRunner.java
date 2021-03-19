@@ -35,9 +35,6 @@ public class StartupRunner implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        applicationDao.deleteAll();
-        userDao.deleteAll();
-
         if (userDao.count() != 0) {
             return;
         }
