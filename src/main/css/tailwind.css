@@ -21,4 +21,10 @@
         background-position: center;
         z-index: -10;
     }
+
+    .scale3d {
+        transform: scale3d(0, 0, 0);
+    }
+
+
 }
