@@ -605,6 +605,159 @@ p {
   transform: scale3d(0, 0, 0);
 }
 
+/*    form popup css*/
+
+{
+  box-sizing: border-box;
+}
+
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+.form-container .cancel {
+  background-color: red;
+}
+
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+/*open popup button css*/
+
+.bouncy{
+  -webkit-animation: bouncy 5s infinite linear;
+          animation: bouncy 5s infinite linear;
+  position: relative;
+}
+
+@-webkit-keyframes bouncy {
+  0%{
+    top:0em
+  }
+
+  40%{
+    top:0em
+  }
+
+  43%{
+    top:-0.9em
+  }
+
+  46%{
+    top:0em
+  }
+
+  48%{
+    top:-0.4em
+  }
+
+  50%{
+    top:0em
+  }
+
+  100%{
+    top:0em
+  }
+}
+
+@keyframes bouncy {
+  0%{
+    top:0em
+  }
+
+  40%{
+    top:0em
+  }
+
+  43%{
+    top:-0.9em
+  }
+
+  46%{
+    top:0em
+  }
+
+  48%{
+    top:-0.4em
+  }
+
+  50%{
+    top:0em
+  }
+
+  100%{
+    top:0em
+  }
+}
+
+/*    hr style*/
+
+hr.fade {
+  height: 10px;
+  border: 0;
+  box-shadow: 0 10px 10px -10px #8c8b8b inset;
+}
+
+hr.curve-fade {
+  display: block;
+  content: "";
+  height: 30px;
+  margin-top: -31px;
+  border-style: solid;
+  border-color: #8c8b8b;
+  border-width: 0 0 1px 0;
+  border-radius: 20px;
+}
+
 .space-y-0 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
