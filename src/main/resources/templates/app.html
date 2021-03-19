@@ -3,93 +3,118 @@
 <head th:replace="partials/head :: header-links(app)"></head>
 <body>
 <nav th:replace="partials/nav :: navbar"></nav>
+<h1 style="text-align: center; font-weight: bold">Application</h1>
     <div class="container">
-        <p style="text-align: center">Title</p>
-        <h3 th:text="${jobApplication.title}"></h3>
-        <p style="text-align: center">Company</p>
-        <a th:href="@{${jobApplication.company}}"></a>
-        <p style="text-align: center">date applied</p>
-        <p th:text="${jobApplication.dateApplied}"></p>
-        <p style="text-align: center">Post Id</p>
-        <p th:href="@{${jobApplication.postingId}}"></p>
-        <p style="text-align: center">referred by</p>
-        <p th:text="${jobApplication.referredBy}"></p>
-        <p style="text-align: center">Description</p>
-        <p th:text="${jobApplication.description}"></p>
+        <p style="font-weight: bold">Title:</p>
+        <p th:text=" ${jobApplication.title}"></p>
+        <br>
+        <p style="font-weight: bold">Company:</p>
+        <a th:text=" ${jobApplication.company}"></a>
+        <br>
+        <p style="font-weight: bold">date applied:</p>
+        <p th:text=" ${jobApplication.dateApplied}"></p>
+        <br>
+        <p style="font-weight: bold">Post Id:</p>
+        <p th:text=" ${jobApplication.postingId}"></p>
+        <br>
+        <p style="font-weight: bold">referred by:</p>
+        <p th:text=" ${jobApplication.referredBy}"></p>
+        <br>
+        <p style="font-weight: bold">Description:</p>
+        <p th:text=" ${jobApplication.description}"></p>
         <hr>
-        <p style="text-align: center">Location</p>
-        <p th:text="${jobApplication.location}"></p>
-        <p style="text-align: center">Salary</p>
-        <p th:text="${jobApplication.salary}"></p>
-        <p style="text-align: center">Position type</p>
-        <p th:text="${jobApplication.positionType}"></p>
-	      <p>resume</p>
-        <a th:href="@{jobApplication.resume.filePath}" th:if="${jobApplication.resume != null}" th:text="${jobApplication.resume.title}"></a>
-        <p th:text="${stage.stage}"></p>
-        <p th:text="${date}"></p>
+        <p style="font-weight: bold">Location:</p>
+        <p th:text=" ${jobApplication.location}"></p>
+        <br>
+        <p style="font-weight: bold">Salary:</p>
+        <p th:text=" ${jobApplication.salary}"></p>
+        <br>
+        <p style="font-weight: bold">Position type:</p>
+        <p th:text=" ${jobApplication.positionType}"></p>
+        <br>
+        <p style="font-weight: bold">resume used:</p>
+        <a th:href=" @{jobApplication.resume.filePath}" th:if="${jobApplication.resume != null}" th:text=" ${jobApplication.resume.title}"></a>
+        <br>
+        <p style="font-weight: bold">Current stage:</p>
+        <p th:text=" ${stage.stage}"></p>
+        <br>
+        <p style="font-weight: bold">Date</p>
+        <p th:text=" ${date}"></p>
         <hr>
-        <p style="text-align: center">notes</p>
-        <div th:each="note : ${jobApplication.note}">
-        <p>note:</p>
-        <p th:text="${note.body}"></p>
-            <br>
-        <p>Created at:</p>
-        <p th:text="${note.createdAt}"></p>
-            <form th:action="@{|/notes/delete/${note.id}|}" method="post">
-                <input type="hidden" name="application" th:value="${jobApplication.id}">
-                <button>remove</button>
-            </form>
-            <a th:href="@{|/note/${note.id}|}">Edit note</a>
+        <p style="text-align: center; font-weight: bold">notes</p>
+        <div class="grid grid-cols-12 gap-2">
+            <div class="py-1 px-4 md:col-span-4 col-span-full">
+                <div th:each="note : ${jobApplication.note}">
+                    <div class="shadow-md transition-all duration-300 rounded hover:shadow-2xl">
+                        <p style="font-weight: bold">note:</p>
+                        <p th:text=" ${note.body}"></p>
+                        <br>
+                        <p style="font-weight: bold">Created at:</p>
+                        <p th:text=" ${note.createdAt}"></p>
+                        <form th:action="@{|/notes/delete/${note.id}|}" method="post">
+                            <input type="hidden" name="application" th:value="${jobApplication.id}">
+                            <button>remove</button>
+                        </form>
+                        <a th:href="@{|/note/${note.id}|}">Edit note</a>
         </div>
+            </div>
+                </div>
+                    </div>
 		<a th:href="@{|/applications/edit/${jobApplication.id}|}"></a>
         <hr>
         <p style="text-align: center; font-weight: bold">Create POC</p>
 		<form th:action="@{/poc}" method="post" th:object="${poc}">
-			<label for="email">email</label>
+			<label for="email">email:</label>
 			<input id="email" type="email" th:field="*{email}">
-			<label for="firstName">first name</label>
+			<label for="firstName">first name:</label>
 			<input id="firstName" type="text" th:field="*{firstName}">
             <br>
-			<label for="lastName">last name</label>
+			<label for="lastName">last name:</label>
 			<input id="lastName" type="text" th:field="*{lastName}">
-			<label for="phone">phone</label>
+			<label for="phone">phone:</label>
 			<input id="phone" type="tel" th:field="*{phoneNumber}">
             <br>
-			<label for="position">position</label>
+			<label for="position">position:</label>
 			<input id="position" type="text" th:field="*{position}">
 			<input type="hidden" name="application" th:value="${jobApplication.id}">
             <br>
 			<button>add pont of contact</button>
             <hr>
 		</form>
-        <div th:each="contact : ${jobApplication.poc}">
-            <p style="font-weight: bold; text-align: center">Point of contacts</p>
-            <br>
-            <p style="font-weight: bold">Position:</p>
-            <p th:text=" ${contact.position}"></p>
-            <br>
-            <p style="font-weight: bold">Name of contact:</p>
-            <p th:text=" ${contact.firstName + ' ' + contact.lastName}"></p>
-            <br>
-            <p style="font-weight: bold">Contact number:</p>
-            <p th:text=" ${contact.phoneNumber}"></p>
-            <br>
-            <p style="font-weight: bold">Contact email:</p>
-            <p th:text=" ${contact.email}"></p>
-            <br>
-			<form th:action="@{|/poc/delete/${contact.id}|}" method="post">
-				<input type="hidden" name="application" th:value="${jobApplication.id}">
-				<button>remove</button>
-			</form>
-			<form th:action="@{|/poc/edit/${contact.id}|}">
-				<input type="hidden" name="application" th:value="${jobApplication.id}">
-				<button>edit</button>
-			</form>
+        <p style="font-weight: bold; text-align: center">Point of contacts</p>
+        <div class="grid grid-cols-12 gap-2">
+            <div class="py-1 px-4 md:col-span-4 col-span-full">
+                <div th:each="contact : ${jobApplication.poc}">
+                    <div class="shadow-md transition-all duration-300 rounded hover:shadow-2xl">
+                        <br>
+                        <p style="font-weight: bold">Position:</p>
+                        <p th:text=" ${contact.position}"></p>
+                        <br>
+                        <p style="font-weight: bold">Name of contact:</p>
+                        <p th:text=" ${contact.firstName + ' ' + contact.lastName}"></p>
+                        <br>
+                        <p style="font-weight: bold">Contact number:</p>
+                        <p th:text=" ${contact.phoneNumber}"></p>
+                        <br>
+                        <p style="font-weight: bold">Contact email:</p>
+                        <p th:text=" ${contact.email}"></p>
+                        <br>
+			            <form th:action="@{|/poc/delete/${contact.id}|}" method="post">
+				            <input type="hidden" name="application" th:value="${jobApplication.id}">
+				            <button>remove</button>
+			            </form>
+			            <form th:action="@{|/poc/edit/${contact.id}|}">
+				            <input type="hidden" name="application" th:value="${jobApplication.id}">
+				            <button>edit</button>
+			            </form>
+                    </div>
+                </div>
+            </div>
         </div>
         <hr>
-    </div>
+        <p style="text-align: center; font-weight: bold">Create Note</p>
 <form th:action="@{/notes}" method="post" th:object="${note}">
-    <label for="note">Note</label>
+    <label for="note">Note:</label>
     <input type="text" id="note" th:field="*{body}" placeholder="note">
     <input type="hidden" name="application" th:value="${jobApplication.id}">
     <br>
@@ -104,6 +129,8 @@
     </button>
     <br>
 </form>
+    </div>
 
+<div th:replace="partials/scripts :: assets"></div>
 </body>
 </html>
