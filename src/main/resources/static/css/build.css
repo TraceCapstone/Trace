@@ -601,6 +601,10 @@ p {
   z-index: -10;
 }
 
+.scale3d {
+  transform: scale3d(0, 0, 0);
+}
+
 .space-y-0 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));

@@ -4,30 +4,31 @@
 <body>
 <nav th:replace="partials/nav :: navbar"></nav>
 
-<h1 style="text-align: center; font-weight: bold; font-size: x-large">Application list</h1>
-
-<div class="container">
-    <div th:each="app : ${jobApplications}">
-        <div class="card">
-            <p style="font-weight: bold">Title:</p><p th:text=" ${app.company}"></p>
-            <br>
-          <p style="font-weight: bold">Date created: </p><h6 th:text=" ${app.dateCreated}"></h6>
-            <br>
-            <p style="font-weight: bold">Job title: </p><p th:text=" ${app.title}"></p>
-            <br>
-            <p style="font-weight: bold">Date applied: </p><p th:text=" ${app.dateApplied}"></p>
-            <br>
-            <p style="font-weight: bold">Location: </p><p th:text=" ${app.location}"></p>
-            <br>
-            <a th:href="@{|/applications/${app.id}|}"><button class="button">full application</button></a>
-            <br>
-            <a th:href="@{|/applications/edit/${app.id}|}"><button class="button">edit application</button></a>
-        </div>
-    </div>
+<h1 class="text-center font-bold text-xl">Application list</h1>
+<div class="grid grid-cols-12 gap-2">
+	<div class="py-1 px-4 md:col-span-4 col-span-full">
+		<div th:each="app : ${jobApplications}">
+			<div class="shadow-md transition-all duration-300 rounded hover:shadow-2xl">
+				<p class="font-bold">Title:</p><p th:text=" ${app.company}"></p>
+				<br>
+			  <p class="font-bold">Date created: </p><h6 th:text=" ${app.dateCreated.toString().subSequence(0, app.dateCreated.toString().indexOf(' '))}"></h6>
+				<br>
+				<p class="font-bold">Job title: </p><p th:text=" ${app.title}"></p>
+				<br>
+				<p class="font-bold">Date applied: </p><p th:text=" ${app.dateApplied}"></p>
+				<br>
+				<p class="font-bold">Location: </p><button type="button" id="location" th:text=" ${app.location}"></button>
+				<br>
+				<a th:href="@{|/applications/${app.id}|}"><button class="hover:bg-purple-500 hover:text-gray-100 hover:shadow-xl">full application</button></a>
+				<br>
+				<a th:href="@{|/applications/edit/${app.id}|}"><button class="hover:bg-purple-500 hover:text-gray-100 hover:shadow-xl">edit application</button></a>
+			</div>
+		</div>
+	</div>
+	<!--START MAPBOX CONTAINER-->
+	<div id='map' class="col-span-8 h-60 rounded-3xl hidden md:block"></div>
+	<!--END MAPBOX CONTAINER-->
 </div>
-    <!--START MAPBOX CONTAINER-->
-	<div id='map' class="w-full h-60 rounded-3xl"></div>
-    <!--END MAPBOX CONTAINER-->
 <div th:replace="partials/scripts :: assets"></div>
 </body>
 </html>
