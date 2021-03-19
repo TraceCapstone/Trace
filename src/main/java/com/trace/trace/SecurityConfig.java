@@ -43,7 +43,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .and()
                 .authorizeRequests()
-                .antMatchers("/application/*")
+                .antMatchers("/applications/*", "/profile", "/applications", "/applications/*/*")
                 .authenticated();
     }
 
