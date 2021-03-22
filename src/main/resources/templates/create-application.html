@@ -3,12 +3,17 @@
 <head th:replace="partials/head :: header-links(create)"></head>
     <body>
         <nav th:replace="partials/nav :: navbar"></nav>
-        <form class="container" th:action="@{/create-application}" method="POST" th:object="${jobApplication}">
+        <form class="grid grid-cols-3 md:grid-cols-3" th:action="@{/create-application}" method="POST" th:object="${jobApplication}">
             <!--JobTitle-->
             <div class="form-group">
                 <label for="jobTitleInput">Job Title</label>
                 <input type="text" class="form-control" id="jobTitleInput" th:field="*{title}"> <!-- aria-describedby="emailHelp"-->
                 <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+            </div>
+            <!--CompanyName-->
+            <div class="form-group">
+                <label for="companyName">Company</label>
+                <input type="text" class="form-control" id="companyName" th:field="*{company}">
             </div>
             <!--PostId-->
             <div class="form-group">
@@ -16,10 +21,30 @@
                 <input type="text" class="form-control" id="postId" th:field="*{postingId}">
                 <p>(Optional)</p>
             </div>
+            <!--JobLocation-->
+            <div class="form-group">
+                <label for="jobLocation">Location</label>
+                <input type="text" class="form-control" id="jobLocation" th:field="*{location}">
+            </div>
             <!--DateApplied-->
             <div class="form-group">
                 <label for="dateApplied">Date Applied</label>
                 <input type="date" class="form-control" id="dateApplied" th:field="*{dateApplied}">
+            </div>
+
+            <!--JobDescription-->
+            <div class="form-group">
+                <label for="jobDescription">Description</label>
+                <textarea type="text" class="form-control" id="jobDescription" th:field="*{description}"></textarea>
+                <p>(Optional)</p>
+            </div>
+
+
+            <!--Salary-->
+            <div class="form-group">
+                <label for="salary">Salary</label>
+                <input type="number" class="form-control" id="salary" th:field="*{salary}">
+                <p>(Optional)</p>
             </div>
             <!--ReferredBy-->
             <div class="form-group">
@@ -27,33 +52,9 @@
                 <input type="text" class="form-control" id="referenceName" th:field="*{referredBy}">
                 <p>(Optional)</p>
             </div>
-            <!--CompanyName-->
-            <div class="form-group">
-                <label for="companyName">Company</label>
-                <input type="text" class="form-control" id="companyName" th:field="*{company}">
-            </div>
-            <!--JobDescription-->
-            <div class="form-group">
-                <label for="jobDescription">Description</label>
-                <textarea type="text" class="form-control" id="jobDescription" th:field="*{description}"></textarea>
-                <p>(Optional)</p>
-            </div>
-            <hr>
-            <!--JobLocation-->
-            <div class="form-group">
-                <label for="jobLocation">Location</label>
-                <input type="text" class="form-control" id="jobLocation" th:field="*{location}">
-            </div>
-            <!--Salary-->
-            <div class="form-group">
-                <label for="salary">Salary</label>
-                <input type="number" class="form-control" id="salary" th:field="*{salary}">
-                <p>(Optional)</p>
-            </div>
             <!--PositionType-->
             <div class="form-group">
                 <label for="positionType">Position Type</label>
-<!--                <input type="text" class="form-control" id="positionType" th:field="*{positionType}">-->
                 <select name="positionType" id="positionType">
                     <option value="full-time">Full-Time</option>
                     <option value="full-time-remote">Full-Time Remote</option>
@@ -71,14 +72,8 @@
                     <option value="intern-remote">Intern Remote</option>
                     <option value="freelance">Freelance</option>
                 </select>
-                <input type="text" class="form-control" id="positionType" th:field="*{positionType}">
                 <p>(Optional)</p>
             </div>
-            <p>Resume(Optional)</p>
-			<fieldset th:each="resume : ${resumes}">
-					<input type="radio" name="resume" th:value="${resume.id}">
-					<label  th:text="${resume.title}"></label>
-			</fieldset>
             <!--ApplicationStage-->
             <div class="form-group">
                 <label for="applicationStage">Application Stage</label>
@@ -86,10 +81,18 @@
                     <option th:each="s : ${stage}" th:value="${s.id}" th:text="${s.stage}"></option>
                 </select>
             </div>
+
+            <p>Resume(Optional)</p>
+			<fieldset th:each="resume : ${resumes}">
+					<input type="radio" name="resume" th:value="${resume.id}">
+					<label  th:text="${resume.title}"></label>
+			</fieldset>
+
             <input type="hidden" th:field="*{id}">
 
-            <button type="button" th:onclick="|window.location.href='/applications'|">Cancel</button>
-            <button type="submit" class="btn btn-primary">Save</button>
+
+            <button class="bg-cancel text-button font-medium rounded-med" th:onclick="|window.location.href='/applications'|">Cancel</button>
+            <button class="bg-save text-button font-medium rounded-med">Save</button>
         </form>
 
         <div th:replace="partials/scripts :: assets"></div>

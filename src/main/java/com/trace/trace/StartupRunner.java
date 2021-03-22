@@ -79,10 +79,80 @@ public class StartupRunner implements CommandLineRunner {
         app.setDateApplied(new Date(1614977184000L));
         app.setDateCreated(new Date(System.currentTimeMillis()));
         app.setCompany("pineapple");
-        app.setLocation("San Antonio");
+        app.setLocation("5443 Beverly Dr NE, Olympia, WA 98516");
         app.setSalary(200399);
         app.setPositionType("full time");
         app.setTitle("orange");
+
+        Application app1 = new Application();
+        app1.setUser(user);
+        app1.setDateApplied(new Date(1614977184000L));
+        app1.setDateCreated(new Date(System.currentTimeMillis()));
+        app1.setCompany("pineapple");
+        app1.setLocation("5443 Beverly Dr NE, Olympia, WA 98516");
+        app1.setSalary(200399);
+        app1.setPositionType("full time");
+        app1.setTitle("orange");
+
+        Application app2 = new Application();
+        app2.setUser(user);
+        app2.setDateApplied(new Date(1614977184000L));
+        app2.setDateCreated(new Date(System.currentTimeMillis()));
+        app2.setCompany("pineapple");
+        app2.setLocation("5443 Beverly Dr NE, Olympia, WA 98516");
+        app2.setSalary(200399);
+        app2.setPositionType("full time");
+        app2.setTitle("orange");
+
+        Application app3 = new Application();
+        app3.setUser(user);
+        app3.setDateApplied(new Date(1614977184000L));
+        app3.setDateCreated(new Date(System.currentTimeMillis()));
+        app3.setCompany("pineapple");
+        app3.setLocation("5443 Beverly Dr NE, Olympia, WA 98516");
+        app3.setSalary(200399);
+        app3.setPositionType("full time");
+        app3.setTitle("orange");
+
+        Application app4 = new Application();
+        app4.setUser(user);
+        app4.setDateApplied(new Date(1614977184000L));
+        app4.setDateCreated(new Date(System.currentTimeMillis()));
+        app4.setCompany("pineapple");
+        app4.setLocation("5443 Beverly Dr NE, Olympia, WA 98516");
+        app4.setSalary(200399);
+        app4.setPositionType("full time");
+        app4.setTitle("orange");
+
+        Application app5 = new Application();
+        app5.setUser(user);
+        app5.setDateApplied(new Date(1614977184000L));
+        app5.setDateCreated(new Date(System.currentTimeMillis()));
+        app5.setCompany("pineapple");
+        app5.setLocation("5443 Beverly Dr NE, Olympia, WA 98516");
+        app5.setSalary(200399);
+        app5.setPositionType("full time");
+        app5.setTitle("orange");
+
+        Application app6 = new Application();
+        app6.setUser(user);
+        app6.setDateApplied(new Date(1614977184000L));
+        app6.setDateCreated(new Date(System.currentTimeMillis()));
+        app6.setCompany("pineapple");
+        app6.setLocation("5443 Beverly Dr NE, Olympia, WA 98516");
+        app6.setSalary(200399);
+        app6.setPositionType("full time");
+        app6.setTitle("orange");
+
+        Application app7 = new Application();
+        app7.setUser(user);
+        app7.setDateApplied(new Date(1614977184000L));
+        app7.setDateCreated(new Date(System.currentTimeMillis()));
+        app7.setCompany("pineapple");
+        app7.setLocation("5443 Beverly Dr NE, Olympia, WA 98516");
+        app7.setSalary(200399);
+        app7.setPositionType("full time");
+        app7.setTitle("orange");
 
         PointOfContact poc = new PointOfContact();
         poc.setApplication(app);
@@ -93,6 +163,13 @@ public class StartupRunner implements CommandLineRunner {
         poc.setPosition("big important person");
 
         applicationDao.save(app);
+        applicationDao.save(app1);
+        applicationDao.save(app2);
+        applicationDao.save(app3);
+        applicationDao.save(app4);
+        applicationDao.save(app5);
+        applicationDao.save(app6);
+        applicationDao.save(app7);
         pocDao.save(poc);
 
         ApplicationStage as = new ApplicationStage();
@@ -101,17 +178,11 @@ public class StartupRunner implements CommandLineRunner {
         as.setStage(stage3);
         applicationsStageDao.save(as);
 
-        ApplicationStage as2 = new ApplicationStage();
-        as.setCreatedAt(new Date(1614977184000L));
-        as.setApplication(app);
-        as.setStage(stage1);
-        applicationsStageDao.save(as);
 
-//        List<Application> appList = new ArrayList<>();
-//        appList.add(new Application("Oracle", "Java Engineer", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.", "San Antonio", 300000, "Full Time", new Date(System.currentTimeMillis()), new Date(19938467798678678L), "", "", "", user, new Resume("resume1", new Date(System.currentTimeMillis()), "", "", user, appList), Arrays.asList(new Note("lorem ipsum", new Date(System.currentTimeMillis()), appList.get(0)), Arrays.asList(new PointOfContact()))));
-//        for (Application app : appList) {@localhost
-//            applicationDao.save(app);
-//        }
+
+
+
+
 
 
 
