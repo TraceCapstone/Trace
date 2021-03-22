@@ -1,4 +1,4 @@
-/*! tailwindcss v2.0.3 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v2.0.4 | MIT License | https://tailwindcss.com */
 
 /*! modern-normalize v1.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 
@@ -601,11 +601,7 @@ p {
   z-index: -10;
 }
 
-<<<<<<< HEAD
 .scale3d{
-=======
-.scale3d {
->>>>>>> ff419746cba3db981bd1598ed5eec733edb78f63
   transform: scale3d(0, 0, 0);
 }
 
