@@ -49,16 +49,29 @@ public class StartupRunner implements CommandLineRunner {
         Stage stage1 = new Stage();
         Stage stage2 = new Stage();
         Stage stage3 = new Stage();
+        Stage stage4 = new Stage();
+        Stage stage5 = new Stage();
+        Stage stage6 = new Stage();
+        Stage stage7 = new Stage();
 
         stage.setStage("Applied");
-        stage1.setStage("Interview Scheduled'");
-        stage2.setStage("Interviewed");
-        stage3.setStage("Technical Interview Scheduled");
+        stage1.setStage("General Interview");
+        stage2.setStage("Technical Interview");
+        stage3.setStage("Behavioral Interview");
+        stage4.setStage("Follow-Up Interview");
+        stage5.setStage("Offer Extended");
+        stage6.setStage("Offer Accepted");
+        stage7.setStage("Offer Declined");
+
 
         stageDao.save(stage);
         stageDao.save(stage1);
         stageDao.save(stage2);
         stageDao.save(stage3);
+        stageDao.save(stage4);
+        stageDao.save(stage5);
+        stageDao.save(stage6);
+        stageDao.save(stage7);
 
 
         Application app = new Application();
