@@ -1,33 +1,30 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" class="w-screen h-screen">
 <head th:replace="partials/head :: header-links(applications)"></head>
-<body>
-<nav th:replace="partials/nav :: navbar"></nav>
+<body class="w-screen h-screen overflow-x-hidden">
 
-<h1 class="text-center font-bold text-xl">Application list</h1>
-<div class="grid grid-cols-12 gap-2">
-	<div class="py-1 px-4 md:col-span-4 col-span-full">
-		<div th:each="app : ${jobApplications}">
-			<div class="shadow-md transition-all duration-300 rounded hover:shadow-2xl">
-				<p class="font-bold">Title:</p><p th:text=" ${app.company}"></p>
-				<br>
-			  <p class="font-bold">Date created: </p><h6 th:text=" ${app.dateCreated.toString().subSequence(0, app.dateCreated.toString().indexOf(' '))}"></h6>
-				<br>
-				<p class="font-bold">Job title: </p><p th:text=" ${app.title}"></p>
-				<br>
-				<p class="font-bold">Date applied: </p><p th:text=" ${app.dateApplied}"></p>
-				<br>
-				<p class="font-bold">Location: </p><button type="button" id="location" th:text=" ${app.location}"></button>
-				<br>
-				<a th:href="@{|/applications/${app.id}|}"><button class="hover:bg-purple-500 hover:text-gray-100 hover:shadow-xl">full application</button></a>
-				<br>
-				<a th:href="@{|/applications/edit/${app.id}|}"><button class="hover:bg-purple-500 hover:text-gray-100 hover:shadow-xl">edit application</button></a>
-			</div>
+<div class="grid grid-cols-12 gap-1 overflow-y-hidden h-full">
+	<nav th:replace="partials/nav :: navbar"></nav>
+	<div class="py-1 pl-2 lg:col-span-5 max-h-screen col-span-full relative overflow-y-auto">
+		<div th:each="app : ${jobApplications}" class="shadow-md transition-all duration-300 rounded hover:shadow-2xl p-2 max-w-lg">
+			<a th:href="@{|/applications/${app.id}|}" class="flex flex-col">
+				<div class="flex w-full justify-between px-2 py-1">
+					<p th:text=" ${app.title}" class="p-1"></p>
+					<button type="button" id="location" th:text=" ${app.location}" class="p-1 w-40"></button>
+				</div>
+				<p th:text=" ${app.company}" class="px-2 py-1"></p>
+				<div class="flex w-full justify-between px-2 py-1">
+					<p th:text=" ${app.dateApplied}" class="p-1"></p>
+					<a th:href="@{|/applications/edit/${app.id}|}" class="py-1 px-3">edit application</a>
+				</div>
+			</a>
 		</div>
 	</div>
 	<!--START MAPBOX CONTAINER-->
-	<div id='map' class="col-span-8 h-60 rounded-3xl hidden md:block"></div>
+
+	<div id='map' class="col-span-7 h-11/12 rounded-l-md hidden lg:block"></div>
 	<!--END MAPBOX CONTAINER-->
+	<div th:replace="partials/footer :: footer"></div>
 </div>
 <input type="hidden" th:value="${apiKey}" id="api">
 <div th:replace="partials/scripts :: assets"></div>

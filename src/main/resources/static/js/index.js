@@ -9,7 +9,8 @@ $(document).ready(function() {
         mapboxgl.accessToken = key
         let map = new mapboxgl.Map({
             container: 'map',
-            style: 'mapbox://styles/mapbox/streets-v11'
+            style: 'mapbox://styles/mapbox/streets-v11',
+            zoom: 15
         });
 
         const geocode = (input) => {
@@ -17,7 +18,7 @@ $(document).ready(function() {
                 .then(res => res.json())
                 .then(data => {
                     try {
-                        map.flyTo({center: data.features[0].center})
+                        map.flyTo({center: data.features[0].center, essential: true})
                     } catch (e) {
                         console.log(e);
                     }
