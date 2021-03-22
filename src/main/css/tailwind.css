@@ -22,6 +22,7 @@
         z-index: -10;
     }
 
+
     .scale3d{
         transform: scale3d(0, 0, 0);
     }
@@ -88,6 +89,9 @@
     .form-container .btn:hover, .open-button:hover {
         opacity: 1;
     }
+    .scale3d {
+        transform: scale3d(0, 0, 0);
+    }
 
 /*open popup button css*/
     .bouncy{
@@ -121,6 +125,5 @@
         border-width: 0 0 1px 0;
         border-radius: 20px;
     }
-
 
 }
