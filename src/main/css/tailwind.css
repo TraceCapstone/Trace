@@ -22,7 +22,12 @@
         z-index: -10;
     }
 
-/*Popup form css*/
+
+    .scale3d{
+        transform: scale3d(0, 0, 0);
+    }
+
+/*    form popup css*/
 {box-sizing: border-box;}
 
     .open-button {
