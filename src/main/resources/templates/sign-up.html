@@ -1,23 +1,23 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="partials/head :: header-links(sign-up)"></head>
-<body>
+<body class="bg">
 <nav th:replace="partials/nav :: navbar"></nav>
+<div class=" flex flex-wrap items-center justify-around py-14 px-4 sm:px-6 lg:px-8 w-full">
+<form th:action="@{/sign-up}" method="post" th:object="${user}" class="my-8 space-y-6">
+    <label for="email" class="sr-only">Email</label>
+    <input type="text" id="email" th:field="*{email}" placeholder="Email">
+    <br>
+    <label for="username" class="sr-only">Username</label>
+    <input type="text" id="username" th:field="*{username}" placeholder="Username">
+    <br>
+    <label for="first" class="sr-only">First name</label>
+    <input type="text" id="first" th:field="*{firstName}" placeholder="First Name">
 
-<form th:action="@{/sign-up}" method="post" th:object="${user}">
-    <label for="email">Email</label>
-    <input type="text" id="email" th:field="*{email}" placeholder="email">
+    <label for="last" class="sr-only">Last Name</label>
+    <input type="text" id="last" th:field="*{lastName}" placeholder="Last Name">
     <br>
-    <label for="username">Username</label>
-    <input type="text" id="username" th:field="*{username}" placeholder="username">
-    <br>
-    <label for="first">First name</label>
-    <input type="text" id="first" th:field="*{firstName}" placeholder="first name">
-    <br>
-    <label for="last">Last Name</label>
-    <input type="text" id="last" th:field="*{lastName}" placeholder="last name">
-    <br>
-    <label for="password">Password</label>
+    <label for="password" class="sr-only">Password</label>
     <input type="password" id="password" th:field="*{password}" placeholder="password">
     <br>
 	<button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
@@ -27,7 +27,7 @@
 							<path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
 						</svg>
 					</span>
-		Sign Up!
+		Submit
 	</button>
 <br>
 
@@ -50,9 +50,10 @@
 				</span>
 	</div>
 </form>
+</div>
 
 
-<p>Already have an account? <a  href="/" class="font-medium text-indigo-600 hover:text-indigo-500">Login here!</a></p>
+<!--<p>Already have an account? <a  href="/" class="font-medium text-indigo-600 hover:text-indigo-500">Login here!</a></p>-->
 
 <div th:replace="partials/scripts :: assets"></div>
 </body>
