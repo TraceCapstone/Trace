@@ -3,6 +3,7 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+
         textColor: {
           'location': '#F5CB5C',
           'job-title': '#3C6E71',
@@ -27,6 +28,7 @@ module.exports = {
           '-10': '-10',
         }
       },
+
     },
     variants: {
       extend: {},

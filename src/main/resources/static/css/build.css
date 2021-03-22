@@ -2698,6 +2698,21 @@ hr.curve-fade {
   background-color: rgba(131, 24, 67, var(--tw-bg-opacity));
 }
 
+
+.bg-custom {
+  --tw-bg-opacity: 1;
+  background-color: rgba(52, 144, 220, var(--tw-bg-opacity));
+}
+
+.bg-secondary {
+  --tw-bg-opacity: 1;
+  background-color: rgba(255, 237, 74, var(--tw-bg-opacity));
+}
+
+.bg-danger {
+  --tw-bg-opacity: 1;
+  background-color: rgba(227, 52, 47, var(--tw-bg-opacity));
+
 .bg-login {
   --tw-bg-opacity: 1;
   background-color: rgba(245, 203, 92, var(--tw-bg-opacity));
@@ -2731,6 +2746,7 @@ hr.curve-fade {
 .bg-bground {
   --tw-bg-opacity: 1;
   background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+>>>>>>> main
 }
 
 .group:hover .group-hover\:bg-transparent {
@@ -3151,6 +3167,21 @@ hr.curve-fade {
   background-color: rgba(131, 24, 67, var(--tw-bg-opacity));
 }
 
+<<<<<<< HEAD
+.group:hover .group-hover\:bg-custom {
+  --tw-bg-opacity: 1;
+  background-color: rgba(52, 144, 220, var(--tw-bg-opacity));
+}
+
+.group:hover .group-hover\:bg-secondary {
+  --tw-bg-opacity: 1;
+  background-color: rgba(255, 237, 74, var(--tw-bg-opacity));
+}
+
+.group:hover .group-hover\:bg-danger {
+  --tw-bg-opacity: 1;
+  background-color: rgba(227, 52, 47, var(--tw-bg-opacity));
+
 .group:hover .group-hover\:bg-login {
   --tw-bg-opacity: 1;
   background-color: rgba(245, 203, 92, var(--tw-bg-opacity));
@@ -3184,6 +3215,7 @@ hr.curve-fade {
 .group:hover .group-hover\:bg-bground {
   --tw-bg-opacity: 1;
   background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+>>>>>>> main
 }
 
 .focus-within\:bg-transparent:focus-within {
@@ -3604,6 +3636,21 @@ hr.curve-fade {
   background-color: rgba(131, 24, 67, var(--tw-bg-opacity));
 }
 
+<<<<<<< HEAD
+.focus-within\:bg-custom:focus-within {
+  --tw-bg-opacity: 1;
+  background-color: rgba(52, 144, 220, var(--tw-bg-opacity));
+}
+
+.focus-within\:bg-secondary:focus-within {
+  --tw-bg-opacity: 1;
+  background-color: rgba(255, 237, 74, var(--tw-bg-opacity));
+}
+
+.focus-within\:bg-danger:focus-within {
+  --tw-bg-opacity: 1;
+  background-color: rgba(227, 52, 47, var(--tw-bg-opacity));
+
 .focus-within\:bg-login:focus-within {
   --tw-bg-opacity: 1;
   background-color: rgba(245, 203, 92, var(--tw-bg-opacity));
@@ -3637,6 +3684,7 @@ hr.curve-fade {
 .focus-within\:bg-bground:focus-within {
   --tw-bg-opacity: 1;
   background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+>>>>>>> main
 }
 
 .hover\:bg-transparent:hover {
@@ -4057,6 +4105,21 @@ hr.curve-fade {
   background-color: rgba(131, 24, 67, var(--tw-bg-opacity));
 }
 
+
+.hover\:bg-custom:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(52, 144, 220, var(--tw-bg-opacity));
+}
+
+.hover\:bg-secondary:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(255, 237, 74, var(--tw-bg-opacity));
+}
+
+.hover\:bg-danger:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(227, 52, 47, var(--tw-bg-opacity));
+
 .hover\:bg-login:hover {
   --tw-bg-opacity: 1;
   background-color: rgba(245, 203, 92, var(--tw-bg-opacity));
@@ -4090,6 +4153,7 @@ hr.curve-fade {
 .hover\:bg-bground:hover {
   --tw-bg-opacity: 1;
   background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+>>>>>>> main
 }
 
 .focus\:bg-transparent:focus {
@@ -4510,6 +4574,21 @@ hr.curve-fade {
   background-color: rgba(131, 24, 67, var(--tw-bg-opacity));
 }
 
+
+.focus\:bg-custom:focus {
+  --tw-bg-opacity: 1;
+  background-color: rgba(52, 144, 220, var(--tw-bg-opacity));
+}
+
+.focus\:bg-secondary:focus {
+  --tw-bg-opacity: 1;
+  background-color: rgba(255, 237, 74, var(--tw-bg-opacity));
+}
+
+.focus\:bg-danger:focus {
+  --tw-bg-opacity: 1;
+  background-color: rgba(227, 52, 47, var(--tw-bg-opacity));
+=======
 .focus\:bg-login:focus {
   --tw-bg-opacity: 1;
   background-color: rgba(245, 203, 92, var(--tw-bg-opacity));
@@ -4543,6 +4622,7 @@ hr.curve-fade {
 .focus\:bg-bground:focus {
   --tw-bg-opacity: 1;
   background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+>>>>>>> main
 }
 
 .bg-none {
@@ -11825,6 +11905,10 @@ hr.curve-fade {
 
 .h-screen {
   height: 100vh;
+}
+
+.h-6\/7 {
+  height: 85.714%;
 }
 
 .text-xs {
@@ -33735,6 +33819,21 @@ hr.curve-fade {
     background-color: rgba(131, 24, 67, var(--tw-bg-opacity));
   }
 
+
+  .sm\:bg-custom {
+    --tw-bg-opacity: 1;
+    background-color: rgba(52, 144, 220, var(--tw-bg-opacity));
+  }
+
+  .sm\:bg-secondary {
+    --tw-bg-opacity: 1;
+    background-color: rgba(255, 237, 74, var(--tw-bg-opacity));
+  }
+
+  .sm\:bg-danger {
+    --tw-bg-opacity: 1;
+    background-color: rgba(227, 52, 47, var(--tw-bg-opacity));
+=======
   .sm\:bg-login {
     --tw-bg-opacity: 1;
     background-color: rgba(245, 203, 92, var(--tw-bg-opacity));
@@ -33768,6 +33867,7 @@ hr.curve-fade {
   .sm\:bg-bground {
     --tw-bg-opacity: 1;
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+>>>>>>> main
   }
 
   .group:hover .sm\:group-hover\:bg-transparent {
@@ -34188,6 +34288,21 @@ hr.curve-fade {
     background-color: rgba(131, 24, 67, var(--tw-bg-opacity));
   }
 
+
+  .group:hover .sm\:group-hover\:bg-custom {
+    --tw-bg-opacity: 1;
+    background-color: rgba(52, 144, 220, var(--tw-bg-opacity));
+  }
+
+  .group:hover .sm\:group-hover\:bg-secondary {
+    --tw-bg-opacity: 1;
+    background-color: rgba(255, 237, 74, var(--tw-bg-opacity));
+  }
+
+  .group:hover .sm\:group-hover\:bg-danger {
+    --tw-bg-opacity: 1;
+    background-color: rgba(227, 52, 47, var(--tw-bg-opacity));
+
   .group:hover .sm\:group-hover\:bg-login {
     --tw-bg-opacity: 1;
     background-color: rgba(245, 203, 92, var(--tw-bg-opacity));
@@ -34221,6 +34336,7 @@ hr.curve-fade {
   .group:hover .sm\:group-hover\:bg-bground {
     --tw-bg-opacity: 1;
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+>>>>>>> main
   }
 
   .sm\:focus-within\:bg-transparent:focus-within {
@@ -34641,6 +34757,21 @@ hr.curve-fade {
     background-color: rgba(131, 24, 67, var(--tw-bg-opacity));
   }
 
+<<<<<<< HEAD
+  .sm\:focus-within\:bg-custom:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(52, 144, 220, var(--tw-bg-opacity));
+  }
+
+  .sm\:focus-within\:bg-secondary:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(255, 237, 74, var(--tw-bg-opacity));
+  }
+
+  .sm\:focus-within\:bg-danger:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(227, 52, 47, var(--tw-bg-opacity));
+
   .sm\:focus-within\:bg-login:focus-within {
     --tw-bg-opacity: 1;
     background-color: rgba(245, 203, 92, var(--tw-bg-opacity));
@@ -34674,6 +34805,7 @@ hr.curve-fade {
   .sm\:focus-within\:bg-bground:focus-within {
     --tw-bg-opacity: 1;
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+>>>>>>> main
   }
 
   .sm\:hover\:bg-transparent:hover {
@@ -35094,6 +35226,21 @@ hr.curve-fade {
     background-color: rgba(131, 24, 67, var(--tw-bg-opacity));
   }
 
+<<<<<<< HEAD
+  .sm\:hover\:bg-custom:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(52, 144, 220, var(--tw-bg-opacity));
+  }
+
+  .sm\:hover\:bg-secondary:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(255, 237, 74, var(--tw-bg-opacity));
+  }
+
+  .sm\:hover\:bg-danger:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(227, 52, 47, var(--tw-bg-opacity));
+
   .sm\:hover\:bg-login:hover {
     --tw-bg-opacity: 1;
     background-color: rgba(245, 203, 92, var(--tw-bg-opacity));
@@ -35127,6 +35274,7 @@ hr.curve-fade {
   .sm\:hover\:bg-bground:hover {
     --tw-bg-opacity: 1;
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+>>>>>>> main
   }
 
   .sm\:focus\:bg-transparent:focus {
@@ -35547,6 +35695,21 @@ hr.curve-fade {
     background-color: rgba(131, 24, 67, var(--tw-bg-opacity));
   }
 
+<<<<<<< HEAD
+  .sm\:focus\:bg-custom:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(52, 144, 220, var(--tw-bg-opacity));
+  }
+
+  .sm\:focus\:bg-secondary:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(255, 237, 74, var(--tw-bg-opacity));
+  }
+
+  .sm\:focus\:bg-danger:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(227, 52, 47, var(--tw-bg-opacity));
+
   .sm\:focus\:bg-login:focus {
     --tw-bg-opacity: 1;
     background-color: rgba(245, 203, 92, var(--tw-bg-opacity));
@@ -35580,6 +35743,7 @@ hr.curve-fade {
   .sm\:focus\:bg-bground:focus {
     --tw-bg-opacity: 1;
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+>>>>>>> main
   }
 
   .sm\:bg-none {
@@ -42862,6 +43026,10 @@ hr.curve-fade {
 
   .sm\:h-screen {
     height: 100vh;
+  }
+
+  .sm\:h-6\/7 {
+    height: 85.714%;
   }
 
   .sm\:text-xs {
@@ -64694,6 +64862,21 @@ hr.curve-fade {
     background-color: rgba(131, 24, 67, var(--tw-bg-opacity));
   }
 
+<<<<<<< HEAD
+  .md\:bg-custom {
+    --tw-bg-opacity: 1;
+    background-color: rgba(52, 144, 220, var(--tw-bg-opacity));
+  }
+
+  .md\:bg-secondary {
+    --tw-bg-opacity: 1;
+    background-color: rgba(255, 237, 74, var(--tw-bg-opacity));
+  }
+
+  .md\:bg-danger {
+    --tw-bg-opacity: 1;
+    background-color: rgba(227, 52, 47, var(--tw-bg-opacity));
+
   .md\:bg-login {
     --tw-bg-opacity: 1;
     background-color: rgba(245, 203, 92, var(--tw-bg-opacity));
@@ -64727,6 +64910,7 @@ hr.curve-fade {
   .md\:bg-bground {
     --tw-bg-opacity: 1;
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+>>>>>>> main
   }
 
   .group:hover .md\:group-hover\:bg-transparent {
@@ -65147,6 +65331,21 @@ hr.curve-fade {
     background-color: rgba(131, 24, 67, var(--tw-bg-opacity));
   }
 
+<<<<<<< HEAD
+  .group:hover .md\:group-hover\:bg-custom {
+    --tw-bg-opacity: 1;
+    background-color: rgba(52, 144, 220, var(--tw-bg-opacity));
+  }
+
+  .group:hover .md\:group-hover\:bg-secondary {
+    --tw-bg-opacity: 1;
+    background-color: rgba(255, 237, 74, var(--tw-bg-opacity));
+  }
+
+  .group:hover .md\:group-hover\:bg-danger {
+    --tw-bg-opacity: 1;
+    background-color: rgba(227, 52, 47, var(--tw-bg-opacity));
+
   .group:hover .md\:group-hover\:bg-login {
     --tw-bg-opacity: 1;
     background-color: rgba(245, 203, 92, var(--tw-bg-opacity));
@@ -65180,6 +65379,7 @@ hr.curve-fade {
   .group:hover .md\:group-hover\:bg-bground {
     --tw-bg-opacity: 1;
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+>>>>>>> main
   }
 
   .md\:focus-within\:bg-transparent:focus-within {
@@ -65600,6 +65800,21 @@ hr.curve-fade {
     background-color: rgba(131, 24, 67, var(--tw-bg-opacity));
   }
 
+<<<<<<< HEAD
+  .md\:focus-within\:bg-custom:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(52, 144, 220, var(--tw-bg-opacity));
+  }
+
+  .md\:focus-within\:bg-secondary:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(255, 237, 74, var(--tw-bg-opacity));
+  }
+
+  .md\:focus-within\:bg-danger:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(227, 52, 47, var(--tw-bg-opacity));
+
   .md\:focus-within\:bg-login:focus-within {
     --tw-bg-opacity: 1;
     background-color: rgba(245, 203, 92, var(--tw-bg-opacity));
@@ -65633,6 +65848,7 @@ hr.curve-fade {
   .md\:focus-within\:bg-bground:focus-within {
     --tw-bg-opacity: 1;
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+>>>>>>> main
   }
 
   .md\:hover\:bg-transparent:hover {
@@ -66053,6 +66269,21 @@ hr.curve-fade {
     background-color: rgba(131, 24, 67, var(--tw-bg-opacity));
   }
 
+<<<<<<< HEAD
+  .md\:hover\:bg-custom:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(52, 144, 220, var(--tw-bg-opacity));
+  }
+
+  .md\:hover\:bg-secondary:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(255, 237, 74, var(--tw-bg-opacity));
+  }
+
+  .md\:hover\:bg-danger:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(227, 52, 47, var(--tw-bg-opacity));
+
   .md\:hover\:bg-login:hover {
     --tw-bg-opacity: 1;
     background-color: rgba(245, 203, 92, var(--tw-bg-opacity));
@@ -66086,6 +66317,7 @@ hr.curve-fade {
   .md\:hover\:bg-bground:hover {
     --tw-bg-opacity: 1;
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+>>>>>>> main
   }
 
   .md\:focus\:bg-transparent:focus {
@@ -66506,6 +66738,21 @@ hr.curve-fade {
     background-color: rgba(131, 24, 67, var(--tw-bg-opacity));
   }
 
+<<<<<<< HEAD
+  .md\:focus\:bg-custom:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(52, 144, 220, var(--tw-bg-opacity));
+  }
+
+  .md\:focus\:bg-secondary:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(255, 237, 74, var(--tw-bg-opacity));
+  }
+
+  .md\:focus\:bg-danger:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(227, 52, 47, var(--tw-bg-opacity));
+
   .md\:focus\:bg-login:focus {
     --tw-bg-opacity: 1;
     background-color: rgba(245, 203, 92, var(--tw-bg-opacity));
@@ -66539,6 +66786,7 @@ hr.curve-fade {
   .md\:focus\:bg-bground:focus {
     --tw-bg-opacity: 1;
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+>>>>>>> main
   }
 
   .md\:bg-none {
@@ -73821,6 +74069,10 @@ hr.curve-fade {
 
   .md\:h-screen {
     height: 100vh;
+  }
+
+  .md\:h-6\/7 {
+    height: 85.714%;
   }
 
   .md\:text-xs {
@@ -95653,6 +95905,21 @@ hr.curve-fade {
     background-color: rgba(131, 24, 67, var(--tw-bg-opacity));
   }
 
+<<<<<<< HEAD
+  .lg\:bg-custom {
+    --tw-bg-opacity: 1;
+    background-color: rgba(52, 144, 220, var(--tw-bg-opacity));
+  }
+
+  .lg\:bg-secondary {
+    --tw-bg-opacity: 1;
+    background-color: rgba(255, 237, 74, var(--tw-bg-opacity));
+  }
+
+  .lg\:bg-danger {
+    --tw-bg-opacity: 1;
+    background-color: rgba(227, 52, 47, var(--tw-bg-opacity));
+
   .lg\:bg-login {
     --tw-bg-opacity: 1;
     background-color: rgba(245, 203, 92, var(--tw-bg-opacity));
@@ -95686,6 +95953,7 @@ hr.curve-fade {
   .lg\:bg-bground {
     --tw-bg-opacity: 1;
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+>>>>>>> main
   }
 
   .group:hover .lg\:group-hover\:bg-transparent {
@@ -96106,6 +96374,21 @@ hr.curve-fade {
     background-color: rgba(131, 24, 67, var(--tw-bg-opacity));
   }
 
+<<<<<<< HEAD
+  .group:hover .lg\:group-hover\:bg-custom {
+    --tw-bg-opacity: 1;
+    background-color: rgba(52, 144, 220, var(--tw-bg-opacity));
+  }
+
+  .group:hover .lg\:group-hover\:bg-secondary {
+    --tw-bg-opacity: 1;
+    background-color: rgba(255, 237, 74, var(--tw-bg-opacity));
+  }
+
+  .group:hover .lg\:group-hover\:bg-danger {
+    --tw-bg-opacity: 1;
+    background-color: rgba(227, 52, 47, var(--tw-bg-opacity));
+
   .group:hover .lg\:group-hover\:bg-login {
     --tw-bg-opacity: 1;
     background-color: rgba(245, 203, 92, var(--tw-bg-opacity));
@@ -96139,6 +96422,7 @@ hr.curve-fade {
   .group:hover .lg\:group-hover\:bg-bground {
     --tw-bg-opacity: 1;
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+>>>>>>> main
   }
 
   .lg\:focus-within\:bg-transparent:focus-within {
@@ -96559,6 +96843,21 @@ hr.curve-fade {
     background-color: rgba(131, 24, 67, var(--tw-bg-opacity));
   }
 
+<<<<<<< HEAD
+  .lg\:focus-within\:bg-custom:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(52, 144, 220, var(--tw-bg-opacity));
+  }
+
+  .lg\:focus-within\:bg-secondary:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(255, 237, 74, var(--tw-bg-opacity));
+  }
+
+  .lg\:focus-within\:bg-danger:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(227, 52, 47, var(--tw-bg-opacity));
+
   .lg\:focus-within\:bg-login:focus-within {
     --tw-bg-opacity: 1;
     background-color: rgba(245, 203, 92, var(--tw-bg-opacity));
@@ -96592,6 +96891,7 @@ hr.curve-fade {
   .lg\:focus-within\:bg-bground:focus-within {
     --tw-bg-opacity: 1;
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+>>>>>>> main
   }
 
   .lg\:hover\:bg-transparent:hover {
@@ -97012,6 +97312,21 @@ hr.curve-fade {
     background-color: rgba(131, 24, 67, var(--tw-bg-opacity));
   }
 
+<<<<<<< HEAD
+  .lg\:hover\:bg-custom:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(52, 144, 220, var(--tw-bg-opacity));
+  }
+
+  .lg\:hover\:bg-secondary:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(255, 237, 74, var(--tw-bg-opacity));
+  }
+
+  .lg\:hover\:bg-danger:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(227, 52, 47, var(--tw-bg-opacity));
+
   .lg\:hover\:bg-login:hover {
     --tw-bg-opacity: 1;
     background-color: rgba(245, 203, 92, var(--tw-bg-opacity));
@@ -97045,6 +97360,7 @@ hr.curve-fade {
   .lg\:hover\:bg-bground:hover {
     --tw-bg-opacity: 1;
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+>>>>>>> main
   }
 
   .lg\:focus\:bg-transparent:focus {
@@ -97465,6 +97781,21 @@ hr.curve-fade {
     background-color: rgba(131, 24, 67, var(--tw-bg-opacity));
   }
 
+<<<<<<< HEAD
+  .lg\:focus\:bg-custom:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(52, 144, 220, var(--tw-bg-opacity));
+  }
+
+  .lg\:focus\:bg-secondary:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(255, 237, 74, var(--tw-bg-opacity));
+  }
+
+  .lg\:focus\:bg-danger:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(227, 52, 47, var(--tw-bg-opacity));
+
   .lg\:focus\:bg-login:focus {
     --tw-bg-opacity: 1;
     background-color: rgba(245, 203, 92, var(--tw-bg-opacity));
@@ -97498,6 +97829,7 @@ hr.curve-fade {
   .lg\:focus\:bg-bground:focus {
     --tw-bg-opacity: 1;
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+>>>>>>> main
   }
 
   .lg\:bg-none {
@@ -104780,6 +105112,10 @@ hr.curve-fade {
 
   .lg\:h-screen {
     height: 100vh;
+  }
+
+  .lg\:h-6\/7 {
+    height: 85.714%;
   }
 
   .lg\:text-xs {
@@ -126612,6 +126948,21 @@ hr.curve-fade {
     background-color: rgba(131, 24, 67, var(--tw-bg-opacity));
   }
 
+<<<<<<< HEAD
+  .xl\:bg-custom {
+    --tw-bg-opacity: 1;
+    background-color: rgba(52, 144, 220, var(--tw-bg-opacity));
+  }
+
+  .xl\:bg-secondary {
+    --tw-bg-opacity: 1;
+    background-color: rgba(255, 237, 74, var(--tw-bg-opacity));
+  }
+
+  .xl\:bg-danger {
+    --tw-bg-opacity: 1;
+    background-color: rgba(227, 52, 47, var(--tw-bg-opacity));
+
   .xl\:bg-login {
     --tw-bg-opacity: 1;
     background-color: rgba(245, 203, 92, var(--tw-bg-opacity));
@@ -126645,6 +126996,7 @@ hr.curve-fade {
   .xl\:bg-bground {
     --tw-bg-opacity: 1;
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+>>>>>>> main
   }
 
   .group:hover .xl\:group-hover\:bg-transparent {
@@ -127065,6 +127417,21 @@ hr.curve-fade {
     background-color: rgba(131, 24, 67, var(--tw-bg-opacity));
   }
 
+<<<<<<< HEAD
+  .group:hover .xl\:group-hover\:bg-custom {
+    --tw-bg-opacity: 1;
+    background-color: rgba(52, 144, 220, var(--tw-bg-opacity));
+  }
+
+  .group:hover .xl\:group-hover\:bg-secondary {
+    --tw-bg-opacity: 1;
+    background-color: rgba(255, 237, 74, var(--tw-bg-opacity));
+  }
+
+  .group:hover .xl\:group-hover\:bg-danger {
+    --tw-bg-opacity: 1;
+    background-color: rgba(227, 52, 47, var(--tw-bg-opacity));
+
   .group:hover .xl\:group-hover\:bg-login {
     --tw-bg-opacity: 1;
     background-color: rgba(245, 203, 92, var(--tw-bg-opacity));
@@ -127098,6 +127465,7 @@ hr.curve-fade {
   .group:hover .xl\:group-hover\:bg-bground {
     --tw-bg-opacity: 1;
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+>>>>>>> main
   }
 
   .xl\:focus-within\:bg-transparent:focus-within {
@@ -127518,6 +127886,21 @@ hr.curve-fade {
     background-color: rgba(131, 24, 67, var(--tw-bg-opacity));
   }
 
+<<<<<<< HEAD
+  .xl\:focus-within\:bg-custom:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(52, 144, 220, var(--tw-bg-opacity));
+  }
+
+  .xl\:focus-within\:bg-secondary:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(255, 237, 74, var(--tw-bg-opacity));
+  }
+
+  .xl\:focus-within\:bg-danger:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(227, 52, 47, var(--tw-bg-opacity));
+
   .xl\:focus-within\:bg-login:focus-within {
     --tw-bg-opacity: 1;
     background-color: rgba(245, 203, 92, var(--tw-bg-opacity));
@@ -127551,6 +127934,7 @@ hr.curve-fade {
   .xl\:focus-within\:bg-bground:focus-within {
     --tw-bg-opacity: 1;
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+>>>>>>> main
   }
 
   .xl\:hover\:bg-transparent:hover {
@@ -127971,6 +128355,21 @@ hr.curve-fade {
     background-color: rgba(131, 24, 67, var(--tw-bg-opacity));
   }
 
+<<<<<<< HEAD
+  .xl\:hover\:bg-custom:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(52, 144, 220, var(--tw-bg-opacity));
+  }
+
+  .xl\:hover\:bg-secondary:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(255, 237, 74, var(--tw-bg-opacity));
+  }
+
+  .xl\:hover\:bg-danger:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(227, 52, 47, var(--tw-bg-opacity));
+
   .xl\:hover\:bg-login:hover {
     --tw-bg-opacity: 1;
     background-color: rgba(245, 203, 92, var(--tw-bg-opacity));
@@ -128004,6 +128403,7 @@ hr.curve-fade {
   .xl\:hover\:bg-bground:hover {
     --tw-bg-opacity: 1;
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+>>>>>>> main
   }
 
   .xl\:focus\:bg-transparent:focus {
@@ -128424,6 +128824,21 @@ hr.curve-fade {
     background-color: rgba(131, 24, 67, var(--tw-bg-opacity));
   }
 
+<<<<<<< HEAD
+  .xl\:focus\:bg-custom:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(52, 144, 220, var(--tw-bg-opacity));
+  }
+
+  .xl\:focus\:bg-secondary:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(255, 237, 74, var(--tw-bg-opacity));
+  }
+
+  .xl\:focus\:bg-danger:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(227, 52, 47, var(--tw-bg-opacity));
+
   .xl\:focus\:bg-login:focus {
     --tw-bg-opacity: 1;
     background-color: rgba(245, 203, 92, var(--tw-bg-opacity));
@@ -128457,6 +128872,7 @@ hr.curve-fade {
   .xl\:focus\:bg-bground:focus {
     --tw-bg-opacity: 1;
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+>>>>>>> main
   }
 
   .xl\:bg-none {
@@ -135739,6 +136155,10 @@ hr.curve-fade {
 
   .xl\:h-screen {
     height: 100vh;
+  }
+
+  .xl\:h-6\/7 {
+    height: 85.714%;
   }
 
   .xl\:text-xs {
@@ -157571,6 +157991,21 @@ hr.curve-fade {
     background-color: rgba(131, 24, 67, var(--tw-bg-opacity));
   }
 
+<<<<<<< HEAD
+  .\32xl\:bg-custom {
+    --tw-bg-opacity: 1;
+    background-color: rgba(52, 144, 220, var(--tw-bg-opacity));
+  }
+
+  .\32xl\:bg-secondary {
+    --tw-bg-opacity: 1;
+    background-color: rgba(255, 237, 74, var(--tw-bg-opacity));
+  }
+
+  .\32xl\:bg-danger {
+    --tw-bg-opacity: 1;
+    background-color: rgba(227, 52, 47, var(--tw-bg-opacity));
+
   .\32xl\:bg-login {
     --tw-bg-opacity: 1;
     background-color: rgba(245, 203, 92, var(--tw-bg-opacity));
@@ -157604,6 +158039,7 @@ hr.curve-fade {
   .\32xl\:bg-bground {
     --tw-bg-opacity: 1;
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+>>>>>>> main
   }
 
   .group:hover .\32xl\:group-hover\:bg-transparent {
@@ -158024,6 +158460,21 @@ hr.curve-fade {
     background-color: rgba(131, 24, 67, var(--tw-bg-opacity));
   }
 
+<<<<<<< HEAD
+  .group:hover .\32xl\:group-hover\:bg-custom {
+    --tw-bg-opacity: 1;
+    background-color: rgba(52, 144, 220, var(--tw-bg-opacity));
+  }
+
+  .group:hover .\32xl\:group-hover\:bg-secondary {
+    --tw-bg-opacity: 1;
+    background-color: rgba(255, 237, 74, var(--tw-bg-opacity));
+  }
+
+  .group:hover .\32xl\:group-hover\:bg-danger {
+    --tw-bg-opacity: 1;
+    background-color: rgba(227, 52, 47, var(--tw-bg-opacity));
+
   .group:hover .\32xl\:group-hover\:bg-login {
     --tw-bg-opacity: 1;
     background-color: rgba(245, 203, 92, var(--tw-bg-opacity));
@@ -158057,6 +158508,7 @@ hr.curve-fade {
   .group:hover .\32xl\:group-hover\:bg-bground {
     --tw-bg-opacity: 1;
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+>>>>>>> main
   }
 
   .\32xl\:focus-within\:bg-transparent:focus-within {
@@ -158477,6 +158929,20 @@ hr.curve-fade {
     background-color: rgba(131, 24, 67, var(--tw-bg-opacity));
   }
 
+  .\32xl\:focus-within\:bg-custom:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(52, 144, 220, var(--tw-bg-opacity));
+  }
+
+  .\32xl\:focus-within\:bg-secondary:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(255, 237, 74, var(--tw-bg-opacity));
+  }
+
+  .\32xl\:focus-within\:bg-danger:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(227, 52, 47, var(--tw-bg-opacity));
+
   .\32xl\:focus-within\:bg-login:focus-within {
     --tw-bg-opacity: 1;
     background-color: rgba(245, 203, 92, var(--tw-bg-opacity));
@@ -158510,6 +158976,7 @@ hr.curve-fade {
   .\32xl\:focus-within\:bg-bground:focus-within {
     --tw-bg-opacity: 1;
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+
   }
 
   .\32xl\:hover\:bg-transparent:hover {
@@ -158930,6 +159397,21 @@ hr.curve-fade {
     background-color: rgba(131, 24, 67, var(--tw-bg-opacity));
   }
 
+<<<<<<< HEAD
+  .\32xl\:hover\:bg-custom:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(52, 144, 220, var(--tw-bg-opacity));
+  }
+
+  .\32xl\:hover\:bg-secondary:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(255, 237, 74, var(--tw-bg-opacity));
+  }
+
+  .\32xl\:hover\:bg-danger:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(227, 52, 47, var(--tw-bg-opacity));
+
   .\32xl\:hover\:bg-login:hover {
     --tw-bg-opacity: 1;
     background-color: rgba(245, 203, 92, var(--tw-bg-opacity));
@@ -158963,6 +159445,7 @@ hr.curve-fade {
   .\32xl\:hover\:bg-bground:hover {
     --tw-bg-opacity: 1;
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+
   }
 
   .\32xl\:focus\:bg-transparent:focus {
@@ -159383,6 +159866,21 @@ hr.curve-fade {
     background-color: rgba(131, 24, 67, var(--tw-bg-opacity));
   }
 
+
+  .\32xl\:focus\:bg-custom:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(52, 144, 220, var(--tw-bg-opacity));
+  }
+
+  .\32xl\:focus\:bg-secondary:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(255, 237, 74, var(--tw-bg-opacity));
+  }
+
+  .\32xl\:focus\:bg-danger:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(227, 52, 47, var(--tw-bg-opacity));
+
   .\32xl\:focus\:bg-login:focus {
     --tw-bg-opacity: 1;
     background-color: rgba(245, 203, 92, var(--tw-bg-opacity));
@@ -159416,6 +159914,7 @@ hr.curve-fade {
   .\32xl\:focus\:bg-bground:focus {
     --tw-bg-opacity: 1;
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+
   }
 
   .\32xl\:bg-none {
@@ -166698,6 +167197,10 @@ hr.curve-fade {
 
   .\32xl\:h-screen {
     height: 100vh;
+  }
+
+  .\32xl\:h-6\/7 {
+    height: 85.714%;
   }
 
   .\32xl\:text-xs {
