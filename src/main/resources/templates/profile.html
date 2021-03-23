@@ -5,9 +5,10 @@
 
 <nav th:replace="partials/nav :: navbar"></nav>
 <div sec:authorize="isAuthenticated()">
-<h1 style="text-align: center; font-weight: bold">Welcome <span th:text="${user.firstName + '!'}">!</span></h1>
+<h1 style="text-align: center; font-weight: bold" class="bg-white">Welcome <span th:text="${user.firstName + '!'}">!</span></h1>
 </div>
-
+<div class="profile-bg"></div>
+<div class="overlay"></div>
 <!--<div>-->
 <!--    <div class="py-1 px-4 md:col-span-4 col-span-full">-->
 <!--        <div sec:authorize="isAuthenticated()">-->
@@ -20,32 +21,30 @@
 <!--    </div>-->
 <!--</div>-->
 <!--<br>-->
-<hr class="fade">
-
 <div class="grid grid-cols-12">
 <div sec:authorize="isAuthenticated()" class="lg:col-span-5 col-span-full flex flex-wrap items-center justify-around py-14 px-4 sm:px-6 lg:px-8 w-full">
-    <h1 style="text-align: center; font-weight: bold">Edit Profile</h1>
+    <h1 style="text-align: center; font-weight: bold; color: white">Edit Profile</h1>
     <form th:action="@{/profile}" th:method="post" th:object="${user}" class="my-8 space-y-6 w-full">
-            <label for="email" class="text-sm">Email:</label>
+            <label for="email" class="text-sm" style="color: white">Email:</label>
             <input id="email" th:field="*{email}" required class="appearance-none rounded-md relative block w-10/12 mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"/>
         <br />
-            <label for="first" class="text-sm">First name:</label>
+            <label for="first" class="text-sm" style="color: white">First name:</label>
             <input id="first" th:field="*{firstName}" required class="appearance-none rounded-md relative block w-10/12 mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"/>
         <br />
-        <label for="last" class="text-sm">Last Name:</label>
+        <label for="last" class="text-sm" style="color: white">Last Name:</label>
         <input id="last" th:field="*{lastName}" required class="appearance-none rounded-md relative block w-10/12 mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"/>
         <br />
                 <input th:field="*{id}" type="hidden"/>
                 <br />
-        <button type="submit" value="Update" style="background-color: #284B63" class="text-white appearance-none rounded-md relative block w-10/12 mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
-            Edit profile
+        <button type="submit" value="Update" style="background-color: #F5CB5C" class="text-grey-800 appearance-none rounded-md relative block w-10/12 mx-auto px-4 py-4 placeholder-gray-500 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
+            Edit Profile
         </button>
 	</form>
 </div>
 <br>
 
 <div class="lg:col-span-6 col-span-full flex flex-wrap items-center justify-around py-14 px-4 sm:px-6 lg:px-8 w-full">
-    <h1 style="text-align: center; font-weight: bold">Upload a resume!</h1>
+    <h1 style="text-align: center; font-weight: bold; color: white" >Upload a resume!</h1>
 <form th:action="@{/fileUpload}" method="post" enctype="multipart/form-data" th:object="${resume}" class="my-8 space-y-6 w-full">
     <br>
 	<input type="file" id="resume" name="file" required class="appearance-none rounded-md relative block w-10/12 mx-auto px-4 py-4 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
@@ -56,12 +55,11 @@
 	<label for="description" class="sr-only">description</label>
 	<textarea th:field="*{description}" placeholder="Description" id="description" class="appearance-none resize-none rounded-md relative block w-10/12 mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"></textarea>
     <br>
-	<input type="submit" value="upload" style="background-color: #284B63" class="text-white appearance-none rounded-md relative block w-10/12 mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"/>
+	<input type="submit" value="Upload" style="background-color: #F5CB5C" class="text-grey-800 appearance-none rounded-md relative block w-10/12 mx-auto px-4 py-4 placeholder-gray-500 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"/>
 </form>
 </div>
 </div>
-<hr>
-<h3 style="font-weight: bold; text-align: center">your resumes</h3>
+<h3 style="font-weight: bold; text-align: center; color: white">your resumes</h3>
 <div class="shadow-md transition-all duration-300 rounded hover:shadow-2xl p-2 max-w-lg">
 <div th:each="resume : ${user.resumes}">
     <p>Title:</p>
@@ -70,7 +68,7 @@
     <p>Description:</p>
     <p th:text=" ${resume.description}"></p>
     <form th:action="@{|/resume/${resume.id}|}" method="post">
-        <button>remove resume</button>
+        <button>Remove Resume</button>
     </form>
 </div>
 </div>
