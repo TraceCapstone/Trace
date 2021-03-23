@@ -3,7 +3,8 @@
 <head th:replace="partials/head :: header-links(sign-up)"></head>
 <body>
 <nav th:replace="partials/nav :: navbar"></nav>
-<div class="signUp-bg" id="overlay">
+<div class="signUp-bg"></div>
+	<div class="overlay"></div>
 <div class=" flex flex-wrap items-center justify-around py-14 px-4 sm:px-6 lg:px-8 w-full">
 <form th:action="@{/sign-up}" method="post" th:object="${user}" class="my-8 space-y-6 w-full">
     <label for="email" class="sr-only">Email</label>
@@ -23,7 +24,7 @@
     <label for="password" class="sr-only">Password</label>
     <input type="password" id="password" th:field="*{password}" placeholder="Password" class="appearance-none rounded-xl relative block w-10/12 mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
     <br>
-	<button type="submit" style="background-color: #F5CB5C" class="group relative w-10/12 mx-auto flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white focus:outline-none focus:ring-2 focus:ring-offset-2">
+	<button type="submit" style="background-color: #F5CB5C" class="group relative w-10/12 mx-auto flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2">
 		Submit
 	</button>
 <br>
@@ -47,7 +48,6 @@
 				</span>
 	</div>
 </form>
-</div>
 </div>
 
 
