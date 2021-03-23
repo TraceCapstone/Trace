@@ -9,7 +9,7 @@ module.exports = {
           'job-title': '#3C6E71',
           'placeholder': '#D9D9D9',
           'button': '#FFFFFF',
-          'link': '#D9D9D9',
+          'link': '#808080',
           'link-state-hvr': '#0F4C5C',
           'link-state-actv': '#FFFFFF',
           'link-state-vstd': '#3C6E71',
@@ -23,6 +23,7 @@ module.exports = {
             'delete': '#333533',
             'cancel': '#333533',
             'bground': '#284B63',
+            'sign-up': '#0F4C5C',
           },
         zIndex: {
           '-10': '-10',

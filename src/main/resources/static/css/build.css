@@ -2757,6 +2757,11 @@ hr.curve-fade {
   background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
 }
 
+.bg-sign-up {
+  --tw-bg-opacity: 1;
+  background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
+}
+
 .group:hover .group-hover\:bg-transparent {
   background-color: transparent;
 }
@@ -3208,6 +3213,11 @@ hr.curve-fade {
 .group:hover .group-hover\:bg-bground {
   --tw-bg-opacity: 1;
   background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+}
+
+.group:hover .group-hover\:bg-sign-up {
+  --tw-bg-opacity: 1;
+  background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
 }
 
 .focus-within\:bg-transparent:focus-within {
@@ -3663,6 +3673,11 @@ hr.curve-fade {
   background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
 }
 
+.focus-within\:bg-sign-up:focus-within {
+  --tw-bg-opacity: 1;
+  background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
+}
+
 .hover\:bg-transparent:hover {
   background-color: transparent;
 }
@@ -4116,6 +4131,11 @@ hr.curve-fade {
   background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
 }
 
+.hover\:bg-sign-up:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
+}
+
 .focus\:bg-transparent:focus {
   background-color: transparent;
 }
@@ -4567,6 +4587,11 @@ hr.curve-fade {
 .focus\:bg-bground:focus {
   --tw-bg-opacity: 1;
   background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+}
+
+.focus\:bg-sign-up:focus {
+  --tw-bg-opacity: 1;
+  background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
 }
 
 .bg-none {
@@ -24982,7 +25007,7 @@ hr.curve-fade {
 
 .text-link {
   --tw-text-opacity: 1;
-  color: rgba(217, 217, 217, var(--tw-text-opacity));
+  color: rgba(128, 128, 128, var(--tw-text-opacity));
 }
 
 .text-link-state-hvr {
@@ -25445,7 +25470,7 @@ hr.curve-fade {
 
 .group:hover .group-hover\:text-link {
   --tw-text-opacity: 1;
-  color: rgba(217, 217, 217, var(--tw-text-opacity));
+  color: rgba(128, 128, 128, var(--tw-text-opacity));
 }
 
 .group:hover .group-hover\:text-link-state-hvr {
@@ -25908,7 +25933,7 @@ hr.curve-fade {
 
 .focus-within\:text-link:focus-within {
   --tw-text-opacity: 1;
-  color: rgba(217, 217, 217, var(--tw-text-opacity));
+  color: rgba(128, 128, 128, var(--tw-text-opacity));
 }
 
 .focus-within\:text-link-state-hvr:focus-within {
@@ -26371,7 +26396,7 @@ hr.curve-fade {
 
 .hover\:text-link:hover {
   --tw-text-opacity: 1;
-  color: rgba(217, 217, 217, var(--tw-text-opacity));
+  color: rgba(128, 128, 128, var(--tw-text-opacity));
 }
 
 .hover\:text-link-state-hvr:hover {
@@ -26834,7 +26859,7 @@ hr.curve-fade {
 
 .focus\:text-link:focus {
   --tw-text-opacity: 1;
-  color: rgba(217, 217, 217, var(--tw-text-opacity));
+  color: rgba(128, 128, 128, var(--tw-text-opacity));
 }
 
 .focus\:text-link-state-hvr:focus {
@@ -33794,6 +33819,11 @@ hr.curve-fade {
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
   }
 
+  .sm\:bg-sign-up {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
+  }
+
   .group:hover .sm\:group-hover\:bg-transparent {
     background-color: transparent;
   }
@@ -34245,6 +34275,11 @@ hr.curve-fade {
   .group:hover .sm\:group-hover\:bg-bground {
     --tw-bg-opacity: 1;
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+  }
+
+  .group:hover .sm\:group-hover\:bg-sign-up {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
   }
 
   .sm\:focus-within\:bg-transparent:focus-within {
@@ -34700,6 +34735,11 @@ hr.curve-fade {
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
   }
 
+  .sm\:focus-within\:bg-sign-up:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
+  }
+
   .sm\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -35153,6 +35193,11 @@ hr.curve-fade {
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
   }
 
+  .sm\:hover\:bg-sign-up:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
+  }
+
   .sm\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -35604,6 +35649,11 @@ hr.curve-fade {
   .sm\:focus\:bg-bground:focus {
     --tw-bg-opacity: 1;
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+  }
+
+  .sm\:focus\:bg-sign-up:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
   }
 
   .sm\:bg-none {
@@ -56006,7 +56056,7 @@ hr.curve-fade {
 
   .sm\:text-link {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .sm\:text-link-state-hvr {
@@ -56469,7 +56519,7 @@ hr.curve-fade {
 
   .group:hover .sm\:group-hover\:text-link {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .group:hover .sm\:group-hover\:text-link-state-hvr {
@@ -56932,7 +56982,7 @@ hr.curve-fade {
 
   .sm\:focus-within\:text-link:focus-within {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .sm\:focus-within\:text-link-state-hvr:focus-within {
@@ -57395,7 +57445,7 @@ hr.curve-fade {
 
   .sm\:hover\:text-link:hover {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .sm\:hover\:text-link-state-hvr:hover {
@@ -57858,7 +57908,7 @@ hr.curve-fade {
 
   .sm\:focus\:text-link:focus {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .sm\:focus\:text-link-state-hvr:focus {
@@ -64753,6 +64803,11 @@ hr.curve-fade {
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
   }
 
+  .md\:bg-sign-up {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
+  }
+
   .group:hover .md\:group-hover\:bg-transparent {
     background-color: transparent;
   }
@@ -65204,6 +65259,11 @@ hr.curve-fade {
   .group:hover .md\:group-hover\:bg-bground {
     --tw-bg-opacity: 1;
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+  }
+
+  .group:hover .md\:group-hover\:bg-sign-up {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
   }
 
   .md\:focus-within\:bg-transparent:focus-within {
@@ -65659,6 +65719,11 @@ hr.curve-fade {
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
   }
 
+  .md\:focus-within\:bg-sign-up:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
+  }
+
   .md\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -66112,6 +66177,11 @@ hr.curve-fade {
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
   }
 
+  .md\:hover\:bg-sign-up:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
+  }
+
   .md\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -66563,6 +66633,11 @@ hr.curve-fade {
   .md\:focus\:bg-bground:focus {
     --tw-bg-opacity: 1;
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+  }
+
+  .md\:focus\:bg-sign-up:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
   }
 
   .md\:bg-none {
@@ -86965,7 +87040,7 @@ hr.curve-fade {
 
   .md\:text-link {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .md\:text-link-state-hvr {
@@ -87428,7 +87503,7 @@ hr.curve-fade {
 
   .group:hover .md\:group-hover\:text-link {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .group:hover .md\:group-hover\:text-link-state-hvr {
@@ -87891,7 +87966,7 @@ hr.curve-fade {
 
   .md\:focus-within\:text-link:focus-within {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .md\:focus-within\:text-link-state-hvr:focus-within {
@@ -88354,7 +88429,7 @@ hr.curve-fade {
 
   .md\:hover\:text-link:hover {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .md\:hover\:text-link-state-hvr:hover {
@@ -88817,7 +88892,7 @@ hr.curve-fade {
 
   .md\:focus\:text-link:focus {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .md\:focus\:text-link-state-hvr:focus {
@@ -95712,6 +95787,11 @@ hr.curve-fade {
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
   }
 
+  .lg\:bg-sign-up {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
+  }
+
   .group:hover .lg\:group-hover\:bg-transparent {
     background-color: transparent;
   }
@@ -96163,6 +96243,11 @@ hr.curve-fade {
   .group:hover .lg\:group-hover\:bg-bground {
     --tw-bg-opacity: 1;
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+  }
+
+  .group:hover .lg\:group-hover\:bg-sign-up {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
   }
 
   .lg\:focus-within\:bg-transparent:focus-within {
@@ -96618,6 +96703,11 @@ hr.curve-fade {
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
   }
 
+  .lg\:focus-within\:bg-sign-up:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
+  }
+
   .lg\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -97071,6 +97161,11 @@ hr.curve-fade {
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
   }
 
+  .lg\:hover\:bg-sign-up:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
+  }
+
   .lg\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -97522,6 +97617,11 @@ hr.curve-fade {
   .lg\:focus\:bg-bground:focus {
     --tw-bg-opacity: 1;
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+  }
+
+  .lg\:focus\:bg-sign-up:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
   }
 
   .lg\:bg-none {
@@ -117924,7 +118024,7 @@ hr.curve-fade {
 
   .lg\:text-link {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .lg\:text-link-state-hvr {
@@ -118387,7 +118487,7 @@ hr.curve-fade {
 
   .group:hover .lg\:group-hover\:text-link {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .group:hover .lg\:group-hover\:text-link-state-hvr {
@@ -118850,7 +118950,7 @@ hr.curve-fade {
 
   .lg\:focus-within\:text-link:focus-within {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .lg\:focus-within\:text-link-state-hvr:focus-within {
@@ -119313,7 +119413,7 @@ hr.curve-fade {
 
   .lg\:hover\:text-link:hover {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .lg\:hover\:text-link-state-hvr:hover {
@@ -119776,7 +119876,7 @@ hr.curve-fade {
 
   .lg\:focus\:text-link:focus {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .lg\:focus\:text-link-state-hvr:focus {
@@ -126671,6 +126771,11 @@ hr.curve-fade {
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
   }
 
+  .xl\:bg-sign-up {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
+  }
+
   .group:hover .xl\:group-hover\:bg-transparent {
     background-color: transparent;
   }
@@ -127122,6 +127227,11 @@ hr.curve-fade {
   .group:hover .xl\:group-hover\:bg-bground {
     --tw-bg-opacity: 1;
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+  }
+
+  .group:hover .xl\:group-hover\:bg-sign-up {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
   }
 
   .xl\:focus-within\:bg-transparent:focus-within {
@@ -127577,6 +127687,11 @@ hr.curve-fade {
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
   }
 
+  .xl\:focus-within\:bg-sign-up:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
+  }
+
   .xl\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -128030,6 +128145,11 @@ hr.curve-fade {
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
   }
 
+  .xl\:hover\:bg-sign-up:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
+  }
+
   .xl\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -128481,6 +128601,11 @@ hr.curve-fade {
   .xl\:focus\:bg-bground:focus {
     --tw-bg-opacity: 1;
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+  }
+
+  .xl\:focus\:bg-sign-up:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
   }
 
   .xl\:bg-none {
@@ -148883,7 +149008,7 @@ hr.curve-fade {
 
   .xl\:text-link {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .xl\:text-link-state-hvr {
@@ -149346,7 +149471,7 @@ hr.curve-fade {
 
   .group:hover .xl\:group-hover\:text-link {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .group:hover .xl\:group-hover\:text-link-state-hvr {
@@ -149809,7 +149934,7 @@ hr.curve-fade {
 
   .xl\:focus-within\:text-link:focus-within {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .xl\:focus-within\:text-link-state-hvr:focus-within {
@@ -150272,7 +150397,7 @@ hr.curve-fade {
 
   .xl\:hover\:text-link:hover {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .xl\:hover\:text-link-state-hvr:hover {
@@ -150735,7 +150860,7 @@ hr.curve-fade {
 
   .xl\:focus\:text-link:focus {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .xl\:focus\:text-link-state-hvr:focus {
@@ -157630,6 +157755,11 @@ hr.curve-fade {
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
   }
 
+  .\32xl\:bg-sign-up {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
+  }
+
   .group:hover .\32xl\:group-hover\:bg-transparent {
     background-color: transparent;
   }
@@ -158081,6 +158211,11 @@ hr.curve-fade {
   .group:hover .\32xl\:group-hover\:bg-bground {
     --tw-bg-opacity: 1;
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+  }
+
+  .group:hover .\32xl\:group-hover\:bg-sign-up {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
   }
 
   .\32xl\:focus-within\:bg-transparent:focus-within {
@@ -158536,6 +158671,11 @@ hr.curve-fade {
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
   }
 
+  .\32xl\:focus-within\:bg-sign-up:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
+  }
+
   .\32xl\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -158989,6 +159129,11 @@ hr.curve-fade {
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
   }
 
+  .\32xl\:hover\:bg-sign-up:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
+  }
+
   .\32xl\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -159440,6 +159585,11 @@ hr.curve-fade {
   .\32xl\:focus\:bg-bground:focus {
     --tw-bg-opacity: 1;
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+  }
+
+  .\32xl\:focus\:bg-sign-up:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
   }
 
   .\32xl\:bg-none {
@@ -179842,7 +179992,7 @@ hr.curve-fade {
 
   .\32xl\:text-link {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .\32xl\:text-link-state-hvr {
@@ -180305,7 +180455,7 @@ hr.curve-fade {
 
   .group:hover .\32xl\:group-hover\:text-link {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .group:hover .\32xl\:group-hover\:text-link-state-hvr {
@@ -180768,7 +180918,7 @@ hr.curve-fade {
 
   .\32xl\:focus-within\:text-link:focus-within {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .\32xl\:focus-within\:text-link-state-hvr:focus-within {
@@ -181231,7 +181381,7 @@ hr.curve-fade {
 
   .\32xl\:hover\:text-link:hover {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .\32xl\:hover\:text-link-state-hvr:hover {
@@ -181694,7 +181844,7 @@ hr.curve-fade {
 
   .\32xl\:focus\:text-link:focus {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .\32xl\:focus\:text-link-state-hvr:focus {
