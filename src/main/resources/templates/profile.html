@@ -8,18 +8,18 @@
 <h1 style="text-align: center; font-weight: bold">Welcome <span th:text="${user.firstName + '!'}">!</span></h1>
 </div>
 
-<div>
-    <div class="py-1 px-4 md:col-span-4 col-span-full">
-        <div sec:authorize="isAuthenticated()">
-            <div class="shadow-md transition-all duration-300 rounded hover:shadow-2xl">
-            Full name: <p th:text="${user.firstName + ' '  + user.lastName}"></p>
-                <br>
-            Email: <p th:text="${user.email}"></p>
-            </div>
-        </div>
-    </div>
-</div>
-<br>
+<!--<div>-->
+<!--    <div class="py-1 px-4 md:col-span-4 col-span-full">-->
+<!--        <div sec:authorize="isAuthenticated()">-->
+<!--            <div class="shadow-md transition-all duration-300 rounded hover:shadow-2xl">-->
+<!--            Full name: <p th:text="${user.firstName + ' '  + user.lastName}"></p>-->
+<!--                <br>-->
+<!--            Email: <p th:text="${user.email}"></p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--<br>-->
 <hr class="fade">
 
 <div class="grid grid-cols-12">
