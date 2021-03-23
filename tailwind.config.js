@@ -23,6 +23,7 @@ module.exports = {
             'delete': '#333533',
             'cancel': '#333533',
             'bground': '#284B63',
+            'sign-up': '#0F4C5C',
           },
         zIndex: {
           '-10': '-10',

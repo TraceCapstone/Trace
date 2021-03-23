@@ -593,7 +593,7 @@ p {
   background-image: url("../img/loginBack.jpg");
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   background-size: cover;
@@ -604,7 +604,7 @@ p {
 .overlay {
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   opacity: .75;
@@ -2757,6 +2757,11 @@ hr.curve-fade {
   background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
 }
 
+.bg-sign-up {
+  --tw-bg-opacity: 1;
+  background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
+}
+
 .group:hover .group-hover\:bg-transparent {
   background-color: transparent;
 }
@@ -3208,6 +3213,11 @@ hr.curve-fade {
 .group:hover .group-hover\:bg-bground {
   --tw-bg-opacity: 1;
   background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+}
+
+.group:hover .group-hover\:bg-sign-up {
+  --tw-bg-opacity: 1;
+  background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
 }
 
 .focus-within\:bg-transparent:focus-within {
@@ -3663,6 +3673,11 @@ hr.curve-fade {
   background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
 }
 
+.focus-within\:bg-sign-up:focus-within {
+  --tw-bg-opacity: 1;
+  background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
+}
+
 .hover\:bg-transparent:hover {
   background-color: transparent;
 }
@@ -4116,6 +4131,11 @@ hr.curve-fade {
   background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
 }
 
+.hover\:bg-sign-up:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
+}
+
 .focus\:bg-transparent:focus {
   background-color: transparent;
 }
@@ -4567,6 +4587,11 @@ hr.curve-fade {
 .focus\:bg-bground:focus {
   --tw-bg-opacity: 1;
   background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+}
+
+.focus\:bg-sign-up:focus {
+  --tw-bg-opacity: 1;
+  background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
 }
 
 .bg-none {
@@ -33794,6 +33819,11 @@ hr.curve-fade {
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
   }
 
+  .sm\:bg-sign-up {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
+  }
+
   .group:hover .sm\:group-hover\:bg-transparent {
     background-color: transparent;
   }
@@ -34245,6 +34275,11 @@ hr.curve-fade {
   .group:hover .sm\:group-hover\:bg-bground {
     --tw-bg-opacity: 1;
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+  }
+
+  .group:hover .sm\:group-hover\:bg-sign-up {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
   }
 
   .sm\:focus-within\:bg-transparent:focus-within {
@@ -34700,6 +34735,11 @@ hr.curve-fade {
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
   }
 
+  .sm\:focus-within\:bg-sign-up:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
+  }
+
   .sm\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -35153,6 +35193,11 @@ hr.curve-fade {
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
   }
 
+  .sm\:hover\:bg-sign-up:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
+  }
+
   .sm\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -35604,6 +35649,11 @@ hr.curve-fade {
   .sm\:focus\:bg-bground:focus {
     --tw-bg-opacity: 1;
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+  }
+
+  .sm\:focus\:bg-sign-up:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
   }
 
   .sm\:bg-none {
@@ -64753,6 +64803,11 @@ hr.curve-fade {
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
   }
 
+  .md\:bg-sign-up {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
+  }
+
   .group:hover .md\:group-hover\:bg-transparent {
     background-color: transparent;
   }
@@ -65204,6 +65259,11 @@ hr.curve-fade {
   .group:hover .md\:group-hover\:bg-bground {
     --tw-bg-opacity: 1;
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+  }
+
+  .group:hover .md\:group-hover\:bg-sign-up {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
   }
 
   .md\:focus-within\:bg-transparent:focus-within {
@@ -65659,6 +65719,11 @@ hr.curve-fade {
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
   }
 
+  .md\:focus-within\:bg-sign-up:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
+  }
+
   .md\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -66112,6 +66177,11 @@ hr.curve-fade {
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
   }
 
+  .md\:hover\:bg-sign-up:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
+  }
+
   .md\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -66563,6 +66633,11 @@ hr.curve-fade {
   .md\:focus\:bg-bground:focus {
     --tw-bg-opacity: 1;
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+  }
+
+  .md\:focus\:bg-sign-up:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
   }
 
   .md\:bg-none {
@@ -95712,6 +95787,11 @@ hr.curve-fade {
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
   }
 
+  .lg\:bg-sign-up {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
+  }
+
   .group:hover .lg\:group-hover\:bg-transparent {
     background-color: transparent;
   }
@@ -96163,6 +96243,11 @@ hr.curve-fade {
   .group:hover .lg\:group-hover\:bg-bground {
     --tw-bg-opacity: 1;
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+  }
+
+  .group:hover .lg\:group-hover\:bg-sign-up {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
   }
 
   .lg\:focus-within\:bg-transparent:focus-within {
@@ -96618,6 +96703,11 @@ hr.curve-fade {
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
   }
 
+  .lg\:focus-within\:bg-sign-up:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
+  }
+
   .lg\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -97071,6 +97161,11 @@ hr.curve-fade {
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
   }
 
+  .lg\:hover\:bg-sign-up:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
+  }
+
   .lg\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -97522,6 +97617,11 @@ hr.curve-fade {
   .lg\:focus\:bg-bground:focus {
     --tw-bg-opacity: 1;
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+  }
+
+  .lg\:focus\:bg-sign-up:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
   }
 
   .lg\:bg-none {
@@ -126671,6 +126771,11 @@ hr.curve-fade {
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
   }
 
+  .xl\:bg-sign-up {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
+  }
+
   .group:hover .xl\:group-hover\:bg-transparent {
     background-color: transparent;
   }
@@ -127122,6 +127227,11 @@ hr.curve-fade {
   .group:hover .xl\:group-hover\:bg-bground {
     --tw-bg-opacity: 1;
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+  }
+
+  .group:hover .xl\:group-hover\:bg-sign-up {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
   }
 
   .xl\:focus-within\:bg-transparent:focus-within {
@@ -127577,6 +127687,11 @@ hr.curve-fade {
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
   }
 
+  .xl\:focus-within\:bg-sign-up:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
+  }
+
   .xl\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -128030,6 +128145,11 @@ hr.curve-fade {
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
   }
 
+  .xl\:hover\:bg-sign-up:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
+  }
+
   .xl\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -128481,6 +128601,11 @@ hr.curve-fade {
   .xl\:focus\:bg-bground:focus {
     --tw-bg-opacity: 1;
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+  }
+
+  .xl\:focus\:bg-sign-up:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
   }
 
   .xl\:bg-none {
@@ -157630,6 +157755,11 @@ hr.curve-fade {
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
   }
 
+  .\32xl\:bg-sign-up {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
+  }
+
   .group:hover .\32xl\:group-hover\:bg-transparent {
     background-color: transparent;
   }
@@ -158081,6 +158211,11 @@ hr.curve-fade {
   .group:hover .\32xl\:group-hover\:bg-bground {
     --tw-bg-opacity: 1;
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+  }
+
+  .group:hover .\32xl\:group-hover\:bg-sign-up {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
   }
 
   .\32xl\:focus-within\:bg-transparent:focus-within {
@@ -158536,6 +158671,11 @@ hr.curve-fade {
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
   }
 
+  .\32xl\:focus-within\:bg-sign-up:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
+  }
+
   .\32xl\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -158989,6 +159129,11 @@ hr.curve-fade {
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
   }
 
+  .\32xl\:hover\:bg-sign-up:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
+  }
+
   .\32xl\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -159440,6 +159585,11 @@ hr.curve-fade {
   .\32xl\:focus\:bg-bground:focus {
     --tw-bg-opacity: 1;
     background-color: rgba(40, 75, 99, var(--tw-bg-opacity));
+  }
+
+  .\32xl\:focus\:bg-sign-up:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(15, 76, 92, var(--tw-bg-opacity));
   }
 
   .\32xl\:bg-none {
