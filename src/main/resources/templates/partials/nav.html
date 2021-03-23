@@ -27,7 +27,7 @@
 				<div class="hidden sm:block sm:ml-6">
 					<div class="flex space-x-4">
 						<!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-						<a sec:authorize="!isAuthenticated()" href="/sign-up" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Sign Up</a>
+						<a sec:authorize="!isAuthenticated()" href="/sign-up" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Login</a>
 						<a href="/aboutUs" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
 						<a sec:authorize="isAuthenticated()" href="/create-application" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Create</a>
 						<a sec:authorize="isAuthenticated()" href="/profile" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Profile</a>
@@ -54,7 +54,13 @@
 			</div>
 		</div>
 	</div>
-	<!--CaptainMarvel1!-->
+	<div sec:authorize="!isAuthenticated()" class="mt-8 flex justify-center hidden sm:block absolute right-10 top-2">
+		<div class="inline-flex rounded-md bg-white shadow">
+			<a href="/sign-up" class="text-gray-700 font-bold py-2 px-6">
+				<button class="button1 bouncy" style="font-weight: bold">Sign Up!</button>
+			</a>
+	 	</div>
+	</div>
 	<!-- Mobile menu, show/hide based on menu state. -->
 	<div class="sm:hidden max-h-0 overflow-y-hidden" id="mobile-menu">
 		<div class="px-2 pt-2 pb-3 space-y-1">

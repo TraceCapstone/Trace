@@ -8,19 +8,9 @@
 <div class="bg-img"></div>
 <div class="overlay"></div>
 
-<div>
-	<div sec:authorize="!isAuthenticated()" class="mt-8 flex justify-center">
-		<div class="inline-flex rounded-md bg-white shadow">
-			<a href="/sign-up" class="text-gray-700 font-bold py-2 px-6">
-				<button class="button1 bouncy" style="font-weight: bold">Sign Up!</button>
-			</a>
-		</div>
-	</div>
-</div>
-<div class=" flex flex-wrap items-center justify-around py-14 px-4 sm:px-6 lg:px-8 w-full">
+<div class=" flex flex-wrap items-center justify-around py-14 px-4 sm:px-6 lg:px-8 w-full mt-10">
 	<div sec:authorize="!isAuthenticated()" class="max-w-md w-full space-y-8">
 		<div>
-			<img class="mx-auto h-12 w-auto" src="/img/traceLogo.png" alt="Workflow">
 			<h2 class="mt-6 text-center text-3xl font-extrabold text-gray-200">
 				Sign in to your account
 			</h2>
@@ -34,7 +24,7 @@
 				</div>
 				<div>
 					<label for="password" class="sr-only">Password</label>
-					<input id="password" name="password" type="password" autocomplete="current-password" required class="appearance-none rounded-md relative block w-10/12 mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Password">
+					<input id="password" name="password" type="password" autocomplete="current-password" required class="appearance-none mt-6 rounded-md relative block w-10/12 mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Password">
 				</div>
 			</div>
 
@@ -45,13 +35,13 @@
 				You have been logged out.
 			</div>
 
-			<div class="flex items-center justify-end w-10/12 mx-auto">
-				<div class="text-sm">
-					<a href="/forgot" class="font-medium text-gray-200 hover:text-indigo-500">
-						Forgot your password?
-					</a>
-				</div>
-			</div>
+<!--			<div class="flex items-center justify-end w-10/12 mx-auto">-->
+<!--				<div class="text-sm">-->
+<!--					<a href="/forgot" class="font-medium text-gray-200 hover:text-indigo-500">-->
+<!--						Forgot your password?-->
+<!--					</a>-->
+<!--				</div>-->
+<!--			</div>-->
 			<div th:if="${sent != null}" th:text="'An email has been sent to '+${sent}"></div>
 			<div>
 				<button type="submit" class="group bg-login relative w-10/12 mx-auto flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2">
