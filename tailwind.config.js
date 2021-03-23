@@ -8,7 +8,7 @@ module.exports = {
           'job-title': '#3C6E71',
           'placeholder': '#D9D9D9',
           'button': '#FFFFFF',
-          'link': '#D9D9D9',
+          'link': '#808080',
           'link-state-hvr': '#0F4C5C',
           'link-state-actv': '#FFFFFF',
           'link-state-vstd': '#3C6E71',

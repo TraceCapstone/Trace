@@ -24958,7 +24958,7 @@ hr.curve-fade {
 
 .text-link {
   --tw-text-opacity: 1;
-  color: rgba(217, 217, 217, var(--tw-text-opacity));
+  color: rgba(128, 128, 128, var(--tw-text-opacity));
 }
 
 .text-link-state-hvr {
@@ -25421,7 +25421,7 @@ hr.curve-fade {
 
 .group:hover .group-hover\:text-link {
   --tw-text-opacity: 1;
-  color: rgba(217, 217, 217, var(--tw-text-opacity));
+  color: rgba(128, 128, 128, var(--tw-text-opacity));
 }
 
 .group:hover .group-hover\:text-link-state-hvr {
@@ -25884,7 +25884,7 @@ hr.curve-fade {
 
 .focus-within\:text-link:focus-within {
   --tw-text-opacity: 1;
-  color: rgba(217, 217, 217, var(--tw-text-opacity));
+  color: rgba(128, 128, 128, var(--tw-text-opacity));
 }
 
 .focus-within\:text-link-state-hvr:focus-within {
@@ -26347,7 +26347,7 @@ hr.curve-fade {
 
 .hover\:text-link:hover {
   --tw-text-opacity: 1;
-  color: rgba(217, 217, 217, var(--tw-text-opacity));
+  color: rgba(128, 128, 128, var(--tw-text-opacity));
 }
 
 .hover\:text-link-state-hvr:hover {
@@ -26810,7 +26810,7 @@ hr.curve-fade {
 
 .focus\:text-link:focus {
   --tw-text-opacity: 1;
-  color: rgba(217, 217, 217, var(--tw-text-opacity));
+  color: rgba(128, 128, 128, var(--tw-text-opacity));
 }
 
 .focus\:text-link-state-hvr:focus {
@@ -55982,7 +55982,7 @@ hr.curve-fade {
 
   .sm\:text-link {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .sm\:text-link-state-hvr {
@@ -56445,7 +56445,7 @@ hr.curve-fade {
 
   .group:hover .sm\:group-hover\:text-link {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .group:hover .sm\:group-hover\:text-link-state-hvr {
@@ -56908,7 +56908,7 @@ hr.curve-fade {
 
   .sm\:focus-within\:text-link:focus-within {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .sm\:focus-within\:text-link-state-hvr:focus-within {
@@ -57371,7 +57371,7 @@ hr.curve-fade {
 
   .sm\:hover\:text-link:hover {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .sm\:hover\:text-link-state-hvr:hover {
@@ -57834,7 +57834,7 @@ hr.curve-fade {
 
   .sm\:focus\:text-link:focus {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .sm\:focus\:text-link-state-hvr:focus {
@@ -86941,7 +86941,7 @@ hr.curve-fade {
 
   .md\:text-link {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .md\:text-link-state-hvr {
@@ -87404,7 +87404,7 @@ hr.curve-fade {
 
   .group:hover .md\:group-hover\:text-link {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .group:hover .md\:group-hover\:text-link-state-hvr {
@@ -87867,7 +87867,7 @@ hr.curve-fade {
 
   .md\:focus-within\:text-link:focus-within {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .md\:focus-within\:text-link-state-hvr:focus-within {
@@ -88330,7 +88330,7 @@ hr.curve-fade {
 
   .md\:hover\:text-link:hover {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .md\:hover\:text-link-state-hvr:hover {
@@ -88793,7 +88793,7 @@ hr.curve-fade {
 
   .md\:focus\:text-link:focus {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .md\:focus\:text-link-state-hvr:focus {
@@ -117900,7 +117900,7 @@ hr.curve-fade {
 
   .lg\:text-link {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .lg\:text-link-state-hvr {
@@ -118363,7 +118363,7 @@ hr.curve-fade {
 
   .group:hover .lg\:group-hover\:text-link {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .group:hover .lg\:group-hover\:text-link-state-hvr {
@@ -118826,7 +118826,7 @@ hr.curve-fade {
 
   .lg\:focus-within\:text-link:focus-within {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .lg\:focus-within\:text-link-state-hvr:focus-within {
@@ -119289,7 +119289,7 @@ hr.curve-fade {
 
   .lg\:hover\:text-link:hover {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .lg\:hover\:text-link-state-hvr:hover {
@@ -119752,7 +119752,7 @@ hr.curve-fade {
 
   .lg\:focus\:text-link:focus {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .lg\:focus\:text-link-state-hvr:focus {
@@ -148859,7 +148859,7 @@ hr.curve-fade {
 
   .xl\:text-link {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .xl\:text-link-state-hvr {
@@ -149322,7 +149322,7 @@ hr.curve-fade {
 
   .group:hover .xl\:group-hover\:text-link {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .group:hover .xl\:group-hover\:text-link-state-hvr {
@@ -149785,7 +149785,7 @@ hr.curve-fade {
 
   .xl\:focus-within\:text-link:focus-within {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .xl\:focus-within\:text-link-state-hvr:focus-within {
@@ -150248,7 +150248,7 @@ hr.curve-fade {
 
   .xl\:hover\:text-link:hover {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .xl\:hover\:text-link-state-hvr:hover {
@@ -150711,7 +150711,7 @@ hr.curve-fade {
 
   .xl\:focus\:text-link:focus {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .xl\:focus\:text-link-state-hvr:focus {
@@ -179818,7 +179818,7 @@ hr.curve-fade {
 
   .\32xl\:text-link {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .\32xl\:text-link-state-hvr {
@@ -180281,7 +180281,7 @@ hr.curve-fade {
 
   .group:hover .\32xl\:group-hover\:text-link {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .group:hover .\32xl\:group-hover\:text-link-state-hvr {
@@ -180744,7 +180744,7 @@ hr.curve-fade {
 
   .\32xl\:focus-within\:text-link:focus-within {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .\32xl\:focus-within\:text-link-state-hvr:focus-within {
@@ -181207,7 +181207,7 @@ hr.curve-fade {
 
   .\32xl\:hover\:text-link:hover {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .\32xl\:hover\:text-link-state-hvr:hover {
@@ -181670,7 +181670,7 @@ hr.curve-fade {
 
   .\32xl\:focus\:text-link:focus {
     --tw-text-opacity: 1;
-    color: rgba(217, 217, 217, var(--tw-text-opacity));
+    color: rgba(128, 128, 128, var(--tw-text-opacity));
   }
 
   .\32xl\:focus\:text-link-state-hvr:focus {
