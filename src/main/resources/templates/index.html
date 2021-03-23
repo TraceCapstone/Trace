@@ -5,16 +5,14 @@
 
 <nav th:replace="partials/nav :: navbar"></nav>
 
-<div class="bg-img opacity-50"></div>
+<div class="bg-img"></div>
+<div class="overlay"></div>
 
-<div class="max-w-screen-2xl mx-auto bg-purple-500 shadow-2xl text-center py-12 hidden lg:block">
-	<h2 class="text-3xl leading-9 font-bold tracking-tight text-gray-200 sm:text-4xl sm:leading-10">
-		jumbotron
-	</h2>
+<div>
 	<div sec:authorize="!isAuthenticated()" class="mt-8 flex justify-center">
 		<div class="inline-flex rounded-md bg-white shadow">
 			<a href="/sign-up" class="text-gray-700 font-bold py-2 px-6">
-				<button class="button1 bouncy" style="font-weight: bold">Sign Up With Us!</button>
+				<button class="button1 bouncy" style="font-weight: bold">Sign Up!</button>
 			</a>
 		</div>
 	</div>
@@ -22,8 +20,8 @@
 <div class=" flex flex-wrap items-center justify-around py-14 px-4 sm:px-6 lg:px-8 w-full">
 	<div sec:authorize="!isAuthenticated()" class="max-w-md w-full space-y-8">
 		<div>
-			<img class="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="Workflow">
-			<h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
+			<img class="mx-auto h-12 w-auto" src="/img/traceLogo.png" alt="Workflow">
+			<h2 class="mt-6 text-center text-3xl font-extrabold text-gray-200">
 				Sign in to your account
 			</h2>
 		</div>
@@ -32,11 +30,11 @@
 			<div class="rounded-md shadow-sm -space-y-px">
 				<div>
 					<label for="email-address" class="sr-only">Email address</label>
-					<input id="email-address" name="email" type="email" autocomplete="email" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Email address">
+					<input id="email-address" name="email" type="email" autocomplete="email" required class="appearance-none rounded-md relative block w-10/12 mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Email address">
 				</div>
 				<div>
 					<label for="password" class="sr-only">Password</label>
-					<input id="password" name="password" type="password" autocomplete="current-password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Password">
+					<input id="password" name="password" type="password" autocomplete="current-password" required class="appearance-none rounded-md relative block w-10/12 mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Password">
 				</div>
 			</div>
 
@@ -47,26 +45,19 @@
 				You have been logged out.
 			</div>
 
-			<div class="flex items-center justify-between">
-				<div class="flex items-center">
-					<input id="remember_me" name="remember_me" type="checkbox" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
-					<label for="remember_me" class="ml-2 block text-sm text-gray-900">
-						Remember me
-					</label>
-				</div>
-
+			<div class="flex items-center justify-end w-10/12 mx-auto">
 				<div class="text-sm">
-					<a href="/forgot" class="font-medium text-indigo-600 hover:text-indigo-500">
+					<a href="/forgot" class="font-medium text-gray-200 hover:text-indigo-500">
 						Forgot your password?
 					</a>
 				</div>
 			</div>
 			<div th:if="${sent != null}" th:text="'An email has been sent to '+${sent}"></div>
 			<div>
-				<button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+				<button type="submit" class="group bg-login relative w-10/12 mx-auto flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2">
 					<span class="absolute left-0 inset-y-0 flex items-center pl-3">
 						<!-- Heroicon name: solid/lock-closed -->
-						<svg class="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+						<svg class="h-5 w-5 text-red-800 group-hover:text-red-900" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
 							<path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
 						</svg>
 					</span>
@@ -75,15 +66,9 @@
 			</div>
 		</form>
 	</div>
-	<p class="max-w-md px-4 py-6 mt-4">
-		Lorem ipsum dolor sit amet, consectetuer
-		adipiscing elit, sed diam nonummy nibh euismod
-		tincidunt ut laoreet dolore magna aliquam
-		erat volutpat. Ut wisi enim ad minim
-		veniam, quis nostrud exerci tation ullamcorper
-		suscipit lobortis nisl ut aliquip ex ea commodo
-		consequat.
-	</p>
+	<p class="max-w-md px-4 py-6 mt-4 text-gray-200">
+		When hunting for a new job, keep track of all the positions you apply for and the important details associated with each job.
+		Stay aware of where you are in the process and keep detailed notes.
 </div>
 
 <div th:replace="partials/scripts :: assets"></div>

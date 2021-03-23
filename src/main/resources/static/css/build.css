@@ -590,7 +590,31 @@ p {
 }
 
 .bg-img {
-  background-image: url("../img/pexels-peter-c-360438.jpg");
+  background-image: url("../img/loginBack.jpg");
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: -10;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: .75;
+  z-index: -10;
+  --tw-bg-opacity: 1;
+  background-color: rgba(40, 75, 99, var(--tw-bg-opacity))
+}
+
+div.signUp-bg {
+  background-image: url("../img/signupBackI.jpg");
   width: 100%;
   height: 100%;
   position: absolute;
