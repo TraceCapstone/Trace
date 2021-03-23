@@ -3,57 +3,59 @@
 <head th:replace="partials/head :: header-links(edit)"></head>
 <body>
     <nav th:replace="partials/nav :: navbar"></nav>
-        <form th:action="@{|/applications/edit/${jobApplication.id}|}" method="post" th:object="${jobApplication}">
-            <div class="form-group">
-                <label for="jobTitleInput">Job Title</label>
-                <input type="text" id="jobTitleInput" class="form-control" th:field="*{title}">
-            </div>
-            <div class="form-group">
-                <label for="postId">Post ID</label>
-                <input type="text" id="postId" class="form-control" th:field="*{id}">
-            </div>
-			<div class="form-group">
-				<label for="dateApplied">Date Applied</label>
-				<input type="date" class="form-control" id="dateApplied" th:field="*{dateApplied}">
-			</div>
-            <div class="form-group">
-                <label for="referenceName">Referred By</label>
-                <input type="text" id="referenceName" class="form-control" th:field="*{referredBy}">
-            </div>
-            <div class="form-group">
-                <label for="company">Company</label>
-                <input type="text" id="company" class="form-control" th:field="*{company}">
-            </div>
-            <div class="form-group">
-                <label for="description">Description</label>
-                <textarea type="text" id="description" class="form-control" th:field="*{description}"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="location">Location</label>
-                <input type="text" id="location" class="form-control" th:field="*{location}">
-            </div>
-            <div class="form-group">
-                <label for="salary">Salary</label>
-                <input type="number" id="salary" class="form-control" th:field="*{salary}">
-            </div>
-            <div class="form-group">
-                <label for="applicationStage">Application Stage</label>
-                <select id="applicationStage" name="test">
-                    <option th:each="s : ${stage}" th:value="${s.id}" th:text="${s.stage}"></option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="positionType">Position Type</label>
-                <input type="text" class="form-control" id="positionType" th:field="*{positionType}">
-            </div>
-			<fieldset th:each="r : ${resumes}">
-				<input type="radio" name="resume" th:value="${r.id}">
-				<label  th:text="${r.title}"></label>
-			</fieldset>
-            <br>
-            <button>Cancel</button>
-            <button type="submit" class="btn btn-primary">Save</button>
-        </form>
+        <div class="flex flex-wrap items-center justify-around py-14 px-4 sm:px-6 lg:px-8 w-full">
+            <form class="grid grid-cols-3 md:grid-cols-3" th:action="@{|/applications/edit/${jobApplication.id}|}" method="post" th:object="${jobApplication}">
+                <div class="form-group">
+                    <label for="jobTitleInput">Job Title</label>
+                    <input type="text" id="jobTitleInput" class="form-control" th:field="*{title}">
+                </div>
+                <div class="form-group">
+                    <label for="postId">Post ID</label>
+                    <input type="text" id="postId" class="form-control" th:field="*{id}">
+                </div>
+                <div class="form-group">
+                    <label for="dateApplied">Date Applied</label>
+                    <input type="date" class="form-control" id="dateApplied" th:field="*{dateApplied}">
+                </div>
+                <div class="form-group">
+                    <label for="referenceName">Referred By</label>
+                    <input type="text" id="referenceName" class="form-control" th:field="*{referredBy}">
+                </div>
+                <div class="form-group">
+                    <label for="company">Company</label>
+                    <input type="text" id="company" class="form-control" th:field="*{company}">
+                </div>
+                <div class="row-span-1">
+                    <label for="description">Description</label>
+                    <textarea type="text" id="description" class="form-control row-span-1 ring-2 ring-link" th:field="*{description}"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input type="text" id="location" class="form-control" th:field="*{location}">
+                </div>
+                <div class="form-group">
+                    <label for="salary">Salary</label>
+                    <input type="number" id="salary" class="form-control" th:field="*{salary}">
+                </div>
+                <div class="form-group">
+                    <label for="applicationStage">Application Stage</label>
+                    <select id="applicationStage" name="test">
+                        <option th:each="s : ${stage}" th:value="${s.id}" th:text="${s.stage}"></option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="positionType">Position Type</label>
+                    <input type="text" class="form-control" id="positionType" th:field="*{positionType}">
+                </div>
+                <fieldset th:each="r : ${resumes}">
+                    <input type="radio" name="resume" th:value="${r.id}">
+                    <label  th:text="${r.title}"></label>
+                </fieldset>
+                <br>
+                <button class="bg-cancel text-button font-medium rounded-med">Cancel</button>
+                <button type="submit" class=" rounded-md relative block w-10/12 mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm ">Save</button>
+            </form>
+        </div>
 
     <div th:replace="partials/scripts :: assets"></div>
 </body>
