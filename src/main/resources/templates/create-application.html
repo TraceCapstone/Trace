@@ -7,34 +7,32 @@
             <div class="col-span-1">
                 <!--JobTitle-->
                 <div class="form-group">
-                    <label for="jobTitleInput">Job Title</label>
-                    <input type="text" class="form-control" id="jobTitleInput" th:field="*{title}"> <!-- aria-describedby="emailHelp"-->
+                    <label for="jobTitleInput"></label>
+                    <input type="text" class="ring-2 ring-link w-96 rounded-md" id="jobTitleInput" th:field="*{title}" placeholder="Job Title *"> <!-- aria-describedby="emailHelp"-->
                     <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
                 </div>
                 <!--CompanyName-->
                 <div class="form-group">
-                    <label for="companyName">Company</label>
-                    <input type="text" class="form-control" id="companyName" th:field="*{company}">
+                    <label for="companyName"></label>
+                    <input type="text" class="ring-2 ring-link w-96 rounded-md" id="companyName" th:field="*{company}" placeholder="Company *">
                 </div>
                 <!--PostId-->
                 <div class="form-group">
-                    <label for="postId">Post ID</label>
-                    <input type="text" class="form-control" id="postId" th:field="*{postingId}">
-                    <p>(Optional)</p>
+                    <label for="postId"></label>
+                    <input type="text" class="ring-2 ring-link w-96 rounded-md" id="postId" th:field="*{postingId}" placeholder="Post ID">
                 </div>
                 <!--JobLocation-->
                 <div class="form-group">
-                    <label for="jobLocation">Location</label>
-                    <input type="text" class="form-control" id="jobLocation" th:field="*{location}">
+                    <label for="jobLocation"></label>
+                    <input type="text" class="ring-2 ring-link w-96 rounded-md" id="jobLocation" th:field="*{location}" placeholder="Location *">
                 </div>
             </div>
 
             <div class="row-span-1">
                 <!--JobDescription-->
                 <div class="form-group">
-                    <label for="jobDescription">Description</label>
-                    <textarea type="text" class="ring-2 ring-link" id="jobDescription" th:field="*{description}"></textarea>
-                    <p>(Optional)</p>
+                    <label for="jobDescription"></label>
+                    <textarea type="text" class="ring-2 ring-link resize-none w-96 h-48 rounded-md" id="jobDescription" th:field="*{description}" placeholder="Description (optional)"></textarea>
                 </div>
             </div>
 
@@ -42,20 +40,18 @@
             <div class="col-span-1">
                 <!--Salary-->
                 <div class="form-group">
-                    <label for="salary">Salary</label>
-                    <input type="number" class="form-control" id="salary" th:field="*{salary}">
-                    <p>(Optional)</p>
+                    <label for="salary"></label>
+                    <input type="number" class="ring-2 ring-link w-96 rounded-md" id="salary" th:field="*{salary}"placeholder="Salary">
                 </div>
                 <!--ReferredBy-->
                 <div class="form-group">
-                    <label for="referenceName">Referred By</label>
-                    <input type="text" class="form-control" id="referenceName" th:field="*{referredBy}">
-                    <p>(Optional)</p>
+                    <label for="referenceName"></label>
+                    <input type="text" class="ring-2 ring-link w-96 rounded-md" id="referenceName" th:field="*{referredBy}" placeholder="Referred By">
                 </div>
                 <!--PositionType-->
                 <div class="form-group">
-                    <label for="positionType">Position Type</label>
-                    <select name="positionType" id="positionType">
+                    <label for="positionType"></label>
+                    <select name="positionType" id="positionType" placeholder="Position Type" class="ring-2 ring-link w-96 rounded-md">
                         <option value="full-time">Full-Time</option>
                         <option value="full-time-remote">Full-Time Remote</option>
                         <option value="part-time">Part-Time</option>
@@ -72,13 +68,12 @@
                         <option value="intern-remote">Intern Remote</option>
                         <option value="freelance">Freelance</option>
                     </select>
-                    <p>(Optional)</p>
                 </div>
                 <!--ApplicationStage-->
                 <div class="form-group">
-                    <label for="applicationStage">Application Stage</label>
-                    <select id="applicationStage" name="test">
-                        <option th:each="s : ${stage}" th:value="${s.id}" th:text="${s.stage}"></option>
+                    <label for="applicationStage"></label>
+                    <select id="applicationStage" name="test" class="ring-2 ring-link w-96 rounded-md">
+                        <option th:each="s : ${stage}" th:value="${s.id}" th:text="${s.stage}" placeholder="Application Stage"></option>
                     </select>
                 </div>
             </div>
@@ -86,21 +81,21 @@
 
             <!--DateApplied-->
             <div class="form-group">
-                <label for="dateApplied">Date Applied</label>
-                <input type="date" class="form-control" id="dateApplied" th:field="*{dateApplied}">
+                <label for="dateApplied"></label>
+                <input type="date" class="ring-2 ring-link w-96 rounded-md" id="dateApplied" th:field="*{dateApplied}" placeholder="Date Applied">
             </div>
             <!--LinkResume-->
             <p>Resume</p>
 			<fieldset th:each="resume : ${resumes}">
-					<input type="radio" name="resume" th:value="${resume.id}">
+					<input type="radio" name="resume" th:value="${resume.id}" class="ring-2 ring-link w-96 rounded-md">
 					<label id="resume" th:text="${resume.title}"></label>
 			</fieldset>
 
             <input type="hidden" th:field="*{id}">
 
 
-            <button class="bg-save text-button font-medium rounded-med">Save</button>
-            <button class="bg-cancel text-button font-medium rounded-med" th:onclick="|window.location.href='/applications'|">Cancel</button>
+            <button class="bg-save text-button font-medium rounded-md">Save</button>
+            <button class="bg-cancel text-button font-medium rounded-md" th:onclick="|window.location.href='/applications'|">Cancel</button>
         </form>
 
         <div th:replace="partials/scripts :: assets"></div>
