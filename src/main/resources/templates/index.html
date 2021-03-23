@@ -1,12 +1,9 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" class="w-screen h-screen">
 <head th:replace="partials/head :: header-links(home)"></head>
-<body>
+<body class="w-screen h-screen">
 
 <nav th:replace="partials/nav :: navbar"></nav>
-
-<div class="bg-img"></div>
-<div class="overlay"></div>
 
 <div class=" flex flex-wrap items-center justify-around py-14 px-4 sm:px-6 lg:px-8 w-full mt-16">
 	<div sec:authorize="!isAuthenticated()" class="max-w-md w-full space-y-8">
@@ -28,10 +25,10 @@
 				</div>
 			</div>
 
-			<div class="text-white px-3 py-2 border-0 rounded relative mb-4 bg-red-500" th:if="${param.error}">
+			<div class="text-white px-3 py-2 border-0 rounded relative mb-4 mx-auto bg-red-500 w-10/12" th:if="${param.error}">
 				Invalid Username or Password.
 			</div>
-			<div class="text-white px-3 py-2 border-0 rounded relative mb-4 bg-red-500" th:if="${param.logout}">
+			<div class="text-white px-3 py-2 border-0 rounded relative mb-4 mx-auto bg-red-500 w-10/12" th:if="${param.logout}">
 				You have been logged out.
 			</div>
 
@@ -59,8 +56,11 @@
 	<p class="max-w-sm px-4 py-6 mt-4 text-gray-200 ">
 		When hunting for a new job, keep track of all the positions you apply for and the important details associated with each job.
 		Stay aware of where you are in the process and keep detailed notes.
+	</p>
 </div>
 
+<div class="bg-img"></div>
+<div class="overlay"></div>
 <div th:replace="partials/scripts :: assets"></div>
 </body>
 </html>
