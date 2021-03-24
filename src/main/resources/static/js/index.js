@@ -63,7 +63,7 @@ function closeForm() {
 
     if($("#delete") !== null) {
         $(document).on("click", "#delete", function() {
-            deletePopup.toggleClass('hidden')
+            deletePopup.toggleClass('invisible')
         })
     }
 
