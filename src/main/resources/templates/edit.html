@@ -6,27 +6,27 @@
 
 <div class="lg:col-span-6 col-span-full flex items-stretch flex-wrap items-center justify-around py-4 px-4 sm:px-6 lg:px-8 w-full content-center">
     <h1 style="text-align: center; font-weight: bold">Edit Application</h1>
-    <form class="grid grid-cols-3 md:grid-cols-3 my-8 space-y-6 w-full" th:action="@{|/applications/edit/${jobApplication.id}|}" method="post" th:object="${jobApplication}">
+    <form class="grid grid-cols-3 md:grid-cols-3 my-8 space-y-6 w-full justify-center" th:action="@{|/applications/edit/${jobApplication.id}|}" method="post" th:object="${jobApplication}">
         <div>
-            <input type="text" id="jobTitleInput" class="ring-2 ring-link rounded-md gap-4 max-w-lg" placeholder="Job Title" th:field="*{title}">
+            <input type="text" id="jobTitleInput" class="ring-2 ring-link w-96 rounded-md ring-gray-300 py-4 pl-4 max-w-md" placeholder="Job Title" th:field="*{title}">
         </div>
         <div>
-            <input type="text" id="company" class="ring-2 ring-link rounded-md gap-4 max-w-lg " placeholder="Company" th:field="*{company}">
+            <input type="text" id="company" class="ring-2 ring-link w-96 rounded-md ring-gray-300 py-4 pl-4 max-w-md" placeholder="Company" th:field="*{company}">
         </div>
         <div>
-            <input type="text" id="postId" class="ring-2 ring-link rounded-md gap-4 max-w-lg " placeholder="Post ID" th:field="*{id}">
+            <input type="text" id="postId" class="ring-2 ring-link w-96 rounded-md ring-gray-300 py-4 pl-4 max-w-md" placeholder="Post ID" th:field="*{id}">
         </div>
         <div>
-            <input type="text" id="location" class="ring-2 ring-link rounded-md gap-4 max-w-lg " placeholder="Location" th:field="*{location}">
+            <input type="text" id="location" class="ring-2 ring-link w-96 rounded-md ring-gray-300 py-4 pl-4 max-w-md" placeholder="Location" th:field="*{location}">
         </div>
-        <textarea type="text" id="description" class="rounded-md row-s pan-1 ring-2 ring-link max-w-lg" th:field="*{description}" placeholder="Description (optional)"></textarea>
+        <textarea type="text" id="description" class="ring-2 ring-link w-96 rounded-md ring-gray-300 py-4 pl-4 max-w-md" th:field="*{description}" placeholder="Description (optional)"></textarea>
         <div>
-            <input type="number" id="salary" class="ring-2 ring-link rounded-md gap-4 max-w-lg " placeholder="Salary" th:field="*{salary}">
+            <input type="number" id="salary" class="ring-2 ring-link w-96 rounded-md ring-gray-300 py-4 pl-4 max-w-md" placeholder="Salary" th:field="*{salary}">
         </div>
         <div>
-            <input type="text" id="referenceName" class="ring-2 ring-link rounded-md gap-4 max-w-lg " placeholder="Referred By" th:field="*{referredBy}">
+            <input type="text" id="referenceName" class="ring-2 ring-link w-96 rounded-md ring-gray-300 py-4 pl-4 max-w-md" placeholder="Referred By" th:field="*{referredBy}">
         </div>
-            <select name="positionType" id="positionType" th:field="*{positionType}" placeholder="Position Type" class="ring-2 ring-link rounded-md max-w-lg">
+            <select name="positionType" id="positionType" th:field="*{positionType}" placeholder="Position Type" class="ring-2 ring-link w-96 rounded-md ring-gray-300 py-4 pl-4 max-w-md">
                  <option value="full-time">Full-Time</option>
                 <option value="full-time-remote">Full-Time Remote</option>
                 <option value="part-time">Part-Time</option>
@@ -50,19 +50,20 @@
             </fieldset>
         </div>
         <div>
-            <select id="applicationStage" name="test" class="ring-2 ring-link rounded-md gap-4 max-w-lg " placeholder="">
+            <select id="applicationStage" name="test" class="ring-2 ring-link w-96 rounded-md ring-gray-300 py-4 pl-4 max-w-md ">
                 <option th:each="s : ${stage}" th:value="${s.id}" th:text="${s.stage}"></option>
             </select>
         </div>
         <div>
-            <input type="date" class="ring-2 ring-link rounded-md gap-4 max-w-lg " placeholder="Date Applied" id="dateApplied" th:field="*{dateApplied}">
+            <input type="date" class="ring-2 ring-link w-96 rounded-md ring-gray-300 py-4 pl-4 max-w-md " placeholder="Date Applied" id="dateApplied" th:field="*{dateApplied}">
         </div>
 
 
         </br>
-
-        <button style="background-color: #284B63" class="bg-cancel text-button font-medium rounded-med w-30 justify-center">Cancel</button>
-        <button type="submit" style="background-color: #284B63" class="bg-submit text-button font-medium rounded-med w-30 justify-center">Save</button>
+        <div class="grid grid-cols-2 col-span-full w-full gap-4 justify-items-center">
+            <button style="background-color: #284B63" class="bg-cancel text-button font-medium rounded-med py-4 pl-4 w-96 justify-center focus:ring lg:col-span-1">Cancel</button>
+            <button type="submit" style="background-color: #284B63" class="bg-submit text-button font-medium rounded-med py-4 pl-4 w-96 justify-center focus:ring lg:col-span-1">Save</button>
+        </div>
 
     </form>
 </div>
