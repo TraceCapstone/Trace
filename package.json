@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "mapbox-gl": "^2.1.1",
+    "moment": "^2.29.1",
     "postcss-cli": "^8.3.1"
   }
 }

@@ -149,5 +149,11 @@
         border-radius: 20px;
     }
 
+    .scroll-container::-webkit-scrollbar {
+        @apply w-2
+    }
 
+    .scroll-container::-webkit-scrollbar-thumb {
+        @apply w-1 bg-purple-200
+    }
 }
