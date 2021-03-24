@@ -12,6 +12,7 @@
 	</div>
 </div>
 
+
 <div class="grid md:grid-cols-2 application tab-item">
 	<!--START COLUMN-->
 	<div class="col-span-1 grid gap-y-0.5 justify-center">
@@ -20,6 +21,30 @@
 		<p style="font-weight: bold">Post Id: <span class="font-thin" th:text=" ${jobApplication.postingId}"></span></p>
 		<p style="font-weight: bold">Referred by: <span class="font-thin"  th:text=" ${jobApplication.referredBy}"></span></p>
 		<p style="font-weight: bold">Description: <span class="font-thin" th:text=" ${jobApplication.description}"></span></p>
+
+
+
+<div class="application tab-item grid grid-cols-2 h-96 px-12 py-8">
+	<div class="md:col-span-1 col-span-full flex flex-col justify-around">
+		<div>
+			<div class="text-3xl font-light" th:text=" ${jobApplication.title}"></div>
+			<div class="text-xl">Company:
+				<p th:text=" ${jobApplication.company}"></p>
+			</div>
+		</div>
+		<div class="font-semibold">date applied:
+			<p class="font-light" th:text=" ${jobApplication.dateApplied.toString().substring(0, jobApplication.dateApplied.toString().indexOf(' ')).replace('-', '/')}"></p>
+		</div>
+		<div class="font-semibold">Post#/Id:
+			<p class="font-light" th:text=" ${jobApplication.postingId}"></p>
+		</div >
+		<div class="font-semibold">referred by:
+			<p class="font-light" th:text=" ${jobApplication.referredBy}"></p>
+		</div>
+		<div class="font-semibold">Description:
+			<p class="font-light" th:text=" ${jobApplication.description}"></p>
+		</div>
+
 	</div>
 	<!--END COLUMN-->
 	<!--START COLUMN-->
