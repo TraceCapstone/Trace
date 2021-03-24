@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<nav class="bg-white z-10 relative col-span-full" th:fragment="navbar">
+<nav class="bg-white z-10 relative col-span-full border-b border-black" th:fragment="navbar">
 	<div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
 		<div class="relative flex items-center justify-between h-20">
 			<div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -28,8 +28,8 @@
 					<div class="flex space-x-14">
 						<!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
 						<a sec:authorize="!isAuthenticated()" href="/" class="text-link hover:bg-gray-300 hover:text-link-state-hvr px-3 py-2 rounded-md text-md font-medium">Login</a>
-						<a href="/aboutUs" class="text-link hover:bg-gray-300 hover:text-link-state-hvr px-3 py-2 rounded-md text-md font-medium">About</a>
-						<a sec:authorize="isAuthenticated()" href="/create-application" class="text-link hover:bg-gray-300 hover:text-link-state-hvr px-3 py-2 rounded-md text-md font-medium">Create</a>
+						<a href="/aboutUs" class="text-link hover:bg-gray-300 hover:text-link-state-hvr px-3 py-2 rounded-md text-md font-medium">About Us</a>
+						<a sec:authorize="isAuthenticated()" href="/create-application" class="text-link hover:bg-gray-300 hover:text-link-state-hvr px-3 py-2 rounded-md text-md font-medium">Create New</a>
 						<a sec:authorize="isAuthenticated()" href="/profile" class="text-link hover:bg-gray-300 hover:text-link-state-hvr px-3 py-2 rounded-md text-md font-medium">Profile</a>
 					</div>
 				</div>
@@ -45,7 +45,7 @@
 					</div>
 					<div id="profile-menu" class="profile-menu scale3d origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5" role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
 						<a href="/profile" class="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100" role="menuitem" th:text="${#authentication.principal.username}"></a>
-						<a sec:authorize="isAuthenticated()" href="/applications" class="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100" role="menuitem">My Applications</a>
+						<a sec:authorize="isAuthenticated()" href="/applications" class="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100" role="menuitem">My Applied Jobs</a>
 						<form th:action="@{/logout}" th:method="post">
 							<button class="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100 w-full text-left" role="menuitem">Sign out</button>
 						</form>
@@ -65,10 +65,10 @@
 	<div class="sm:hidden max-h-0 overflow-y-hidden" id="mobile-menu">
 		<div class="px-2 pt-2 pb-3 space-y-1">
 			<!-- Current: "bg-gray-900 text-white", Default: "text-link hover:bg-gray-300 hover:text-link-state-hvr" -->
-			<a href="/" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+			<a href="/" class="bg-gray-300 text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
 			<a href="/sign-up" sec:authorize="!isAuthenticated()" class="text-link hover:bg-gray-300 hover:text-link-state-hvr block px-3 py-2 rounded-md text-base font-medium">Sign Up</a>
-			<a href="/aboutUs" class="text-link hover:bg-gray-300 hover:text-link-state-hvr block px-3 py-2 rounded-md text-base font-medium">About</a>
-			<a href="/create-application" sec:authorize="isAuthenticated()" class="text-link hover:bg-gray-300 hover:text-link-state-hvr block px-3 py-2 rounded-md text-base font-medium">Create</a>
+			<a href="/aboutUs" class="text-link hover:bg-gray-300 hover:text-link-state-hvr block px-3 py-2 rounded-md text-base font-medium">About Us</a>
+			<a href="/create-application" sec:authorize="isAuthenticated()" class="text-link hover:bg-gray-300 hover:text-link-state-hvr block px-3 py-2 rounded-md text-base font-medium">Create New</a>
 		</div>
 	</div>
 </nav>

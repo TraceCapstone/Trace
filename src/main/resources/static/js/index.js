@@ -4,6 +4,9 @@ $(document).ready(function() {
     const mobileBtn = document.getElementById("mobile-btn");
     const icon = document.querySelector("#user-menu");
     const menu = document.querySelector("#profile-menu");
+    const deletePopup = $("#delete-popup");
+    const tabContent = $(".tab-item");
+    const tabs = $(".tab");
     if(document.getElementById("map") !== null) {
         const key = document.getElementById("api").value;
         mapboxgl.accessToken = key
@@ -56,7 +59,26 @@ function closeForm() {
             if (menu.classList.contains("scale3d")) menu.classList.remove("scale3d")
             else menu.classList.add("scale3d")
         })
-
     }
 
+    if($("#delete") !== null) {
+        $(document).on("click", "#delete", function() {
+            deletePopup.toggleClass('hidden')
+        })
+    }
+
+    function showTabContent() {
+        console.log("click");
+        for (const content of tabContent) {
+            $(content).addClass("hidden");
+        }
+        for (const content of tabContent) {
+            if ($(content).hasClass(($(this).attr('id')))) {
+                $(content).removeClass("hidden");
+            }
+        }
+    }
+
+    if(tabs !== null)
+        tabs.on("click", showTabContent)
 })
