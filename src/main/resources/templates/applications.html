@@ -10,17 +10,17 @@
 			<div class="flex flex-col">
 				<div class="flex w-full justify-between px-2 py-1">
 					<a th:href="@{|/applications/${app.id}|}" class="flex flex-col">
-						<p th:text=" ${app.title}" class="p-1"></p>
+						<p th:text=" ${app.title}" class="p-1 text-job-title font-medium hover:underline"></p>
 					</a>
 					<button type="button" id="location" th:text=" ${app.location}" class="p-1 w-40 text-location text-sm "></button>
 				</div>
 				<p th:text=" ${app.company}" class="px-2 py-1"></p>
 				<div class="flex w-full justify-between items-center px-2 py-1">
-					<p th:text=" ${app.dateApplied.toString().substring(0, app.dateApplied.toString().indexOf(' ')).replace('-', '/')}" class="p-1"></p>
-					<div class="felx items-center">
-						<a th:href="@{|/applications/edit/${app.id}|}" class="py-1 px-4 bg-edit rounded-full text-sm text-white">Edit</a>
-						<form th:action="@{|/applications/${app.id}/delete|}" th:method="post" class="text-center">
-							<button class="px-4 py-1 bg-edit rounded-full text-white text-sm">Delete</button>
+					<p th:text=" ${app.dateApplied.toString().substring(0, app.dateApplied.toString().indexOf(' ')).replace('-', '/')}" class="p-1 pl-0"></p>
+					<div class="">
+						<a th:href="@{|/applications/edit/${app.id}|}" class="py-1 px-4 bg-edit rounded-md text-sm text-white">Edit</a>
+						<form th:action="@{|/applications/${app.id}/delete|}" th:method="post" class="text-center inline-block">
+							<button class="px-4 py-1 bg-delete rounded-md text-white text-sm">Delete</button>
 						</form>
 <!--						<button id="delete" class="px-4 py-1 bg-edit rounded-full text-white text-sm">Delete</button>-->
 					</div>

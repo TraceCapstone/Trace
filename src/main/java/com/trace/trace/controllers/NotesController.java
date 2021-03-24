@@ -31,7 +31,7 @@ public class NotesController {
     public String viewIndividualNote(Model model, @PathVariable long id) {
         Note note = notesDao.getOne(id);
         model.addAttribute("notes", note);
-        return "/notes";
+        return "notes";
     }
 
     @PostMapping("/note/{id}")

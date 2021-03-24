@@ -31,7 +31,7 @@ public class Application implements Serializable {
     private String location;
 
     @Column(nullable = true)
-    private int salary;
+    private Integer salary;
 
     @Column(nullable = true)
     private String positionType;
@@ -146,11 +146,11 @@ public class Application implements Serializable {
         this.location = location;
     }
 
-    public int getSalary() {
+    public Integer getSalary() {
         return salary;
     }
 
-    public void setSalary(int salary) {
+    public void setSalary(Integer salary) {
         this.salary = salary;
     }
 

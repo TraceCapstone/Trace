@@ -166,6 +166,6 @@
     }
 
     .scroll-container::-webkit-scrollbar-thumb {
-        @apply w-1 bg-purple-200
+        @apply w-1 bg-gray-700
     }
 }

@@ -804,7 +804,7 @@ hr.curve-fade {
 
 .scroll-container::-webkit-scrollbar-thumb {
   --tw-bg-opacity: 1;
-  background-color: rgba(221, 214, 254, var(--tw-bg-opacity));
+  background-color: rgba(55, 65, 81, var(--tw-bg-opacity));
   width: 0.25rem
 }
 

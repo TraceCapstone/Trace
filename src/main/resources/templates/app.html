@@ -76,14 +76,14 @@
 						<p th:text=" ${contact.phoneNumber}"></p>
 					</div>
 				</div>
-				<div class="col-span-full flex justify-evenly">
+				<div class="col-span-full flex justify-evenly mt-2">
 					<form th:action="@{|/poc/edit/${contact.id}|}" class=" inline-block">
 						<input type="hidden" name="application" th:value="${jobApplication.id}">
-						<button>edit</button>
+						<button class="px-4 py-1 bg-edit rounded-md text-white text-sm">edit</button>
 					</form>
 					<form th:action="@{|/poc/delete/${contact.id}|}" method="post" class=" inline-block">
 						<input type="hidden" name="application" th:value="${jobApplication.id}">
-						<button>remove</button>
+						<button class="px-4 py-1 bg-delete rounded-md text-white text-sm">remove</button>
 					</form>
 				</div>
 			</div>
@@ -102,7 +102,7 @@
 		<label for="position"></label>
 		<input id="position" type="text" th:field="*{position}" class="mt-3 md:mt-0 appearance-none rounded-md relative block w-full mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Position" required>
 		<input type="hidden" name="application" th:value="${jobApplication.id}">
-		<button class=" px=6 py-2 bg-edit rounded-full text-white mt-3">Add</button>
+		<button class=" px-4 py-1 bg-delete rounded-md text-white text-sm mt-3">Add</button>
 	</form>
 
 
