@@ -1,4 +1,4 @@
-/*! tailwindcss v2.0.3 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v2.0.4 | MIT License | https://tailwindcss.com */
 
 /*! modern-normalize v1.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 
@@ -589,6 +589,18 @@ p {
   }
 }
 
+div.profile-bg {
+  background-image: url("../img/Profile.jpeg");
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: -10;
+}
+
 .bg-img {
   background-image: url("../img/loginBack.jpg");
   width: 100%;
@@ -784,6 +796,16 @@ hr.curve-fade {
   border-color: #8c8b8b;
   border-width: 0 0 1px 0;
   border-radius: 20px;
+}
+
+.scroll-container::-webkit-scrollbar {
+  width: 0.5rem
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  --tw-bg-opacity: 1;
+  background-color: rgba(221, 214, 254, var(--tw-bg-opacity));
+  width: 0.25rem
 }
 
 .space-y-0 > :not([hidden]) ~ :not([hidden]) {

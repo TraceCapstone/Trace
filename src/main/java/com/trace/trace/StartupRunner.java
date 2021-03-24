@@ -157,7 +157,7 @@ public class StartupRunner implements CommandLineRunner {
         PointOfContact poc = new PointOfContact();
         poc.setApplication(app);
         poc.setEmail("name@email.com");
-        poc.setPhoneNumber("29934881");
+        poc.setPhoneNumber("299-348-8881");
         poc.setFirstName("Ryan");
         poc.setLastName("Mcguire");
         poc.setPosition("big important person");
@@ -178,6 +178,47 @@ public class StartupRunner implements CommandLineRunner {
         as.setStage(stage3);
         applicationsStageDao.save(as);
 
+        ApplicationStage as1 = new ApplicationStage();
+        as1.setCreatedAt(new Date(System.currentTimeMillis()));
+        as1.setApplication(app1);
+        as1.setStage(stage3);
+        applicationsStageDao.save(as1);
+
+        ApplicationStage as2 = new ApplicationStage();
+        as2.setCreatedAt(new Date(System.currentTimeMillis()));
+        as2.setApplication(app2);
+        as2.setStage(stage3);
+        applicationsStageDao.save(as2);
+
+        ApplicationStage as3 = new ApplicationStage();
+        as3.setCreatedAt(new Date(System.currentTimeMillis()));
+        as3.setApplication(app3);
+        as3.setStage(stage3);
+        applicationsStageDao.save(as3);
+
+        ApplicationStage as4 = new ApplicationStage();
+        as4.setCreatedAt(new Date(System.currentTimeMillis()));
+        as4.setApplication(app4);
+        as4.setStage(stage3);
+        applicationsStageDao.save(as4);
+
+        ApplicationStage as5 = new ApplicationStage();
+        as5.setCreatedAt(new Date(System.currentTimeMillis()));
+        as5.setApplication(app5);
+        as5.setStage(stage3);
+        applicationsStageDao.save(as5);
+
+        ApplicationStage as6 = new ApplicationStage();
+        as6.setCreatedAt(new Date(System.currentTimeMillis()));
+        as6.setApplication(app6);
+        as6.setStage(stage3);
+        applicationsStageDao.save(as6);
+
+        ApplicationStage as7 = new ApplicationStage();
+        as7.setCreatedAt(new Date(System.currentTimeMillis()));
+        as7.setApplication(app7);
+        as7.setStage(stage3);
+        applicationsStageDao.save(as7);
 
 
 

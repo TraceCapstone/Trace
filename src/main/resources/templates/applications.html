@@ -3,26 +3,36 @@
 <head th:replace="partials/head :: header-links(applications)"></head>
 <body class="w-screen h-screen overflow-x-hidden">
 
-<div class="grid grid-cols-12 gap-1 overflow-y-hidden h-full">
+<div class="grid grid-cols-12 overflow-y-hidden h-full">
 	<nav th:replace="partials/nav :: navbar"></nav>
-	<div class="py-1 pl-2 lg:col-span-5 max-h-screen col-span-full relative overflow-y-auto">
-		<div th:each="app : ${jobApplications}" class="shadow-md transition-all duration-300 rounded hover:shadow-2xl p-2 max-w-lg">
+	<div class=" pl-2 lg:col-span-5 max-h-screen col-span-full relative overflow-y-auto rounded-md scroll-container lg:max-w-xl">
+		<div th:each="app : ${jobApplications}" class="ring-1 ring-gray-300 transition-all relative duration-300 appCard hover:shadow-xl p-2 justify-start">
 			<a th:href="@{|/applications/${app.id}|}" class="flex flex-col">
 				<div class="flex w-full justify-between px-2 py-1">
 					<p th:text=" ${app.title}" class="p-1"></p>
-					<button type="button" id="location" th:text=" ${app.location}" class="p-1 w-40"></button>
+					<button type="button" id="location" th:text=" ${app.location}" class="p-1 w-40 text-location text-sm"></button>
 				</div>
 				<p th:text=" ${app.company}" class="px-2 py-1"></p>
-				<div class="flex w-full justify-between px-2 py-1">
-					<p th:text=" ${app.dateApplied}" class="p-1"></p>
-					<a th:href="@{|/applications/edit/${app.id}|}" class="py-1 px-3">edit application</a>
+				<div class="flex w-full justify-between items-center px-2 py-1">
+					<p th:text=" ${app.dateApplied.toString().substring(0, app.dateApplied.toString().indexOf(' ')).replace('-', '/')}" class="p-1"></p>
+					<div class="felx items-center">
+						<a th:href="@{|/applications/edit/${app.id}|}" class="py-1 px-4 bg-edit rounded-full text-sm text-white">Edit</a>
+						<button id="delete" class="px-4 py-1 bg-edit rounded-full text-white text-sm">Delete</button>
+					</div>
 				</div>
 			</a>
+			<div id="delete-popup" class="fixed z-20 px-6 py-4 bg-red-500 text-md hidden top-20">
+				<h2 class="p-2 font-bold">Are you sure you want to delete this application</h2>
+				<form th:action="@{|/applications/${app.id}/delete|}" th:method="post" class="text-center">
+					<button>Yes, Delete it</button>
+				</form>
+			</div>
 		</div>
 	</div>
-	<!--START MAPBOX CONTAINER-->
 
-	<div id='map' class="col-span-7 h-11/12 rounded-l-md hidden lg:block"></div>
+
+	<!--START MAPBOX CONTAINER-->
+	<div id='map' class="col-span-7 h-full rounded-l-md hidden lg:block ml-6"></div>
 	<!--END MAPBOX CONTAINER-->
 	<div th:replace="partials/footer :: footer"></div>
 </div>
