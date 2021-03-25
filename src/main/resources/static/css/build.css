@@ -808,6 +808,13 @@ hr.curve-fade {
   width: 0.25rem
 }
 
+.headshot {
+  -webkit-clip-path: circle(44.1% at 50% 43%);
+          clip-path: circle(44.1% at 50% 43%);
+  -webkit-mask: content-box;
+          mask: content-box;
+}
+
 .space-y-0 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
