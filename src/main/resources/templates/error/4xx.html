@@ -10,7 +10,9 @@
 <body>
 <th:block th:switch="${status}">
 	<div th:case="'404'">
-		<h1>Page not found</h1>
+		<h1>404</h1>
+		<span>Page Not Found</span>
+		<p>It looks like the page you were looking for does not exist or the url was incorrect</p>
 	</div>
 	<div th:case="'403'">
 		<h1>You don't have permission to view this page.</h1>

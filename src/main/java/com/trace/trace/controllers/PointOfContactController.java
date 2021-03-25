@@ -22,8 +22,11 @@ public class PointOfContactController {
     @PostMapping("/poc")
     public String addPoc(@ModelAttribute PointOfContact poc, @RequestParam(name = "application") String applicationId) {
         Application app = applicationDao.getOne(Long.parseLong(applicationId));
-        String formattedPhone = poc.getPhoneNumber().substring(0, 3) + "-" + poc.getPhoneNumber().substring(3, 6) + "-" + poc.getPhoneNumber().substring(6);
-        poc.setPhoneNumber(formattedPhone);
+        String formattedPhone;
+        if (!poc.getPhoneNumber().equals("")) {
+            formattedPhone = poc.getPhoneNumber().substring(0, 3) + "-" + poc.getPhoneNumber().substring(3, 6) + "-" + poc.getPhoneNumber().substring(6);
+            poc.setPhoneNumber(formattedPhone);
+        }
         poc.setApplication(app);
         pocDao.save(poc);
         return "redirect:/applications/"+applicationId;
