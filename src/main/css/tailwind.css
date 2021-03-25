@@ -168,4 +168,9 @@
     .scroll-container::-webkit-scrollbar-thumb {
         @apply w-1 bg-gray-700
     }
+
+    .headshot {
+        clip-path: circle(44.1% at 50% 43%);
+        mask: content-box;
+    }
 }
