@@ -22,55 +22,62 @@
 <!--</div>-->
 <!--<br>-->
 <div class="grid grid-cols-12">
-<div sec:authorize="isAuthenticated()" class="lg:col-span-5 col-span-full flex flex-wrap items-center justify-around py-14 px-4 sm:px-6 lg:px-8 w-full">
+<div sec:authorize="isAuthenticated()" class="lg:col-span-3 col-span-full flex flex-wrap items-center justify-around py-14 px-4 sm:px-6 lg:px-8 w-full">
     <h1 style="text-align: center; font-weight: bold; color: white">Edit Profile</h1>
     <form th:action="@{/profile}" th:method="post" th:object="${user}" class="my-8 space-y-6 w-full">
-            <input id="email" th:field="*{email}" required class="appearance-none rounded-md relative block w-10/12 mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"/>
+            <input id="email" th:field="*{email}" required class="appearance-none rounded-md relative block w-full mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm max-w-xs"/>
         <br />
-            <input id="first" th:field="*{firstName}" required class="appearance-none rounded-md relative block w-10/12 mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"/>
+            <input id="first" th:field="*{firstName}" required class="appearance-none rounded-md relative block w-full mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm max-w-xs"/>
         <br />
-        <input id="last" th:field="*{lastName}" required class="appearance-none rounded-md relative block w-10/12 mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"/>
+        <input id="last" th:field="*{lastName}" required class="appearance-none rounded-md relative block w-full mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm max-w-xs"/>
         <br />
                 <input th:field="*{id}" type="hidden"/>
                 <br />
-        <button type="submit" value="Update" style="background-color: #F5CB5C" class="text-grey-800 appearance-none rounded-md relative block w-10/12 mx-auto px-4 py-4 placeholder-gray-500 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
+        <button type="submit" value="Update" style="background-color: #F5CB5C" class="text-grey-800 appearance-none rounded-md relative block w-full mx-auto px-4 py-4 placeholder-gray-500 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm max-w-xs">
             Edit Profile
         </button>
 	</form>
 </div>
 <br>
 
-<div class="lg:col-span-6 col-span-full flex flex-wrap items-center justify-around py-14 px-4 sm:px-6 lg:px-8 w-full">
+<div class="lg:col-span-3 col-span-full flex flex-wrap items-center justify-around py-14 px-4 sm:px-6 lg:px-8 w-full">
     <h1 style="text-align: center; font-weight: bold; color: white" >Upload A Resume!</h1>
 <form th:action="@{/fileUpload}" method="post" enctype="multipart/form-data" th:object="${resume}" class="my-8 space-y-6 w-full">
     <br>
-	<input type="file" id="resume" name="file" required class="bg-white appearance-none rounded-md relative block w-10/12 mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
+	<input type="file" id="resume" name="file" required class="bg-white appearance-none rounded-md relative block w-full mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm max-w-xs">
     <br>
 	<label for="title" class="sr-only">Title</label>
-	<input type="text" th:field="*{title}" placeholder="Title" id="title" required class="appearance-none rounded-md relative block w-10/12 mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
+	<input type="text" th:field="*{title}" placeholder="Title" id="title" required class="appearance-none rounded-md relative block w-full mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm max-w-xs">
     <br>
 	<label for="description" class="sr-only">description</label>
-	<textarea th:field="*{description}" placeholder="Description" id="description" class="appearance-none resize-none rounded-md relative block w-10/12 mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"></textarea>
+	<textarea th:field="*{description}" placeholder="Description" id="description" class="appearance-none resize-none rounded-md relative block w-full mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm max-w-xs"></textarea>
     <br>
-	<input type="submit" value="Upload" style="background-color: #F5CB5C" class="text-grey-800 appearance-none rounded-md relative block w-10/12 mx-auto px-4 py-4 placeholder-gray-500 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"/>
+	<input type="submit" value="Upload" style="background-color: #F5CB5C" class="text-grey-800 appearance-none rounded-md relative block w-full mx-auto px-4 py-4 placeholder-gray-500 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm max-w-xs"/>
 </form>
 </div>
-</div>
-<h3 style="font-weight: bold; text-align: center; color: white">Uploaded Resumes</h3>
-<div class="shadow-md transition-all duration-300 rounded hover:shadow-2xl p-2 max-w-lg">
-    <span th:if="${user.resumes.size() == 0}" class="text-white text-lg">You have no uploaded resumes...</span>
-<div th:each="resume : ${user.resumes}" class="bg-white ring-1 ring-gray-300 transition-all relative duration-300 appCard hover:shadow-xl p-2 justify-start">
+    <br>
+
+
+<div class="lg:col-span-4 col-span-full py-14 px-4 sm:px-6 lg:px-8 w-full">
+    <h3 style="font-weight: bold; text-align: center; color: white">Uploaded Resumes</h3>
+<h1 th:if="${user.resumes.size() == 0}" class="text-white text-l w-full mt-20">You have no uploaded resumes...</h1>
+<div class="m-auto shadow-md transition-all duration-300 rounded hover:shadow-2xl p-2 max-w-lg w-full mt-20 max-h-96 overflow-y-auto">
+<div th:each="resume : ${user.resumes}" class="flex flex-col justify-start bg-white ring-1 ring-gray-300 transition-all relative duration-300 hover:shadow-xl p-3 max-w-xs mx-auto">
+    <div class="p-0.5">
     <p>Title:</p>
     <p th:text=" ${resume.title}"></p>
-    <br>
+    </div>
+    <div  class="p-0.5">
     <p>Description:</p>
     <p th:text=" ${resume.description}"></p>
-    <form th:action="@{|/resume/${resume.id}|}" method="post">
-        <button class="px-4 py-1 bg-edit rounded-full text-white text-sm">Remove Resume</button>
+    </div>
+    <form th:action="@{|/resume/${resume.id}|}" method="post" class="self-center inline-block p-2">
+        <button class="mx-auto px-4 py-1 bg-edit rounded-md text-white text-sm">Remove</button>
     </form>
 </div>
 </div>
-
+</div>
+</div>
 
 <!--popup-->
 <!--<button type="submit" class="btn open" onclick="openForm()">Edit profile</button>-->
