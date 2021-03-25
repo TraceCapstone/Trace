@@ -11,14 +11,14 @@ Table of contents
 - [Coming Soon](#coming-soon) 
 - [Contact us](#meet-the-team)
 
-##Getting started 
+## Getting started 
 When hunting for a new job, keep track of all the positions you apply for and the
 important details associated with each job. Trace is convenient for storing contact information,
 resumes, detailed notes, as well as other important information related to the application
 process. Trace is a four member group project built using Agile methodology and the following
 technologies: Java, the Spring Boot framework, Tailwind CSS and the Mapbox API.
 ---
-###Built with:
+### Built with:
 - Java
 - Spring Boot
 - Javascript
@@ -26,18 +26,18 @@ technologies: Java, the Spring Boot framework, Tailwind CSS and the Mapbox API.
 - Tailwind CSS
 - Mapbox API
 
-##Features
+## Features
 
-##Project Planning
+## Project Planning
 
-##Coming Soon!
+## Coming Soon!
 - In-site search
 - Event Calendar
 - Social Networking 
 
-####Checkout our [Trello](https://trello.com/b/7RZwJwaF/trace-kanban-board) board for an in-depth look at project planning 
+#### Checkout our [Trello](https://trello.com/b/7RZwJwaF/trace-kanban-board) board for an in-depth look at project planning 
 
-##Meet the team:
+## Meet the team:
 
 [Correy Everett](https://github.com/correyEverett)
 
