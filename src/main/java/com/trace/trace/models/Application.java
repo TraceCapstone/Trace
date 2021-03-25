@@ -24,7 +24,7 @@ public class Application implements Serializable {
     @Column(nullable = false)
     private String title;
 
-    @Column(nullable = true, length = 400)
+    @Column(nullable = true, length = 1500)
     private String description;
 
     @Column(nullable = false)
