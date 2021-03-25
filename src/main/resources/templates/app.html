@@ -109,31 +109,27 @@
 </div>
 <div class="hidden notes grid grid-cols-2 h-96 tab-item hidden">
 	<div class="py-1 px-4 md:col-span-1 col-span-full">
-		<div th:each="note : ${jobApplication.note}">
-			<div class="shadow-md transition-all duration-300 rounded hover:shadow-2xl">
+		<div th:each="note : ${jobApplication.note}" class="grid grid-cols-4 h-40 border px-4 border-black py-2">
+			<div class="col-span-full lg:col-span-2 flex flex-col justify-evenly items-center lg:items-end px-5">
 				<p>note:</p>
 				<p th:text=" ${note.body}"></p>
 				<p>Created at:</p>
 				<p th:text=" ${note.createdAt}"></p>
-				<form th:action="@{|/notes/delete/${note.id}|}" method="post">
+				<form th:action="@{|/notes/delete/${note.id}|}" method="post" class="inline-block">
 					<input type="hidden" name="application" th:value="${jobApplication.id}">
-					<button>remove</button>
+					<button class="px-4 py-1 bg-delete rounded-md text-white text-sm">remove</button>
 				</form>
-				<a th:href="@{|/note/${note.id}|}">Edit note</a>
+				<div class="inline-block">
+				<a th:href="@{|/note/${note.id}|}" class="px-4 py-1 bg-edit rounded-md text-white text-sm">Edit note</a>
+				</div>
 			</div>
 		</div>
 	</div>
 	<form th:action="@{/notes}" method="post" th:object="${note}" class="md:col-span-1">
 		<label for="note">Note:</label>
-		<input type="text" id="note" th:field="*{body}" placeholder="note">
+		<input type="text" id="note" th:field="*{body}" placeholder="note" class="mt-3 md:mt-0 appearance-none rounded-md w-full relative block mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
 		<input type="hidden" name="application" th:value="${jobApplication.id}">
-		<button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-			<span class="absolute left-0 inset-y-0 flex items-center pl-3">
-				<!-- Heroicon name: solid/lock-closed -->
-				<svg class="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-					<path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
-				</svg>
-			</span>
+		<button type="submit" class=" px-4 py-1 bg-delete rounded-md text-white text-sm mt-3">
 			Make note
 		</button>
 	</form>
