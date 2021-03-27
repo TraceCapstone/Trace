@@ -1,62 +1,62 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" class="w-screen h-screen">
 <head th:replace="partials/head :: header-links(create)"></head>
-<body class="w-screen h-screen">
+<body class="w-screen h-screen bg-gray-100">
 <div class="h-full flex flex-col">
 	<nav th:replace="partials/nav :: navbar"></nav>
-	<div class="h-full flex flex-col justify-center">
-		<form class="grid md:grid-cols-3" th:action="@{/create-application}" method="POST" th:object="${jobApplication}">
-			<div class="col-span-1 grid grid-cols-1 gap-y-4 md:justify-center mx-2">
+	<div class="h-full">
+		<form class="grid grid-cols-3 space-y-6" th:action="@{/create-application}" method="POST" th:object="${jobApplication}">
+			<div class="md:col-span-1 space-y-6 col-span-full gap-y-4 md:justify-center mx-2">
 				<!--JobTitle-->
-				<div class="col-span-full">
+				<div class="">
 					<label for="jobTitleInput"></label>
 					<input type="text" class="w-full ring-2 ring-link rounded-md w-full ring-gray-300 py-4 pl-4" id="jobTitleInput" th:field="*{title}" required placeholder="Job Title *"> <!-- aria-describedby="emailHelp"-->
 					<!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
 				</div>
 				<!--CompanyName-->
-				<div class="col-span-full">
+				<div class="">
 					<label for="companyName"></label>
 					<input type="text" class="w-full ring-2 ring-link rounded-md ring-gray-300 py-4 pl-4" id="companyName" th:field="*{company}" required placeholder="Company *">
 				</div>
 				<!--PostId-->
-				<div class="col-span-full">
+				<div class="">
 					<label for="postId"></label>
 					<input type="text" class="w-full ring-2 ring-link rounded-md ring-gray-300 py-4 pl-4" id="postId" th:field="*{postingId}" placeholder="Post ID">
 				</div>
 				<!--JobLocation-->
-				<div class="col-span-full">
+				<div class="">
 					<label for="jobLocation"></label>
 					<input type="text" class="w-full ring-2 ring-link rounded-md ring-gray-300 py-4 pl-4" id="jobLocation" th:field="*{location}" required placeholder="Location *">
 				</div>
 				<!--DateApplied-->
-				<div class="col-span-full">
+				<div class="">
 					<label for="dateApplied"></label>
 					<input type="date" class="w-full ring-2 ring-link rounded-md ring-gray-300 py-4 pl-4" id="dateApplied" th:field="*{dateApplied}" required placeholder="Date Applied">
 				</div>
 			</div>
 
-			<div class="row-span-1 grid-cols-1 grid md:justify-center mx-2">
+			<div class="md:col-span-1 space-y-6 col-span-full md:justify-center mx-2">
 				<!--JobDescription-->
-				<div class="col-span-full">
+				<div class="">
 					<label for="jobDescription"></label>
 					<textarea class="w-full ring-2 ring-gray-300 resize-none h-96 rounded-md pl-4 pt-4" id="jobDescription" th:field="*{description}" placeholder="Description"></textarea>
 				</div>
 			</div>
 
 
-			<div class="col-span-1 grid grid-cols-1 gap-4 md:justify-center mx-2">
+			<div class="md:col-span-1 space-y-6 col-span-full grid-cols-1 gap-4 md:justify-center mx-2">
 				<!--Salary-->
-				<div class="col-span-full">
+				<div class="">
 					<label for="salary"></label>
 					<input type="number" class="w-full ring-2 ring-link rounded-md ring-gray-300 py-4 pl-4" id="salary" th:field="*{salary}" placeholder="Salary">
 				</div>
 				<!--ReferredBy-->
-				<div class="col-span-full">
+				<div class="">
 					<label for="referenceName"></label>
 					<input type="text" class="w-full ring-2 ring-link rounded-md ring-gray-300 py-4 pl-4" id="referenceName" th:field="*{referredBy}" placeholder="Referred By">
 				</div>
 				<!--PositionType-->
-				<div class="col-span-full">
+				<div class="">
 					<label for="positionType"></label>
 					<select name="positionType" id="positionType" class="w-full ring-2 ring-link rounded-md ring-gray-300 py-4 pl-4">
 						<option value="full-time">Full-Time</option>
@@ -77,7 +77,7 @@
 					</select>
 				</div>
 				<!--ApplicationStage-->
-				<div class="col-span-full">
+				<div class="">
 					<label for="applicationStage"></label>
 					<select id="applicationStage" name="test" class="w-full ring-2 ring-link rounded-md ring-gray-300 py-4 pl-4">
 						<option th:each="s : ${stage}" th:value="${s.id}" th:text="${s.stage}"></option>

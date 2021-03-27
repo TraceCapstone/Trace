@@ -27,6 +27,7 @@ module.exports = {
           },
         zIndex: {
           '-10': '-10',
+          '-20': '-20'
         },
       maxHeight: {
         '0': '0',

@@ -7,8 +7,6 @@
 	<div sec:authorize="isAuthenticated()">
 		<h1 style="text-align: center; font-weight: bold" class="bg-white">Welcome <span th:text="${user.firstName + '!'}">!</span></h1>
 	</div>
-	<div class="profile-bg"></div>
-	<div class="overlay"></div>
 	<!--<div>-->
 	<!--    <div class="py-1 px-4 md:col-span-4 col-span-full">-->
 	<!--        <div sec:authorize="isAuthenticated()">-->
@@ -76,6 +74,8 @@
 	</div>
 
 	<div th:replace="partials/footer :: footer"></div>
+	<div class="profile-bg"></div>
+	<div class="overlay"></div>
 </div>
 	<div th:replace="partials/scripts :: assets"></div>
     </body>

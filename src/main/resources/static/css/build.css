@@ -27804,6 +27804,10 @@ hr.curve-fade {
   z-index: -10;
 }
 
+.-z-20 {
+  z-index: -20;
+}
+
 .focus-within\:z-0:focus-within {
   z-index: 0;
 }
@@ -27836,6 +27840,10 @@ hr.curve-fade {
   z-index: -10;
 }
 
+.focus-within\:-z-20:focus-within {
+  z-index: -20;
+}
+
 .focus\:z-0:focus {
   z-index: 0;
 }
@@ -27866,6 +27874,10 @@ hr.curve-fade {
 
 .focus\:-z-10:focus {
   z-index: -10;
+}
+
+.focus\:-z-20:focus {
+  z-index: -20;
 }
 
 .gap-0 {
@@ -58877,6 +58889,10 @@ hr.curve-fade {
     z-index: -10;
   }
 
+  .sm\:-z-20 {
+    z-index: -20;
+  }
+
   .sm\:focus-within\:z-0:focus-within {
     z-index: 0;
   }
@@ -58909,6 +58925,10 @@ hr.curve-fade {
     z-index: -10;
   }
 
+  .sm\:focus-within\:-z-20:focus-within {
+    z-index: -20;
+  }
+
   .sm\:focus\:z-0:focus {
     z-index: 0;
   }
@@ -58939,6 +58959,10 @@ hr.curve-fade {
 
   .sm\:focus\:-z-10:focus {
     z-index: -10;
+  }
+
+  .sm\:focus\:-z-20:focus {
+    z-index: -20;
   }
 
   .sm\:gap-0 {
@@ -89885,6 +89909,10 @@ hr.curve-fade {
     z-index: -10;
   }
 
+  .md\:-z-20 {
+    z-index: -20;
+  }
+
   .md\:focus-within\:z-0:focus-within {
     z-index: 0;
   }
@@ -89917,6 +89945,10 @@ hr.curve-fade {
     z-index: -10;
   }
 
+  .md\:focus-within\:-z-20:focus-within {
+    z-index: -20;
+  }
+
   .md\:focus\:z-0:focus {
     z-index: 0;
   }
@@ -89947,6 +89979,10 @@ hr.curve-fade {
 
   .md\:focus\:-z-10:focus {
     z-index: -10;
+  }
+
+  .md\:focus\:-z-20:focus {
+    z-index: -20;
   }
 
   .md\:gap-0 {
@@ -120893,6 +120929,10 @@ hr.curve-fade {
     z-index: -10;
   }
 
+  .lg\:-z-20 {
+    z-index: -20;
+  }
+
   .lg\:focus-within\:z-0:focus-within {
     z-index: 0;
   }
@@ -120925,6 +120965,10 @@ hr.curve-fade {
     z-index: -10;
   }
 
+  .lg\:focus-within\:-z-20:focus-within {
+    z-index: -20;
+  }
+
   .lg\:focus\:z-0:focus {
     z-index: 0;
   }
@@ -120955,6 +120999,10 @@ hr.curve-fade {
 
   .lg\:focus\:-z-10:focus {
     z-index: -10;
+  }
+
+  .lg\:focus\:-z-20:focus {
+    z-index: -20;
   }
 
   .lg\:gap-0 {
@@ -151901,6 +151949,10 @@ hr.curve-fade {
     z-index: -10;
   }
 
+  .xl\:-z-20 {
+    z-index: -20;
+  }
+
   .xl\:focus-within\:z-0:focus-within {
     z-index: 0;
   }
@@ -151933,6 +151985,10 @@ hr.curve-fade {
     z-index: -10;
   }
 
+  .xl\:focus-within\:-z-20:focus-within {
+    z-index: -20;
+  }
+
   .xl\:focus\:z-0:focus {
     z-index: 0;
   }
@@ -151963,6 +152019,10 @@ hr.curve-fade {
 
   .xl\:focus\:-z-10:focus {
     z-index: -10;
+  }
+
+  .xl\:focus\:-z-20:focus {
+    z-index: -20;
   }
 
   .xl\:gap-0 {
@@ -182909,6 +182969,10 @@ hr.curve-fade {
     z-index: -10;
   }
 
+  .\32xl\:-z-20 {
+    z-index: -20;
+  }
+
   .\32xl\:focus-within\:z-0:focus-within {
     z-index: 0;
   }
@@ -182941,6 +183005,10 @@ hr.curve-fade {
     z-index: -10;
   }
 
+  .\32xl\:focus-within\:-z-20:focus-within {
+    z-index: -20;
+  }
+
   .\32xl\:focus\:z-0:focus {
     z-index: 0;
   }
@@ -182971,6 +183039,10 @@ hr.curve-fade {
 
   .\32xl\:focus\:-z-10:focus {
     z-index: -10;
+  }
+
+  .\32xl\:focus\:-z-20:focus {
+    z-index: -20;
   }
 
   .\32xl\:gap-0 {
