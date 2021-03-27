@@ -27,15 +27,19 @@ technologies: Java, the Spring Boot framework, Tailwind CSS and the Mapbox API.
 - Mapbox API
 
 ## Features
+---
 
 ## Project Planning
+---
+
+#### Checkout our [Trello](https://trello.com/b/7RZwJwaF/trace-kanban-board) board for an in-depth look at project planning 
 
 ## Coming Soon!
+---
 - In-site search
 - Event Calendar
 - Social Networking 
 
-#### Checkout our [Trello](https://trello.com/b/7RZwJwaF/trace-kanban-board) board for an in-depth look at project planning 
 
 ## Meet the team:
 
