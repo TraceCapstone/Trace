@@ -23,21 +23,21 @@
 							<form th:action="@{|/applications/${app.id}/delete|}" th:method="post" class="text-center inline-block">
 								<button class="px-4 py-1 bg-delete rounded-md text-white text-sm">Delete</button>
 							</form>
-	<!--						<button id="delete" class="px-4 py-1 bg-edit rounded-full text-white text-sm">Delete</button>-->
+							<!--<button id="delete" class="px-4 py-1 bg-edit rounded-full text-white text-sm">Delete</button>-->
 						</div>
 					</div>
 				</div>
-	<!--			<div id="delete-popup" class="fixed z-20 px-6 py-4 bg-red-500 text-md hidden top-20">-->
-	<!--				<h2 class="p-2 font-bold">Are you sure you want to delete this application</h2>-->
-	<!--			</div>-->
+				<!--<div id="delete-popup" class="fixed z-20 px-6 py-4 bg-red-500 text-md hidden top-20">-->
+				<!--<h2 class="p-2 font-bold">Are you sure you want to delete this application</h2>-->
+				<!--</div>-->
 			</div>
 		</div>
-	<!--START MAPBOX CONTAINER-->
-	<div id='map' class="col-span-7 justify-start h-full rounded-l-md hidden lg:block ml-6 mr-4"></div>
-	<!--END MAPBOX CONTAINER-->
-</div>
+		<!--START MAPBOX CONTAINER-->
+		<div id='map' class="col-span-7 justify-start h-full rounded-l-md hidden lg:block ml-6 mr-4"></div>
+		<!--END MAPBOX CONTAINER-->
+	</div>
 
-<!--	<div th:replace="partials/footer :: footer"></div>-->
+	<div th:replace="partials/footer :: footer"></div>
 </div>
 <input type="hidden" th:value="${apiKey}" id="api">
 <div th:replace="partials/scripts :: assets"></div>

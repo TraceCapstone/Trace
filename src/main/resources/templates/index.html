@@ -2,65 +2,66 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" class="w-screen h-screen">
 <head th:replace="partials/head :: header-links(home)"></head>
 <body class="w-screen h-screen">
+<div class="h-full flex flex-col">
+	<nav th:replace="partials/nav :: navbar"></nav>
 
-<nav th:replace="partials/nav :: navbar"></nav>
-
-<div class=" flex flex-wrap items-center justify-around py-14 px-4 sm:px-6 lg:px-8 w-full mt-16">
-	<div sec:authorize="!isAuthenticated()" class="max-w-md w-full space-y-8">
-		<div>
-			<h2 class="mt-6 text-center text-3xl font-extrabold text-gray-200">
-				Sign in to your account
-			</h2>
-		</div>
-		<form class="my-8 space-y-6" th:action="@{/}" method="post">
-			<input type="hidden" name="remember" value="true">
-			<div class="rounded-md shadow-sm -space-y-px">
-				<div>
-					<label for="email-address" class="sr-only">Email address</label>
-					<input id="email-address" name="email" type="email" autocomplete="email" required class="appearance-none rounded-md relative block w-10/12 mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Email address">
-				</div>
-				<div>
-					<label for="password" class="sr-only">Password</label>
-					<input id="password" name="password" type="password" autocomplete="current-password" required class="appearance-none mt-6 rounded-md relative block w-10/12 mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Password">
-				</div>
-			</div>
-
-			<div class="text-white px-3 py-2 border-0 rounded relative mb-4 mx-auto bg-red-500 w-10/12" th:if="${param.error}">
-				Invalid Username or Password.
-			</div>
-			<div class="text-white px-3 py-2 border-0 rounded relative mb-4 mx-auto bg-red-500 w-10/12" th:if="${param.logout}">
-				You have been logged out.
-			</div>
-
-<!--			<div class="flex items-center justify-end w-10/12 mx-auto">-->
-<!--				<div class="text-sm">-->
-<!--					<a href="/forgot" class="font-medium text-gray-200 hover:text-indigo-500">-->
-<!--						Forgot your password?-->
-<!--					</a>-->
-<!--				</div>-->
-<!--			</div>-->
-			<div th:if="${sent != null}" th:text="'An email has been sent to '+${sent}"></div>
+	<div class=" flex flex-wrap items-center h-full justify-around py-14 pb-0 px-4 sm:px-6 lg:px-8 w-full">
+		<div sec:authorize="!isAuthenticated()" class="max-w-md w-full space-y-8">
 			<div>
-				<button type="submit" class="group bg-login relative w-10/12 mx-auto flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2">
-					<span class="absolute left-0 inset-y-0 flex items-center pl-3">
-						<!-- Heroicon name: solid/lock-closed -->
-						<svg class="h-5 w-5 text-red-800 group-hover:text-red-900" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-							<path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
-						</svg>
-					</span>
-					Sign in
-				</button>
+				<h2 class="mt-6 text-center text-3xl font-extrabold text-gray-200">
+					Sign in to your account
+				</h2>
 			</div>
-		</form>
-	</div>
-	<p class="max-w-xl px-4 py-6 mt-4 text-gray-200 text-xl">
-		When hunting for a new job, keep track of all the positions you apply for and the important details associated with each job.
-		Stay aware of where you are in the process and keep detailed notes.
-	</p>
-</div>
+			<form class="my-8 space-y-6" th:action="@{/}" method="post">
+				<input type="hidden" name="remember" value="true">
+				<div class="rounded-md shadow-sm -space-y-px">
+					<div>
+						<label for="email-address" class="sr-only">Email address</label>
+						<input id="email-address" name="email" type="email" autocomplete="email" required class="appearance-none rounded-md relative block w-10/12 mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Email address">
+					</div>
+					<div>
+						<label for="password" class="sr-only">Password</label>
+						<input id="password" name="password" type="password" autocomplete="current-password" required class="appearance-none mt-6 rounded-md relative block w-10/12 mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Password">
+					</div>
+				</div>
 
+				<div class="text-white px-3 py-2 border-0 rounded relative mb-4 mx-auto bg-red-500 w-10/12" th:if="${param.error}">
+					Invalid Username or Password.
+				</div>
+				<div class="text-white px-3 py-2 border-0 rounded relative mb-4 mx-auto bg-red-500 w-10/12" th:if="${param.logout}">
+					You have been logged out.
+				</div>
+
+				<!--	<div class="flex items-center justify-end w-10/12 mx-auto">-->
+				<!--		<div class="text-sm">-->
+				<!--			<a href="/forgot" class="font-medium text-gray-200 hover:text-indigo-500">-->
+				<!--				Forgot your password?-->
+				<!--			</a>-->
+				<!--		</div>-->
+				<!--	</div>-->
+				<div th:if="${sent != null}" th:text="'An email has been sent to '+${sent}"></div>
+				<div>
+					<button type="submit" class="group text-md bg-login relative w-10/12 mx-auto flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2">
+						<span class="absolute left-0 inset-y-0 flex items-center pl-3">
+							<!-- Heroicon name: solid/lock-closed -->
+							<svg class="h-5 w-5 text-red-800 group-hover:text-red-900" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+								<path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+							</svg>
+						</span>
+						Sign in
+					</button>
+				</div>
+			</form>
+		</div>
+		<p class="max-w-xl px-4 py-6 mt-4 text-gray-200 text-xl">
+			When hunting for a new job, keep track of all the positions you apply for and the important details associated with each job.
+			Stay aware of where you are in the process and keep detailed notes.
+		</p>
+	</div>
+	<div th:replace="partials/footer :: footer"></div>
 <div class="bg-img"></div>
 <div class="overlay"></div>
+</div>
 <div th:replace="partials/scripts :: assets"></div>
 </body>
 </html>

@@ -1,58 +1,55 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" class="w-screen h-screen">
 <head th:replace="partials/head :: header-links(sign-up)"></head>
-<body>
-<nav th:replace="partials/nav :: navbar"></nav>
-<div class="signUp-bg"></div>
+<body class="w-screen h-screen">
+<div class="h-full flex flex-col">
+	<div class="signUp-bg"></div>
 	<div class="overlay"></div>
-<div class=" flex flex-wrap items-center justify-around py-14 px-4 sm:px-6 lg:px-8">
-<form th:action="@{/sign-up}" method="post" th:object="${user}" class="my-8 space-y-6 w-full max-w-screen-lg">
-    <label for="email" class="sr-only">Email</label>
-    <input type="text" id="email" th:field="*{email}" placeholder="Email" class="appearance-none rounded-md relative block w-10/12 mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
-    <br>
-    <label for="username" class="sr-only">Username</label>
-    <input type="text" id="username" th:field="*{username}" placeholder="Username" class="appearance-none rounded-md relative block w-10/12 mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
-    <br>
-	<div class="text-center">
-    <label for="first" class="sr-only">First name</label>
-    <input type="text" id="first" th:field="*{firstName}" placeholder="First Name" class="appearance-none rounded-md relative inline-block w-5/12 mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
-
-    <label for="last" class="sr-only">Last Name</label>
-    <input type="text" id="last" th:field="*{lastName}" placeholder="Last Name" class="appearance-none rounded-md relative inline-block w-5/12 px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
-	</div>
-    <br>
-    <label for="password" class="sr-only">Password</label>
-    <input type="password" id="password" th:field="*{password}" placeholder="Password" class="appearance-none rounded-xl relative block w-10/12 mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
-    <br>
-	<button type="submit" style="background-color: #F5CB5C" class="group relative w-10/12 mx-auto flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2">
-		Submit
-	</button>
-<br>
-
-	<ul class="text-sm" th:each="error: ${#fields.errors('password')}">
-		<li th:each="message : ${error.split(',')}" class="relative px-3 py-1 leading-normal text-red-700 rounded-lg">
+	<nav th:replace="partials/nav :: navbar"></nav>
+	<div class=" flex flex-wrap items-center h-full justify-around py-14 px-4 sm:px-6 lg:px-8">
+		<form th:action="@{/sign-up}" method="post" th:object="${user}" class="my-8 space-y-6 w-full max-w-screen-lg">
+			<label for="email" class="sr-only">Email</label>
+			<input type="text" id="email" th:field="*{email}" placeholder="Email" class="appearance-none rounded-md relative block w-10/12 mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
+			<br>
+			<label for="username" class="sr-only">Username</label>
+			<input type="text" id="username" th:field="*{username}" placeholder="Username" class="appearance-none rounded-md relative block w-10/12 mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
+			<br>
+			<div class="text-center">
+				<label for="first" class="sr-only">First name</label>
+				<input type="text" id="first" th:field="*{firstName}" placeholder="First Name" class="appearance-none rounded-md relative inline-block w-5/12 mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
+				<label for="last" class="sr-only">Last Name</label>
+				<input type="text" id="last" th:field="*{lastName}" placeholder="Last Name" class="appearance-none rounded-md relative inline-block w-5/12 px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
+			</div>
+			<br>
+			<label for="password" class="sr-only">Password</label>
+			<input type="password" id="password" th:field="*{password}" placeholder="Password" class="appearance-none rounded-xl relative block w-10/12 mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
+			<br>
+			<button type="submit" style="background-color: #F5CB5C" class="group relative w-10/12 mx-auto flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2">
+				Submit
+			</button>
+			<ul class="text-sm" th:each="error: ${#fields.errors('password')}">
+				<li th:each="message : ${error.split(',')}" class="relative px-3 py-1 leading-normal text-red-700 rounded-lg">
 					<span class="absolute inset-y-0 left-0 flex items-center ml-4">
 						<svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
 							<path d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" fill-rule="evenodd"></path>
 						</svg>
 					</span>
-			<p class="ml-6" th:text="${message}"></p>
-		</li>
-	</ul>
-	<div class="text-white px-3 py-2 border-0 rounded relative mb-4 bg-red-500" th:if="${username != null}" th:text="'a user with username '+${username}+' already exists'"></div>
-	<div class="text-white px-3 py-2 border-0 rounded relative mb-4 bg-red-500" th:if="${email != null}" th:text="'the email '+${email}+' is already being used'"></div>
-
-	<div th:if="${mismatch == 0}" class="text-white px-3 py-2 border-0 rounded relative mb-4 bg-red-500">
+					<p class="ml-6" th:text="${message}"></p>
+				</li>
+			</ul>
+			<div class="text-white px-3 py-2 border-0 rounded relative mb-4 bg-red-500" th:if="${username != null}" th:text="'a user with username '+${username}+' already exists'"></div>
+			<div class="text-white px-3 py-2 border-0 rounded relative mb-4 bg-red-500" th:if="${email != null}" th:text="'the email '+${email}+' is already being used'"></div>
+			<div th:if="${mismatch == 0}" class="text-white px-3 py-2 border-0 rounded relative mb-4 bg-red-500">
 				<span class="inline-block align-middle mr-8 text-lg">
 					Passwords do not match
 				</span>
+			</div>
+		</form>
 	</div>
-</form>
+
+
+	<div th:replace="partials/footer :: footer"></div>
 </div>
-
-
-<!--<p>Already have an account? <a  href="/" class="font-medium text-indigo-600 hover:text-indigo-500">Login here!</a></p>-->
-
 <div th:replace="partials/scripts :: assets"></div>
 </body>
 </html>

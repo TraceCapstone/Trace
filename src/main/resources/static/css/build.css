@@ -14177,7 +14177,7 @@ hr.curve-fade {
 }
 
 .max-h-0 {
-  max-height: 0px;
+  max-height: 0;
 }
 
 .max-h-1 {
@@ -14296,6 +14296,18 @@ hr.curve-fade {
   max-height: 24rem;
 }
 
+.max-h-104 {
+  max-height: 28rem;
+}
+
+.max-h-108 {
+  max-height: 32rem;
+}
+
+.max-h-110 {
+  max-height: 33rem;
+}
+
 .max-h-px {
   max-height: 1px;
 }
@@ -14322,6 +14334,18 @@ hr.curve-fade {
 
 .max-h-screen {
   max-height: 100vh;
+}
+
+.max-h-1\/4 {
+  max-height: 25%;
+}
+
+.max-h-1\/2 {
+  max-height: 50%;
+}
+
+.max-h-3\/4 {
+  max-height: 75%;
 }
 
 .max-w-0 {
@@ -45239,7 +45263,7 @@ hr.curve-fade {
   }
 
   .sm\:max-h-0 {
-    max-height: 0px;
+    max-height: 0;
   }
 
   .sm\:max-h-1 {
@@ -45358,6 +45382,18 @@ hr.curve-fade {
     max-height: 24rem;
   }
 
+  .sm\:max-h-104 {
+    max-height: 28rem;
+  }
+
+  .sm\:max-h-108 {
+    max-height: 32rem;
+  }
+
+  .sm\:max-h-110 {
+    max-height: 33rem;
+  }
+
   .sm\:max-h-px {
     max-height: 1px;
   }
@@ -45384,6 +45420,18 @@ hr.curve-fade {
 
   .sm\:max-h-screen {
     max-height: 100vh;
+  }
+
+  .sm\:max-h-1\/4 {
+    max-height: 25%;
+  }
+
+  .sm\:max-h-1\/2 {
+    max-height: 50%;
+  }
+
+  .sm\:max-h-3\/4 {
+    max-height: 75%;
   }
 
   .sm\:max-w-0 {
@@ -76223,7 +76271,7 @@ hr.curve-fade {
   }
 
   .md\:max-h-0 {
-    max-height: 0px;
+    max-height: 0;
   }
 
   .md\:max-h-1 {
@@ -76342,6 +76390,18 @@ hr.curve-fade {
     max-height: 24rem;
   }
 
+  .md\:max-h-104 {
+    max-height: 28rem;
+  }
+
+  .md\:max-h-108 {
+    max-height: 32rem;
+  }
+
+  .md\:max-h-110 {
+    max-height: 33rem;
+  }
+
   .md\:max-h-px {
     max-height: 1px;
   }
@@ -76368,6 +76428,18 @@ hr.curve-fade {
 
   .md\:max-h-screen {
     max-height: 100vh;
+  }
+
+  .md\:max-h-1\/4 {
+    max-height: 25%;
+  }
+
+  .md\:max-h-1\/2 {
+    max-height: 50%;
+  }
+
+  .md\:max-h-3\/4 {
+    max-height: 75%;
   }
 
   .md\:max-w-0 {
@@ -107207,7 +107279,7 @@ hr.curve-fade {
   }
 
   .lg\:max-h-0 {
-    max-height: 0px;
+    max-height: 0;
   }
 
   .lg\:max-h-1 {
@@ -107326,6 +107398,18 @@ hr.curve-fade {
     max-height: 24rem;
   }
 
+  .lg\:max-h-104 {
+    max-height: 28rem;
+  }
+
+  .lg\:max-h-108 {
+    max-height: 32rem;
+  }
+
+  .lg\:max-h-110 {
+    max-height: 33rem;
+  }
+
   .lg\:max-h-px {
     max-height: 1px;
   }
@@ -107352,6 +107436,18 @@ hr.curve-fade {
 
   .lg\:max-h-screen {
     max-height: 100vh;
+  }
+
+  .lg\:max-h-1\/4 {
+    max-height: 25%;
+  }
+
+  .lg\:max-h-1\/2 {
+    max-height: 50%;
+  }
+
+  .lg\:max-h-3\/4 {
+    max-height: 75%;
   }
 
   .lg\:max-w-0 {
@@ -138191,7 +138287,7 @@ hr.curve-fade {
   }
 
   .xl\:max-h-0 {
-    max-height: 0px;
+    max-height: 0;
   }
 
   .xl\:max-h-1 {
@@ -138310,6 +138406,18 @@ hr.curve-fade {
     max-height: 24rem;
   }
 
+  .xl\:max-h-104 {
+    max-height: 28rem;
+  }
+
+  .xl\:max-h-108 {
+    max-height: 32rem;
+  }
+
+  .xl\:max-h-110 {
+    max-height: 33rem;
+  }
+
   .xl\:max-h-px {
     max-height: 1px;
   }
@@ -138336,6 +138444,18 @@ hr.curve-fade {
 
   .xl\:max-h-screen {
     max-height: 100vh;
+  }
+
+  .xl\:max-h-1\/4 {
+    max-height: 25%;
+  }
+
+  .xl\:max-h-1\/2 {
+    max-height: 50%;
+  }
+
+  .xl\:max-h-3\/4 {
+    max-height: 75%;
   }
 
   .xl\:max-w-0 {
@@ -169175,7 +169295,7 @@ hr.curve-fade {
   }
 
   .\32xl\:max-h-0 {
-    max-height: 0px;
+    max-height: 0;
   }
 
   .\32xl\:max-h-1 {
@@ -169294,6 +169414,18 @@ hr.curve-fade {
     max-height: 24rem;
   }
 
+  .\32xl\:max-h-104 {
+    max-height: 28rem;
+  }
+
+  .\32xl\:max-h-108 {
+    max-height: 32rem;
+  }
+
+  .\32xl\:max-h-110 {
+    max-height: 33rem;
+  }
+
   .\32xl\:max-h-px {
     max-height: 1px;
   }
@@ -169320,6 +169452,18 @@ hr.curve-fade {
 
   .\32xl\:max-h-screen {
     max-height: 100vh;
+  }
+
+  .\32xl\:max-h-1\/4 {
+    max-height: 25%;
+  }
+
+  .\32xl\:max-h-1\/2 {
+    max-height: 50%;
+  }
+
+  .\32xl\:max-h-3\/4 {
+    max-height: 75%;
   }
 
   .\32xl\:max-w-0 {

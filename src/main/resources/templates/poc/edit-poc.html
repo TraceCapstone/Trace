@@ -2,28 +2,29 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" class="w-screen h-screen">
 <head th:replace="partials/head :: header-links(trace-edit-poc)"></head>
 <body class="w-screen h-screen">
+<div class="flex flex-col h-full">
+	<nav th:replace="partials/nav :: navbar"></nav>
 
-<nav th:replace="partials/nav :: navbar"></nav>
-
-<form th:if="${poc != null}" th:action="@{|/poc/edit/${poc.id}|}" method="post" th:object="${poc}" class="flex flex-col justify-evenly px-4 lg:pl-0 w-full max-w-2xl mx-auto items-center">
-	<label for="edit-email" class="w-full">
-		<input id="edit-email" type="email" th:field="*{email}" th:value="${email}" class="mt-3  appearance-none rounded-md w-full relative block mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
-	</label>
-	<label for="edit-firstName" class="w-full">
-		<input id="edit-firstName" type="text" th:field="*{firstName}" th:value="${firstName}" class="mt-3  appearance-none rounded-md relative block w-full mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
-	</label>
-	<label for="edit-lastName" class="w-full">
-		<input id="edit-lastName" type="text" th:field="*{lastName}" th:value="${lastName}" class="mt-3  appearance-none rounded-md relative block w-full mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
-	</label>
-	<label for="edit-phone" class="w-full">
-		<input id="edit-phone" type="tel" th:field="*{phoneNumber}" th:value="${phoneNumber}" class="mt-3  appearance-none rounded-md relative block w-full mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
-	</label>
-	<label for="edit-position" class="w-full">
-		<input id="edit-position" type="text" th:field="*{position}" th:value="${position}" class="mt-3 appearance-none rounded-md relative block w-full mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
-	</label>
-	<button class=" px-6 py-2 bg-edit rounded-full text-white mt-3">change</button>
-</form>
-
+	<form th:if="${poc != null}" th:action="@{|/poc/edit/${poc.id}|}" method="post" th:object="${poc}" class="flex flex-col justify-evenly px-4 lg:pl-0 w-full h-full max-w-2xl mx-auto items-center">
+		<label for="edit-email" class="w-full">
+			<input id="edit-email" type="email" th:field="*{email}" th:value="${email}" class="mt-3  appearance-none rounded-md w-full relative block mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
+		</label>
+		<label for="edit-firstName" class="w-full">
+			<input id="edit-firstName" type="text" th:field="*{firstName}" th:value="${firstName}" class="mt-3  appearance-none rounded-md relative block w-full mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
+		</label>
+		<label for="edit-lastName" class="w-full">
+			<input id="edit-lastName" type="text" th:field="*{lastName}" th:value="${lastName}" class="mt-3  appearance-none rounded-md relative block w-full mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
+		</label>
+		<label for="edit-phone" class="w-full">
+			<input id="edit-phone" type="tel" th:field="*{phoneNumber}" th:value="${phoneNumber}" class="mt-3  appearance-none rounded-md relative block w-full mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
+		</label>
+		<label for="edit-position" class="w-full">
+			<input id="edit-position" type="text" th:field="*{position}" th:value="${position}" class="mt-3 appearance-none rounded-md relative block w-full mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
+		</label>
+		<button class=" px-6 py-2 bg-edit rounded-full w-full text-white mt-3">change</button>
+	</form>
+	<div th:replace="partials/footer :: footer"></div>
+</div>
 <div th:replace="partials/scripts :: assets"></div>
 </body>
 </html>

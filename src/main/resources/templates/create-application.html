@@ -1,104 +1,107 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" class="w-screen h-screen">
 <head th:replace="partials/head :: header-links(create)"></head>
-<body>
-<nav th:replace="partials/nav :: navbar"></nav>
-<hr class="bg-grey-300 mt-8">
-<form class="grid md:grid-cols-3 mt-28" th:action="@{/create-application}" method="POST" th:object="${jobApplication}">
-	<div class="col-span-1 grid grid-cols-1 gap-y-4 md:justify-center mx-2">
-		<!--JobTitle-->
-		<div class="col-span-full">
-			<label for="jobTitleInput"></label>
-			<input type="text" class="w-full ring-2 ring-link rounded-md w-full ring-gray-300 py-4 pl-4" id="jobTitleInput" th:field="*{title}" required placeholder="Job Title *"> <!-- aria-describedby="emailHelp"-->
-			<!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
-		</div>
-		<!--CompanyName-->
-		<div class="col-span-full">
-			<label for="companyName"></label>
-			<input type="text" class="w-full ring-2 ring-link rounded-md ring-gray-300 py-4 pl-4" id="companyName" th:field="*{company}" required placeholder="Company *">
-		</div>
-		<!--PostId-->
-		<div class="col-span-full">
-			<label for="postId"></label>
-			<input type="text" class="w-full ring-2 ring-link rounded-md ring-gray-300 py-4 pl-4" id="postId" th:field="*{postingId}" placeholder="Post ID">
-		</div>
-		<!--JobLocation-->
-		<div class="col-span-full">
-			<label for="jobLocation"></label>
-			<input type="text" class="w-full ring-2 ring-link rounded-md ring-gray-300 py-4 pl-4" id="jobLocation" th:field="*{location}" required placeholder="Location *">
-		</div>
-		<!--DateApplied-->
-		<div class="col-span-full">
-			<label for="dateApplied"></label>
-			<input type="date" class="w-full ring-2 ring-link rounded-md ring-gray-300 py-4 pl-4" id="dateApplied" th:field="*{dateApplied}" required placeholder="Date Applied">
-		</div>
-	</div>
+<body class="w-screen h-screen">
+<div class="h-full flex flex-col">
+	<nav th:replace="partials/nav :: navbar"></nav>
+	<div class="h-full flex flex-col justify-center">
+		<form class="grid md:grid-cols-3" th:action="@{/create-application}" method="POST" th:object="${jobApplication}">
+			<div class="col-span-1 grid grid-cols-1 gap-y-4 md:justify-center mx-2">
+				<!--JobTitle-->
+				<div class="col-span-full">
+					<label for="jobTitleInput"></label>
+					<input type="text" class="w-full ring-2 ring-link rounded-md w-full ring-gray-300 py-4 pl-4" id="jobTitleInput" th:field="*{title}" required placeholder="Job Title *"> <!-- aria-describedby="emailHelp"-->
+					<!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+				</div>
+				<!--CompanyName-->
+				<div class="col-span-full">
+					<label for="companyName"></label>
+					<input type="text" class="w-full ring-2 ring-link rounded-md ring-gray-300 py-4 pl-4" id="companyName" th:field="*{company}" required placeholder="Company *">
+				</div>
+				<!--PostId-->
+				<div class="col-span-full">
+					<label for="postId"></label>
+					<input type="text" class="w-full ring-2 ring-link rounded-md ring-gray-300 py-4 pl-4" id="postId" th:field="*{postingId}" placeholder="Post ID">
+				</div>
+				<!--JobLocation-->
+				<div class="col-span-full">
+					<label for="jobLocation"></label>
+					<input type="text" class="w-full ring-2 ring-link rounded-md ring-gray-300 py-4 pl-4" id="jobLocation" th:field="*{location}" required placeholder="Location *">
+				</div>
+				<!--DateApplied-->
+				<div class="col-span-full">
+					<label for="dateApplied"></label>
+					<input type="date" class="w-full ring-2 ring-link rounded-md ring-gray-300 py-4 pl-4" id="dateApplied" th:field="*{dateApplied}" required placeholder="Date Applied">
+				</div>
+			</div>
 
-	<div class="row-span-1 grid-cols-1 grid md:justify-center mx-2">
-		<!--JobDescription-->
-		<div class="col-span-full">
-			<label for="jobDescription"></label>
-			<textarea class="w-full ring-2 ring-gray-300 resize-none h-96 rounded-md pl-4 pt-4" id="jobDescription" th:field="*{description}" placeholder="Description"></textarea>
-		</div>
-	</div>
+			<div class="row-span-1 grid-cols-1 grid md:justify-center mx-2">
+				<!--JobDescription-->
+				<div class="col-span-full">
+					<label for="jobDescription"></label>
+					<textarea class="w-full ring-2 ring-gray-300 resize-none h-96 rounded-md pl-4 pt-4" id="jobDescription" th:field="*{description}" placeholder="Description"></textarea>
+				</div>
+			</div>
 
 
-	<div class="col-span-1 grid grid-cols-1 gap-4 md:justify-center mx-2">
-		<!--Salary-->
-		<div class="col-span-full">
-			<label for="salary"></label>
-			<input type="number" class="w-full ring-2 ring-link rounded-md ring-gray-300 py-4 pl-4" id="salary" th:field="*{salary}" placeholder="Salary">
-		</div>
-		<!--ReferredBy-->
-		<div class="col-span-full">
-			<label for="referenceName"></label>
-			<input type="text" class="w-full ring-2 ring-link rounded-md ring-gray-300 py-4 pl-4" id="referenceName" th:field="*{referredBy}" placeholder="Referred By">
-		</div>
-		<!--PositionType-->
-		<div class="col-span-full">
-			<label for="positionType"></label>
-			<select name="positionType" id="positionType" class="w-full ring-2 ring-link rounded-md ring-gray-300 py-4 pl-4">
-				<option value="full-time">Full-Time</option>
-				<option value="full-time-remote">Full-Time Remote</option>
-				<option value="part-time">Part-Time</option>
-				<option value="part-time-remote">Part-Time Remote</option>
-				<option value="contract">Contract</option>
-				<option value="contract-remote">Contract Remote</option>
-				<option value="temporary">Temporary</option>
-				<option value="temporary-remote">Temporary Remote</option>
-				<option value="seasonal">Seasonal</option>
-				<option value="seasonal-remote">Seasonal Remote</option>
-				<option value="apprenticeship">Apprenticeship</option>
-				<option value="apprenticeship-remote">Apprenticeship Remote</option>
-				<option value="intern">Intern</option>
-				<option value="intern-remote">Intern Remote</option>
-				<option value="freelance">Freelance</option>
-			</select>
-		</div>
-		<!--ApplicationStage-->
-		<div class="col-span-full">
-			<label for="applicationStage"></label>
-			<select id="applicationStage" name="test" class="w-full ring-2 ring-link rounded-md ring-gray-300 py-4 pl-4">
-				<option th:each="s : ${stage}" th:value="${s.id}" th:text="${s.stage}"></option>
-			</select>
-		</div>
-		<!--LinkResume-->
-		<div>
-			<fieldset th:each="resume : ${resumes}">
-				<input type="radio" name="resume" id="resume" th:value="${resume.id}">
-				<label for="resume" th:text="${resume.title}"></label>
-			</fieldset>
-		</div>
-	</div>
-	<input type="hidden" th:field="*{id}">
+			<div class="col-span-1 grid grid-cols-1 gap-4 md:justify-center mx-2">
+				<!--Salary-->
+				<div class="col-span-full">
+					<label for="salary"></label>
+					<input type="number" class="w-full ring-2 ring-link rounded-md ring-gray-300 py-4 pl-4" id="salary" th:field="*{salary}" placeholder="Salary">
+				</div>
+				<!--ReferredBy-->
+				<div class="col-span-full">
+					<label for="referenceName"></label>
+					<input type="text" class="w-full ring-2 ring-link rounded-md ring-gray-300 py-4 pl-4" id="referenceName" th:field="*{referredBy}" placeholder="Referred By">
+				</div>
+				<!--PositionType-->
+				<div class="col-span-full">
+					<label for="positionType"></label>
+					<select name="positionType" id="positionType" class="w-full ring-2 ring-link rounded-md ring-gray-300 py-4 pl-4">
+						<option value="full-time">Full-Time</option>
+						<option value="full-time-remote">Full-Time Remote</option>
+						<option value="part-time">Part-Time</option>
+						<option value="part-time-remote">Part-Time Remote</option>
+						<option value="contract">Contract</option>
+						<option value="contract-remote">Contract Remote</option>
+						<option value="temporary">Temporary</option>
+						<option value="temporary-remote">Temporary Remote</option>
+						<option value="seasonal">Seasonal</option>
+						<option value="seasonal-remote">Seasonal Remote</option>
+						<option value="apprenticeship">Apprenticeship</option>
+						<option value="apprenticeship-remote">Apprenticeship Remote</option>
+						<option value="intern">Intern</option>
+						<option value="intern-remote">Intern Remote</option>
+						<option value="freelance">Freelance</option>
+					</select>
+				</div>
+				<!--ApplicationStage-->
+				<div class="col-span-full">
+					<label for="applicationStage"></label>
+					<select id="applicationStage" name="test" class="w-full ring-2 ring-link rounded-md ring-gray-300 py-4 pl-4">
+						<option th:each="s : ${stage}" th:value="${s.id}" th:text="${s.stage}"></option>
+					</select>
+				</div>
+				<!--LinkResume-->
+				<div>
+					<fieldset th:each="resume : ${resumes}">
+						<input type="radio" name="resume" id="resume" th:value="${resume.id}">
+						<label for="resume" th:text="${resume.title}"></label>
+					</fieldset>
+				</div>
+			</div>
+			<input type="hidden" th:field="*{id}">
 
-	<div class="grid grid-cols-2 col-span-full gap-4 justify-items-center mt-10 mx-2">
-		<button class="w-full bg-save text-button font-medium rounded-md py-4 pl-4 col-span-full lg:col-span-1">Save</button>
-		<button class="w-full bg-cancel text-button font-medium rounded-md py-4 pl-4 col-span-full lg:col-span-1" th:onclick="|window.location.href='/applications'|">Cancel
-		</button>
+			<div class="grid grid-cols-2 col-span-full gap-4 justify-items-center mt-10 mx-2">
+				<button class="w-full bg-save text-button font-medium rounded-md py-4 pl-4 col-span-full lg:col-span-1">Save</button>
+				<button class="w-full bg-cancel text-button font-medium rounded-md py-4 pl-4 col-span-full lg:col-span-1" th:onclick="|window.location.href='/applications'|">Cancel
+				</button>
+			</div>
+		</form>
 	</div>
-</form>
-<hr class="bg-grey-300 mt-40">
+	<div th:replace="partials/footer :: footer"></div>
+</div>
 <div th:replace="partials/scripts :: assets"></div>
 </body>
 </html>
