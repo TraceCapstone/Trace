@@ -28,8 +28,8 @@
 					<div class="flex space-x-14">
 						<!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
 						<a sec:authorize="!isAuthenticated()" href="/" class="text-link hover:bg-gray-300 hover:text-link-state-hvr px-3 py-2 rounded-md text-md font-medium">Login</a>
-						<a sec:authorize="isAuthenticated()" href="/create-application" class="text-link hover:bg-gray-300 hover:text-link-state-hvr px-3 py-2 rounded-md text-md font-medium">Add New Applied Job</a>
-						<a sec:authorize="isAuthenticated()" href="/applications" class="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100" role="menuitem">My Applied Jobs</a>
+						<a sec:authorize="isAuthenticated()" href="/create-application" class="text-link hover:bg-gray-300 hover:text-link-state-hvr px-3 py-2 rounded-md text-md font-medium">Create New Applied Job</a>
+						<a sec:authorize="isAuthenticated()" href="/applications" class="text-link hover:bg-gray-300 hover:text-link-state-hvr px-3 py-2 rounded-md text-md font-medium" role="menuitem">My Applied Jobs</a>
 
 					</div>
 				</div>

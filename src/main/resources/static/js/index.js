@@ -13,7 +13,8 @@ $(document).ready(function() {
         let map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/streets-v11',
-            zoom: 15
+            zoom: 4,
+            center: [-97.922, 39.381]
         });
 
         const geocode = (input) => {
@@ -21,11 +22,11 @@ $(document).ready(function() {
                 .then(res => res.json())
                 .then(data => {
                     try {
-                        map.flyTo({center: data.features[0].center, essential: true})
+                        map.flyTo({center: data.features[0].center, essential: true, zoom: 15})
                     } catch (e) {
                         console.log(e);
                     }
-                });
+                })
         }
         $(document).on("click", "#location", function() {
             geocode(this.innerText)
