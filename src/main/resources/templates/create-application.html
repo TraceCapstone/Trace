@@ -4,7 +4,7 @@
 <body class="w-screen h-screen bg-gray-100">
 <div class="h-full flex flex-col">
 	<nav th:replace="partials/nav :: navbar"></nav>
-	<div class="h-full">
+	<div class="h-full flex flex-col justify-center">
 		<form class="grid grid-cols-3 space-y-6" th:action="@{/create-application}" method="POST" th:object="${jobApplication}">
 			<div class="md:col-span-1 space-y-6 col-span-full gap-y-4 md:justify-center mx-2">
 				<!--JobTitle-->
