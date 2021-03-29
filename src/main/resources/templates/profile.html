@@ -55,7 +55,7 @@
 		<div class="lg:col-span-4 col-span-full py-14 px-4 sm:px-6 lg:px-8 w-full">
 			<h3 style="font-weight: bold; text-align: center; color: white">Uploaded Resumes</h3>
 			<h1 th:if="${user.resumes.size() == 0}" class="text-white text-l w-full mt-20">You have no uploaded resumes...</h1>
-			<div class="m-auto shadow-md transition-all duration-300 rounded hover:shadow-2xl p-2 max-w-lg w-full mt-20 max-h-96 overflow-y-auto">
+			<div th:if="${user.resumes.size() != 0 }" class="m-auto shadow-md transition-all duration-300 rounded hover:shadow-2xl p-2 max-w-xs w-full mt-20 max-h-96 overflow-y-auto">
 				<div th:each="resume : ${user.resumes}" class="flex flex-col justify-start bg-white ring-1 ring-gray-300 transition-all relative duration-300 hover:shadow-xl p-3 max-w-xs mx-auto">
 					<div class="p-0.5">
 						<p>Title:</p>
