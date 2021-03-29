@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" class="w-screen h-screen">
 <head th:replace="partials/head :: header-links(app)"></head>
-<body class="w-screen h-screen bg-gray-100">
-<div class="h-full flex flex-col">
+<body class="flex flex-col min-h-screen bg-gray-100">
 	<nav th:replace="partials/nav :: navbar"></nav>
 
 	<div class=" w-full text-lg py-2 px-2 bg-white border-b border-gray-300" id="tab">
@@ -13,7 +12,7 @@
 		</div>
 	</div>
 
-	<div class=" h-full flex flex-col justify-center tab-item application">
+	<div class="flex-grow flex flex-col justify-center tab-item application">
 		<div class="grid md:grid-cols-2">
 			<!--START COLUMN-->
 			<div class="col-span-1 grid gap-y-4 justify-center ml-20">
@@ -46,7 +45,7 @@
 
 
 
-	<div class="grid grid-cols-2 h-96 poc tab-item hidden h-full">
+	<div class="grid grid-cols-2 h-96 poc tab-item hidden flex-grow">
 
 		<div class="col-span-full md:col-span-1">
 			<div class="py-2 px-4 overflow-y-auto max-h-110">
@@ -98,7 +97,7 @@
 
 
 	</div>
-	<div class="h-full notes grid grid-cols-2 h-96 tab-item hidden">
+	<div class="flex-grow notes grid grid-cols-2 h-96 tab-item hidden">
 		<div class="col-span-full md:col-span-1">
 			<div class="py-2 px-4">
 				<div th:each="note : ${jobApplication.note}" class="grid grid-cols-4 h-60 border px-4 border-black py-2">
@@ -137,7 +136,6 @@
 	</div>
 
 	<div th:replace="partials/footer :: footer"></div>
-</div>
 <div th:replace="partials/scripts :: assets"></div>
 </body>
 </html>

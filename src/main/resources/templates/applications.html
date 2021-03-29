@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" class="w-screen h-screen">
 <head th:replace="partials/head :: header-links(applications)"></head>
-<body class="w-screen h-screen overflow-x-hidden">
+<body class="flex flex-col min-h-screen overflow-x-hidden">
 <div class="flex flex-col h-full bg-gray-100">
 	<nav th:replace="partials/nav :: navbar"></nav>
 
-	<div class="grid grid-cols-12 h-full content-center overflow-y-hidden justify-center">
+	<div class="grid grid-cols-12 min-h-full flex-grow content-center overflow-y-hidden justify-center">
 		<div class="lg:col-span-5 max-h-screen col-span-full relative overflow-y-auto divide-y divide-gray-400 rounded-md scroll-container lg:max-w-3xl ml-4 ">
 			<div th:each="app : ${jobApplications}" class=" transition-all relative duration-300 appCard hover:shadow-xl p-2 justify-start">
 				<div class="flex flex-col max-w-lg mx-auto">
