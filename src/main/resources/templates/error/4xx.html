@@ -1,18 +1,15 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport"
-		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
-</head>
-<body>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" class="w-screen h-screen">
+<head th:replace="partials/head :: header-links(error-400)"></head>
+<body class="w-screen h-screen">
 <th:block th:switch="${status}">
-	<div th:case="'404'">
-		<h1>404</h1>
-		<span>Page Not Found</span>
-		<p>It looks like the page you were looking for does not exist or the requested URL was incorrect</p>
+	<div th:case="'404'" class="w-full h-full flex items-center justify-center bg-gradient-to-r from-green-400 to-blue-500 ">
+		<div class="bg-white px-4 py-2 relative">
+			<span class="text-3xl inline-block lg:text-4xl font-semibold text-red-400 relative z-10">404</span>
+			<span class="text-3xl inline-block lg:text-4xl font-semibold text-blue-400 absolute left-3.5 top-2.5">404</span>
+			<div class="text-lg">Page Not Found</div>
+			<p class="text-md block">It looks like the page you were looking for does not exist or the requested URL was incorrect</p>
+		</div>
 	</div>
 	<div th:case="'403'">
 		<h1>You don't have permission to view this page.</h1>
