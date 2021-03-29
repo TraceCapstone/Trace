@@ -1,44 +1,42 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" class="w-screen h-screen">
 <head th:replace="partials/head :: header-links(applications)"></head>
-<body class="flex flex-col min-h-screen overflow-x-hidden">
-<div class="flex flex-col h-full bg-gray-100">
+<body class="flex flex-col min-h-screen overflow-x-hidden bg-gray-100">
 	<nav th:replace="partials/nav :: navbar"></nav>
 
-	<div class="grid grid-cols-12 min-h-full flex-grow content-center overflow-y-hidden justify-center">
-		<div class="lg:col-span-5 max-h-screen col-span-full relative overflow-y-auto divide-y divide-gray-400 rounded-md scroll-container lg:max-w-3xl ml-4 ">
-			<div th:each="app : ${jobApplications}" class=" transition-all relative duration-300 appCard hover:shadow-xl p-2 justify-start">
-				<div class="flex flex-col max-w-lg mx-auto">
-					<div class="flex w-full justify-between px-2 py-1">
-						<a th:href="@{|/applications/${app.id}|}" class="flex flex-col">
-							<p th:text=" ${app.title}" class="p-1 text-job-title font-medium hover:underline"></p>
-						</a>
-						<button type="button" id="location" th:text=" ${app.location}" class="p-1 w-40 text-location text-sm "></button>
-					</div>
-					<p th:text=" ${app.company}" class="px-2 py-1"></p>
-					<div class="flex w-full justify-between items-center px-2 py-1">
-						<p th:text=" ${app.dateApplied.toString().substring(0, app.dateApplied.toString().indexOf(' ')).replace('-', '/')}" class="p-1 pl-0"></p>
-						<div class="">
-							<a th:href="@{|/applications/edit/${app.id}|}" class="py-1 px-4 bg-edit rounded-md text-sm text-white">Edit</a>
-							<form th:action="@{|/applications/${app.id}/delete|}" th:method="post" class="text-center inline-block">
-								<button class="px-4 py-1 bg-delete rounded-md text-white text-sm">Delete</button>
-							</form>
-							<!--<button id="delete" class="px-4 py-1 bg-edit rounded-full text-white text-sm">Delete</button>-->
-						</div>
+<div class="grid grid-cols-12 flex-grow content-center overflow-y-hidden justify-center">
+	<div class="lg:col-span-5 max-h-112 col-span-full relative overflow-y-auto divide-y divide-gray-400 rounded-md scroll-container lg:max-w-3xl ml-4 ">
+		<div th:each="app : ${jobApplications}" class=" transition-all relative duration-300 appCard hover:shadow-xl p-2 justify-start">
+			<div class="flex flex-col max-w-lg mx-auto">
+				<div class="flex w-full justify-between px-2 py-1">
+					<a th:href="@{|/applications/${app.id}|}" class="flex flex-col">
+						<p th:text=" ${app.title}" class="p-1 text-job-title font-medium hover:underline"></p>
+					</a>
+					<button type="button" id="location" th:text=" ${app.location}" class="p-1 w-40 text-location text-sm "></button>
+				</div>
+				<p th:text=" ${app.company}" class="px-2 py-1"></p>
+				<div class="flex w-full justify-between items-center px-2 py-1">
+					<p th:text=" ${app.dateApplied.toString().substring(0, app.dateApplied.toString().indexOf(' ')).replace('-', '/')}" class="p-1 pl-0"></p>
+					<div class="">
+						<a th:href="@{|/applications/edit/${app.id}|}" class="py-1 px-4 bg-edit rounded-md text-sm text-white">Edit</a>
+						<form th:action="@{|/applications/${app.id}/delete|}" th:method="post" class="text-center inline-block">
+							<button class="px-4 py-1 bg-delete rounded-md text-white text-sm">Delete</button>
+						</form>
+						<!--<button id="delete" class="px-4 py-1 bg-edit rounded-full text-white text-sm">Delete</button>-->
 					</div>
 				</div>
-				<!--<div id="delete-popup" class="fixed z-20 px-6 py-4 bg-red-500 text-md hidden top-20">-->
-				<!--<h2 class="p-2 font-bold">Are you sure you want to delete this application</h2>-->
-				<!--</div>-->
 			</div>
+			<!--<div id="delete-popup" class="fixed z-20 px-6 py-4 bg-red-500 text-md hidden top-20">-->
+			<!--<h2 class="p-2 font-bold">Are you sure you want to delete this application</h2>-->
+			<!--</div>-->
 		</div>
-		<!--START MAPBOX CONTAINER-->
-		<div id='map' class="col-span-7 justify-start h-full rounded-l-md hidden lg:block ml-6 mr-4"></div>
-		<!--END MAPBOX CONTAINER-->
 	</div>
-
-	<div th:replace="partials/footer :: footer"></div>
+	<!--START MAPBOX CONTAINER-->
+		<div id='map' class="col-span-7 justify-start h-full rounded-l-md hidden lg:block ml-6 mr-4"></div>
+	<!--END MAPBOX CONTAINER-->
 </div>
+
+<div th:replace="partials/footer :: footer"></div>
 <input type="hidden" th:value="${apiKey}" id="api">
 <div th:replace="partials/scripts :: assets"></div>
 </body>

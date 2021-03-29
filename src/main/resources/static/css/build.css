@@ -14308,6 +14308,10 @@ hr.curve-fade {
   max-height: 33rem;
 }
 
+.max-h-112 {
+  max-height: 40rem;
+}
+
 .max-h-px {
   max-height: 1px;
 }
@@ -45406,6 +45410,10 @@ hr.curve-fade {
     max-height: 33rem;
   }
 
+  .sm\:max-h-112 {
+    max-height: 40rem;
+  }
+
   .sm\:max-h-px {
     max-height: 1px;
   }
@@ -76424,6 +76432,10 @@ hr.curve-fade {
 
   .md\:max-h-110 {
     max-height: 33rem;
+  }
+
+  .md\:max-h-112 {
+    max-height: 40rem;
   }
 
   .md\:max-h-px {
@@ -107446,6 +107458,10 @@ hr.curve-fade {
     max-height: 33rem;
   }
 
+  .lg\:max-h-112 {
+    max-height: 40rem;
+  }
+
   .lg\:max-h-px {
     max-height: 1px;
   }
@@ -138466,6 +138482,10 @@ hr.curve-fade {
     max-height: 33rem;
   }
 
+  .xl\:max-h-112 {
+    max-height: 40rem;
+  }
+
   .xl\:max-h-px {
     max-height: 1px;
   }
@@ -169484,6 +169504,10 @@ hr.curve-fade {
 
   .\32xl\:max-h-110 {
     max-height: 33rem;
+  }
+
+  .\32xl\:max-h-112 {
+    max-height: 40rem;
   }
 
   .\32xl\:max-h-px {
