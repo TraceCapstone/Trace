@@ -130,9 +130,10 @@
 
 /*open popup button css*/
     .bouncy{
-        animation: bouncy 5s infinite linear;
+        animation: bouncy 15s infinite linear;
         position: relative;
     }
+
     @keyframes bouncy {
         0%{top:0em}
         40%{top:0em}
