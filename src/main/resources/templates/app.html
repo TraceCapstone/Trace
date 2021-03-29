@@ -5,7 +5,7 @@
 <div class="h-full flex flex-col">
 	<nav th:replace="partials/nav :: navbar"></nav>
 
-	<div class=" w-full text-lg py-2 px-2 border-b border-gray-300" id="tab">
+	<div class=" w-full text-lg py-2 px-2 bg-white border-b border-gray-300" id="tab">
 		<div class="w-full space-x-1 md:space-x-10 lg:space-x-20 max-w-3xl mx-auto flex items-center justify-center">
 			<button id="application" class="px-6 py-2 dark:bg-opacity-20 active tab text-location">Application</button>
 			<button id="notes" class="px-6 py-2 dark:bg-opacity-20 tab">Notes</button>
@@ -33,7 +33,7 @@
 				<p style="font-weight: bold">Resume Used:</p>
 				<a class="" th:href=" @{jobApplication.resume.filePath}" th:if="${jobApplication.resume != null}" th:text=" ${jobApplication.resume.title}"></a>
 				<div class="grid grid-cols-2">
-					<a class="text-button text-center bg-edit rounded-md mr-4 pt-1 px-4 py-1" th:href="@{|/applications/edit/${jobApplication.id}|}">Edit</a>
+					<a class="text-button text-center bg-edit rounded-md pt-3" th:href="@{|/applications/edit/${jobApplication.id}|}">Edit</a>
 					<form th:action="@{|/applications/${jobApplication.id}/delete|}" th:method="POST" class="text-center inline-block">
 						<button class="px-4 py-1 bg-delete rounded-md text-white h-12">Delete</button>
 					</form>
