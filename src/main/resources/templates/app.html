@@ -33,18 +33,9 @@
 				<p style="font-weight: bold">Resume Used:</p>
 				<a class="" th:href=" @{jobApplication.resume.filePath}" th:if="${jobApplication.resume != null}" th:text=" ${jobApplication.resume.title}"></a>
 				<div class="grid grid-cols-2">
-					<a class="text-button text-center bg-edit rounded-md mr-4" th:href="@{|/applications/edit/${jobApplication.id}|}">Edit</a>
-					<!--DELETE MODULE-->
-					<!--			<div id="delete-popup" class="fixed z-20 px-6 py-4 bg-red-500 text-md hidden top-20">-->
-					<!--				<h2 class="p-2 font-bold">Are you sure you want to delete this application</h2>-->
-					<!--				<form th:action="@{|/applications/${jobApplication.id}/delete|}" th:method="post" class="text-center">-->
-					<!--					<button>Yes, Delete it</button>-->
-					<!--				</form>-->
-					<!--			</div>-->
-					<!--			-->
+					<a class="text-button text-center bg-edit rounded-md mr-4 pt-1 px-4 py-1" th:href="@{|/applications/edit/${jobApplication.id}|}">Edit</a>
 					<form th:action="@{|/applications/${jobApplication.id}/delete|}" th:method="POST" class="text-center inline-block">
-						<button class="px-4 py-1 bg-delete rounded-md text-white text-sm">Delete</button>
-		<!--				<button class="text-button bg-delete rounded-md ml-4" id="delete">Delete</button>-->
+						<button class="px-4 py-1 bg-delete rounded-md text-white h-12">Delete</button>
 					</form>
 				</div>
 			</div>
