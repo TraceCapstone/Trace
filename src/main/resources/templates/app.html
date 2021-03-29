@@ -70,11 +70,11 @@
 					<div class="col-span-full flex justify-evenly mt-2">
 						<form th:action="@{|/poc/edit/${contact.id}|}" class=" inline-block">
 							<input type="hidden" name="application" th:value="${jobApplication.id}">
-							<button class="px-4 py-1 bg-edit rounded-md text-white text-sm">edit</button>
+							<button class="px-4 py-1 bg-edit rounded-md text-white text-sm">Edit</button>
 						</form>
 						<form th:action="@{|/poc/delete/${contact.id}|}" method="post" class=" inline-block">
 							<input type="hidden" name="application" th:value="${jobApplication.id}">
-							<button class="px-4 py-1 bg-delete rounded-md text-white text-sm">remove</button>
+							<button class="px-4 py-1 bg-delete rounded-md text-white text-sm">Remove</button>
 						</form>
 					</div>
 				</div>
@@ -104,11 +104,11 @@
 				<div th:each="note : ${jobApplication.note}" class="grid grid-cols-4 h-60 border px-4 border-black py-2">
 					<div  class="col-span-full lg:col-span-2 flex flex-col justify-evenly items-center lg:items-end px-5">
 						<div>
-						<p>note:</p>
+						<p>Note:</p>
 						<p th:text=" ${note.body}"></p>
 						</div>
 						<div>
-						<p>Created at:</p>
+						<p>Created At:</p>
 						<p th:text=" ${note.createdAt}"></p>
 						</div>
 					</div>
@@ -118,20 +118,20 @@
 						</div>
 						<form th:action="@{|/notes/delete/${note.id}|}" method="post" class="inline-block">
 							<input type="hidden" name="application" th:value="${jobApplication.id}">
-							<button class="px-4 py-1 bg-delete rounded-md text-white text-sm">remove</button>
+							<button class="px-4 py-1 bg-delete rounded-md text-white text-sm">Remove</button>
 						</form>
 					</div>
 				</div>
 			</div>
 		</div>
 		<form th:action="@{/notes}" method="post" th:object="${note}" class="inline-flex flex-col justify-evenly col-span-full md:col-span-1 px-4 lg:pl-0">
-			<span class="font-bold text-center">Create a note!</span>
+			<span class="font-bold text-center">Create A Note!</span>
 			<div>
-				<textarea id="note" th:field="*{body}" placeholder="note" class="resize-none mt-3 md:mt-0 appearance-none rounded-md w-full relative block mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"></textarea>
+				<textarea id="note" th:field="*{body}" placeholder="Note" class="resize-none mt-3 md:mt-0 appearance-none rounded-md w-full relative block mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"></textarea>
 			</div>
 			<input type="hidden" name="application" th:value="${jobApplication.id}">
 			<button type="submit" class="px-4 py-1 bg-delete rounded-md text-white text-sm mt-3">
-				Make note
+				Make Note
 			</button>
 		</form>
 	</div>
