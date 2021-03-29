@@ -1,11 +1,10 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" class="w-screen h-screen">
 <head th:replace="partials/head :: header-links(home)"></head>
-<body class="w-screen h-screen">
-<div class="h-full flex flex-col">
+<body class="flex flex-col h-screen bg-gray-100">
 	<nav th:replace="partials/nav :: navbar"></nav>
 
-	<div class=" flex flex-wrap items-center h-full justify-around py-14 pb-0 px-4 sm:px-6 lg:px-8 w-full">
+	<div class=" flex flex-wrap items-center flex-grow justify-around py-14 pb-0 px-4 sm:px-6 lg:px-8 w-full">
 		<div sec:authorize="!isAuthenticated()" class="max-w-md w-full space-y-8">
 			<div>
 				<h2 class="mt-6 text-center text-3xl font-extrabold text-gray-200">
@@ -58,10 +57,9 @@
 			Stay aware of where you are in the process and keep detailed notes.
 		</p>
 	</div>
-	<div th:replace="partials/footer :: footer"></div>
 <div class="bg-img"></div>
 <div class="overlay"></div>
-</div>
+	<div th:replace="partials/footer :: footer"></div>
 <div th:replace="partials/scripts :: assets"></div>
 </body>
 </html>

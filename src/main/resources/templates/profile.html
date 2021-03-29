@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" class="w-screen h-screen">
 <head th:replace="partials/head :: header-links(profile)"></head>
-<body class="w-screen h-screen">
-<div class="flex flex-col h-full">
+<body class="flex flex-col min-h-screen">
+
 	<nav th:replace="partials/nav :: navbar"></nav>
 	<div sec:authorize="isAuthenticated()">
 		<h1 style="text-align: center; font-weight: bold" class="bg-white">Welcome <span th:text="${user.firstName + '!'}">!</span></h1>
@@ -19,7 +19,7 @@
 	<!--    </div>-->
 	<!--</div>-->
 	<!--<br>-->
-	<div class="grid grid-cols-12 h-full">
+	<div class="grid grid-cols-12 flex-grow">
 		<div sec:authorize="isAuthenticated()" class="lg:col-span-4 col-span-full flex flex-wrap items-start justify-around py-14 px-4 sm:px-6 lg:px-8 w-full">
 			<h1 style="text-align: center; font-weight: bold; color: white">Edit Profile</h1>
 			<form th:action="@{/profile}" th:method="post" th:object="${user}" class=" space-y-8 w-full flex flex-wrap items-center justify-around">
@@ -76,7 +76,6 @@
 	<div th:replace="partials/footer :: footer"></div>
 	<div class="profile-bg"></div>
 	<div class="overlay"></div>
-</div>
 	<div th:replace="partials/scripts :: assets"></div>
     </body>
     </html>

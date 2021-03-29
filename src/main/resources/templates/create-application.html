@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" class="w-screen h-screen">
 <head th:replace="partials/head :: header-links(create)"></head>
-<body class="w-screen h-screen bg-gray-100">
-<div class="h-full flex flex-col">
+<body class="flex flex-col min-h-screen bg-gray-100">
 	<nav th:replace="partials/nav :: navbar"></nav>
-	<div class="h-full flex flex-col justify-center">
+	<div class="flex-grow flex flex-col justify-center">
 		<form class="grid grid-cols-3 space-y-6" th:action="@{/create-application}" method="POST" th:object="${jobApplication}">
 			<div class="md:col-span-1 space-y-6 col-span-full gap-y-4 md:justify-center mx-2">
 				<!--JobTitle-->
@@ -101,7 +100,7 @@
 		</form>
 	</div>
 	<div th:replace="partials/footer :: footer"></div>
-</div>
+
 <div th:replace="partials/scripts :: assets"></div>
 </body>
 </html>
