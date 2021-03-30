@@ -6,7 +6,7 @@
 
 	<div class=" w-full text-lg py-2 px-2 bg-white border-b border-gray-300" id="tab">
 		<div class="w-full space-x-1 md:space-x-10 lg:space-x-20 max-w-3xl mx-auto flex items-center justify-center">
-			<button id="application" class="px-6 py-2 dark:bg-opacity-20 active tab text-location">Application</button>
+			<button id="application" class="px-6 py-2 dark:bg-opacity-20 active tab text-link-state-hvr">Application</button>
 			<button id="notes" class="px-6 py-2 dark:bg-opacity-20 tab">Notes</button>
 			<button id="poc" class="px-6 py-2 dark:bg-opacity-20 tab">POC's</button>
 		</div>
@@ -25,7 +25,7 @@
 			<!--END COLUMN-->
 			<!--START COLUMN-->
 			<div class="col-span-1 grid gap-4 justify-center">
-				<p style="" class="text-location font-light" th:text=" ${jobApplication.location}"></p>
+				<p style="" class="text-link-state-hvr font-light" th:text=" ${jobApplication.location}"></p>
 				<p style="font-weight: bold">Salary: <span class="font-thin" th:text=" ${jobApplication.salary}"></span></p>
 				<p style="font-weight: bold">Type: <span class="font-thin" th:text=" ${jobApplication.positionType}"></span></p>
 				<p style="font-weight: bold">Current Stage: <span class="font-thin" th:text=" ${stage.stage}"></span></p>
