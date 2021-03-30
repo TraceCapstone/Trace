@@ -4,7 +4,9 @@
 <body class="flex flex-col min-h-screen bg-gray-100">
 	<nav th:replace="partials/nav :: navbar"></nav>
 
-	<h1 style="text-align: center; font-weight: bold">Edit an Application</h1>
+	<div>
+		<h1 class=" text-link-state-hvr text-center text-3xl font-extrabold">Edit An Application</h1>
+	</div>
 	<div class=" flex-grow">
 		<form class="grid md:grid-cols-3 space-y-6" th:action="@{|/applications/edit/${jobApplication.id}|}" method="post" th:object="${jobApplication}">
 			<div class="col-span-1 gap-y-4 space-y-6 md:justify-center mx-2">

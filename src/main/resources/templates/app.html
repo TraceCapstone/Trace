@@ -103,8 +103,9 @@
 			<input type="hidden" name="application" th:value="${jobApplication.id}">
 			<button type="submit" class="w-full bg-delete text-button font-medium rounded-md py-4 pl-4 col-span-full lg:col-span-1">Make a Note</button>
 		</form>
-		<div class="col-span-full md:col-span-1">
-			<div th:each="note : ${jobApplication.note}" class="grid grid-cols-4 h-60 border px-4 border-black py-2">
+		<div class="col-span-full overflow-y-auto md:col-span-1">
+			<div class="py-2 px-4 overflow-y-auto max-h-110">
+			<div th:each="note : ${jobApplication.note}" class="grid grid-cols-4 h-40 border px-4 border-black py-2">
 				<div  class="col-span-full lg:col-span-2 flex flex-col justify-evenly items-center lg:items-end px-5">
 					<div>
 					<p>Note:</p>
@@ -123,9 +124,9 @@
 						<input type="hidden" name="application" th:value="${jobApplication.id}">
 						<button class="px-4 py-1 bg-delete rounded-md text-white text-sm">Remove</button>
 					</form>
+					</div>
 				</div>
 			</div>
-
 		</div>
 	</div>
 
