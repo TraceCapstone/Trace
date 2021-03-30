@@ -59,7 +59,7 @@ public class Application implements Serializable {
     @ManyToOne
     private User user;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     private Resume resume;
 
     @OneToMany(mappedBy = "application", cascade = CascadeType.ALL)
