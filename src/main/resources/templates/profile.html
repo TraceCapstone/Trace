@@ -5,20 +5,9 @@
 
 	<nav th:replace="partials/nav :: navbar"></nav>
 	<div sec:authorize="isAuthenticated()">
-		<h1 style="text-align: center; font-weight: bold" class="bg-white">Welcome <span th:text="${user.firstName + '!'}">!</span></h1>
+		<h1 style="text-align: center; font-weight: bold" class="text-link-state-hvr text-center text-xl font-semibold bg-gray-100 pt-4 pb-5">Welcome <span th:text="${user.firstName + '!'}">!</span></h1>
 	</div>
-	<!--<div>-->
-	<!--    <div class="py-1 px-4 md:col-span-4 col-span-full">-->
-	<!--        <div sec:authorize="isAuthenticated()">-->
-	<!--            <div class="shadow-md transition-all duration-300 rounded hover:shadow-2xl">-->
-	<!--            Full name: <p th:text="${user.firstName + ' '  + user.lastName}"></p>-->
-	<!--                <br>-->
-	<!--            Email: <p th:text="${user.email}"></p>-->
-	<!--            </div>-->
-	<!--        </div>-->
-	<!--    </div>-->
-	<!--</div>-->
-	<!--<br>-->
+	<hr>
 	<div class="grid grid-cols-12 flex-grow">
 		<div sec:authorize="isAuthenticated()" class="lg:col-span-4 col-span-full flex flex-wrap items-start justify-around py-14 px-4 sm:px-6 lg:px-8 w-full">
 			<h1 style="text-align: center; font-weight: bold; color: white">Edit Profile</h1>
