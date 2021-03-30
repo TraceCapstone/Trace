@@ -3,7 +3,7 @@
 <head th:replace="partials/head :: header-links(app)"></head>
 <body class="flex flex-col min-h-screen bg-gray-100">
 	<nav th:replace="partials/nav :: navbar"></nav>
-
+	<!--START SECONDARY NAV-->
 	<div class=" w-full text-lg py-2 px-2 bg-white border-b border-gray-300" id="tab">
 		<div class="w-full space-x-1 md:space-x-10 lg:space-x-20 max-w-3xl mx-auto flex items-center justify-center">
 			<button id="application" class="px-6 py-2 dark:bg-opacity-20 active tab text-link-state-hvr">Application</button>
@@ -11,7 +11,8 @@
 			<button id="poc" class="px-6 py-2 dark:bg-opacity-20 tab">POC's</button>
 		</div>
 	</div>
-
+	<!--END SECONDARY NAV-->
+	<!--BEGIN INDIVIDUAL APPLICATION RECORD-->
 	<div class="flex-grow flex flex-col justify-center tab-item application">
 		<div class="grid md:grid-cols-2">
 			<!--START COLUMN-->
@@ -38,14 +39,17 @@
 					</form>
 				</div>
 			</div>
-
+			<!--END COLUMN-->
 		</div>
-		<!--END COLUMN-->
 	</div>
-
-
+	<!--END INDIVIDUAL APPLICATION RECORD-->
+	<!--BEGIN POCs-->
 	<div class="grid grid-cols-2 h-96 poc tab-item hidden flex-grow">
 		<form th:action="@{/poc}" method="post" th:object="${poc}" class="inline-flex flex-col justify-start space-y-4 col-span-full md:col-span-1 px-4 lg:pr-0">
+			<div class="col-span-12">
+				<h1 class="text-link-state-hvr text-center text-xl font-semibold pb-5">Create A POC!</h1>
+				<hr>
+			</div>
 			<label for="email" ></label>
 			<input id="email" type="email" th:field="*{email}" class="mt-3 md:mt-0 appearance-none rounded-md w-full relative block mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Email" required>
 			<label for="firstName"></label>
@@ -57,7 +61,7 @@
 			<label for="position"></label>
 			<input id="position" type="text" th:field="*{position}" class="mt-3 md:mt-0 appearance-none rounded-md relative block w-full mx-auto px-4 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Position" required>
 			<input type="hidden" name="application" th:value="${jobApplication.id}">
-			<button class="w-full bg-delete text-button font-medium rounded-md py-4 pl-4 col-span-full lg:col-span-1">Add</button>
+			<button class="w-full bg-delete text-button font-medium rounded-md py-4 pl-4 col-span-full lg:col-span-1">Add POC</button>
 		</form>
 		<div class="col-span-full md:col-span-1">
 			<div class="py-2 px-4 overflow-y-auto max-h-110">
@@ -91,17 +95,20 @@
 				</div>
 			</div>
 		</div>
-
-
 	</div>
+	<!--END POCs-->
+	<!--BEGIN NOTES-->
 	<div class="flex-grow notes grid grid-cols-2 w-auto h-96 tab-item hidden">
-		<form th:action="@{/notes}" method="post" th:object="${note}" class="inline-flex flex-col justify-evenly col-span-full md:col-span-1 px-4 lg:pr-0">
-			<span class="font-bold text-center">Create A Note!</span>
+		<form th:action="@{/notes}" method="post" th:object="${note}" class="inline-flex flex-col justify-start space-y-4 col-span-full md:col-span-1 px-4 lg:pr-0">
+			<div class="col-span-12">
+				<h1 class="text-link-state-hvr text-center text-xl font-semibold pb-5">Create A Note!</h1>
+				<hr>
+			</div>
 			<div>
 				<textarea id="note" th:field="*{body}" placeholder="Note" class="resize-none mt-3 md:mt-0 appearance-none rounded-md w-full relative block mx-auto px-4 pt-4 h-96 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10"></textarea>
 			</div>
 			<input type="hidden" name="application" th:value="${jobApplication.id}">
-			<button type="submit" class="w-full bg-delete text-button font-medium rounded-md py-4 pl-4 col-span-full lg:col-span-1">Make a Note</button>
+			<button type="submit" class="w-full bg-delete text-button font-medium rounded-md py-4 pl-4 col-span-full lg:col-span-1">Add Note</button>
 		</form>
 		<div class="col-span-full overflow-y-auto md:col-span-1">
 			<div class="py-2 px-4 overflow-y-auto max-h-110">
@@ -129,7 +136,7 @@
 			</div>
 		</div>
 	</div>
-
+	<!--END NOTES-->
 	<div th:replace="partials/footer :: footer"></div>
 <div th:replace="partials/scripts :: assets"></div>
 </body>

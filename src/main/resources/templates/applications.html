@@ -3,12 +3,12 @@
 <head th:replace="partials/head :: header-links(applications)"></head>
 <body class="flex flex-col min-h-screen overflow-x-hidden bg-gray-100">
 	<nav th:replace="partials/nav :: navbar"></nav>
-
-<div class="grid grid-cols-12 flex-grow content-center overflow-y-hidden justify-center">
 	<div class="col-span-12">
 		<h1 class="text-link-state-hvr text-center text-3xl font-semibold pt-5 pb-5">Here Are Your Applied Jobs</h1>
 		<hr>
 	</div>
+<div class="grid grid-cols-12 flex-grow content-center overflow-y-hidden justify-center">
+
 	<div class="lg:col-span-5 max-h-112 col-span-full relative overflow-y-auto divide-y divide-gray-400 rounded-md scroll-container lg:max-w-3xl ml-4 ">
 		<div th:each="app : ${jobApplications}" class=" transition-all relative duration-300 appCard hover:shadow-xl p-2 justify-start">
 			<div class="flex flex-col max-w-lg mx-auto">
