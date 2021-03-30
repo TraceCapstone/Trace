@@ -5,7 +5,8 @@
 	<nav th:replace="partials/nav :: navbar"></nav>
 
 	<div>
-		<h1 class=" text-link-state-hvr text-center text-3xl font-extrabold">Edit An Application</h1>
+		<h1 class="text-link-state-hvr text-center text-3xl font-semibold pt-5 pb-5">Edit Application</h1>
+		<hr>
 	</div>
 	<div class=" flex-grow">
 		<form class="grid md:grid-cols-3 space-y-6" th:action="@{|/applications/edit/${jobApplication.id}|}" method="post" th:object="${jobApplication}">

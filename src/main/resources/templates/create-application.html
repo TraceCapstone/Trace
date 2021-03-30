@@ -4,7 +4,8 @@
 <body class="flex flex-col min-h-screen bg-gray-100">
 	<nav th:replace="partials/nav :: navbar"></nav>
 	<div>
-		<h1 class=" text-link-state-hvr text-center text-3xl font-extrabold">Create An Application!</h1>
+		<h1 class="text-link-state-hvr text-center text-3xl font-semibold pt-5 pb-5">Create An Application!</h1>
+		<hr>
 	</div>
 	<div class="flex-grow flex flex-col justify-center">
 		<form class="grid grid-cols-3 space-y-6" th:action="@{/create-application}" method="POST" th:object="${jobApplication}">
