@@ -24,8 +24,10 @@ public class PointOfContactController {
         Application app = applicationDao.getOne(Long.parseLong(applicationId));
         String formattedPhone;
         if (!poc.getPhoneNumber().equals("")) {
-            formattedPhone = poc.getPhoneNumber().substring(0, 3) + "-" + poc.getPhoneNumber().substring(3, 6) + "-" + poc.getPhoneNumber().substring(6);
-            poc.setPhoneNumber(formattedPhone);
+            if(!poc.getPhoneNumber().contains("-")) {
+                formattedPhone = poc.getPhoneNumber().substring(0, 3) + "-" + poc.getPhoneNumber().substring(3, 6) + "-" + poc.getPhoneNumber().substring(6);
+                poc.setPhoneNumber(formattedPhone);
+            }
         }
         poc.setApplication(app);
         pocDao.save(poc);
