@@ -66,8 +66,9 @@
 			<!-- Current: "bg-gray-900 text-white", Default: "text-link hover:bg-gray-300 hover:text-link-state-hvr" -->
 			<a href="/" class="bg-gray-300 text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
 			<a href="/sign-up" sec:authorize="!isAuthenticated()" class="text-link hover:bg-gray-300 hover:text-link-state-hvr block px-3 py-2 rounded-md text-base font-medium">Sign Up</a>
-			<a href="/aboutUs" class="text-link hover:bg-gray-300 hover:text-link-state-hvr block px-3 py-2 rounded-md text-base font-medium">About Us</a>
-			<a href="/create-application" sec:authorize="isAuthenticated()" class="text-link hover:bg-gray-300 hover:text-link-state-hvr block px-3 py-2 rounded-md text-base font-medium">New Applied Job</a>
+			<a sec:authorize="isAuthenticated()" href="/create-application" class="text-link hover:bg-gray-300 hover:text-link-state-hvr px-3 py-2 rounded-md text-md font-medium">Create New Applied Job</a>
+			<a sec:authorize="isAuthenticated()" href="/applications" class="text-link hover:bg-gray-300 hover:text-link-state-hvr px-3 py-2 rounded-md text-md font-medium" role="menuitem">My Applied Jobs</a>
+			<a href="/aboutUs" class="text-link hover:bg-gray-300 hover:text-link-state-hvr block px-3 py-2 rounded-md text-base font-medium">Meet the Developers</a>
 		</div>
 	</div>
 </nav>
