@@ -3,7 +3,6 @@ package com.trace.trace.controllers;
 import com.trace.trace.models.Resume;
 import com.trace.trace.repositories.ApplicationRepository;
 import com.trace.trace.repositories.ResumeRepository;
-import com.trace.trace.repositories.UserRepository;
 import com.trace.trace.services.UserService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
